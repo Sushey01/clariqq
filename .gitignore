@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+dist/
+build/
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# Databases & Vector Stores
+backend/storage/chroma_db/
+*.sqlite3
+
+# Large Data & Model files
+*.jsonl
+*.gguf
+*.bin
+*.pt
+*.safetensors
+*.csv
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
