@@ -18,7 +18,10 @@ SESSION_TTL = 3600  # Automatically clear inactive cache sessions after 1 hour
 
 class RedisSessionCache:
     def __init__(self):
-        """Initializes a connection pool matching standard MLOps runtime patterns."""
+        """Initializes a connection pool, or falls back to in-memory dictionary."""
+        self.use_fallback = False
+        self.fallback_cache = {}
+        
         try:
             self.pool = redis.ConnectionPool(
                 host=REDIS_HOST, 
@@ -30,19 +33,24 @@ class RedisSessionCache:
             client = redis.Redis(connection_pool=self.pool)
             client.ping()
             logging.info("Successfully established active Redis memory cache connection pool.")
-        except redis.ConnectionError as e:
-            logging.error(f"Failed to connect to local Redis memory engine instance: {str(e)}")
-            raise e
+        except (redis.ConnectionError, redis.exceptions.ConnectionError, Exception) as e:
+            logging.warning(f"Redis not available, falling back to in-memory dictionary: {str(e)}")
+            self.use_fallback = True
 
-    def _get_client(self) -> redis.Redis:
+    def _get_client(self):
+        if self.use_fallback:
+            return None
         return redis.Redis(connection_pool=self.pool)
 
     def save_chat_session(self, session_id: str, messages: List[BaseMessage]) -> None:
-        """Serializes LangChain BaseMessage components into string blocks inside Redis."""
-        client = self._get_client()
-        # Convert complex LangChain structures into plain serializable arrays of dicts
+        """Serializes LangChain BaseMessage components into string blocks inside Redis or Dict."""
         serialized_messages = messages_to_dict(messages)
         
+        if self.use_fallback:
+            self.fallback_cache[f"session:{session_id}"] = json.dumps(serialized_messages)
+            return
+
+        client = self._get_client()
         client.set(
             name=f"session:{session_id}",
             value=json.dumps(serialized_messages),
@@ -51,8 +59,11 @@ class RedisSessionCache:
 
     def load_chat_session(self, session_id: str) -> List[BaseMessage]:
         """Fetches string structures from cache memory and rebuilds LangChain message vectors."""
-        client = self._get_client()
-        raw_data = client.get(f"session:{session_id}")
+        if self.use_fallback:
+            raw_data = self.fallback_cache.get(f"session:{session_id}")
+        else:
+            client = self._get_client()
+            raw_data = client.get(f"session:{session_id}")
         
         if not raw_data:
             return []

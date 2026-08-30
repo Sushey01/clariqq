@@ -4,13 +4,16 @@ Orchestrates the connection between the Vector Store (context) and the LLM (gene
 """
 
 import logging
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.messages import HumanMessage, AIMessage
+from operator import itemgetter
 
 # Import the initialized clients from our subsystems
 from app.storage.vector_client import vector_client
 from app.ai_engine.llm_client import clariq_llm
+from app.storage.redis_client import redis_cache
 
 class RAGPipeline:
     def __init__(self):
@@ -27,16 +30,21 @@ class RAGPipeline:
 
     def _build_prompt_template(self) -> ChatPromptTemplate:
         """Constructs the Socratic curriculum-grounded prompt."""
-        # Note: In a larger app, this string can be moved to app/ai_engine/templates.py
         system_template = (
             "You are a strict but encouraging Socratic tutor for the Class 10 Science curriculum.\n"
-            "Use the following textbook excerpts to formulate your response.\n"
-            "Do NOT give the student the direct answer right away. Instead, use the context to ask "
-            "a guiding question that helps them figure it out themselves.\n\n"
+            "Your goal is to guide the student to the answer step-by-step. NEVER give them the direct answer.\n"
+            "Follow these RULES strictly:\n"
+            "1. NEVER give the direct answer to the student's question.\n"
+            "2. Keep your response very short (1-3 sentences maximum).\n"
+            "3. ALWAYS end your response with a single guiding question.\n"
+            "4. Praise the student when they get something right, then guide them to the next step.\n"
+            "5. If the student doesn't know, provide a hint and ask a simpler question.\n"
+            "6. If the student asks a COMPLETELY NEW question, seamlessly pivot to the new topic and start a new Socratic line of questioning. Do not force them to finish the old topic.\n\n"
             "Textbook Context:\n{context}\n\n"
         )
         return ChatPromptTemplate.from_messages([
             ("system", system_template),
+            MessagesPlaceholder(variable_name="chat_history"),
             ("human", "{question}")
         ])
 
@@ -48,29 +56,36 @@ class RAGPipeline:
     def _build_chain(self):
         """Assembles the LangChain Expression Language (LCEL) retrieval pipeline."""
         return (
-            # 1. Retrieve the docs and format them, while passing the user's question through
-            {"context": self.retriever | self._format_docs, "question": RunnablePassthrough()}
-            # 2. Inject context and question into the prompt template
+            {
+                "context": itemgetter("question") | self.retriever | self._format_docs, 
+                "question": itemgetter("question"),
+                "chat_history": itemgetter("chat_history")
+            }
             | self.prompt
-            # 3. Send the prompt to the local LLM
             | clariq_llm
-            # 4. Parse the raw AI output into a clean python string
             | StrOutputParser()
         )
 
-    def invoke(self, question: str) -> str:
+    def invoke(self, question: str, session_id: str = "default_session") -> str:
         """
-        Executes the RAG pipeline for a given user question.
-        
-        Args:
-            question: The string input from the user.
-            
-        Returns:
-            The generated string response from the LLM.
+        Executes the RAG pipeline with chat history memory.
         """
-        logging.info(f"Executing RAG pipeline for question: {question}")
+        logging.info(f"Executing RAG pipeline for session '{session_id}' - question: {question}")
         try:
-            response = self.chain.invoke(question)
+            # 1. Load history
+            history = redis_cache.load_chat_session(session_id)
+            
+            # 2. Run chain
+            response = self.chain.invoke({
+                "question": question,
+                "chat_history": history
+            })
+            
+            # 3. Update history
+            history.append(HumanMessage(content=question))
+            history.append(AIMessage(content=response))
+            redis_cache.save_chat_session(session_id, history)
+            
             return response
         except Exception as e:
             logging.error(f"Error during RAG pipeline execution: {str(e)}")
@@ -87,16 +102,22 @@ if __name__ == "__main__":
     # A quick testing block so you can run this script directly to test your AI!
     if rag_chain_pipeline:
         print("\n" + "="*50)
-        # Allow the user to type any question in the terminal!
-        test_question = input("Enter a Science Question (or press Enter for default): ")
-        if not test_question.strip():
-            test_question = "What is photosynthesis?"
+        print("Socratic Tutor Terminal Test (Type 'quit' or 'exit' to stop)")
+        print("="*50 + "\n")
+        
+        while True:
+            test_question = input("\nStudent: ")
             
-        print(f"\nUser Question: {test_question}\n")
-        print("Tutor Response (Thinking...):")
-        try:
-            answer = rag_chain_pipeline.invoke(test_question)
-            print("\n" + answer)
-        except Exception as e:
-            print(f"Execution failed: {e}")
-        print("\n" + "="*50 + "\n")
+            if test_question.strip().lower() in ['quit', 'exit']:
+                print("Ending session.")
+                break
+            
+            if not test_question.strip():
+                continue
+                
+            print("\nTutor (Thinking...): ", end="", flush=True)
+            try:
+                answer = rag_chain_pipeline.invoke(test_question, session_id="terminal_test")
+                print("\n" + answer)
+            except Exception as e:
+                print(f"\nExecution failed: {e}")

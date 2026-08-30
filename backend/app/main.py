@@ -61,7 +61,10 @@ def chat_endpoint(payload: ChatRequest):
     
     try:
         # Invoke the LangChain RAG pipeline
-        answer = rag_chain_pipeline.invoke(payload.question)
+        answer = rag_chain_pipeline.invoke(
+            question=payload.question, 
+            session_id=payload.session_id
+        )
         
         return ChatResponse(
             answer=answer,
