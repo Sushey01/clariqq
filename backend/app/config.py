@@ -20,6 +20,9 @@ HF_TOKEN = os.getenv("HUGGINGFACE_API_KEY") or os.getenv("HF_TOKEN") or ""
 if HF_TOKEN:
     os.environ["HF_TOKEN"] = HF_TOKEN
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.1"))
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
 
 CHROMA_DIR = Path(os.getenv("CHROMA_DIR", BACKEND_DIR / "storage" / "chroma_db"))
 RETRIEVE_K = int(os.getenv("RETRIEVE_K", "3"))
