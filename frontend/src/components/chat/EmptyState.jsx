@@ -17,7 +17,8 @@ export default function EmptyState({ onPrompt }) {
           <Card
             key={card.title}
             hoverable
-            onClick={() => onPrompt(card.query)}
+            onClick={onPrompt ? () => onPrompt(card.query) : undefined}
+            hoverable={Boolean(onPrompt)}
             className="h-[88px] text-left"
           >
             <p className="text-sm font-medium text-zinc-100">{card.title}</p>

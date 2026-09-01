@@ -8,6 +8,7 @@ export default function Composer({
   isLoading,
   socraticMode,
   disabled = false,
+  placeholder = 'Ask anything about Grade 10 science',
 }) {
   const [input, setInput] = useState('');
   const textareaRef = useRef(null);
@@ -45,7 +46,7 @@ export default function Composer({
                 submit(event);
               }
             }}
-            placeholder="Ask anything about Grade 10 science"
+            placeholder={placeholder}
             disabled={isLoading || disabled}
           />
           <div className="flex items-center justify-between px-3 pb-2">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import AmbientField from './AmbientField';
+import TryDemoButton from './TryDemoButton';
 
 export default function AuthLayout({ eyebrow, title, children }) {
   const panel = useRef(null);
@@ -41,6 +42,12 @@ export default function AuthLayout({ eyebrow, title, children }) {
               Clariq guides with Socratic questions instead of dumping solutions.
               Sign in to keep your chats on this device.
             </p>
+            <div className="pt-2">
+              <TryDemoButton />
+              <p className="mt-2 text-xs text-zinc-500">
+                One free question. No account needed.
+              </p>
+            </div>
           </div>
           <p className="text-xs text-zinc-600">Socratic RAG tutor</p>
         </section>
@@ -52,6 +59,10 @@ export default function AuthLayout({ eyebrow, title, children }) {
             </p>
             <h2 className="mt-2 font-outfit text-2xl font-semibold text-white">{title}</h2>
             <div className="mt-8">{children}</div>
+            <div className="mt-6 flex flex-col items-center gap-2 lg:hidden">
+              <TryDemoButton />
+              <p className="text-xs text-zinc-500">One free question. No account needed.</p>
+            </div>
           </div>
         </section>
       </div>

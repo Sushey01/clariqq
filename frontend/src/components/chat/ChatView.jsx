@@ -9,6 +9,9 @@ export default function ChatView({
   backendStatus,
   onSend,
   onRegenerate,
+  composerDisabled = false,
+  composerPlaceholder,
+  footer = null,
 }) {
   const messages = session?.messages ?? [];
   const backendDown = backendStatus === 'offline';
@@ -17,13 +20,13 @@ export default function ChatView({
     <div className="relative flex min-h-0 flex-1 flex-col bg-[#212121]">
       <div className="flex-1 overflow-y-auto">
         {messages.length === 0 ? (
-          <EmptyState onPrompt={onSend} />
+          <EmptyState onPrompt={composerDisabled ? undefined : onSend} />
         ) : (
           <div className="px-0 py-4 md:py-6">
             <MessageList
               messages={messages}
               isLoading={isLoading}
-              onRegenerate={onRegenerate}
+              onRegenerate={composerDisabled ? null : onRegenerate}
             />
           </div>
         )}
@@ -35,10 +38,14 @@ export default function ChatView({
         </p>
       )}
 
+      {footer}
+
       <Composer
         onSend={onSend}
         isLoading={isLoading}
         socraticMode={socraticMode}
+        disabled={composerDisabled}
+        placeholder={composerPlaceholder}
       />
     </div>
   );
