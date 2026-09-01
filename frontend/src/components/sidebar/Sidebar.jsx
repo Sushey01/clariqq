@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { PanelLeftClose, Search, SquarePen } from 'lucide-react';
+import { LogOut, PanelLeftClose, Search, SquarePen } from 'lucide-react';
 import { Button, Input } from '@/components/ui';
 import SessionItem from './SessionItem';
 import { groupSessions } from './groupSessions';
@@ -13,6 +13,8 @@ export default function Sidebar({
   onNewChat,
   onDeleteSession,
   onRenameSession,
+  user,
+  onLogout,
 }) {
   const [searchTerm, setSearchTerm] = useState('');
   const grouped = useMemo(
@@ -103,6 +105,22 @@ export default function Sidebar({
             );
           })}
         </nav>
+
+        <div className="border-t border-white/5 p-3">
+          <p className="truncate px-1 text-xs font-medium text-zinc-200">
+            {user?.name || 'Student'}
+          </p>
+          <p className="truncate px-1 text-[11px] text-zinc-500">{user?.email}</p>
+          <Button
+            variant="ghost"
+            size="md"
+            onClick={onLogout}
+            className="mt-2 w-full justify-start gap-2 text-zinc-400"
+          >
+            <LogOut className="h-4 w-4" />
+            Log out
+          </Button>
+        </div>
       </aside>
     </>
   );
