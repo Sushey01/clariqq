@@ -19,6 +19,7 @@ backend/storage/chroma_db/
 
 # Large Data & Model files
 *.jsonl
+models/
 *.gguf
 *.bin
 *.pt
