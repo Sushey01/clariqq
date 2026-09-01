@@ -22,7 +22,7 @@ def _as_chat_dicts(messages: list[BaseMessage]) -> list[dict]:
 
 class GroqChat(BaseChatModel):
     api_key: str
-    model: str = "llama-3.1-8b-instant"
+    model: str = "openai/gpt-oss-20b"
     temperature: float = 0.1
     max_tokens: int = 512
 
@@ -55,6 +55,11 @@ class GroqChat(BaseChatModel):
             json=payload,
             timeout=60.0,
         )
-        response.raise_for_status()
-        text = response.json()["choices"][0]["message"]["content"]
+        if response.status_code >= 400:
+            raise RuntimeError(f"Groq error {response.status_code}: {response.text[:400]}")
+        data = response.json()
+        message = data["choices"][0]["message"]
+        text = (message.get("content") or message.get("reasoning") or "").strip()
+        if not text:
+            raise RuntimeError("Groq returned an empty message.")
         return ChatResult(generations=[ChatGeneration(message=AIMessage(content=text))])

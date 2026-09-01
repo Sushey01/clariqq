@@ -15,7 +15,10 @@ export function useBackendHealth(intervalMs = 15000) {
         const data = await getHealth();
         if (!cancelled) {
           setHealth({
-            status: data.status === 'ok' ? 'ok' : 'not_ready',
+            status:
+              data.status === 'ok' && data.groq_configured !== false
+                ? 'ok'
+                : 'not_ready',
             detail: data.detail ?? null,
           });
         }

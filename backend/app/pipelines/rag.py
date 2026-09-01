@@ -53,10 +53,11 @@ def get_tutor() -> Tutor | None:
     try:
         _tutor = Tutor(llm=get_llm(), retriever=get_retriever())
         _error = None
+        return _tutor
     except Exception as exc:
         _tutor = None
         _error = str(exc)
-    return _tutor
+        return None
 
 
 def tutor_error() -> str | None:
