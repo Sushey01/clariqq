@@ -22,6 +22,18 @@ const Card = ({
   return (
     <div
       onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={
+        onClick
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onClick(event);
+              }
+            }
+          : undefined
+      }
       className={twMerge(
         clsx(
           baseStyles,

@@ -1,249 +1,153 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Header, Sidebar, ChatContainer, SettingsModal } from '@/components';
+import { useCallback, useEffect, useState } from 'react';
+import { sendChat } from '@/api/client';
+import { useBackendHealth } from '@/hooks/useBackendHealth';
+import { useChatSessions } from '@/hooks/useChatSessions';
+import Header from '@/components/header/Header';
+import Sidebar from '@/components/sidebar/Sidebar';
+import ChatView from '@/components/chat/ChatView';
+import SettingsModal from '@/components/settings/SettingsModal';
 
-const LOCAL_STORAGE_KEY = 'clariq_socratic_sessions_v1';
+function titleFromQuestion(question) {
+  const trimmed = question.trim();
+  return trimmed.length > 32 ? `${trimmed.slice(0, 32)}...` : trimmed;
+}
 
-function App() {
-  const [sessions, setSessions] = useState(() => {
-    try {
-      const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (saved) {
-        return JSON.parse(saved);
-      }
-    } catch (e) {
-      console.error('Failed to load sessions from localStorage:', e);
-    }
-    // Default initial session
-    return [
-      {
-        id: 'session-default-1',
-        title: 'Science Exploration',
-        createdAt: Date.now(),
-        messages: [
-          {
-            sender: 'ai',
-            text: 'Hello! I am your **Clariq Socratic Science Tutor**. What topic would you like to explore today? We can dive into Physics, Chemistry, Biology, or Space Science.'
-          }
-        ]
-      }
-    ];
-  });
+export default function App() {
+  const {
+    sessions,
+    activeSession,
+    activeSessionId,
+    setActiveSessionId,
+    createChat,
+    deleteSession,
+    renameSession,
+    clearAll,
+    appendMessage,
+    replaceMessages,
+  } = useChatSessions();
 
-  const [activeSessionId, setActiveSessionId] = useState(() => {
-    return sessions[0]?.id || null;
-  });
-
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [activeModel, setActiveModel] = useState('qwen-socratic');
+  const health = useBackendHealth();
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [activeModel, setActiveModel] = useState('clariq-socratic');
   const [socraticMode, setSocraticMode] = useState('strict');
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Sync sessions with localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(sessions));
-    } catch (e) {
-      console.error('Failed to save sessions to localStorage:', e);
-    }
-  }, [sessions]);
-
-  // Keyboard shortcut: Ctrl + K for New Chat
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        handleCreateNewChat();
+    const onKey = (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        createChat();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [createChat]);
 
-  const activeSession = sessions.find(s => s.id === activeSessionId) || sessions[0];
+  const askTutor = useCallback(
+    async (question, { regenerate = false } = {}) => {
+      if (!activeSessionId || !question.trim()) return;
 
-  const handleCreateNewChat = useCallback(() => {
-    const newSessionId = `session-${Date.now()}`;
-    const newSession = {
-      id: newSessionId,
-      title: 'New Conversation',
-      createdAt: Date.now(),
-      messages: []
-    };
-
-    setSessions(prev => [newSession, ...prev]);
-    setActiveSessionId(newSessionId);
-  }, []);
-
-  const handleDeleteSession = useCallback((id) => {
-    setSessions(prev => {
-      const filtered = prev.filter(s => s.id !== id);
-      if (filtered.length === 0) {
-        const freshSessionId = `session-${Date.now()}`;
-        const freshSession = {
-          id: freshSessionId,
-          title: 'New Conversation',
-          createdAt: Date.now(),
-          messages: []
-        };
-        setActiveSessionId(freshSessionId);
-        return [freshSession];
-      }
-      if (id === activeSessionId) {
-        setActiveSessionId(filtered[0].id);
-      }
-      return filtered;
-    });
-  }, [activeSessionId]);
-
-  const handleRenameSession = useCallback((id, newTitle) => {
-    setSessions(prev =>
-      prev.map(s => (s.id === id ? { ...s, title: newTitle } : s))
-    );
-  }, []);
-
-  const handleClearAllHistory = useCallback(() => {
-    const freshId = `session-${Date.now()}`;
-    const freshSession = {
-      id: freshId,
-      title: 'New Conversation',
-      createdAt: Date.now(),
-      messages: []
-    };
-    setSessions([freshSession]);
-    setActiveSessionId(freshId);
-  }, []);
-
-  const handleSendMessage = async (userQuery) => {
-    if (!activeSessionId) return;
-
-    // Update user message immediately
-    const userMsg = { sender: 'user', text: userQuery };
-    
-    setSessions(prev =>
-      prev.map(session => {
-        if (session.id === activeSessionId) {
-          const isFirstUserMsg = session.messages.filter(m => m.sender === 'user').length === 0;
-          // Auto rename title based on first user query if still generic
-          const updatedTitle = (isFirstUserMsg || session.title === 'New Conversation')
-            ? userQuery.slice(0, 30) + (userQuery.length > 30 ? '...' : '')
-            : session.title;
-
-          return {
-            ...session,
-            title: updatedTitle,
-            messages: [...session.messages, userMsg]
-          };
+      if (regenerate) {
+        const withoutLastAi = [...(activeSession.messages || [])];
+        if (withoutLastAi.at(-1)?.sender === 'ai') {
+          withoutLastAi.pop();
         }
-        return session;
-      })
-    );
-
-    setIsLoading(true);
-
-    try {
-      const response = await fetch('http://127.0.0.1:8000/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          question: userQuery, 
-          session_id: activeSessionId,
-          socratic_mode: socraticMode
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`Server responded with status ${response.status}`);
+        replaceMessages(activeSessionId, withoutLastAi);
+      } else {
+        const isFirst =
+          (activeSession.messages || []).filter((m) => m.sender === 'user')
+            .length === 0;
+        appendMessage(
+          activeSessionId,
+          { sender: 'user', text: question },
+          isFirst || activeSession.title === 'New chat'
+            ? titleFromQuestion(question)
+            : undefined
+        );
       }
 
-      const data = await response.json();
-      const aiMsg = { sender: 'ai', text: data.answer };
+      setIsLoading(true);
+      try {
+        const data = await sendChat({
+          question,
+          sessionId: activeSessionId,
+          socraticMode,
+        });
+        appendMessage(activeSessionId, {
+          sender: 'ai',
+          text: data.answer,
+        });
+      } catch (error) {
+        appendMessage(activeSessionId, {
+          sender: 'ai',
+          text: `Could not reach the Clariq API. ${error.message}`,
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [
+      activeSession,
+      activeSessionId,
+      appendMessage,
+      replaceMessages,
+      socraticMode,
+    ]
+  );
 
-      setSessions(prev =>
-        prev.map(session => {
-          if (session.id === activeSessionId) {
-            return {
-              ...session,
-              messages: [...session.messages, aiMsg]
-            };
-          }
-          return session;
-        })
-      );
-    } catch (error) {
-      console.error('API Error:', error);
-      const fallbackMsg = {
-        sender: 'ai',
-        text: '⚠️ **Connection Note**: Unable to reach the local Clariq RAG FastAPI backend (`http://127.0.0.1:8000/api/chat`).\n\nPlease ensure your Python backend server is running!'
-      };
-
-      setSessions(prev =>
-        prev.map(session => {
-          if (session.id === activeSessionId) {
-            return {
-              ...session,
-              messages: [...session.messages, fallbackMsg]
-            };
-          }
-          return session;
-        })
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const lastUserText = [...(activeSession?.messages || [])]
+    .reverse()
+    .find((message) => message.sender === 'user')?.text;
 
   return (
-    <div className="flex h-screen bg-[#212121] text-zinc-100 overflow-hidden font-sans select-none">
-      
-      {/* Sidebar Navigation */}
+    <div className="flex h-screen overflow-hidden bg-[#212121] font-sans text-zinc-100">
       <Sidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
         sessions={sessions}
         activeSessionId={activeSessionId}
-        onSelectSession={setActiveSessionId}
-        onNewChat={handleCreateNewChat}
-        onDeleteSession={handleDeleteSession}
-        onRenameSession={handleRenameSession}
-        onOpenSettings={() => setIsSettingsOpen(true)}
+        onSelectSession={(id) => {
+          setActiveSessionId(id);
+          if (window.innerWidth < 768) setSidebarOpen(false);
+        }}
+        onNewChat={createChat}
+        onDeleteSession={deleteSession}
+        onRenameSession={renameSession}
       />
 
-      {/* Main Content Workspace */}
-      <div className="flex-1 flex flex-col h-full min-w-0 bg-[#212121]">
-        {/* ChatGPT Top Header Bar */}
+      <div className="flex min-w-0 flex-1 flex-col bg-[#212121]">
         <Header
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-          onNewChat={handleCreateNewChat}
+          isSidebarOpen={sidebarOpen}
+          onToggleSidebar={() => setSidebarOpen((open) => !open)}
+          onNewChat={createChat}
           activeModel={activeModel}
-          setActiveModel={setActiveModel}
-          onOpenSettings={() => setIsSettingsOpen(true)}
+          onModelChange={setActiveModel}
+          onOpenSettings={() => setSettingsOpen(true)}
+          backendStatus={health.status}
         />
-
-        {/* Chat Viewport */}
-        <ChatContainer
+        <ChatView
           session={activeSession}
-          onSendMessage={handleSendMessage}
           isLoading={isLoading}
           socraticMode={socraticMode}
+          backendStatus={health.status}
+          onSend={(text) => askTutor(text)}
+          onRegenerate={() =>
+            lastUserText && askTutor(lastUserText, { regenerate: true })
+          }
         />
       </div>
 
-      {/* Settings Dialog */}
       <SettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
+        isOpen={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
         socraticMode={socraticMode}
-        setSocraticMode={setSocraticMode}
-        onClearHistory={handleClearAllHistory}
+        onModeChange={setSocraticMode}
+        onClearHistory={clearAll}
         activeSession={activeSession}
+        backendStatus={health.status}
+        backendDetail={health.detail}
       />
-
     </div>
   );
 }
-
-export default App;
