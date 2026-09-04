@@ -48,7 +48,7 @@ def reload_env() -> None:
     for path in ENV_FILES:
         _apply_env_file(path)
 
-    global GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER, LLM_TEMPERATURE
+    global GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER, LLM_TEMPERATURE, LOCAL_GGUF_PATH
     global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN
     OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     os.environ.setdefault("OLLAMA_HOST", OLLAMA_BASE_URL)
@@ -62,10 +62,15 @@ def reload_env() -> None:
     LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
     GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+    raw_gguf = os.getenv("LOCAL_GGUF_PATH", "").strip()
+    LOCAL_GGUF_PATH = Path(raw_gguf) if raw_gguf else REPO_ROOT / "models" / "socratic-phi3-q8_0.gguf"
+    if not LOCAL_GGUF_PATH.is_absolute():
+        LOCAL_GGUF_PATH = (REPO_ROOT / LOCAL_GGUF_PATH).resolve()
 
 
 GROQ_API_KEY = ""
 GROQ_MODEL = "openai/gpt-oss-20b"
+LOCAL_GGUF_PATH = REPO_ROOT / "models" / "socratic-phi3-q8_0.gguf"
 LLM_PROVIDER = "auto"
 LLM_TEMPERATURE = 0.1
 OLLAMA_BASE_URL = "http://localhost:11434"
