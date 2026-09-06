@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Button, Input } from '@/components/ui';
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton';
 
-export default function AuthForm({ mode, onSubmit }) {
+export default function AuthForm({ mode, onSubmit, onGoogle }) {
   const isSignup = mode === 'signup';
   const formRef = useRef(null);
   const [error, setError] = useState('');
@@ -60,6 +61,21 @@ export default function AuthForm({ mode, onSubmit }) {
       setPending(false);
     }
   };
+
+  const handleGoogle = useCallback(
+    async (credential) => {
+      setError('');
+      setPending(true);
+      try {
+        await onGoogle(credential);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setPending(false);
+      }
+    },
+    [onGoogle]
+  );
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
@@ -132,8 +148,22 @@ export default function AuthForm({ mode, onSubmit }) {
         </Button>
       </div>
 
+      <div className="auth-item flex items-center gap-3 py-1">
+        <span className="h-px flex-1 bg-white/10" />
+        <span className="text-[11px] uppercase tracking-wide text-zinc-500">or</span>
+        <span className="h-px flex-1 bg-white/10" />
+      </div>
+
+      <div className="auth-item flex justify-center">
+        <GoogleSignInButton
+          text={isSignup ? 'signup_with' : 'signin_with'}
+          disabled={pending}
+          onCredential={handleGoogle}
+        />
+      </div>
+
       <p className="auth-item text-center text-xs text-zinc-500">
-        Accounts are stored in this browser only until backend auth is added.
+        Google uses your school or personal Google account. Email signup stays in this browser until you switch fully to the API.
       </p>
 
       <p className="auth-item text-center text-sm text-zinc-400">

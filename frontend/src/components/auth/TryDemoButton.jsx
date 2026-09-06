@@ -50,7 +50,7 @@ export default function TryDemoButton() {
         className="try-demo-btn inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white px-5 py-2.5 text-sm font-semibold text-black"
       >
         <Sparkles className="h-4 w-4" />
-        Try one question
+        Try a Socratic chat
       </Link>
     </span>
   );

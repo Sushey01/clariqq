@@ -11,3 +11,5 @@ redis==5.0.4
 chromadb==0.6.2
 huggingface-hub>=0.23.0
 llama-cpp-python>=0.2.77
+google-auth>=2.29.0
+PyJWT>=2.8.0

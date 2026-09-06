@@ -1,9 +1,12 @@
 import { createContext, useContext, useMemo, useState } from 'react';
+import { loginWithGoogle as requestGoogleLogin } from '@/api/client';
 import {
+  clearAccessToken,
   clearSession,
   getSession,
   listUsers,
   publicUser,
+  saveAccessToken,
   saveSession,
   saveUsers,
 } from './storage';
@@ -47,12 +50,22 @@ export function AuthProvider({ children }) {
       return session;
     };
 
+    const loginWithGoogle = async (idToken) => {
+      const data = await requestGoogleLogin(idToken);
+      saveAccessToken(data.access_token);
+      const session = publicUser(data.user);
+      saveSession(session);
+      setUser(session);
+      return session;
+    };
+
     const logout = () => {
+      clearAccessToken();
       clearSession();
       setUser(null);
     };
 
-    return { user, signup, login, logout };
+    return { user, signup, login, loginWithGoogle, logout };
   }, [user]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -50,6 +50,7 @@ def reload_env() -> None:
 
     global GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER, LLM_TEMPERATURE, LOCAL_GGUF_PATH
     global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN
+    global GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, JWT_SECRET
     OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     os.environ.setdefault("OLLAMA_HOST", OLLAMA_BASE_URL)
     EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
@@ -62,6 +63,13 @@ def reload_env() -> None:
     LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
     GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+    GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip() or os.getenv(
+        "VITE_GOOGLE_CLIENT_ID", ""
+    ).strip()
+    GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "").strip()
+    JWT_SECRET = os.getenv("JWT_SECRET", "").strip() or os.getenv(
+        "GOOGLE_CLIENT_SECRET", ""
+    ).strip()
     raw_gguf = os.getenv("LOCAL_GGUF_PATH", "").strip()
     LOCAL_GGUF_PATH = Path(raw_gguf) if raw_gguf else REPO_ROOT / "models" / "socratic-phi3-q8_0.gguf"
     if not LOCAL_GGUF_PATH.is_absolute():
@@ -78,6 +86,10 @@ EMBED_MODEL = "nomic-embed-text"
 HF_REPO_ID = "Susu11/clariq_socratic-GGUF"
 HF_FILENAME = "model.gguf"
 HF_TOKEN = ""
+GOOGLE_CLIENT_ID = ""
+GOOGLE_CLIENT_SECRET = ""
+JWT_SECRET = ""
+JWT_EXPIRE_HOURS = 24 * 7
 
 reload_env()
 
