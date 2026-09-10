@@ -12,12 +12,15 @@ export default function ChatView({
   composerDisabled = false,
   composerPlaceholder,
   footer = null,
+  onUpload,
+  uploadEnabled = false,
+  uploadStatus = '',
 }) {
   const messages = session?.messages ?? [];
   const backendDown = backendStatus === 'offline';
 
   return (
-    <div className="relative flex min-h-0 flex-1 flex-col bg-[#212121]">
+    <div className="relative flex min-h-0 flex-1 flex-col bg-[var(--bg-canvas)]">
       <div className="flex-1 overflow-y-auto">
         {messages.length === 0 ? (
           <EmptyState onPrompt={composerDisabled ? undefined : onSend} />
@@ -46,6 +49,9 @@ export default function ChatView({
         socraticMode={socraticMode}
         disabled={composerDisabled}
         placeholder={composerPlaceholder}
+        onUpload={onUpload}
+        uploadEnabled={uploadEnabled}
+        uploadStatus={uploadStatus}
       />
     </div>
   );

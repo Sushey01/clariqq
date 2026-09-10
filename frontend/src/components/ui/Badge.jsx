@@ -18,7 +18,7 @@ const Badge = ({
     emerald: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     purple: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
     amber: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
-    zinc: 'bg-zinc-800 text-zinc-300 border-white/5',
+    zinc: 'bg-[var(--bg-card)] text-[var(--ink-muted)] border-[var(--border)]',
     rose: 'bg-rose-500/10 text-rose-300 border-rose-500/20',
   };
 

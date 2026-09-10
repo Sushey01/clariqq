@@ -1,6 +1,7 @@
 import { Download, Trash2 } from 'lucide-react';
 import { Button, Card, Modal } from '@/components/ui';
 import { SOCRATIC_MODES } from '@/constants/app';
+import { useTheme } from '@/theme/ThemeProvider';
 
 export default function SettingsModal({
   isOpen,
@@ -12,6 +13,7 @@ export default function SettingsModal({
   backendStatus,
   backendDetail,
 }) {
+  const { theme, setTheme, typeSize, setTypeSize } = useTheme();
   const exportMarkdown = () => {
     if (!activeSession?.messages?.length) return;
     const content = activeSession.messages
@@ -41,7 +43,7 @@ export default function SettingsModal({
       }
     >
       <div className="space-y-2">
-        <p className="text-sm font-semibold text-zinc-100">Teaching style</p>
+        <p className="text-sm font-semibold text-[var(--ink)]">Teaching style</p>
         {SOCRATIC_MODES.map((mode) => (
           <Card
             key={mode.id}
@@ -50,17 +52,53 @@ export default function SettingsModal({
             variant={socraticMode === mode.id ? 'indigo' : 'default'}
             className="p-3"
           >
-            <p className="text-xs font-semibold text-white">{mode.title}</p>
-            <p className="mt-1 text-[11px] leading-relaxed text-zinc-400">
+            <p className="text-xs font-semibold text-[var(--ink)]">{mode.title}</p>
+            <p className="mt-1 text-[11px] leading-relaxed text-[var(--ink-muted)]">
               {mode.description}
             </p>
           </Card>
         ))}
       </div>
 
+      <div className="space-y-2">
+        <p className="text-sm font-semibold text-[var(--ink)]">Appearance</p>
+        <div className="flex gap-2">
+          {['dark', 'light'].map((value) => (
+            <Button
+              key={value}
+              variant={theme === value ? 'indigo' : 'secondary'}
+              size="md"
+              onClick={() => setTheme(value)}
+              className="flex-1 capitalize"
+            >
+              {value}
+            </Button>
+          ))}
+        </div>
+        <p className="pt-2 text-xs font-semibold text-[var(--ink)]">Text size</p>
+        <div className="flex gap-2">
+          <Button
+            variant={typeSize === 'default' ? 'indigo' : 'secondary'}
+            size="md"
+            className="flex-1"
+            onClick={() => setTypeSize('default')}
+          >
+            Default
+          </Button>
+          <Button
+            variant={typeSize === 'comfortable' ? 'indigo' : 'secondary'}
+            size="md"
+            className="flex-1"
+            onClick={() => setTypeSize('comfortable')}
+          >
+            Comfortable
+          </Button>
+        </div>
+      </div>
+
       <Card variant="glass">
-        <p className="text-xs font-semibold text-zinc-200">Backend</p>
-        <p className="mt-1 font-mono text-xs text-zinc-400">
+        <p className="text-xs font-semibold text-[var(--ink)]">Backend</p>
+        <p className="mt-1 font-mono text-xs text-[var(--ink-muted)]">
           Status: {backendStatus}
           {backendDetail ? ` — ${backendDetail}` : ''}
         </p>

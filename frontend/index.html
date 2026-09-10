@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clariq</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('clariq_theme_v1');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+          if (localStorage.getItem('clariq_type_size_v1') === 'comfortable') {
+            document.documentElement.setAttribute('data-type-size', 'comfortable');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>

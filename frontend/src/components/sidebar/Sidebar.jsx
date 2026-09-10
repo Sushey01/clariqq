@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { LogOut, PanelLeftClose, Search, SquarePen } from 'lucide-react';
+import { LogOut, PanelLeftClose, Search, SquarePen, LayoutGrid } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button, Input } from '@/components/ui';
 import SessionItem from './SessionItem';
 import { groupSessions } from './groupSessions';
@@ -34,13 +35,13 @@ export default function Sidebar({
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex h-full w-[260px] shrink-0 flex-col bg-[#171717] transition-transform duration-200 md:static ${
+        className={`fixed inset-y-0 left-0 z-50 flex h-full w-[260px] shrink-0 flex-col bg-[var(--bg-sidebar)] transition-transform duration-200 md:static ${
           isOpen ? 'translate-x-0' : '-translate-x-full md:hidden'
         }`}
       >
         <div className="space-y-2 p-3">
           <div className="flex items-center justify-between px-1 py-1">
-            <span className="font-outfit text-sm font-semibold text-zinc-100">
+            <span className="font-outfit text-sm font-semibold text-[var(--ink)]">
               Clariq
             </span>
             <div className="flex items-center">
@@ -68,7 +69,7 @@ export default function Sidebar({
               <SquarePen className="h-4 w-4" />
               New chat
             </span>
-            <kbd className="rounded border border-white/10 bg-black/30 px-1.5 py-0.5 font-mono text-[10px] text-zinc-400">
+            <kbd className="rounded border border-[var(--border)] bg-[var(--bg-canvas)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--ink-muted)]">
               Ctrl K
             </kbd>
           </Button>
@@ -86,7 +87,7 @@ export default function Sidebar({
             if (items.length === 0) return null;
             return (
               <div key={label}>
-                <p className="px-2 pb-1 text-[11px] font-medium uppercase tracking-wide text-zinc-500">
+                <p className="px-2 pb-1 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-faint)]">
                   {label}
                 </p>
                 <div className="space-y-0.5">
@@ -106,16 +107,23 @@ export default function Sidebar({
           })}
         </nav>
 
-        <div className="border-t border-white/5 p-3">
-          <p className="truncate px-1 text-xs font-medium text-zinc-200">
+        <div className="border-t border-[var(--border)] p-3">
+          <Link
+            to="/app"
+            className="mb-2 flex items-center gap-2 rounded-lg px-1 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)]"
+          >
+            <LayoutGrid className="h-4 w-4" />
+            Student hub
+          </Link>
+          <p className="truncate px-1 text-xs font-medium text-[var(--ink)]">
             {user?.name || 'Student'}
           </p>
-          <p className="truncate px-1 text-[11px] text-zinc-500">{user?.email}</p>
+          <p className="truncate px-1 text-[11px] text-[var(--ink-faint)]">{user?.email}</p>
           <Button
             variant="ghost"
             size="md"
             onClick={onLogout}
-            className="mt-2 w-full justify-start gap-2 text-zinc-400"
+            className="mt-2 w-full justify-start gap-2 text-[var(--ink-muted)]"
           >
             <LogOut className="h-4 w-4" />
             Log out

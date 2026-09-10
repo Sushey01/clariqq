@@ -11,13 +11,13 @@ export default function LoginPage() {
   const onGoogle = useCallback(
     async (idToken) => {
       await loginWithGoogle(idToken);
-      navigate('/', { replace: true });
+      navigate('/app', { replace: true });
     },
     [loginWithGoogle, navigate]
   );
 
   if (user) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/app" replace />;
   }
 
   return (
@@ -26,7 +26,7 @@ export default function LoginPage() {
         mode="login"
         onSubmit={async ({ email, password }) => {
           login({ email, password });
-          navigate('/', { replace: true });
+          navigate('/app', { replace: true });
         }}
         onGoogle={onGoogle}
       />

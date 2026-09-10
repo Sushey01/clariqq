@@ -28,7 +28,7 @@ const Dropdown = ({
     <div className="relative inline-block" ref={dropdownRef}>
       {trigger}
       {isOpen && (
-        <div className={`absolute ${alignmentClass} mt-2 ${width} bg-[#212121] border border-white/10 rounded-2xl shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150`}>
+        <div className={`absolute ${alignmentClass} mt-2 ${width} bg-[var(--bg-raised)] border border-[var(--border)] rounded-2xl shadow-2xl p-1.5 z-50`}>
           {children}
         </div>
       )}

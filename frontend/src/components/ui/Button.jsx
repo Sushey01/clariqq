@@ -17,12 +17,12 @@ const Button = React.forwardRef(({
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed select-none';
 
   const variants = {
-    primary: 'bg-white text-black hover:bg-zinc-200 active:scale-95 shadow-md',
-    secondary: 'bg-zinc-800 hover:bg-zinc-700/80 text-zinc-100 border border-white/5 shadow-xs',
-    ghost: 'text-zinc-400 hover:text-white hover:bg-zinc-800',
-    outline: 'border border-white/10 hover:border-white/20 text-zinc-300 hover:text-white bg-transparent',
-    indigo: 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 active:scale-95',
-    danger: 'bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/20',
+    primary: 'bg-[var(--ink)] text-[var(--bg-canvas)] hover:opacity-90 active:scale-95 shadow-md',
+    secondary: 'bg-[var(--bg-card)] hover:opacity-90 text-[var(--ink)] border border-[var(--border)]',
+    ghost: 'text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-card)]',
+    outline: 'border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)] bg-transparent',
+    indigo: 'bg-[var(--accent)] hover:opacity-90 text-white shadow-md',
+    danger: 'bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20',
   };
 
   const sizes = {

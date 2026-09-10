@@ -13,10 +13,10 @@ const Card = ({
   const baseStyles = 'p-4 rounded-2xl transition-all duration-200 border shadow-md select-none';
 
   const variants = {
-    default: 'bg-[#171717]/80 border-white/5',
-    interactive: 'bg-[#171717]/80 hover:bg-zinc-800/90 border-white/5 hover:border-white/20 cursor-pointer group',
-    glass: 'bg-zinc-900/60 backdrop-blur-md border-white/5',
-    indigo: 'bg-indigo-600/10 border-indigo-500/30 text-white',
+    default: 'bg-[var(--bg-card)] border-[var(--border)] text-[var(--ink)]',
+    interactive: 'bg-[var(--bg-card)] hover:bg-[var(--bg-raised)] border-[var(--border)] hover:border-[var(--accent)] cursor-pointer group',
+    glass: 'bg-[var(--bg-raised)]/80 backdrop-blur-md border-[var(--border)]',
+    indigo: 'bg-[var(--accent-soft)] border-[color-mix(in_srgb,var(--accent)_40%,transparent)] text-[var(--ink)]',
   };
 
   return (

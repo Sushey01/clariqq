@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getAuthConfig } from '@/api/client';
+import { useTheme } from '@/theme/ThemeProvider';
 
 function loadGis() {
   return new Promise((resolve, reject) => {
@@ -25,6 +26,7 @@ function loadGis() {
 export default function GoogleSignInButton({ text = 'signin_with', onCredential, disabled }) {
   const slotRef = useRef(null);
   const [error, setError] = useState('');
+  const { theme } = useTheme();
 
   useEffect(() => {
     let cancelled = false;
@@ -49,7 +51,7 @@ export default function GoogleSignInButton({ text = 'signin_with', onCredential,
         });
         google.accounts.id.renderButton(slotRef.current, {
           type: 'standard',
-          theme: 'filled_black',
+          theme: theme === 'light' ? 'outline' : 'filled_black',
           size: 'large',
           text,
           shape: 'pill',
@@ -64,7 +66,7 @@ export default function GoogleSignInButton({ text = 'signin_with', onCredential,
     return () => {
       cancelled = true;
     };
-  }, [onCredential, text]);
+  }, [onCredential, text, theme]);
 
   return (
     <div className="space-y-2">

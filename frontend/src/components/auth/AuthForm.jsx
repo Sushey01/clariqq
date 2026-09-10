@@ -81,51 +81,51 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
       {isSignup && (
         <label className="auth-item block space-y-1.5">
-          <span className="text-xs text-zinc-400">Name</span>
+          <span className="text-xs text-[var(--ink-muted)]">Name</span>
           <Input
             required
             placeholder="Your name"
             value={values.name}
             onChange={update('name')}
-            className="bg-[#2f2f2f] py-2.5 text-sm"
+            className="bg-[var(--bg-input)] py-2.5 text-sm"
           />
         </label>
       )}
 
       <label className="auth-item block space-y-1.5">
-        <span className="text-xs text-zinc-400">Email</span>
+        <span className="text-xs text-[var(--ink-muted)]">Email</span>
         <Input
           required
           type="email"
           placeholder="you@school.edu"
           value={values.email}
           onChange={update('email')}
-          className="bg-[#2f2f2f] py-2.5 text-sm"
+            className="bg-[var(--bg-input)] py-2.5 text-sm"
         />
       </label>
 
       <label className="auth-item block space-y-1.5">
-        <span className="text-xs text-zinc-400">Password</span>
+        <span className="text-xs text-[var(--ink-muted)]">Password</span>
         <Input
           required
           type="password"
           placeholder="At least 6 characters"
           value={values.password}
           onChange={update('password')}
-          className="bg-[#2f2f2f] py-2.5 text-sm"
+            className="bg-[var(--bg-input)] py-2.5 text-sm"
         />
       </label>
 
       {isSignup && (
         <label className="auth-item block space-y-1.5">
-          <span className="text-xs text-zinc-400">Confirm password</span>
+          <span className="text-xs text-[var(--ink-muted)]">Confirm password</span>
           <Input
             required
             type="password"
             placeholder="Repeat password"
             value={values.confirm}
             onChange={update('confirm')}
-            className="bg-[#2f2f2f] py-2.5 text-sm"
+            className="bg-[var(--bg-input)] py-2.5 text-sm"
           />
         </label>
       )}
@@ -150,7 +150,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
 
       <div className="auth-item flex items-center gap-3 py-1">
         <span className="h-px flex-1 bg-white/10" />
-        <span className="text-[11px] uppercase tracking-wide text-zinc-500">or</span>
+        <span className="text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">or</span>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
@@ -162,22 +162,22 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
         />
       </div>
 
-      <p className="auth-item text-center text-xs text-zinc-500">
+      <p className="auth-item text-center text-xs text-[var(--ink-faint)]">
         Google uses your school or personal Google account. Email signup stays in this browser until you switch fully to the API.
       </p>
 
-      <p className="auth-item text-center text-sm text-zinc-400">
+      <p className="auth-item text-center text-sm text-[var(--ink-muted)]">
         {isSignup ? (
           <>
             Already have an account?{' '}
-            <Link to="/login" className="text-white hover:underline">
+            <Link to="/login" className="text-[var(--ink)] hover:underline">
               Log in
             </Link>
           </>
         ) : (
           <>
             New here?{' '}
-            <Link to="/signup" className="text-white hover:underline">
+            <Link to="/signup" className="text-[var(--ink)] hover:underline">
               Create an account
             </Link>
           </>

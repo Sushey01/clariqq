@@ -1,11 +1,10 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/auth/AuthContext';
-import ChatPage from '@/pages/ChatPage';
 
-export default function ProtectedChat() {
+export default function ProtectedRoute({ children }) {
   const { user } = useAuth();
   if (!user) {
     return <Navigate to="/login" replace />;
   }
-  return <ChatPage />;
+  return children;
 }

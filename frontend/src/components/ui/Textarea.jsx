@@ -23,7 +23,7 @@ const Textarea = React.forwardRef(({
       placeholder={placeholder}
       className={twMerge(
         clsx(
-          'w-full bg-transparent text-zinc-100 placeholder-zinc-400 resize-none min-h-[44px] max-h-[180px] py-2 px-4 focus:outline-none focus:ring-0 font-inter text-[15px] leading-relaxed overflow-y-auto disabled:opacity-50',
+          'w-full bg-transparent text-[var(--ink)] placeholder-[var(--ink-faint)] resize-none min-h-[44px] max-h-[180px] py-2 px-4 focus:outline-none focus:ring-0 font-inter text-[15px] leading-relaxed overflow-y-auto disabled:opacity-50',
           className
         )
       )}

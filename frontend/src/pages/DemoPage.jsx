@@ -5,6 +5,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { useBackendHealth } from '@/hooks/useBackendHealth';
 import ChatView from '@/components/chat/ChatView';
 import DemoLimitCard from '@/components/chat/DemoLimitCard';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const DEMO_MAX_TURNS = 5;
 
@@ -55,27 +56,28 @@ export default function DemoPage() {
   );
 
   if (user) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/app" replace />;
   }
 
   const remaining = DEMO_MAX_TURNS - studentTurns;
 
   return (
-    <div className="flex h-screen flex-col overflow-hidden bg-[#212121] text-zinc-100">
+    <div className="flex h-screen flex-col overflow-hidden bg-[var(--bg-canvas)] text-[var(--ink)]">
       <header className="flex h-14 items-center justify-between px-4">
-        <p className="text-sm font-medium text-zinc-300">
+        <p className="text-sm font-medium text-[var(--ink-muted)]">
           Demo · Socratic chat
           {studentTurns > 0 && !locked
             ? ` · ${remaining} ${remaining === 1 ? 'reply' : 'replies'} left`
             : ''}
         </p>
         <div className="flex items-center gap-3 text-sm">
-          <Link to="/login" className="text-zinc-400 hover:text-white">
+          <ThemeToggle />
+          <Link to="/login" className="text-[var(--ink-muted)] hover:text-[var(--ink)]">
             Log in
           </Link>
           <Link
             to="/signup"
-            className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black"
+            className="rounded-full bg-[var(--ink)] px-3 py-1.5 text-xs font-semibold text-[var(--bg-canvas)]"
           >
             Sign up
           </Link>

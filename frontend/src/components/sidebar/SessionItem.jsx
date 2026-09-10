@@ -27,8 +27,8 @@ export default function SessionItem({
       }}
       className={`group flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm ${
         isActive
-          ? 'bg-[#2f2f2f] text-white'
-          : 'text-zinc-400 hover:bg-[#2f2f2f] hover:text-zinc-200'
+          ? 'bg-[var(--bg-card)] text-[var(--ink)]'
+          : 'text-[var(--ink-muted)] hover:bg-[var(--bg-card)] hover:text-[var(--ink)]'
       }`}
     >
       <div className="flex min-w-0 flex-1 items-center gap-2 pr-2">
@@ -43,7 +43,7 @@ export default function SessionItem({
               if (event.key === 'Escape') setEditing(false);
             }}
             autoFocus
-            className="w-full rounded border border-white/20 bg-black/40 px-1.5 py-0.5 text-xs text-white outline-none"
+            className="w-full rounded border border-[var(--border)] bg-[var(--bg-input)] px-1.5 py-0.5 text-xs text-[var(--ink)] outline-none"
           />
         ) : (
           <span className="truncate">{session.title || 'New chat'}</span>

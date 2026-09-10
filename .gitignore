@@ -15,6 +15,7 @@ env/
 
 # Databases & Vector Stores
 backend/storage/chroma_db/
+backend/storage/uploads/
 *.sqlite3
 
 # Large Data & Model files

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Check, Copy, RotateCw, ThumbsDown, ThumbsUp } from 'lucide-react';
-import { Button, CodeBlock } from '@/components/ui';
+import { Badge, Button, CodeBlock } from '@/components/ui';
 
-export default function Message({ message, onRegenerate }) {
+export default function Message({ message, onRegenerate, showYourTurn = false }) {
   const isUser = message.sender === 'user';
   const [copied, setCopied] = useState(false);
   const [feedback, setFeedback] = useState(null);
@@ -17,7 +17,7 @@ export default function Message({ message, onRegenerate }) {
   if (isUser) {
     return (
       <div className="flex w-full justify-end py-3">
-        <div className="max-w-[85%] rounded-3xl rounded-tr-md bg-[#2f2f2f] px-5 py-3 text-[15px] leading-relaxed text-zinc-100 sm:max-w-[75%]">
+        <div className="max-w-[85%] rounded-3xl rounded-tr-md bg-[var(--bg-bubble)] px-5 py-3 text-[15px] leading-relaxed text-[var(--ink)] sm:max-w-[75%]">
           {message.text}
         </div>
       </div>
@@ -26,12 +26,19 @@ export default function Message({ message, onRegenerate }) {
 
   return (
     <div className="flex w-full gap-4 py-4">
-      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-black">
+      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--ink)] text-[11px] font-semibold text-[var(--bg-canvas)]">
         C
       </div>
       <div className="min-w-0 flex-1">
-        <p className="mb-2 text-sm font-semibold text-zinc-100">Clariq</p>
-        <div className="chatgpt-markdown text-[15px] text-zinc-200">
+        <div className="mb-2 flex items-center gap-2">
+          <p className="text-sm font-semibold text-[var(--ink)]">Clariq</p>
+          {showYourTurn && (
+            <Badge variant="indigo" size="sm">
+              Your turn
+            </Badge>
+          )}
+        </div>
+        <div className="chatgpt-markdown text-[15px]">
           <ReactMarkdown
             components={{
               code({ inline, className, children, ...props }) {
@@ -42,7 +49,7 @@ export default function Message({ message, onRegenerate }) {
                 }
                 return (
                   <code
-                    className="rounded bg-zinc-800 px-1.5 py-0.5 font-mono text-sm text-zinc-200"
+                    className="rounded bg-[var(--bg-bubble)] px-1.5 py-0.5 font-mono text-sm"
                     {...props}
                   >
                     {children}
@@ -54,7 +61,7 @@ export default function Message({ message, onRegenerate }) {
             {message.text}
           </ReactMarkdown>
         </div>
-        <div className="mt-2 flex items-center gap-1 text-zinc-400">
+        <div className="mt-2 flex items-center gap-1 text-[var(--ink-muted)]">
           <Button variant="ghost" size="sm" onClick={copy} className="px-2 py-1">
             {copied ? (
               <Check className="h-3.5 w-3.5 text-emerald-400" />

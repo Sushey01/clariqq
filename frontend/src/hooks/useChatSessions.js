@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 const KEY = 'clariq_socratic_sessions_v1';
+const ACTIVE_KEY = 'clariq_active_session_v1';
 
 function freshSession() {
   return {
@@ -28,9 +29,24 @@ function loadSessions() {
 
 export function useChatSessions() {
   const [sessions, setSessions] = useState(loadSessions);
-  const [activeSessionId, setActiveSessionId] = useState(
-    () => sessions[0]?.id ?? null
-  );
+  const [activeSessionId, setActiveSessionIdState] = useState(() => {
+    try {
+      const stored = localStorage.getItem(ACTIVE_KEY);
+      if (stored) return stored;
+    } catch {
+      /* ignore */
+    }
+    return sessions[0]?.id ?? null;
+  });
+
+  const setActiveSessionId = useCallback((id) => {
+    setActiveSessionIdState(id);
+    try {
+      localStorage.setItem(ACTIVE_KEY, id);
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(KEY, JSON.stringify(sessions));
@@ -41,10 +57,18 @@ export function useChatSessions() {
 
   const createChat = useCallback(() => {
     const session = freshSession();
-    setSessions((prev) => [session, ...prev]);
+    setSessions((prev) => {
+      const next = [session, ...prev];
+      try {
+        localStorage.setItem(KEY, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
     setActiveSessionId(session.id);
     return session.id;
-  }, []);
+  }, [setActiveSessionId]);
 
   const deleteSession = useCallback((id) => {
     setSessions((prev) => {
@@ -59,7 +83,7 @@ export function useChatSessions() {
       }
       return next;
     });
-  }, [activeSessionId]);
+  }, [activeSessionId, setActiveSessionId]);
 
   const renameSession = useCallback((id, title) => {
     setSessions((prev) =>
@@ -73,7 +97,7 @@ export function useChatSessions() {
     const session = freshSession();
     setSessions([session]);
     setActiveSessionId(session.id);
-  }, []);
+  }, [setActiveSessionId]);
 
   const appendMessage = useCallback((sessionId, message, title) => {
     setSessions((prev) =>
@@ -82,6 +106,7 @@ export function useChatSessions() {
         return {
           ...session,
           title: title ?? session.title,
+          updatedAt: Date.now(),
           messages: [...session.messages, message],
         };
       })

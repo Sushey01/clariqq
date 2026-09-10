@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
-import { sendChat } from '@/api/client';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { sendChat, uploadMaterial } from '@/api/client';
+import { PENDING_PROMPT_KEY } from '@/constants/app';
 import { useAuth } from '@/auth/AuthContext';
+import { getAccessToken } from '@/auth/storage';
 import { useBackendHealth } from '@/hooks/useBackendHealth';
 import { useChatSessions } from '@/hooks/useChatSessions';
 import Header from '@/components/header/Header';
@@ -29,11 +31,15 @@ export default function ChatPage() {
   } = useChatSessions();
 
   const health = useBackendHealth();
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 768
+  );
   const [activeModel, setActiveModel] = useState('clariq-socratic');
   const [socraticMode, setSocraticMode] = useState('strict');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState('');
+  const pendingStarted = useRef(false);
 
   useEffect(() => {
     const onKey = (event) => {
@@ -98,12 +104,26 @@ export default function ChatPage() {
     ]
   );
 
+  useEffect(() => {
+    if (pendingStarted.current) return;
+    let pending = '';
+    try {
+      pending = sessionStorage.getItem(PENDING_PROMPT_KEY) || '';
+      if (pending) sessionStorage.removeItem(PENDING_PROMPT_KEY);
+    } catch {
+      pending = '';
+    }
+    if (!pending) return;
+    pendingStarted.current = true;
+    askTutor(pending);
+  }, [askTutor]);
+
   const lastUserText = [...(activeSession?.messages || [])]
     .reverse()
     .find((message) => message.sender === 'user')?.text;
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#212121] font-sans text-zinc-100">
+    <div className="flex h-screen overflow-hidden bg-[var(--bg-canvas)] font-sans text-[var(--ink)]">
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -120,7 +140,7 @@ export default function ChatPage() {
         onLogout={logout}
       />
 
-      <div className="flex min-w-0 flex-1 flex-col bg-[#212121]">
+      <div className="flex min-w-0 flex-1 flex-col bg-[var(--bg-canvas)]">
         <Header
           isSidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen((open) => !open)}
@@ -139,6 +159,21 @@ export default function ChatPage() {
           onRegenerate={() =>
             lastUserText && askTutor(lastUserText, { regenerate: true })
           }
+          uploadEnabled={Boolean(getAccessToken())}
+          uploadStatus={uploadStatus}
+          onUpload={async (file) => {
+            setUploadStatus(`Uploading ${file.name}…`);
+            try {
+              const material = await uploadMaterial(file);
+              setUploadStatus(
+                material.indexed
+                  ? `Indexed ${material.filename}. Ask about that sheet.`
+                  : `${material.filename} saved but not indexed.`
+              );
+            } catch (error) {
+              setUploadStatus(error.message);
+            }
+          }}
         />
       </div>
 

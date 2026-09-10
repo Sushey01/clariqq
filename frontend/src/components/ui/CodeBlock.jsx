@@ -12,12 +12,11 @@ const CodeBlock = ({ language, code }) => {
   };
 
   return (
-    <div className="my-4 rounded-xl overflow-hidden border border-white/10 bg-[#0d0d0d] font-mono text-xs shadow-xl">
-      {/* Code Header Bar */}
-      <div className="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-white/10 text-zinc-400">
+    <div className="my-4 rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--bg-sidebar)] font-mono text-xs shadow-xl">
+      <div className="flex items-center justify-between px-4 py-2 bg-[var(--bg-raised)] border-b border-[var(--border)] text-[var(--ink-muted)]">
         <div className="flex items-center space-x-2">
-          <Terminal className="w-3.5 h-3.5 text-indigo-400" />
-          <span className="font-semibold text-zinc-300 uppercase tracking-wider text-[11px]">
+          <Terminal className="w-3.5 h-3.5 text-[var(--accent)]" />
+          <span className="font-semibold uppercase tracking-wider text-[11px]">
             {language || 'text'}
           </span>
         </div>
@@ -42,7 +41,7 @@ const CodeBlock = ({ language, code }) => {
       </div>
 
       {/* Code Content */}
-      <div className="p-4 overflow-x-auto text-zinc-200 leading-relaxed">
+      <div className="p-4 overflow-x-auto text-[var(--ink)] leading-relaxed">
         <pre className="m-0 bg-transparent p-0 border-none">
           <code>{code}</code>
         </pre>

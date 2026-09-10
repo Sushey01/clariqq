@@ -20,11 +20,11 @@ export default function ModelSelect({
           variant="ghost"
           size="sm"
           onClick={() => onOpenChange(!isOpen)}
-          className="px-2 font-outfit text-sm font-semibold text-zinc-100"
+          className="px-2 font-outfit text-sm font-semibold text-[var(--ink)]"
         >
           <span>{selected.name}</span>
           <ChevronDown
-            className={`h-4 w-4 text-zinc-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+            className={`h-4 w-4 text-[var(--ink-muted)] transition-transform ${isOpen ? 'rotate-180' : ''}`}
           />
         </Button>
       }
@@ -39,17 +39,17 @@ export default function ModelSelect({
               onChange(model.id);
               onOpenChange(false);
             }}
-            className="flex w-full items-start justify-between rounded-xl p-2.5 text-left hover:bg-zinc-800"
+            className="flex w-full items-start justify-between rounded-xl p-2.5 text-left hover:bg-[var(--bg-card)]"
           >
             <span>
-              <span className="block text-sm font-medium text-zinc-100">
+              <span className="block text-sm font-medium text-[var(--ink)]">
                 {model.name}
               </span>
-              <span className="mt-0.5 block text-xs text-zinc-400">
+              <span className="mt-0.5 block text-xs text-[var(--ink-muted)]">
                 {model.description}
               </span>
             </span>
-            {selectedModel && <Check className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300" />}
+            {selectedModel && <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ink-muted)]" />}
           </button>
         );
       })}

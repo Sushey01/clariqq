@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { PanelLeft, Plus, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
 import { Badge, Button } from '@/components/ui';
 import ModelSelect from './ModelSelect';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const STATUS = {
   ok: { label: 'Backend ready', variant: 'emerald' },
@@ -23,7 +25,7 @@ export default function Header({
   const status = STATUS[backendStatus] ?? STATUS.unknown;
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center justify-between bg-[#212121] px-3">
+    <header className="sticky top-0 z-30 flex h-14 items-center justify-between bg-[var(--bg-canvas)] px-3">
       <div className="flex items-center gap-1">
         {!isSidebarOpen && (
           <Button
@@ -41,6 +43,13 @@ export default function Header({
           isOpen={modelOpen}
           onOpenChange={setModelOpen}
         />
+        <Link
+          to="/app"
+          className="hidden items-center gap-1 rounded-lg px-2 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)] sm:inline-flex"
+        >
+          <LayoutGrid className="h-4 w-4" />
+          Hub
+        </Link>
       </div>
 
       <div className="flex items-center gap-2">
@@ -52,6 +61,7 @@ export default function Header({
             <Plus className="h-5 w-5" />
           </Button>
         )}
+        <ThemeToggle />
         <Button variant="ghost" size="icon" onClick={onOpenSettings} title="Settings">
           <Settings className="h-5 w-5" />
         </Button>
