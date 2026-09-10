@@ -1,4 +1,4 @@
-"""Chat model factory: local GGUF when LLM_PROVIDER=local, otherwise Groq."""
+"""Chat model factory: local GGUF, Modal vLLM, or Groq."""
 
 from huggingface_hub import hf_hub_download
 from langchain_community.chat_models import ChatLlamaCpp
@@ -22,6 +22,7 @@ def get_llm():
 
     reload_env()
     from app import config
+    from app.ai_engine.groq_chat import GroqChat, OpenAICompatChat
 
     if config.LLM_PROVIDER == "local":
         model_path = _local_model_path(config)
@@ -38,14 +39,31 @@ def get_llm():
         )
         return _model
 
+    if config.LLM_PROVIDER == "modal":
+        if not config.MODAL_BASE_URL:
+            searched = ", ".join(str(path) for path in ENV_FILES)
+            raise RuntimeError(
+                "MODAL_BASE_URL is empty. Deploy modal/serve_socratic.py, then put "
+                "MODAL_BASE_URL=https://...modal.run/v1 in "
+                f"{REPO_ROOT / '.env'} (searched: {searched}) and restart uvicorn."
+            )
+        _model = OpenAICompatChat(
+            api_key=config.MODAL_API_KEY or "clariq-modal",
+            model=config.MODAL_MODEL,
+            base_url=config.MODAL_BASE_URL,
+            temperature=config.LLM_TEMPERATURE,
+            max_tokens=128,
+            timeout=180.0,
+            provider_name="modal",
+        )
+        return _model
+
     if not config.GROQ_API_KEY:
         searched = ", ".join(str(path) for path in ENV_FILES)
         raise RuntimeError(
             "GROQ_API_KEY is empty. Put GROQ_API_KEY=gsk_... in "
             f"{REPO_ROOT / '.env'} (searched: {searched}) then restart uvicorn."
         )
-    from app.ai_engine.groq_chat import GroqChat
-
     _model = GroqChat(
         api_key=config.GROQ_API_KEY,
         model=config.GROQ_MODEL,

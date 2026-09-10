@@ -40,9 +40,7 @@ def decode_token(token: str) -> dict:
         raise HTTPException(status_code=401, detail="Invalid or expired token.") from exc
 
 
-def get_current_user(
-    creds: HTTPAuthorizationCredentials | None = Depends(_bearer),
-) -> dict:
+def _user_from_bearer(creds: HTTPAuthorizationCredentials | None) -> dict:
     if creds is None or creds.scheme.lower() != "bearer":
         raise HTTPException(status_code=401, detail="Not signed in.")
     payload = decode_token(creds.credentials)
@@ -51,3 +49,17 @@ def get_current_user(
         "email": payload.get("email") or "",
         "name": payload.get("name") or "",
     }
+
+
+def get_current_user(
+    creds: HTTPAuthorizationCredentials | None = Depends(_bearer),
+) -> dict:
+    return _user_from_bearer(creds)
+
+
+def get_optional_user(
+    creds: HTTPAuthorizationCredentials | None = Depends(_bearer),
+) -> dict | None:
+    if creds is None or not creds.credentials:
+        return None
+    return _user_from_bearer(creds)

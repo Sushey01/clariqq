@@ -51,6 +51,7 @@ def reload_env() -> None:
     global GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER, LLM_TEMPERATURE, LOCAL_GGUF_PATH
     global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN
     global GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, JWT_SECRET
+    global MODAL_BASE_URL, MODAL_API_KEY, MODAL_MODEL
     OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     os.environ.setdefault("OLLAMA_HOST", OLLAMA_BASE_URL)
     EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
@@ -63,6 +64,9 @@ def reload_env() -> None:
     LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
     GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+    MODAL_BASE_URL = os.getenv("MODAL_BASE_URL", "").strip()
+    MODAL_API_KEY = os.getenv("MODAL_API_KEY", "").strip() or "clariq-modal"
+    MODAL_MODEL = os.getenv("MODAL_MODEL", "socratic-phi3").strip() or "socratic-phi3"
     GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip() or os.getenv(
         "VITE_GOOGLE_CLIENT_ID", ""
     ).strip()
@@ -78,6 +82,9 @@ def reload_env() -> None:
 
 GROQ_API_KEY = ""
 GROQ_MODEL = "openai/gpt-oss-20b"
+MODAL_BASE_URL = ""
+MODAL_API_KEY = "clariq-modal"
+MODAL_MODEL = "socratic-phi3"
 LOCAL_GGUF_PATH = REPO_ROOT / "models" / "socratic-phi3-q8_0.gguf"
 LLM_PROVIDER = "auto"
 LLM_TEMPERATURE = 0.1
@@ -94,7 +101,10 @@ JWT_EXPIRE_HOURS = 24 * 7
 reload_env()
 
 CHROMA_DIR = Path(os.getenv("CHROMA_DIR", BACKEND_DIR / "storage" / "chroma_db"))
+UPLOADS_DIR = Path(os.getenv("UPLOADS_DIR", BACKEND_DIR / "storage" / "uploads"))
 RETRIEVE_K = int(os.getenv("RETRIEVE_K", "3"))
+MATERIALS_MAX_BYTES = int(os.getenv("MATERIALS_MAX_BYTES", str(10 * 1024 * 1024)))
+SHARED_USER_ID = "shared"
 
 REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))

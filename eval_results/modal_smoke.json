@@ -1,0 +1,10 @@
+{
+  "ok": false,
+  "skipped": true,
+  "health_status": null,
+  "chat_status": null,
+  "reply": null,
+  "elapsed_s": null,
+  "error": "MODAL_BASE_URL is empty. Deploy modal/serve_socratic.py, then set LLM_PROVIDER=modal and MODAL_BASE_URL in .env.",
+  "base_url": null
+}

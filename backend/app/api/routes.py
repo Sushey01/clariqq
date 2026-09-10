@@ -2,8 +2,9 @@
 
 import os
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 
+from app.auth.jwt_tokens import get_optional_user
 from app.config import reload_env
 from app.pipelines.rag import get_tutor, tutor_error
 from app.schemas.chat import ChatRequest, ChatResponse
@@ -17,12 +18,13 @@ def health():
     return {
         "status": "ok",
         "groq_configured": bool(os.getenv("GROQ_API_KEY", "").strip()),
+        "modal_configured": bool(os.getenv("MODAL_BASE_URL", "").strip()),
         "detail": None,
     }
 
 
 @router.post("/api/chat", response_model=ChatResponse)
-def chat(body: ChatRequest):
+def chat(body: ChatRequest, user: dict | None = Depends(get_optional_user)):
     tutor = get_tutor()
     if tutor is None:
         raise HTTPException(status_code=503, detail=tutor_error())
@@ -32,6 +34,7 @@ def chat(body: ChatRequest):
             question=body.question,
             session_id=body.session_id,
             mode=body.socratic_mode,
+            user_id=user["id"] if user else None,
         )
     except Exception as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
