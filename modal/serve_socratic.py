@@ -1,76 +1,106 @@
-"""vLLM GPU server for Clariq's Socratic Phi-3. Not a Modal Sandbox.
+"""Serve Clariq GGUF on a Modal GPU via llama.cpp (OpenAI-compatible).
 
-Deploy (from the repo root, after `pip install modal` and `modal setup`):
+vLLM cannot load Susu11/socratic-phi3 (private / no HF config.json).
+This serves the public GGUF instead: Susu11/clariq_socratic-GGUF.
 
-    modal secret create clariq-llm CLARIQ_MODAL_KEY=clariq-modal
-    # optional, if Susu11/socratic-phi3 is private:
-    # modal secret create huggingface HF_TOKEN=hf_...
+llama-cpp-python 0.3.3–0.3.4 bundled server raises
+"'coroutine' object is not callable" on /v1/chat/completions, so this
+wraps Llama.create_chat_completion in FastAPI instead.
+
     modal deploy modal/serve_socratic.py
-
-Copy the printed HTTPS URL into .env as MODAL_BASE_URL (include /v1).
-Set LLM_PROVIDER=modal and MODAL_API_KEY to the same CLARIQ_MODAL_KEY.
-Stop the app when idle: modal app stop clariq-socratic
+    modal app stop clariq-socratic
 """
 
 import os
-import subprocess
 
 import modal
 
 MINUTES = 60
-VLLM_PORT = 8000
-MODEL_NAME = "Susu11/socratic-phi3"
+HF_REPO = "Susu11/clariq_socratic-GGUF"
+HF_FILE = "model.gguf"
 SERVED_NAME = "socratic-phi3"
 
-vllm_image = (
+image = (
     modal.Image.from_registry("nvidia/cuda:12.4.0-devel-ubuntu22.04", add_python="3.11")
     .entrypoint([])
-    .pip_install("vllm==0.6.6.post1")
+    .run_commands(
+        "pip install huggingface_hub fastapi "
+        "'llama-cpp-python==0.3.4' "
+        "--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124"
+    )
 )
 
-hf_cache_vol = modal.Volume.from_name("clariq-hf-cache", create_if_missing=True)
-vllm_cache_vol = modal.Volume.from_name("clariq-vllm-cache", create_if_missing=True)
+gguf_vol = modal.Volume.from_name("clariq-gguf-cache", create_if_missing=True)
 
 app = modal.App("clariq-socratic")
-
-# Bearer token for vLLM --api-key. Override by creating a Modal secret named
-# clariq-llm with CLARIQ_MODAL_KEY=... and adding it to secrets= below.
-# Private HF repo: modal secret create huggingface HF_TOKEN=hf_...
 _secrets = [modal.Secret.from_dict({"CLARIQ_MODAL_KEY": "clariq-modal"})]
 
 
 @app.function(
-    image=vllm_image,
+    image=image,
     gpu="T4",
     timeout=15 * MINUTES,
-    scaledown_window=10 * MINUTES,
+    scaledown_window=15 * MINUTES,
+    min_containers=1,
     secrets=_secrets,
-    volumes={
-        "/root/.cache/huggingface": hf_cache_vol,
-        "/root/.cache/vllm": vllm_cache_vol,
-    },
+    volumes={"/root/.cache/huggingface": gguf_vol},
 )
-@modal.concurrent(max_inputs=16)
-@modal.web_server(port=VLLM_PORT, startup_timeout=10 * MINUTES)
+@modal.concurrent(max_inputs=1)
+@modal.asgi_app()
 def serve():
-    api_key = os.environ.get("CLARIQ_MODAL_KEY") or "clariq-modal"
-    cmd = [
-        "vllm",
-        "serve",
-        MODEL_NAME,
-        "--served-model-name",
-        SERVED_NAME,
-        "--host",
-        "0.0.0.0",
-        "--port",
-        str(VLLM_PORT),
-        "--dtype",
-        "float16",
-        "--max-model-len",
-        "2048",
-        "--enforce-eager",
-        "--trust-remote-code",
-        "--api-key",
-        api_key,
-    ]
-    subprocess.Popen(cmd)
+    from fastapi import FastAPI, Header, HTTPException
+    from huggingface_hub import hf_hub_download
+    from llama_cpp import Llama
+    from pydantic import BaseModel
+
+    expected_key = os.environ.get("CLARIQ_MODAL_KEY") or "clariq-modal"
+    model_path = hf_hub_download(repo_id=HF_REPO, filename=HF_FILE)
+    llm = Llama(
+        model_path=model_path,
+        n_gpu_layers=-1,
+        n_ctx=2048,
+        chat_format="chatml",
+        verbose=False,
+    )
+
+    web = FastAPI()
+
+    class ChatBody(BaseModel):
+        messages: list
+        model: str | None = None
+        max_tokens: int = 256
+        temperature: float = 0.1
+        stop: list[str] | None = None
+        stream: bool = False
+
+    def _require_key(authorization: str | None) -> None:
+        if not authorization:
+            raise HTTPException(status_code=401, detail="Missing Authorization")
+        scheme, _, token = authorization.partition(" ")
+        if scheme.lower() != "bearer" or token != expected_key:
+            raise HTTPException(status_code=401, detail="Invalid API key")
+
+    @web.get("/v1/models")
+    def models(authorization: str | None = Header(default=None)):
+        _require_key(authorization)
+        return {
+            "object": "list",
+            "data": [{"id": SERVED_NAME, "object": "model"}],
+        }
+
+    @web.post("/v1/chat/completions")
+    def chat(
+        body: ChatBody,
+        authorization: str | None = Header(default=None),
+    ):
+        _require_key(authorization)
+        if body.stream:
+            raise HTTPException(status_code=400, detail="stream is not supported")
+        return llm.create_chat_completion(
+            messages=body.messages,
+            max_tokens=body.max_tokens,
+            temperature=body.temperature,
+            stop=body.stop,
+        )
+
+    return web

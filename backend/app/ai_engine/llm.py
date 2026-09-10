@@ -53,8 +53,9 @@ def get_llm():
             base_url=config.MODAL_BASE_URL,
             temperature=config.LLM_TEMPERATURE,
             max_tokens=128,
-            timeout=180.0,
+            timeout=600.0,
             provider_name="modal",
+            retry_transient=True,
         )
         return _model
 

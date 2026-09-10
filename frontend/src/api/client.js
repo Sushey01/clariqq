@@ -11,24 +11,18 @@ function authHeaders(extra = {}) {
   return headers;
 }
 
-async function parseError(response) {
+async function parseError(response, rawText = "") {
+  const text = rawText || "";
   try {
-    const body = await response.json();
+    const body = text ? JSON.parse(text) : await response.clone().json();
     if (Array.isArray(body.detail)) {
       return body.detail.map((item) => item.msg || JSON.stringify(item)).join(' ');
     }
     return body.detail || body.message || `Request failed (${response.status})`;
   } catch {
+    if (text.trim()) return text.slice(0, 300);
     return `Request failed (${response.status})`;
   }
-}
-
-export async function getHealth() {
-  const response = await fetch(`${API_BASE}/health`);
-  if (!response.ok) {
-    throw new Error(await parseError(response));
-  }
-  return response.json();
 }
 
 export async function sendChat({ question, sessionId, socraticMode }) {
@@ -42,10 +36,25 @@ export async function sendChat({ question, sessionId, socraticMode }) {
     }),
   });
 
+  const raw = await response.text();
+  if (!response.ok) {
+    throw new Error(await parseError(response, raw));
+  }
+  if (!raw.trim()) {
+    throw new Error('Empty reply from the tutor API.');
+  }
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error('Tutor API returned a non-JSON reply.');
+  }
+}
+
+export async function getHealth() {
+  const response = await fetch(`${API_BASE}/health`);
   if (!response.ok) {
     throw new Error(await parseError(response));
   }
-
   return response.json();
 }
 

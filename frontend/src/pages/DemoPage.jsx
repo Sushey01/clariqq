@@ -46,7 +46,7 @@ export default function DemoPage() {
       } catch (error) {
         setMessages((prev) => [
           ...prev,
-          { sender: 'ai', text: `Could not reach the Clariq API. ${error.message}` },
+          { sender: 'ai', text: error.message },
         ]);
       } finally {
         setIsLoading(false);

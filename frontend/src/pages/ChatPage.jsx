@@ -89,7 +89,7 @@ export default function ChatPage() {
       } catch (error) {
         appendMessage(activeSessionId, {
           sender: 'ai',
-          text: `Could not reach the Clariq API. ${error.message}`,
+          text: error.message,
         });
       } finally {
         setIsLoading(false);
