@@ -5,13 +5,14 @@ This serves the public GGUF instead: Susu11/clariq_socratic-GGUF.
 
 llama-cpp-python 0.3.3–0.3.4 bundled server raises
 "'coroutine' object is not callable" on /v1/chat/completions, so this
-wraps Llama.create_chat_completion in FastAPI instead.
+wraps Llama.create_completion in FastAPI instead.
 
     modal deploy modal/serve_socratic.py
     modal app stop clariq-socratic
 """
 
 import os
+import re
 
 import modal
 
@@ -55,13 +56,40 @@ def serve():
 
     expected_key = os.environ.get("CLARIQ_MODAL_KEY") or "clariq-modal"
     model_path = hf_hub_download(repo_id=HF_REPO, filename=HF_FILE)
+    # 0.3.4 CUDA wheels have no built-in "phi-3" chat_format; prompt Phi-3 by hand.
     llm = Llama(
         model_path=model_path,
         n_gpu_layers=-1,
         n_ctx=2048,
-        chat_format="chatml",
         verbose=False,
     )
+
+    phi3_stops = [
+        "<|end|>",
+        "<|endoftext|>",
+        "<|user|>",
+        "<|system|>",
+        "<|assistant|>",
+    ]
+    _special_re = re.compile(r"\|?<\|[^|>]+?\|>")
+
+    def _strip_specials(text: str) -> str:
+        cleaned = _special_re.sub("", text or "")
+        return cleaned.rstrip("|").strip()
+
+    def _phi3_prompt(messages: list[dict]) -> str:
+        parts: list[str] = []
+        for message in messages:
+            role = message["role"]
+            if role == "system":
+                tag = "system"
+            elif role == "assistant":
+                tag = "assistant"
+            else:
+                tag = "user"
+            parts.append(f"<|{tag}|>\n{message['content']}<|end|>\n")
+        parts.append("<|assistant|>\n")
+        return "".join(parts)
 
     web = FastAPI()
 
@@ -96,11 +124,58 @@ def serve():
         _require_key(authorization)
         if body.stream:
             raise HTTPException(status_code=400, detail="stream is not supported")
-        return llm.create_chat_completion(
-            messages=body.messages,
-            max_tokens=body.max_tokens,
-            temperature=body.temperature,
-            stop=body.stop,
-        )
+        try:
+            rows = []
+            for item in body.messages:
+                if isinstance(item, dict):
+                    rows.append(
+                        {
+                            "role": str(item.get("role") or "user"),
+                            "content": str(item.get("content") or ""),
+                        }
+                    )
+                else:
+                    rows.append(
+                        {
+                            "role": str(getattr(item, "role", "user")),
+                            "content": str(getattr(item, "content", "")),
+                        }
+                    )
+            last_user = next(
+                (row["content"] for row in reversed(rows) if row["role"] == "user"),
+                "",
+            )
+            preview = " ".join(last_user.split())[:80]
+            print(
+                f"chat completions messages={len(rows)} last_user={preview!r}",
+                flush=True,
+            )
+            completion = llm.create_completion(
+                prompt=_phi3_prompt(rows),
+                max_tokens=body.max_tokens,
+                temperature=body.temperature,
+                stop=list(dict.fromkeys([*(body.stop or []), *phi3_stops])),
+            )
+            choice = completion["choices"][0]
+            text = _strip_specials(choice.get("text") or "")
+            result = {
+                "id": completion.get("id", "chatcmpl-clariq"),
+                "object": "chat.completion",
+                "model": body.model or SERVED_NAME,
+                "choices": [
+                    {
+                        "index": 0,
+                        "message": {
+                            "role": "assistant",
+                            "content": text,
+                        },
+                        "finish_reason": choice.get("finish_reason"),
+                    }
+                ],
+                "usage": completion.get("usage"),
+            }
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=f"{type(exc).__name__}: {exc}") from exc
+        return result
 
     return web

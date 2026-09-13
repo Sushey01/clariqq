@@ -204,9 +204,18 @@ def looks_like_definition_dump(answer: str) -> bool:
     return bool(_DEF_ANSWER_RE.search(answer or ""))
 
 
+_PHI3_SPECIAL_RE = re.compile(r"\|?<\|[^|>]+?\|>")
+
+
+def strip_phi3_specials(text: str) -> str:
+    """Remove leaked Phi-3 role tokens so they are not saved into chat history."""
+    cleaned = _PHI3_SPECIAL_RE.sub("", text or "")
+    return cleaned.rstrip("|").strip()
+
+
 def ensure_socratic_reply(answer: str, question: str, mode: str, topic: str | None) -> str:
     """Keep strict/guided from dumping definitions or ending without a question."""
-    text = (answer or "").strip()
+    text = strip_phi3_specials(answer or "")
     if mode not in ("strict", "guided"):
         return text
     def_topic = definition_topic(question)

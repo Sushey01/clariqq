@@ -1,7 +1,5 @@
 """HTTP routes. This is the only file the frontend talks to."""
 
-import os
-
 from fastapi import APIRouter, Depends, HTTPException
 
 from app.auth.jwt_tokens import get_optional_user
@@ -15,10 +13,14 @@ router = APIRouter()
 @router.get("/health")
 def health():
     reload_env()
+    from app import config
+
     return {
         "status": "ok",
-        "groq_configured": bool(os.getenv("GROQ_API_KEY", "").strip()),
-        "modal_configured": bool(os.getenv("MODAL_BASE_URL", "").strip()),
+        "llm_provider": config.LLM_PROVIDER,
+        "groq_configured": bool(config.GROQ_API_KEY),
+        "modal_configured": bool(config.MODAL_BASE_URL),
+        "hf_space_configured": bool(config.HF_SPACE_ID),
         "detail": None,
     }
 

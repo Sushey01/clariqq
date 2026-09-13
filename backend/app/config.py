@@ -49,7 +49,7 @@ def reload_env() -> None:
         _apply_env_file(path)
 
     global GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER, LLM_TEMPERATURE, LOCAL_GGUF_PATH
-    global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN
+    global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN, HF_SPACE_ID
     global GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, JWT_SECRET
     global MODAL_BASE_URL, MODAL_API_KEY, MODAL_MODEL
     OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
@@ -57,6 +57,7 @@ def reload_env() -> None:
     EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
     HF_REPO_ID = os.getenv("HF_REPO_ID", "Susu11/clariq_socratic-GGUF")
     HF_FILENAME = os.getenv("HF_FILENAME", "model.gguf")
+    HF_SPACE_ID = os.getenv("HF_SPACE_ID", "Susu11/socratic").strip() or "Susu11/socratic"
     HF_TOKEN = os.getenv("HUGGINGFACE_API_KEY") or os.getenv("HF_TOKEN") or ""
     if HF_TOKEN:
         os.environ["HF_TOKEN"] = HF_TOKEN
@@ -92,6 +93,7 @@ OLLAMA_BASE_URL = "http://localhost:11434"
 EMBED_MODEL = "nomic-embed-text"
 HF_REPO_ID = "Susu11/clariq_socratic-GGUF"
 HF_FILENAME = "model.gguf"
+HF_SPACE_ID = "Susu11/socratic"
 HF_TOKEN = ""
 GOOGLE_CLIENT_ID = ""
 GOOGLE_CLIENT_SECRET = ""

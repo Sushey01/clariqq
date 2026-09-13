@@ -50,9 +50,19 @@ class TurnPolicyTests(unittest.TestCase):
 
     def test_strict_prompt_bans_definition_dump(self):
         text = system_prompt("strict").lower()
-        self.assertIn("do not state the definition", text)
+        self.assertIn("do not dump the full mechanism", text)
         self.assertIn("that's it exactly", text)
         self.assertIn("ignore", text)
+
+    def test_strict_and_guided_prompts_ground_on_student_topic(self):
+        for mode in ("strict", "guided"):
+            text = system_prompt(mode).lower()
+            self.assertIn("must use words from the student's latest topic", text)
+            self.assertIn("younger student", text)
+            self.assertIn("unknowns", text)
+            self.assertIn("what we learned earlier", text)
+            self.assertIn("name that topic", text)
+            self.assertIn("do not invent a new chapter", text)
 
     def test_meta_addendum_mentions_topic(self):
         extra = turn_addendum("meta", "what is proton?")
@@ -105,6 +115,22 @@ class TurnPolicyTests(unittest.TestCase):
         self.assertNotIn("subatomic", out.lower())
         self.assertNotIn("positive electric charge", out.lower())
         self.assertIn("proton", out.lower())
+        self.assertIn("?", out)
+
+    def test_ensure_socratic_strips_phi3_specials(self):
+        from app.pipelines.turn_policy import ensure_socratic_reply, strip_phi3_specials
+
+        leaked = (
+            "What do you already know for sure, and what are the unknowns?"
+            "|<|system|>"
+        )
+        self.assertEqual(
+            strip_phi3_specials(leaked),
+            "What do you already know for sure, and what are the unknowns?",
+        )
+        out = ensure_socratic_reply(leaked, "Guide me through DNA replication", "strict", None)
+        self.assertNotIn("<|", out)
+        self.assertNotIn("system", out)
         self.assertIn("?", out)
 
 

@@ -8,6 +8,8 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage, BaseMessage
 from langchain_core.outputs import ChatGeneration, ChatResult
 
+from app.pipelines.turn_policy import strip_phi3_specials
+
 _RETRY_STATUSES = {502, 503, 504}
 
 
@@ -42,6 +44,7 @@ class OpenAICompatChat(BaseChatModel):
     timeout: float = 60.0
     provider_name: str = "openai_compat"
     retry_transient: bool = False
+    stop_sequences: list[str] | None = None
 
     @property
     def _llm_type(self) -> str:
@@ -60,8 +63,9 @@ class OpenAICompatChat(BaseChatModel):
             "max_tokens": self.max_tokens,
             "messages": _as_chat_dicts(messages),
         }
-        if stop:
-            payload["stop"] = stop
+        stops = list(stop or self.stop_sequences or [])
+        if stops:
+            payload["stop"] = stops
 
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -121,7 +125,9 @@ class OpenAICompatChat(BaseChatModel):
                 raise RuntimeError(last_error) from exc
 
             message = data["choices"][0]["message"]
-            text = (message.get("content") or message.get("reasoning") or "").strip()
+            text = strip_phi3_specials(
+                message.get("content") or message.get("reasoning") or ""
+            )
             if not text:
                 raise RuntimeError(f"{self.provider_name} returned an empty message.")
             return ChatResult(generations=[ChatGeneration(message=AIMessage(content=text))])

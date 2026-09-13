@@ -91,18 +91,29 @@ class Tutor:
 
 _tutor = None
 _error = None
+_tutor_llm_id = None
 
 
 def get_tutor() -> Tutor | None:
-    global _tutor, _error
-    if _tutor is not None:
+    global _tutor, _error, _tutor_llm_id
+    llm = None
+    try:
+        llm = get_llm()
+    except Exception as exc:
+        _tutor = None
+        _error = str(exc)
+        _tutor_llm_id = None
+        return None
+    if _tutor is not None and _tutor_llm_id is llm:
         return _tutor
     try:
-        _tutor = Tutor(llm=get_llm())
+        _tutor = Tutor(llm=llm)
+        _tutor_llm_id = llm
         _error = None
         return _tutor
     except Exception as exc:
         _tutor = None
+        _tutor_llm_id = None
         _error = str(exc)
         return None
 
