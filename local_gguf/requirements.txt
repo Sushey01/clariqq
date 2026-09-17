@@ -1,0 +1,3 @@
+# Standalone local GGUF chatbot only. Do not mix this into the main Clariq backend.
+gradio>=4.44.0
+llama-cpp-python>=0.2.77

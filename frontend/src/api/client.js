@@ -1,14 +1,18 @@
-import { getAccessToken } from '@/auth/storage';
+import { clearAccessToken, getAccessToken } from '@/auth/storage';
 
 const API_BASE = import.meta.env.VITE_API_URL ?? '';
 
-function authHeaders(extra = {}) {
+function authHeaders(extra = {}, { withToken = true } = {}) {
   const headers = { ...extra };
-  const token = getAccessToken();
+  const token = withToken ? getAccessToken() : null;
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
   return headers;
+}
+
+function isStaleTokenError(message) {
+  return /invalid or expired token/i.test(message || '');
 }
 
 async function parseError(response, rawText = "") {
@@ -25,10 +29,10 @@ async function parseError(response, rawText = "") {
   }
 }
 
-export async function sendChat({ question, sessionId, socraticMode }) {
+async function postChat({ question, sessionId, socraticMode }, withToken) {
   const response = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
-    headers: authHeaders({ 'Content-Type': 'application/json' }),
+    headers: authHeaders({ 'Content-Type': 'application/json' }, { withToken }),
     body: JSON.stringify({
       question,
       session_id: sessionId,
@@ -48,6 +52,28 @@ export async function sendChat({ question, sessionId, socraticMode }) {
   } catch {
     throw new Error('Tutor API returned a non-JSON reply.');
   }
+}
+
+export async function sendChat({ question, sessionId, socraticMode }) {
+  try {
+    return await postChat({ question, sessionId, socraticMode }, true);
+  } catch (error) {
+    if (!getAccessToken() || !isStaleTokenError(error.message)) {
+      throw error;
+    }
+    clearAccessToken();
+    return postChat({ question, sessionId, socraticMode }, false);
+  }
+}
+
+export async function getAuthMe() {
+  const response = await fetch(`${API_BASE}/api/auth/me`, {
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
 }
 
 export async function getHealth() {

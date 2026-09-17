@@ -1,8 +1,9 @@
-import { createContext, useContext, useMemo, useState } from 'react';
-import { loginWithGoogle as requestGoogleLogin } from '@/api/client';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { getAuthMe, loginWithGoogle as requestGoogleLogin } from '@/api/client';
 import {
   clearAccessToken,
   clearSession,
+  getAccessToken,
   getSession,
   listUsers,
   publicUser,
@@ -15,6 +16,18 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => getSession());
+
+  useEffect(() => {
+    const token = getAccessToken();
+    if (!token) return undefined;
+    let cancelled = false;
+    getAuthMe().catch(() => {
+      if (!cancelled) clearAccessToken();
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const value = useMemo(() => {
     const signup = ({ name, email, password }) => {

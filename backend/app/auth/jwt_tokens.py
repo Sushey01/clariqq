@@ -60,6 +60,17 @@ def get_current_user(
 def get_optional_user(
     creds: HTTPAuthorizationCredentials | None = Depends(_bearer),
 ) -> dict | None:
+    """Chat can proceed without notes if the JWT is missing or stale."""
     if creds is None or not creds.credentials:
         return None
-    return _user_from_bearer(creds)
+    if creds.scheme.lower() != "bearer":
+        return None
+    try:
+        payload = decode_token(creds.credentials)
+    except HTTPException:
+        return None
+    return {
+        "id": str(payload["sub"]),
+        "email": payload.get("email") or "",
+        "name": payload.get("name") or "",
+    }
