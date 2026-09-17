@@ -32,6 +32,9 @@ from urllib.parse import urlparse
 
 import requests
 from eval_set import EVAL_SET
+from training_fingerprints import fingerprint_matchers
+
+TRAINING_FINGERPRINTS = fingerprint_matchers()
 
 _SPACE_CLIENT = None
 _SPACE_KEY = None
@@ -62,24 +65,6 @@ SYSTEM_PROMPT = (
     "it from the fundamentals. If the student switches topic, follow their lead. "
     "Keep responses to 1-3 sentences."
 )
-
-# Exact-ish phrases from Socratic training scripts. If they appear on a
-# question that is NOT that concept, the model is replaying a memorized turn
-# (the "what is light?" -> prism/dispersion failure).
-TRAINING_FINGERPRINTS = {
-    "Dispersion of light": (
-        "white light passing through a glass prism",
-        "white light passing through a prism",
-        "band of colours from violet to red",
-        "band of colors from violet to red",
-    ),
-    "Newton's first law (inertia)": (
-        "bus you're standing in suddenly brakes",
-        "bus you are standing in suddenly brakes",
-    ),
-    "Electric current": ("bulb connected to a battery lights up",),
-    "Nutrition in plants": ("plants don't eat like we do", "plants do not eat like we do"),
-}
 
 _DEF_ANSWER_RE = re.compile(
     r"\b(is a|is an|are a|are an|refers to|defined as)\b",
@@ -228,7 +213,7 @@ def flag_response(category: str, question: str, answer: str, concept_hint: str):
     stripped = answer.strip()
     if stripped and (re.search(r"[.,]{2,}", answer) or stripped[-1] not in ".?!\"'"):
         flags.append("POSSIBLY_MALFORMED")
-    lower = answer.lower()
+    lower = " ".join(answer.lower().replace("\u2014", " ").replace("–", " ").split())
     for concept, fingerprints in TRAINING_FINGERPRINTS.items():
         if any(fp in lower for fp in fingerprints):
             if concept_hint != concept:
