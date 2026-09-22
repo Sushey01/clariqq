@@ -1,111 +1,139 @@
 # Clariq backend plan
 
-Stack: **FastAPI** under `backend/app/`. RAG: Chroma + Ollama embeddings. Tutor: `backend/app/pipelines/rag.py` + `backend/app/prompts.py`. Auth: Google JWT. Materials: SQLite catalog + per-user Chroma chunks.
+Stack: **FastAPI** under `backend/app/`. RAG: Chroma + Ollama embeddings. Tutor: `backend/app/pipelines/rag.py` + `backend/app/prompts.py`. Auth: Google JWT. Materials: SQLite catalog + per-user Chroma chunks. Knowledge graph: `backend/app/knowledge/` (FYP Objective 4).
 
 Goal: keep a **Socratic RAG tutor**. Do not turn `/api/chat` into a dump-the-answer chatbot. Do not rewrite the engine in another framework.
 
-Out of scope for this track: frontend pixels, Three.js, Next.js, replacing Qwen/Groq/HF routing unless it is already in `config.py`.
+Out of scope for this track: frontend pixels, Three.js, Next.js, replacing Qwen/Groq/HF routing unless it is already in `config.py`. DistilBERT dump-classifier and classroom WebSockets are **not** in the current cut (thesis can cite `turn_policy.ensure_socratic_reply` instead).
+
+**Status (22 Sep 2026):** Core tutor + auth + materials are live. The SEE knowledge graph (135 nodes, mastery, inspect APIs) is live as a **side package**. Chat JSON is still `{ answer, session_id }` only.
 
 ---
 
-## Current contract
+## What we already had (do not rip out)
 
-`POST /api/chat` body: `question`, `session_id`, `socratic_mode` (`strict` | `guided` | `direct`).
+| Piece | Where | Notes |
+| --- | --- | --- |
+| `POST /api/chat` | `backend/app/api/routes.py`, `pipelines/rag.py` | Socratic `ask()`. Optional JWT for notes + textbook. |
+| Turn policy | `pipelines/turn_policy.py`, `prompts.py` | Classify science/identity/meta; keep a `?` in strict/guided. |
+| Sessions | `storage/sessions.py` | Redis or in-memory. |
+| Health | `GET /health` | Reports `llm_provider` (Groq / HF Space / Modal / local). |
+| Google JWT | `api/auth_routes.py` | `/api/auth/config`, `/google`, `/me`. Email/password is frontend-only. |
+| Materials | `api/materials_routes.py` | JWT upload / reindex / delete. Ollama down → 503 + `indexed: false`. |
+| Textbook index | `scripts/data_ingestion.py`, `storage/chroma.py` | Shared `user_id=shared`. Not pgvector (document that vs the interim report). |
 
-Response: `answer`, `session_id`.
-
-Optional JWT: personal note chunks + shared textbook (`retrieve_documents` in `backend/app/storage/chroma.py`). Invalid JWT must not block textbook chat (`get_optional_user`).
-
-Other routes: `/health`, `/api/auth/*`, `/api/materials` (+ reindex, delete).
-
-Sessions: Redis or in-memory (`backend/app/storage/sessions.py`).
+**Chat contract (unchanged on purpose):** body `question`, `session_id`, `socratic_mode`. Response `answer`, `session_id`. Invalid JWT must not block textbook chat.
 
 ---
 
-## Work packages
+## What we just shipped (knowledge graph)
 
-### B1 — Stabilize chat for the new UI (small, compatible)
+FYP Objective 4 in software, **without rewriting RAG**. Inspect: `backend/app/knowledge/README.md`.
 
-Add **optional** fields on `ChatResponse` so the frontend can style turns without guessing:
+| Piece | Where | What it does |
+| --- | --- | --- |
+| Catalog | `knowledge/concepts.json` | 135 nodes (Physics 45, Chemistry 50, Biology 40) + prerequisite edges. Rebuild: `python backend/scripts/build_concepts_json.py`. |
+| Formulas | `knowledge/scoring.py` | `st = sim × coherence`; `m ← m + 0.25(st − m)`; `m0 = 0.5`; confused after 3× `st < 0.40`. Token overlap (no extra LLM; works if Ollama is down). |
+| Store | `storage/mastery.py` | SQLite tables `knowledge_mastery`, `knowledge_events` in `users.sqlite3`. |
+| Hook | `knowledge/record.py` | After a **successful** `ask()`, `routes.py` calls this in try/except. Guests skipped. Identity/meta skipped. Chat still returns if scoring fails. |
+| Inspect APIs | `api/progress_routes.py` | See table below. |
 
-- `move_type`: `question` | `hint` | `explanation` (default `question`)
-- `sources`: list of `{ "kind": "notes" | "textbook", "title": str }` from retrieved docs (cap 3)
+| URL | Auth | Use |
+| --- | --- | --- |
+| `GET /api/knowledge/catalog` | none | Open in the browser: all nodes, edges, `counts`. |
+| `GET /api/progress` | JWT | Nodes this student has touched. |
+| `GET /api/progress/graph` | JWT | Full graph with `m`, `seen`, `confused`. |
+| `GET /api/reports/weekly` | JWT | Last 7 days: weakest, confused, mean `st`. Demo export: `REPORT_EXPORT_SECRET` + header `X-Report-Export` + `?user_id=`. |
 
-Keep `answer` as today. Old clients ignore extra JSON.
+Earth remains a **tutor subject** on the frontend. The **FYP graph is Physics / Chemistry / Biology only**, as in the interim report.
 
-**Files:** `backend/app/schemas/chat.py`, `backend/app/api/routes.py`, `backend/app/pipelines/rag.py`.
+Cohen’s κ is **offline** (teacher spreadsheet), not an API. No teacher school login.
 
-**Heuristic for `move_type` (no extra LLM call):** last non-empty sentence ends with `?` → `question`; `socratic_mode == "guided"` and no `?` → `hint`; `direct` → `explanation` if no `?`. Prompt still requires a closing question in strict/guided.
+Tests: `backend/tests/test_knowledge_scoring.py`.
 
-**Test:** Swagger `POST /api/chat` still returns 200 with `answer`; extra keys present.
+---
 
-### B2 — Do not break Socratic prompts
+## What we are doing now / still open
 
-- Keep one question per turn in `prompts.py`.
-- Context label: student notes vs textbook (already in `_format_context`).
-- No “dump the PDF”.
+### B1 — Optional chat fields (not started)
 
-**Test:** DNA / photosynthesis threads stay on topic (regression you already care about).
+Left untouched so `ChatResponse` stays `{ answer, session_id }`. When you want UI citations without heuristics:
+
+- `move_type`: `question` | `hint` | `explanation`
+- `sources`: up to 3 `{ kind: notes|textbook, title }`
+
+**Files (when you start):** `schemas/chat.py`, then a **small** addition on the chat response. Prefer not to rewrite `rag.py`; attach sources from a second retrieve or a return-tuple later.
+
+Frontend F5 already infers kind from `?` in `socraticKind.js`. F6 waits on this.
+
+### B2 — Socratic prompts (maintenance)
+
+Done. Re-run DNA / photosynthesis threads after any prompt change. Do not “improve” by answering more.
 
 ### B3 — Auth and materials (maintenance)
 
-- Materials still JWT-only; guests textbook-only.
-- Stale JWT on `/api/chat`: optional user → `None` (already).
-- Size limits, Ollama-down → 503 + `indexed: false` (already).
+Done unless a bug appears.
 
-Only change if bugs appear. **Files:** `auth/jwt_tokens.py`, `api/materials_routes.py`.
+### B4 — Health honesty (done)
 
-### B4 — Health honesty
+`/health` already exposes `llm_provider` and provider flags.
 
-`/health` should keep reflecting the active LLM provider (`LLM_PROVIDER` in `routes.py`) so the frontend badge is not “Groq false = dead” when using HF Space.
+### B5 — Progress API (engine done; UI not wired)
 
-No GGUF load on health.
+Backend **GET** progress/graph/weekly is live. Hub still uses **localStorage session counts**, which is not the same as mastery `m`. Next product step (only if you ask): a thin `/app` or `/app/progress` page that **reads** the new APIs. Do not mix those numbers.
 
-### B5 — Progress API (after F5 exists)
+### B6 — Streaming (later)
 
-Later, not blocking frontend cards:
+REST is enough for Socratic wait. No SSE/WebSocket until the UI needs it.
 
-- `GET/POST /api/progress` keyed by JWT: topic ids, session counts.
-- Until then frontend may use localStorage.
+### O1 — Precision@3 (harness started, gold set not finished)
 
-### B6 — Streaming (optional, after B1)
+- Script: `backend/scripts/precision_at_3.py`
+- Sample labels: `backend/eval/retrieval_gold.sample.jsonl` (3 template queries)
+- **Now:** grow to 100 NEB-style queries and 300 passage judgments; measure P@3 on current Chroma. Do **not** migrate to pgvector unless P@3 is stuck and you have weeks.
 
-Socratic turns are short; **REST is enough**. If you add streaming:
+### O3 — Latency ≤ 5s (not measured)
 
-- Prefer **SSE** `GET` or `POST` `/api/chat/stream` emitting the same final `answer` + `move_type`.
-- Do not WebSocket the tutor unless you add live presence.
+Log or load-test p95 on `POST /api/chat` with ~10 concurrent sessions. Bottleneck is the LLM, not the graph hook.
 
-Do not start B6 until the UI needs it.
+### O2 / serving (thesis alignment, not a rewrite)
+
+Live router is Groq / HF Space / Modal / local GGUF (`config.LLM_PROVIDER`). Final report should **match that**, not assume LLaMA-3-8B is inside FastAPI unless you actually serve that file.
 
 ---
 
-## Explicitly later (not this backend plan)
+## Explicitly later
 
 - Fine-tuning per student notes
-- New vector DB
+- New vector DB / pgvector migration
 - OCR / Drive
-- LangGraph rewrite
+- LangGraph
+- DistilBERT “direct answer” classifier
+- Classroom WebSockets
+- Teacher JWT / school class roster
 
 ---
 
-## Integration with frontend
-
-Frontend plan F5 can ship with heuristics. F6 consumes B1 fields.
+## Integration sketch
 
 ```
-Tutor UI  --POST /api/chat-->  rag.ask()  --> Chroma filter user_id|shared  --> LLM  --> { answer, move_type?, sources? }
+Tutor UI --POST /api/chat--> rag.ask() --> Chroma --> LLM --> { answer, session_id }
+                              \ after success, JWT science turn
+                               record_student_turn() --> SQLite mastery
+Progress UI (future) --GET /api/progress/graph--> knowledge_mastery + concepts.json
 ```
 
 ---
 
 ## Risks
 
-- Extra LLM classifier for `move_type` = latency and cost; use heuristics first.
-- `--reload` + local GGUF can crash; students should use Groq/HF Space as already configured.
-- Port 8000: one uvicorn (`app.main:app` from `backend/`), not `main:app`.
+- Scoring uses a **second** textbook retrieve in `record.py` (RAG file not modified). Extra Chroma call; must never fail the chat.
+- Token-overlap `sim` is weaker than sentence-transformers cosine in the report. Good enough to demo; mention in the write-up.
+- `--reload` + local GGUF can crash; prefer Groq/HF Space as configured.
+- Port 8000: `uvicorn app.main:app` from `backend/`.
 
 ---
 
-## Done when
+## Done when (this track)
 
-`/api/chat` remains Socratic, RAG isolation holds, and the frontend can style question vs hint vs sources without a breaking change to `answer`.
+Chat stays Socratic; RAG isolation holds; you can **open `/api/knowledge/catalog` and `/api/progress/graph`** and see 135 nodes plus a student’s `m`. Optional: labelled P@3, B1 fields, a progress page.

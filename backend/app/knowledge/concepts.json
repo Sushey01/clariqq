@@ -1,0 +1,1737 @@
+{
+  "version": 1,
+  "title": "SEE Class 10 Science concept graph (Physics 45, Chemistry 50, Biology 40)",
+  "source": "CDC/NEB-aligned concept list for Clariq FYP Objective 4. Prerequisite edges are a working set pending teacher kappa.",
+  "counts": {
+    "Physics": 45,
+    "Chemistry": 50,
+    "Biology": 40,
+    "edges": 99
+  },
+  "nodes": [
+    {
+      "id": "phy_measurement",
+      "subject": "Physics",
+      "name": "Measurement",
+      "chapter": "Measurement",
+      "aliases": [
+        "measure",
+        "reading",
+        "instrument"
+      ]
+    },
+    {
+      "id": "phy_si_units",
+      "subject": "Physics",
+      "name": "SI units",
+      "chapter": "Measurement",
+      "aliases": [
+        "si",
+        "metre",
+        "kilogram",
+        "second"
+      ]
+    },
+    {
+      "id": "phy_scalars",
+      "subject": "Physics",
+      "name": "Scalars",
+      "chapter": "Force and motion",
+      "aliases": [
+        "scalar quantity"
+      ]
+    },
+    {
+      "id": "phy_vectors",
+      "subject": "Physics",
+      "name": "Vectors",
+      "chapter": "Force and motion",
+      "aliases": [
+        "vector quantity",
+        "direction"
+      ]
+    },
+    {
+      "id": "phy_distance_displacement",
+      "subject": "Physics",
+      "name": "Distance and displacement",
+      "chapter": "Force and motion",
+      "aliases": [
+        "displacement",
+        "distance"
+      ]
+    },
+    {
+      "id": "phy_speed",
+      "subject": "Physics",
+      "name": "Speed",
+      "chapter": "Force and motion",
+      "aliases": [
+        "how fast"
+      ]
+    },
+    {
+      "id": "phy_velocity",
+      "subject": "Physics",
+      "name": "Velocity",
+      "chapter": "Force and motion",
+      "aliases": [
+        "velocity"
+      ]
+    },
+    {
+      "id": "phy_acceleration",
+      "subject": "Physics",
+      "name": "Acceleration",
+      "chapter": "Force and motion",
+      "aliases": [
+        "accelerate",
+        "decelerate"
+      ]
+    },
+    {
+      "id": "phy_motion_graphs",
+      "subject": "Physics",
+      "name": "Motion graphs",
+      "chapter": "Force and motion",
+      "aliases": [
+        "distance time",
+        "velocity time",
+        "graph of motion"
+      ]
+    },
+    {
+      "id": "phy_force",
+      "subject": "Physics",
+      "name": "Force",
+      "chapter": "Force and motion",
+      "aliases": [
+        "push",
+        "pull",
+        "newton"
+      ]
+    },
+    {
+      "id": "phy_newton_first",
+      "subject": "Physics",
+      "name": "Newton's first law",
+      "chapter": "Force and motion",
+      "aliases": [
+        "inertia",
+        "uniform motion",
+        "first law"
+      ]
+    },
+    {
+      "id": "phy_newton_second",
+      "subject": "Physics",
+      "name": "Newton's second law",
+      "chapter": "Force and motion",
+      "aliases": [
+        "f=ma",
+        "second law"
+      ]
+    },
+    {
+      "id": "phy_newton_third",
+      "subject": "Physics",
+      "name": "Newton's third law",
+      "chapter": "Force and motion",
+      "aliases": [
+        "action reaction",
+        "third law"
+      ]
+    },
+    {
+      "id": "phy_mass",
+      "subject": "Physics",
+      "name": "Mass",
+      "chapter": "Force and motion",
+      "aliases": [
+        "amount of matter"
+      ]
+    },
+    {
+      "id": "phy_weight",
+      "subject": "Physics",
+      "name": "Weight",
+      "chapter": "Force and motion",
+      "aliases": [
+        "gravity on a mass"
+      ]
+    },
+    {
+      "id": "phy_friction",
+      "subject": "Physics",
+      "name": "Friction",
+      "chapter": "Force and motion",
+      "aliases": [
+        "resist motion",
+        "rough"
+      ]
+    },
+    {
+      "id": "phy_momentum",
+      "subject": "Physics",
+      "name": "Momentum",
+      "chapter": "Force and motion",
+      "aliases": [
+        "mass times velocity"
+      ]
+    },
+    {
+      "id": "phy_pressure",
+      "subject": "Physics",
+      "name": "Pressure",
+      "chapter": "Pressure",
+      "aliases": [
+        "force over area",
+        "pascal"
+      ]
+    },
+    {
+      "id": "phy_atmospheric_pressure",
+      "subject": "Physics",
+      "name": "Atmospheric pressure",
+      "chapter": "Pressure",
+      "aliases": [
+        "air pressure",
+        "barometer"
+      ]
+    },
+    {
+      "id": "phy_density",
+      "subject": "Physics",
+      "name": "Density",
+      "chapter": "Pressure",
+      "aliases": [
+        "mass over volume",
+        "dense"
+      ]
+    },
+    {
+      "id": "phy_buoyancy",
+      "subject": "Physics",
+      "name": "Buoyancy",
+      "chapter": "Pressure",
+      "aliases": [
+        "upthrust",
+        "float",
+        "sink",
+        "ice float"
+      ]
+    },
+    {
+      "id": "phy_archimedes",
+      "subject": "Physics",
+      "name": "Archimedes' principle",
+      "chapter": "Pressure",
+      "aliases": [
+        "displaced liquid"
+      ]
+    },
+    {
+      "id": "phy_work",
+      "subject": "Physics",
+      "name": "Work",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "force times distance"
+      ]
+    },
+    {
+      "id": "phy_energy",
+      "subject": "Physics",
+      "name": "Energy",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "ability to do work"
+      ]
+    },
+    {
+      "id": "phy_kinetic_energy",
+      "subject": "Physics",
+      "name": "Kinetic energy",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "moving energy"
+      ]
+    },
+    {
+      "id": "phy_potential_energy",
+      "subject": "Physics",
+      "name": "Potential energy",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "stored energy",
+        "gravitational potential"
+      ]
+    },
+    {
+      "id": "phy_conservation_energy",
+      "subject": "Physics",
+      "name": "Conservation of energy",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "energy cannot be created"
+      ]
+    },
+    {
+      "id": "phy_power",
+      "subject": "Physics",
+      "name": "Power",
+      "chapter": "Work, energy and power",
+      "aliases": [
+        "work per time",
+        "watt"
+      ]
+    },
+    {
+      "id": "phy_heat",
+      "subject": "Physics",
+      "name": "Heat",
+      "chapter": "Heat",
+      "aliases": [
+        "thermal energy"
+      ]
+    },
+    {
+      "id": "phy_temperature",
+      "subject": "Physics",
+      "name": "Temperature",
+      "chapter": "Heat",
+      "aliases": [
+        "hot cold",
+        "thermometer",
+        "celsius"
+      ]
+    },
+    {
+      "id": "phy_heat_transfer",
+      "subject": "Physics",
+      "name": "Heat transfer",
+      "chapter": "Heat",
+      "aliases": [
+        "conduction",
+        "convection",
+        "radiation"
+      ]
+    },
+    {
+      "id": "phy_wave",
+      "subject": "Physics",
+      "name": "Waves",
+      "chapter": "Wave and sound",
+      "aliases": [
+        "wavelength",
+        "frequency",
+        "amplitude"
+      ]
+    },
+    {
+      "id": "phy_sound",
+      "subject": "Physics",
+      "name": "Sound",
+      "chapter": "Wave and sound",
+      "aliases": [
+        "vibration",
+        "echo",
+        "loudness",
+        "pitch"
+      ]
+    },
+    {
+      "id": "phy_light",
+      "subject": "Physics",
+      "name": "Light",
+      "chapter": "Light",
+      "aliases": [
+        "ray",
+        "luminous"
+      ]
+    },
+    {
+      "id": "phy_reflection",
+      "subject": "Physics",
+      "name": "Reflection of light",
+      "chapter": "Light",
+      "aliases": [
+        "mirror",
+        "incident ray"
+      ]
+    },
+    {
+      "id": "phy_refraction",
+      "subject": "Physics",
+      "name": "Refraction of light",
+      "chapter": "Light",
+      "aliases": [
+        "bend",
+        "pencil in water",
+        "snell"
+      ]
+    },
+    {
+      "id": "phy_lenses",
+      "subject": "Physics",
+      "name": "Lenses",
+      "chapter": "Light",
+      "aliases": [
+        "convex",
+        "concave",
+        "focal"
+      ]
+    },
+    {
+      "id": "phy_human_eye",
+      "subject": "Physics",
+      "name": "Human eye",
+      "chapter": "Light",
+      "aliases": [
+        "retina",
+        "lens of eye",
+        "myopia"
+      ]
+    },
+    {
+      "id": "phy_current",
+      "subject": "Physics",
+      "name": "Electric current",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "ampere",
+        "flow of charge"
+      ]
+    },
+    {
+      "id": "phy_voltage",
+      "subject": "Physics",
+      "name": "Potential difference",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "voltage",
+        "volt"
+      ]
+    },
+    {
+      "id": "phy_resistance",
+      "subject": "Physics",
+      "name": "Resistance",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "ohm",
+        "resistor"
+      ]
+    },
+    {
+      "id": "phy_ohms_law",
+      "subject": "Physics",
+      "name": "Ohm's law",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "v=ir",
+        "ohms law"
+      ]
+    },
+    {
+      "id": "phy_circuits",
+      "subject": "Physics",
+      "name": "Series and parallel circuits",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "series",
+        "parallel"
+      ]
+    },
+    {
+      "id": "phy_magnetism",
+      "subject": "Physics",
+      "name": "Magnetism",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "magnet",
+        "north pole",
+        "field lines"
+      ]
+    },
+    {
+      "id": "phy_electromagnet",
+      "subject": "Physics",
+      "name": "Electromagnet",
+      "chapter": "Current electricity and magnetism",
+      "aliases": [
+        "coil",
+        "solenoid"
+      ]
+    },
+    {
+      "id": "che_matter",
+      "subject": "Chemistry",
+      "name": "Matter",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "stuff",
+        "material"
+      ]
+    },
+    {
+      "id": "che_states",
+      "subject": "Chemistry",
+      "name": "States of matter",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "solid",
+        "liquid",
+        "gas"
+      ]
+    },
+    {
+      "id": "che_element",
+      "subject": "Chemistry",
+      "name": "Element",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "pure element"
+      ]
+    },
+    {
+      "id": "che_compound",
+      "subject": "Chemistry",
+      "name": "Compound",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "chemical compound"
+      ]
+    },
+    {
+      "id": "che_mixture",
+      "subject": "Chemistry",
+      "name": "Mixture",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "mix",
+        "alloy"
+      ]
+    },
+    {
+      "id": "che_solution",
+      "subject": "Chemistry",
+      "name": "Solution",
+      "chapter": "Classification of materials",
+      "aliases": [
+        "solute",
+        "solvent",
+        "dissolve"
+      ]
+    },
+    {
+      "id": "che_atom",
+      "subject": "Chemistry",
+      "name": "Atom",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "smallest particle of element"
+      ]
+    },
+    {
+      "id": "che_molecule",
+      "subject": "Chemistry",
+      "name": "Molecule",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "group of atoms"
+      ]
+    },
+    {
+      "id": "che_proton",
+      "subject": "Chemistry",
+      "name": "Proton",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "positive nucleus"
+      ]
+    },
+    {
+      "id": "che_neutron",
+      "subject": "Chemistry",
+      "name": "Neutron",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "neutral nucleus"
+      ]
+    },
+    {
+      "id": "che_electron",
+      "subject": "Chemistry",
+      "name": "Electron",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "negative",
+        "orbit"
+      ]
+    },
+    {
+      "id": "che_atomic_number",
+      "subject": "Chemistry",
+      "name": "Atomic number",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "proton number",
+        "z"
+      ]
+    },
+    {
+      "id": "che_mass_number",
+      "subject": "Chemistry",
+      "name": "Mass number",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "nucleon",
+        "a"
+      ]
+    },
+    {
+      "id": "che_electronic_config",
+      "subject": "Chemistry",
+      "name": "Electronic configuration",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "shells",
+        "2,8,8"
+      ]
+    },
+    {
+      "id": "che_valency",
+      "subject": "Chemistry",
+      "name": "Valency",
+      "chapter": "Atomic structure",
+      "aliases": [
+        "combining capacity"
+      ]
+    },
+    {
+      "id": "che_periodic_table",
+      "subject": "Chemistry",
+      "name": "Periodic table",
+      "chapter": "Periodic table",
+      "aliases": [
+        "groups",
+        "periods",
+        "mendeleev"
+      ]
+    },
+    {
+      "id": "che_metals",
+      "subject": "Chemistry",
+      "name": "Metals",
+      "chapter": "Periodic table",
+      "aliases": [
+        "metallic",
+        "lustre"
+      ]
+    },
+    {
+      "id": "che_nonmetals",
+      "subject": "Chemistry",
+      "name": "Non-metals",
+      "chapter": "Periodic table",
+      "aliases": [
+        "nonmetal"
+      ]
+    },
+    {
+      "id": "che_reactivity",
+      "subject": "Chemistry",
+      "name": "Metal reactivity",
+      "chapter": "Metals",
+      "aliases": [
+        "reactivity series"
+      ]
+    },
+    {
+      "id": "che_ionic_bond",
+      "subject": "Chemistry",
+      "name": "Ionic bond",
+      "chapter": "Chemical bonding",
+      "aliases": [
+        "transfer electrons",
+        "ion"
+      ]
+    },
+    {
+      "id": "che_covalent_bond",
+      "subject": "Chemistry",
+      "name": "Covalent bond",
+      "chapter": "Chemical bonding",
+      "aliases": [
+        "share electrons"
+      ]
+    },
+    {
+      "id": "che_formula",
+      "subject": "Chemistry",
+      "name": "Chemical formula",
+      "chapter": "Language of chemistry",
+      "aliases": [
+        "h2o",
+        "co2",
+        "formula"
+      ]
+    },
+    {
+      "id": "che_equation",
+      "subject": "Chemistry",
+      "name": "Chemical equation",
+      "chapter": "Language of chemistry",
+      "aliases": [
+        "reaction equation"
+      ]
+    },
+    {
+      "id": "che_balancing",
+      "subject": "Chemistry",
+      "name": "Balancing equations",
+      "chapter": "Language of chemistry",
+      "aliases": [
+        "balance",
+        "coefficients"
+      ]
+    },
+    {
+      "id": "che_conservation_mass",
+      "subject": "Chemistry",
+      "name": "Conservation of mass",
+      "chapter": "Language of chemistry",
+      "aliases": [
+        "mass conserved"
+      ]
+    },
+    {
+      "id": "che_acid",
+      "subject": "Chemistry",
+      "name": "Acids",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "sour",
+        "h+"
+      ]
+    },
+    {
+      "id": "che_base",
+      "subject": "Chemistry",
+      "name": "Bases",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "bitter",
+        "oh-",
+        "alkali"
+      ]
+    },
+    {
+      "id": "che_salt",
+      "subject": "Chemistry",
+      "name": "Salts",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "nacl",
+        "neutralisation product"
+      ]
+    },
+    {
+      "id": "che_ph",
+      "subject": "Chemistry",
+      "name": "pH",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "ph scale"
+      ]
+    },
+    {
+      "id": "che_indicator",
+      "subject": "Chemistry",
+      "name": "Indicators",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "litmus",
+        "phenolphthalein"
+      ]
+    },
+    {
+      "id": "che_neutralization",
+      "subject": "Chemistry",
+      "name": "Neutralisation",
+      "chapter": "Acid, base and salt",
+      "aliases": [
+        "acid plus base"
+      ]
+    },
+    {
+      "id": "che_oxidation",
+      "subject": "Chemistry",
+      "name": "Oxidation",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "gain oxygen",
+        "lose electrons"
+      ]
+    },
+    {
+      "id": "che_reduction",
+      "subject": "Chemistry",
+      "name": "Reduction",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "lose oxygen"
+      ]
+    },
+    {
+      "id": "che_rusting",
+      "subject": "Chemistry",
+      "name": "Rusting",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "iron rust",
+        "corrosion"
+      ]
+    },
+    {
+      "id": "che_water",
+      "subject": "Chemistry",
+      "name": "Water",
+      "chapter": "Water",
+      "aliases": [
+        "h2o",
+        "universal solvent"
+      ]
+    },
+    {
+      "id": "che_hard_water",
+      "subject": "Chemistry",
+      "name": "Hard water",
+      "chapter": "Water",
+      "aliases": [
+        "calcium",
+        "lather"
+      ]
+    },
+    {
+      "id": "che_air",
+      "subject": "Chemistry",
+      "name": "Air",
+      "chapter": "Some gases",
+      "aliases": [
+        "atmosphere mixture"
+      ]
+    },
+    {
+      "id": "che_oxygen",
+      "subject": "Chemistry",
+      "name": "Oxygen",
+      "chapter": "Some gases",
+      "aliases": [
+        "o2",
+        "supports burning"
+      ]
+    },
+    {
+      "id": "che_carbon_dioxide",
+      "subject": "Chemistry",
+      "name": "Carbon dioxide",
+      "chapter": "Some gases",
+      "aliases": [
+        "co2",
+        "limewater"
+      ]
+    },
+    {
+      "id": "che_nitrogen",
+      "subject": "Chemistry",
+      "name": "Nitrogen",
+      "chapter": "Some gases",
+      "aliases": [
+        "n2"
+      ]
+    },
+    {
+      "id": "che_hydrogen",
+      "subject": "Chemistry",
+      "name": "Hydrogen",
+      "chapter": "Some gases",
+      "aliases": [
+        "h2",
+        "pop test"
+      ]
+    },
+    {
+      "id": "che_carbon",
+      "subject": "Chemistry",
+      "name": "Carbon",
+      "chapter": "Carbon and its compounds",
+      "aliases": [
+        "allotrope",
+        "diamond",
+        "graphite"
+      ]
+    },
+    {
+      "id": "che_hydrocarbon",
+      "subject": "Chemistry",
+      "name": "Hydrocarbons",
+      "chapter": "Carbon and its compounds",
+      "aliases": [
+        "alkane",
+        "methane"
+      ]
+    },
+    {
+      "id": "che_polymer",
+      "subject": "Chemistry",
+      "name": "Polymers",
+      "chapter": "Carbon and its compounds",
+      "aliases": [
+        "plastic",
+        "polymerisation"
+      ]
+    },
+    {
+      "id": "che_fertilizer",
+      "subject": "Chemistry",
+      "name": "Fertilisers",
+      "chapter": "Applied chemistry",
+      "aliases": [
+        "npk",
+        "urea"
+      ]
+    },
+    {
+      "id": "che_pesticide",
+      "subject": "Chemistry",
+      "name": "Pesticides",
+      "chapter": "Applied chemistry",
+      "aliases": [
+        "insecticide"
+      ]
+    },
+    {
+      "id": "che_lab_safety",
+      "subject": "Chemistry",
+      "name": "Laboratory safety",
+      "chapter": "Laboratory",
+      "aliases": [
+        "hazards",
+        "bunsen"
+      ]
+    },
+    {
+      "id": "che_endothermic",
+      "subject": "Chemistry",
+      "name": "Endothermic and exothermic",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "heat given out",
+        "heat taken in"
+      ]
+    },
+    {
+      "id": "che_rate",
+      "subject": "Chemistry",
+      "name": "Rate of reaction",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "catalyst",
+        "faster reaction"
+      ]
+    },
+    {
+      "id": "che_electrolysis",
+      "subject": "Chemistry",
+      "name": "Electrolysis",
+      "chapter": "Chemical reaction",
+      "aliases": [
+        "electrolyte",
+        "ions move"
+      ]
+    },
+    {
+      "id": "bio_cell",
+      "subject": "Biology",
+      "name": "Cell",
+      "chapter": "Cell biology",
+      "aliases": [
+        "basic unit of life"
+      ]
+    },
+    {
+      "id": "bio_organelle",
+      "subject": "Biology",
+      "name": "Cell organelles",
+      "chapter": "Cell biology",
+      "aliases": [
+        "mitochondria",
+        "nucleus",
+        "chloroplast organelle"
+      ]
+    },
+    {
+      "id": "bio_plant_cell",
+      "subject": "Biology",
+      "name": "Plant cell",
+      "chapter": "Cell biology",
+      "aliases": [
+        "cell wall",
+        "vacuole"
+      ]
+    },
+    {
+      "id": "bio_animal_cell",
+      "subject": "Biology",
+      "name": "Animal cell",
+      "chapter": "Cell biology",
+      "aliases": [
+        "no cell wall"
+      ]
+    },
+    {
+      "id": "bio_tissue",
+      "subject": "Biology",
+      "name": "Tissue",
+      "chapter": "Organisation of life",
+      "aliases": [
+        "group of cells"
+      ]
+    },
+    {
+      "id": "bio_organ",
+      "subject": "Biology",
+      "name": "Organ",
+      "chapter": "Organisation of life",
+      "aliases": [
+        "heart",
+        "leaf as organ"
+      ]
+    },
+    {
+      "id": "bio_organ_system",
+      "subject": "Biology",
+      "name": "Organ system",
+      "chapter": "Organisation of life",
+      "aliases": [
+        "digestive system"
+      ]
+    },
+    {
+      "id": "bio_photosynthesis",
+      "subject": "Biology",
+      "name": "Photosynthesis",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "make food",
+        "chlorophyll",
+        "glucose from light"
+      ]
+    },
+    {
+      "id": "bio_transpiration",
+      "subject": "Biology",
+      "name": "Transpiration",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "water loss stomata"
+      ]
+    },
+    {
+      "id": "bio_tropism",
+      "subject": "Biology",
+      "name": "Tropism",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "phototropism",
+        "geotropism"
+      ]
+    },
+    {
+      "id": "bio_flower",
+      "subject": "Biology",
+      "name": "Flower",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "petal",
+        "stamen",
+        "pistil"
+      ]
+    },
+    {
+      "id": "bio_seed",
+      "subject": "Biology",
+      "name": "Seed",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "embryo plant"
+      ]
+    },
+    {
+      "id": "bio_germination",
+      "subject": "Biology",
+      "name": "Germination",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "seed grows"
+      ]
+    },
+    {
+      "id": "bio_digestion",
+      "subject": "Biology",
+      "name": "Digestion",
+      "chapter": "Life process in animals",
+      "aliases": [
+        "stomach",
+        "enzyme food"
+      ]
+    },
+    {
+      "id": "bio_respiration",
+      "subject": "Biology",
+      "name": "Respiration",
+      "chapter": "Life process in animals",
+      "aliases": [
+        "breathing",
+        "oxygen glucose"
+      ]
+    },
+    {
+      "id": "bio_circulation",
+      "subject": "Biology",
+      "name": "Circulation",
+      "chapter": "Life process in animals",
+      "aliases": [
+        "blood",
+        "heart pump"
+      ]
+    },
+    {
+      "id": "bio_excretion",
+      "subject": "Biology",
+      "name": "Excretion",
+      "chapter": "Life process in animals",
+      "aliases": [
+        "kidney",
+        "urea"
+      ]
+    },
+    {
+      "id": "bio_nervous",
+      "subject": "Biology",
+      "name": "Nervous system",
+      "chapter": "Life process in animals",
+      "aliases": [
+        "brain",
+        "neuron",
+        "reflex"
+      ]
+    },
+    {
+      "id": "bio_reproduction",
+      "subject": "Biology",
+      "name": "Reproduction",
+      "chapter": "Reproduction",
+      "aliases": [
+        "offspring"
+      ]
+    },
+    {
+      "id": "bio_mitosis",
+      "subject": "Biology",
+      "name": "Mitosis",
+      "chapter": "Reproduction",
+      "aliases": [
+        "cell division body"
+      ]
+    },
+    {
+      "id": "bio_meiosis",
+      "subject": "Biology",
+      "name": "Meiosis",
+      "chapter": "Reproduction",
+      "aliases": [
+        "gamete",
+        "half chromosomes"
+      ]
+    },
+    {
+      "id": "bio_dna",
+      "subject": "Biology",
+      "name": "DNA",
+      "chapter": "Heredity",
+      "aliases": [
+        "genetic material",
+        "double helix"
+      ]
+    },
+    {
+      "id": "bio_chromosome",
+      "subject": "Biology",
+      "name": "Chromosome",
+      "chapter": "Heredity",
+      "aliases": [
+        "chromatin"
+      ]
+    },
+    {
+      "id": "bio_heredity",
+      "subject": "Biology",
+      "name": "Heredity",
+      "chapter": "Heredity",
+      "aliases": [
+        "inherited",
+        "traits"
+      ]
+    },
+    {
+      "id": "bio_microorganism",
+      "subject": "Biology",
+      "name": "Microorganisms",
+      "chapter": "Microbiology",
+      "aliases": [
+        "microbe"
+      ]
+    },
+    {
+      "id": "bio_bacteria",
+      "subject": "Biology",
+      "name": "Bacteria",
+      "chapter": "Microbiology",
+      "aliases": [
+        "bacterial"
+      ]
+    },
+    {
+      "id": "bio_virus",
+      "subject": "Biology",
+      "name": "Virus",
+      "chapter": "Microbiology",
+      "aliases": [
+        "viral"
+      ]
+    },
+    {
+      "id": "bio_fungi",
+      "subject": "Biology",
+      "name": "Fungi",
+      "chapter": "Microbiology",
+      "aliases": [
+        "fungus",
+        "yeast"
+      ]
+    },
+    {
+      "id": "bio_pathogen",
+      "subject": "Biology",
+      "name": "Pathogen",
+      "chapter": "Health",
+      "aliases": [
+        "disease causing"
+      ]
+    },
+    {
+      "id": "bio_immunity",
+      "subject": "Biology",
+      "name": "Immunity",
+      "chapter": "Health",
+      "aliases": [
+        "immune",
+        "white blood cell"
+      ]
+    },
+    {
+      "id": "bio_vaccine",
+      "subject": "Biology",
+      "name": "Vaccine",
+      "chapter": "Health",
+      "aliases": [
+        "immunisation",
+        "vaccination"
+      ]
+    },
+    {
+      "id": "bio_ecosystem",
+      "subject": "Biology",
+      "name": "Ecosystem",
+      "chapter": "Environment",
+      "aliases": [
+        "habitat community"
+      ]
+    },
+    {
+      "id": "bio_food_chain",
+      "subject": "Biology",
+      "name": "Food chain",
+      "chapter": "Environment",
+      "aliases": [
+        "producer consumer"
+      ]
+    },
+    {
+      "id": "bio_food_web",
+      "subject": "Biology",
+      "name": "Food web",
+      "chapter": "Environment",
+      "aliases": [
+        "linked food chains"
+      ]
+    },
+    {
+      "id": "bio_biodiversity",
+      "subject": "Biology",
+      "name": "Biodiversity",
+      "chapter": "Environment",
+      "aliases": [
+        "variety of life"
+      ]
+    },
+    {
+      "id": "bio_conservation",
+      "subject": "Biology",
+      "name": "Conservation",
+      "chapter": "Environment",
+      "aliases": [
+        "protect species"
+      ]
+    },
+    {
+      "id": "bio_pollution",
+      "subject": "Biology",
+      "name": "Pollution",
+      "chapter": "Environment",
+      "aliases": [
+        "air water soil pollution"
+      ]
+    },
+    {
+      "id": "bio_classification",
+      "subject": "Biology",
+      "name": "Classification of organisms",
+      "chapter": "Diversity",
+      "aliases": [
+        "kingdom",
+        "species"
+      ]
+    },
+    {
+      "id": "bio_human_health",
+      "subject": "Biology",
+      "name": "Human health",
+      "chapter": "Health",
+      "aliases": [
+        "hygiene",
+        "balanced diet"
+      ]
+    },
+    {
+      "id": "bio_hormones_plant",
+      "subject": "Biology",
+      "name": "Plant hormones",
+      "chapter": "Life process in plants",
+      "aliases": [
+        "auxin"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "phy_measurement",
+      "to": "phy_si_units"
+    },
+    {
+      "from": "phy_scalars",
+      "to": "phy_vectors"
+    },
+    {
+      "from": "phy_distance_displacement",
+      "to": "phy_speed"
+    },
+    {
+      "from": "phy_speed",
+      "to": "phy_velocity"
+    },
+    {
+      "from": "phy_velocity",
+      "to": "phy_acceleration"
+    },
+    {
+      "from": "phy_acceleration",
+      "to": "phy_motion_graphs"
+    },
+    {
+      "from": "phy_force",
+      "to": "phy_newton_first"
+    },
+    {
+      "from": "phy_newton_first",
+      "to": "phy_newton_second"
+    },
+    {
+      "from": "phy_newton_second",
+      "to": "phy_newton_third"
+    },
+    {
+      "from": "phy_mass",
+      "to": "phy_weight"
+    },
+    {
+      "from": "phy_force",
+      "to": "phy_friction"
+    },
+    {
+      "from": "phy_mass",
+      "to": "phy_momentum"
+    },
+    {
+      "from": "phy_force",
+      "to": "phy_pressure"
+    },
+    {
+      "from": "phy_pressure",
+      "to": "phy_atmospheric_pressure"
+    },
+    {
+      "from": "phy_mass",
+      "to": "phy_density"
+    },
+    {
+      "from": "phy_density",
+      "to": "phy_buoyancy"
+    },
+    {
+      "from": "phy_buoyancy",
+      "to": "phy_archimedes"
+    },
+    {
+      "from": "phy_force",
+      "to": "phy_work"
+    },
+    {
+      "from": "phy_work",
+      "to": "phy_energy"
+    },
+    {
+      "from": "phy_energy",
+      "to": "phy_kinetic_energy"
+    },
+    {
+      "from": "phy_energy",
+      "to": "phy_potential_energy"
+    },
+    {
+      "from": "phy_energy",
+      "to": "phy_conservation_energy"
+    },
+    {
+      "from": "phy_work",
+      "to": "phy_power"
+    },
+    {
+      "from": "phy_heat",
+      "to": "phy_temperature"
+    },
+    {
+      "from": "phy_heat",
+      "to": "phy_heat_transfer"
+    },
+    {
+      "from": "phy_wave",
+      "to": "phy_sound"
+    },
+    {
+      "from": "phy_light",
+      "to": "phy_reflection"
+    },
+    {
+      "from": "phy_light",
+      "to": "phy_refraction"
+    },
+    {
+      "from": "phy_refraction",
+      "to": "phy_lenses"
+    },
+    {
+      "from": "phy_lenses",
+      "to": "phy_human_eye"
+    },
+    {
+      "from": "phy_current",
+      "to": "phy_voltage"
+    },
+    {
+      "from": "phy_voltage",
+      "to": "phy_resistance"
+    },
+    {
+      "from": "phy_resistance",
+      "to": "phy_ohms_law"
+    },
+    {
+      "from": "phy_ohms_law",
+      "to": "phy_circuits"
+    },
+    {
+      "from": "phy_magnetism",
+      "to": "phy_electromagnet"
+    },
+    {
+      "from": "che_matter",
+      "to": "che_states"
+    },
+    {
+      "from": "che_element",
+      "to": "che_compound"
+    },
+    {
+      "from": "che_compound",
+      "to": "che_mixture"
+    },
+    {
+      "from": "che_mixture",
+      "to": "che_solution"
+    },
+    {
+      "from": "che_atom",
+      "to": "che_molecule"
+    },
+    {
+      "from": "che_atom",
+      "to": "che_proton"
+    },
+    {
+      "from": "che_atom",
+      "to": "che_neutron"
+    },
+    {
+      "from": "che_atom",
+      "to": "che_electron"
+    },
+    {
+      "from": "che_proton",
+      "to": "che_atomic_number"
+    },
+    {
+      "from": "che_proton",
+      "to": "che_mass_number"
+    },
+    {
+      "from": "che_electron",
+      "to": "che_electronic_config"
+    },
+    {
+      "from": "che_electronic_config",
+      "to": "che_valency"
+    },
+    {
+      "from": "che_element",
+      "to": "che_periodic_table"
+    },
+    {
+      "from": "che_periodic_table",
+      "to": "che_metals"
+    },
+    {
+      "from": "che_periodic_table",
+      "to": "che_nonmetals"
+    },
+    {
+      "from": "che_metals",
+      "to": "che_reactivity"
+    },
+    {
+      "from": "che_valency",
+      "to": "che_ionic_bond"
+    },
+    {
+      "from": "che_valency",
+      "to": "che_covalent_bond"
+    },
+    {
+      "from": "che_formula",
+      "to": "che_equation"
+    },
+    {
+      "from": "che_equation",
+      "to": "che_balancing"
+    },
+    {
+      "from": "che_balancing",
+      "to": "che_conservation_mass"
+    },
+    {
+      "from": "che_acid",
+      "to": "che_base"
+    },
+    {
+      "from": "che_acid",
+      "to": "che_ph"
+    },
+    {
+      "from": "che_ph",
+      "to": "che_indicator"
+    },
+    {
+      "from": "che_acid",
+      "to": "che_neutralization"
+    },
+    {
+      "from": "che_base",
+      "to": "che_salt"
+    },
+    {
+      "from": "che_oxidation",
+      "to": "che_reduction"
+    },
+    {
+      "from": "che_oxidation",
+      "to": "che_rusting"
+    },
+    {
+      "from": "che_water",
+      "to": "che_hard_water"
+    },
+    {
+      "from": "che_air",
+      "to": "che_oxygen"
+    },
+    {
+      "from": "che_air",
+      "to": "che_carbon_dioxide"
+    },
+    {
+      "from": "che_air",
+      "to": "che_nitrogen"
+    },
+    {
+      "from": "che_carbon",
+      "to": "che_hydrocarbon"
+    },
+    {
+      "from": "che_hydrocarbon",
+      "to": "che_polymer"
+    },
+    {
+      "from": "che_equation",
+      "to": "che_endothermic"
+    },
+    {
+      "from": "che_equation",
+      "to": "che_rate"
+    },
+    {
+      "from": "bio_cell",
+      "to": "bio_organelle"
+    },
+    {
+      "from": "bio_cell",
+      "to": "bio_plant_cell"
+    },
+    {
+      "from": "bio_cell",
+      "to": "bio_animal_cell"
+    },
+    {
+      "from": "bio_cell",
+      "to": "bio_tissue"
+    },
+    {
+      "from": "bio_tissue",
+      "to": "bio_organ"
+    },
+    {
+      "from": "bio_organ",
+      "to": "bio_organ_system"
+    },
+    {
+      "from": "bio_plant_cell",
+      "to": "bio_photosynthesis"
+    },
+    {
+      "from": "bio_photosynthesis",
+      "to": "bio_transpiration"
+    },
+    {
+      "from": "bio_flower",
+      "to": "bio_seed"
+    },
+    {
+      "from": "bio_seed",
+      "to": "bio_germination"
+    },
+    {
+      "from": "bio_organ_system",
+      "to": "bio_digestion"
+    },
+    {
+      "from": "bio_organ_system",
+      "to": "bio_respiration"
+    },
+    {
+      "from": "bio_organ_system",
+      "to": "bio_circulation"
+    },
+    {
+      "from": "bio_organ_system",
+      "to": "bio_excretion"
+    },
+    {
+      "from": "bio_organ_system",
+      "to": "bio_nervous"
+    },
+    {
+      "from": "bio_cell",
+      "to": "bio_mitosis"
+    },
+    {
+      "from": "bio_mitosis",
+      "to": "bio_meiosis"
+    },
+    {
+      "from": "bio_meiosis",
+      "to": "bio_reproduction"
+    },
+    {
+      "from": "bio_dna",
+      "to": "bio_chromosome"
+    },
+    {
+      "from": "bio_chromosome",
+      "to": "bio_heredity"
+    },
+    {
+      "from": "bio_microorganism",
+      "to": "bio_bacteria"
+    },
+    {
+      "from": "bio_microorganism",
+      "to": "bio_virus"
+    },
+    {
+      "from": "bio_microorganism",
+      "to": "bio_fungi"
+    },
+    {
+      "from": "bio_pathogen",
+      "to": "bio_immunity"
+    },
+    {
+      "from": "bio_immunity",
+      "to": "bio_vaccine"
+    },
+    {
+      "from": "bio_ecosystem",
+      "to": "bio_food_chain"
+    },
+    {
+      "from": "bio_food_chain",
+      "to": "bio_food_web"
+    },
+    {
+      "from": "bio_biodiversity",
+      "to": "bio_conservation"
+    }
+  ]
+}

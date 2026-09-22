@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.auth_routes import router as auth_router
 from app.api.materials_routes import router as materials_router
+from app.api.progress_routes import router as progress_router
 from app.api.routes import router
 
 app = FastAPI(title="Clariq", version="1.0.0")
@@ -20,3 +21,4 @@ app.add_middleware(
 app.include_router(router)
 app.include_router(auth_router)
 app.include_router(materials_router)
+app.include_router(progress_router)

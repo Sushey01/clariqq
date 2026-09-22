@@ -1,13 +1,17 @@
 """HTTP routes. This is the only file the frontend talks to."""
 
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException
 
 from app.auth.jwt_tokens import get_optional_user
 from app.config import reload_env
+from app.knowledge.record import record_student_turn
 from app.pipelines.rag import get_tutor, tutor_error
 from app.schemas.chat import ChatRequest, ChatResponse
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 
 @router.get("/health")
@@ -40,5 +44,11 @@ def chat(body: ChatRequest, user: dict | None = Depends(get_optional_user)):
         )
     except Exception as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    if user:
+        try:
+            record_student_turn(user_id=user["id"], question=body.question)
+        except Exception:
+            logger.exception("knowledge: scoring skipped; chat reply still returned")
 
     return ChatResponse(answer=answer, session_id=body.session_id)
