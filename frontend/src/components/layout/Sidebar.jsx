@@ -35,17 +35,17 @@ export default function Sidebar({
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex h-full w-[260px] shrink-0 flex-col bg-[var(--bg-sidebar)] transition-transform duration-200 md:static ${
+        className={`fixed inset-y-0 left-0 z-50 flex h-full w-[272px] shrink-0 flex-col border-r border-[var(--border)] bg-[var(--bg-sidebar)]/90 backdrop-blur-xl transition-transform duration-200 md:static ${
           isOpen ? 'translate-x-0' : '-translate-x-full md:hidden'
         }`}
       >
         <div className="space-y-2 p-3">
           <div className="flex items-center justify-between px-1 py-1">
             <span className="font-outfit text-sm font-semibold text-[var(--ink)]">
-              Clariq
+              Lab log
             </span>
             <div className="flex items-center">
-              <Button variant="ghost" size="icon" onClick={onNewChat} title="New chat">
+              <Button variant="ghost" size="icon" onClick={onNewChat} title="New session">
                 <SquarePen className="h-4 w-4" />
               </Button>
               <Button
@@ -67,7 +67,7 @@ export default function Sidebar({
           >
             <span className="flex items-center gap-2">
               <SquarePen className="h-4 w-4" />
-              New chat
+              New path
             </span>
             <kbd className="rounded border border-[var(--border)] bg-[var(--bg-canvas)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--ink-muted)]">
               Ctrl K
@@ -76,7 +76,7 @@ export default function Sidebar({
 
           <Input
             icon={Search}
-            placeholder="Search chats"
+            placeholder="Search sessions"
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
@@ -113,7 +113,7 @@ export default function Sidebar({
             className="mb-2 flex items-center gap-2 rounded-lg px-1 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)]"
           >
             <LayoutGrid className="h-4 w-4" />
-            Student hub
+            Lab floor
           </Link>
           <p className="truncate px-1 text-xs font-medium text-[var(--ink)]">
             {user?.name || 'Student'}

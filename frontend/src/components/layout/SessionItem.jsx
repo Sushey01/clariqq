@@ -27,7 +27,7 @@ export default function SessionItem({
       }}
       className={`group flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm ${
         isActive
-          ? 'bg-[var(--bg-card)] text-[var(--ink)]'
+          ? 'bg-[var(--accent-soft)] text-[var(--ink)]'
           : 'text-[var(--ink-muted)] hover:bg-[var(--bg-card)] hover:text-[var(--ink)]'
       }`}
     >
@@ -46,7 +46,7 @@ export default function SessionItem({
             className="w-full rounded border border-[var(--border)] bg-[var(--bg-input)] px-1.5 py-0.5 text-xs text-[var(--ink)] outline-none"
           />
         ) : (
-          <span className="truncate">{session.title || 'New chat'}</span>
+          <span className="truncate">{session.title || 'New session'}</span>
         )}
       </div>
 

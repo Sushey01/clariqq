@@ -18,7 +18,7 @@ const Modal = ({
       onClick={onClose}
     >
       <div
-        className={`w-full ${maxWidth} bg-[var(--bg-canvas)] border border-[var(--border)] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]`}
+        className={`w-full ${maxWidth} lab-glass rounded-3xl overflow-hidden flex flex-col max-h-[90vh]`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-6 py-4 border-b border-[var(--border)] flex items-center justify-between bg-[var(--bg-sidebar)]">

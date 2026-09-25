@@ -5,11 +5,6 @@ const TYPE_KEY = 'clariq_type_size_v1';
 
 const ThemeContext = createContext(null);
 
-function systemTheme() {
-  if (typeof window === 'undefined') return 'dark';
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
-
 function readStored(key, fallback) {
   try {
     return localStorage.getItem(key) || fallback;
@@ -19,7 +14,7 @@ function readStored(key, fallback) {
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setThemeState] = useState(() => readStored(THEME_KEY, systemTheme()));
+  const [theme, setThemeState] = useState(() => readStored(THEME_KEY, 'dark'));
   const [typeSize, setTypeSizeState] = useState(() => readStored(TYPE_KEY, 'default'));
 
   useEffect(() => {

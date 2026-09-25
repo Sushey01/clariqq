@@ -13,9 +13,9 @@ const Card = ({
   const baseStyles = 'p-4 rounded-2xl transition-all duration-200 border shadow-md select-none';
 
   const variants = {
-    default: 'bg-[var(--bg-card)] border-[var(--border)] text-[var(--ink)]',
-    interactive: 'bg-[var(--bg-card)] hover:bg-[var(--bg-raised)] border-[var(--border)] hover:border-[var(--accent)] cursor-pointer group',
-    glass: 'bg-[var(--bg-raised)]/80 backdrop-blur-md border-[var(--border)]',
+    default: 'lab-glass text-[var(--ink)] shadow-none',
+    interactive: 'lab-glass hover:border-[var(--accent)] cursor-pointer group shadow-none',
+    glass: 'lab-glass',
     indigo: 'bg-[var(--accent-soft)] border-[color-mix(in_srgb,var(--accent)_40%,transparent)] text-[var(--ink)]',
   };
 

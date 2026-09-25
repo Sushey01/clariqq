@@ -77,4 +77,11 @@ export const STARTER_PROMPTS = [
 
 export const SUBJECTS = [...new Set(STARTER_PROMPTS.map((item) => item.subject))];
 
+export const SUBJECT_COPY = {
+  Physics: 'Motion, forces, and light — one observation at a time.',
+  Chemistry: 'Atoms, equations, and what actually changes in a reaction.',
+  Biology: 'Cells, DNA, and how plants store sunlight.',
+  Earth: 'Water, weather, and why seasons are not “closer to the sun”.',
+};
+
 export const PENDING_PROMPT_KEY = 'clariq_pending_prompt';

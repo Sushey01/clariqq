@@ -1,11 +1,12 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { sendChat } from '@/api/client';
 import { useAuth } from '@/auth/AuthContext';
 import { useBackendHealth } from '@/hooks/useBackendHealth';
 import ChatView from '@/components/chat/ChatView';
 import DemoLimitCard from '@/components/chat/DemoLimitCard';
-import ThemeToggle from '@/components/theme/ThemeToggle';
+import SiteHeader from '@/components/layout/SiteHeader';
+import LabFrame from '@/components/lab/LabFrame';
 
 const DEMO_MAX_TURNS = 5;
 
@@ -62,27 +63,14 @@ export default function DemoPage() {
   const remaining = DEMO_MAX_TURNS - studentTurns;
 
   return (
-    <div className="flex h-screen flex-col overflow-hidden bg-[var(--bg-canvas)] text-[var(--ink)]">
-      <header className="flex h-14 items-center justify-between px-4">
-        <p className="text-sm font-medium text-[var(--ink-muted)]">
-          Demo · Socratic chat
-          {studentTurns > 0 && !locked
-            ? ` · ${remaining} ${remaining === 1 ? 'reply' : 'replies'} left`
-            : ''}
-        </p>
-        <div className="flex items-center gap-3 text-sm">
-          <ThemeToggle />
-          <Link to="/login" className="text-[var(--ink-muted)] hover:text-[var(--ink)]">
-            Log in
-          </Link>
-          <Link
-            to="/signup"
-            className="rounded-full bg-[var(--ink)] px-3 py-1.5 text-xs font-semibold text-[var(--bg-canvas)]"
-          >
-            Sign up
-          </Link>
-        </div>
-      </header>
+    <LabFrame className="h-screen">
+      <SiteHeader />
+      <p className="lab-header border-b border-[var(--border)] px-5 py-2 text-center text-xs text-[var(--ink-muted)]">
+        Open desk · five student turns
+        {studentTurns > 0 && !locked
+          ? ` · ${remaining} ${remaining === 1 ? 'reply' : 'replies'} left`
+          : ''}
+      </p>
       <ChatView
         session={session}
         isLoading={isLoading}
@@ -99,6 +87,6 @@ export default function DemoPage() {
         }
         footer={locked && !isLoading ? <DemoLimitCard /> : null}
       />
-    </div>
+    </LabFrame>
   );
 }

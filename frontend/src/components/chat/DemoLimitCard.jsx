@@ -2,15 +2,12 @@ import { Link } from 'react-router-dom';
 
 export default function DemoLimitCard() {
   return (
-    <div className="mx-auto mb-3 w-full max-w-3xl rounded-2xl border border-[color-mix(in_srgb,var(--accent)_35%,transparent)] bg-[var(--bg-raised)] px-4 py-3 text-center">
+    <div className="lab-glass mx-auto mb-3 w-full max-w-3xl rounded-[1.75rem] px-4 py-4 text-center">
       <p className="text-sm text-[var(--ink)]">
         That was your free Socratic thread. Create an account to keep learning.
       </p>
       <div className="mt-3 flex justify-center gap-2">
-        <Link
-          to="/signup"
-          className="rounded-full bg-[var(--ink)] px-4 py-1.5 text-xs font-semibold text-[var(--bg-canvas)]"
-        >
+        <Link to="/signup" className="lab-cta-primary rounded-full px-4 py-1.5 text-xs font-semibold">
           Create account
         </Link>
         <Link

@@ -6,7 +6,7 @@ const ACTIVE_KEY = 'clariq_active_session_v1';
 function freshSession() {
   return {
     id: `session-${Date.now()}`,
-    title: 'New chat',
+    title: 'New session',
     createdAt: Date.now(),
     messages: [],
   };

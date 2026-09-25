@@ -139,7 +139,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
       <div className="auth-item pt-2">
         <Button
           type="submit"
-          variant="primary"
+          variant="indigo"
           size="lg"
           disabled={pending}
           className="w-full rounded-full py-3 text-sm"

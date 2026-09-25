@@ -5,10 +5,11 @@ import { useAuth } from '@/auth/AuthContext';
 import { getAccessToken } from '@/auth/storage';
 import { useBackendHealth } from '@/hooks/useBackendHealth';
 import { useChatSessions } from '@/hooks/useChatSessions';
-import Header from '@/components/header/Header';
-import Sidebar from '@/components/sidebar/Sidebar';
+import Header from '@/components/layout/Header';
+import Sidebar from '@/components/layout/Sidebar';
 import ChatView from '@/components/chat/ChatView';
 import SettingsModal from '@/components/settings/SettingsModal';
+import LabFrame from '@/components/lab/LabFrame';
 
 function titleFromQuestion(question) {
   const trimmed = question.trim();
@@ -69,7 +70,7 @@ export default function ChatPage() {
         appendMessage(
           activeSessionId,
           { sender: 'user', text: question },
-          isFirst || activeSession.title === 'New chat'
+          isFirst || activeSession.title === 'New session' || activeSession.title === 'New chat'
             ? titleFromQuestion(question)
             : undefined
         );
@@ -123,7 +124,8 @@ export default function ChatPage() {
     .find((message) => message.sender === 'user')?.text;
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[var(--bg-canvas)] font-sans text-[var(--ink)]">
+    <LabFrame className="h-screen overflow-hidden">
+    <div className="flex min-h-0 flex-1 overflow-hidden font-sans">
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -140,7 +142,7 @@ export default function ChatPage() {
         onLogout={logout}
       />
 
-      <div className="flex min-w-0 flex-1 flex-col bg-[var(--bg-canvas)]">
+      <div className="flex min-w-0 flex-1 flex-col bg-transparent">
         <Header
           isSidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen((open) => !open)}
@@ -188,5 +190,6 @@ export default function ChatPage() {
         backendDetail={health.detail}
       />
     </div>
+    </LabFrame>
   );
 }

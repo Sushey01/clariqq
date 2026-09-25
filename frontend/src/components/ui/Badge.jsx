@@ -14,7 +14,7 @@ const Badge = ({
   const baseStyles = 'inline-flex items-center space-x-1 font-medium border rounded-md select-none';
 
   const variants = {
-    indigo: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20',
+    indigo: 'bg-[var(--accent-soft)] text-[var(--accent)] border-[var(--border)]',
     emerald: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     purple: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
     amber: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
@@ -29,7 +29,7 @@ const Badge = ({
   };
 
   const dotColors = {
-    indigo: 'bg-indigo-400',
+    indigo: 'bg-[var(--accent)]',
     emerald: 'bg-emerald-400',
     purple: 'bg-purple-400',
     amber: 'bg-amber-400',

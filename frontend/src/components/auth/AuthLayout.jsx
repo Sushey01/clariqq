@@ -1,76 +1,49 @@
-import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import AmbientField from './AmbientField';
-import TryDemoButton from './TryDemoButton';
-import ThemeToggle from '@/components/theme/ThemeToggle';
+import SiteHeader from '@/components/layout/SiteHeader';
+import SiteFooter from '@/components/layout/SiteFooter';
+import LabHeroFallback from '@/components/lab/LabHeroFallback';
+import TryDemoButton from '@/components/auth/TryDemoButton';
 
 export default function AuthLayout({ eyebrow, title, children }) {
-  const panel = useRef(null);
-
-  useGSAP(
-    () => {
-      gsap.from('.brand-copy', {
-        x: -24,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out',
-      });
-    },
-    { scope: panel }
-  );
-
   return (
-    <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--ink)]">
-      <AmbientField />
-      <div className="absolute right-4 top-4 z-20">
-        <ThemeToggle />
-      </div>
-      <div
-        ref={panel}
-        className="relative z-10 mx-auto grid min-h-screen max-w-6xl grid-cols-1 lg:grid-cols-2"
-      >
-        <section className="hidden flex-col justify-between p-12 lg:flex">
-          <Link to="/" className="font-outfit text-lg font-semibold tracking-tight">
+    <div data-lab="cinematic" className="min-h-screen bg-[var(--bg-canvas)] text-[var(--ink)]">
+      <SiteHeader />
+      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl lg:grid-cols-2">
+        <section className="hero-band relative hidden overflow-hidden p-12 lg:flex lg:flex-col lg:justify-between">
+          <span className="lab-orb-cyan pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full" />
+          <span className="lab-orb-orange pointer-events-none absolute -right-8 bottom-10 h-64 w-64 rounded-full" />
+          <Link to="/" className="relative font-outfit text-lg font-semibold">
             Clariq
           </Link>
-          <div className="brand-copy max-w-md space-y-4">
+          <div className="relative max-w-md space-y-4">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]">
-              Grade 10 science tutor
+              Nepal · Class 10 lab
             </p>
             <h1 className="font-outfit text-4xl font-semibold leading-tight">
-              Ask. Think. Arrive at the answer yourself.
+              Sign in. Pick a bench. Take a turn.
             </h1>
-            <p className="text-sm leading-relaxed text-[var(--ink-muted)]">
-              Clariq guides with Socratic questions instead of dumping solutions.
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--hero-muted)' }}>
+              After you sign in, your notes can join the textbook. The tutor still waits. The desk stays
+              2D and readable.
             </p>
-            <div className="pt-2">
-              <TryDemoButton />
-              <p className="mt-2 text-xs text-[var(--ink-faint)]">
-                Short Socratic thread. No account needed.
-              </p>
+            <TryDemoButton variant="hero" label="Start a question path" />
+            <div className="pt-4">
+              <LabHeroFallback />
             </div>
           </div>
-          <p className="text-xs text-[var(--ink-faint)]">Socratic RAG tutor</p>
+          <p className="relative text-xs" style={{ color: 'var(--hero-muted)' }}>
+            Socratic science lab
+          </p>
         </section>
-
         <section className="flex items-center justify-center p-6 sm:p-10">
-          <div className="w-full max-w-md rounded-3xl border border-[var(--border)] bg-[var(--bg-raised)]/90 p-8 backdrop-blur-md">
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--ink-faint)]">
-              {eyebrow}
-            </p>
+          <div className="lab-glass w-full max-w-md rounded-[1.75rem] p-8">
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--ink-faint)]">{eyebrow}</p>
             <h2 className="mt-2 font-outfit text-2xl font-semibold">{title}</h2>
             <div className="mt-8">{children}</div>
-            <div className="mt-6 flex flex-col items-center gap-2 lg:hidden">
-              <TryDemoButton />
-              <p className="text-xs text-[var(--ink-faint)]">
-                Short Socratic thread. No account needed.
-              </p>
-            </div>
           </div>
         </section>
       </div>
+      <SiteFooter />
     </div>
   );
 }

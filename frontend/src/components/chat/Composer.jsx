@@ -41,7 +41,7 @@ export default function Composer({
   return (
     <div className="px-3 pb-3 pt-2 md:px-4 bg-[var(--bg-canvas)]">
       <form onSubmit={submit} className="mx-auto w-full max-w-3xl">
-        <div className="rounded-[28px] border border-[var(--border)] bg-[var(--bg-raised)] focus-within:border-[var(--accent)] transition-colors">
+        <div className="lab-glass rounded-[1.75rem] focus-within:border-[var(--accent)]">
           <Textarea
             ref={textareaRef}
             value={input}
@@ -88,7 +88,7 @@ export default function Composer({
             </div>
             <Button
               type="submit"
-              variant="primary"
+              variant="indigo"
               size="iconRound"
               disabled={isLoading || disabled || !input.trim()}
               title="Send"

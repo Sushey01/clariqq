@@ -21,7 +21,7 @@ const Button = React.forwardRef(({
     secondary: 'bg-[var(--bg-card)] hover:opacity-90 text-[var(--ink)] border border-[var(--border)]',
     ghost: 'text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-card)]',
     outline: 'border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)] bg-transparent',
-    indigo: 'bg-[var(--accent)] hover:opacity-90 text-white shadow-md',
+    indigo: 'lab-cta-primary shadow-[0_10px_30px_rgba(34,211,238,0.25)]',
     danger: 'bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20',
   };
 
