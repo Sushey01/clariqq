@@ -40,6 +40,8 @@ class OpenAICompatChat(BaseChatModel):
     model: str
     base_url: str
     temperature: float = 0.1
+    top_p: float | None = None
+    repetition_penalty: float | None = None
     max_tokens: int = 256
     timeout: float = 60.0
     provider_name: str = "openai_compat"
@@ -63,6 +65,10 @@ class OpenAICompatChat(BaseChatModel):
             "max_tokens": self.max_tokens,
             "messages": _as_chat_dicts(messages),
         }
+        if self.top_p is not None:
+            payload["top_p"] = self.top_p
+        if self.repetition_penalty is not None:
+            payload["repetition_penalty"] = self.repetition_penalty
         stops = list(stop or self.stop_sequences or [])
         if stops:
             payload["stop"] = stops

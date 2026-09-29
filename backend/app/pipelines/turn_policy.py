@@ -22,9 +22,20 @@ _META_RE = re.compile(
     r"|you('re| are) supposed to"
     r"|not supposed to (answer|tell|give)"
     r"|stop (giving|telling|answering)"
-    r"|socratic"
+    r"|not being socratic"
+    r"|be (more )?socratic"
+    r"|why (aren'?t|are not) you socratic"
     r"|why don'?t you (ask|guide)"
     r")",
+    re.I,
+)
+
+_ASK_RE = re.compile(
+    r"\b(what|why|how|when|where|which|explain|define|help me|understand|teach)\b",
+    re.I,
+)
+_STUCK_RE = re.compile(
+    r"\b(i don'?t know|dont know|idk|not sure|still confused|confused|no idea)\b",
     re.I,
 )
 
@@ -114,6 +125,27 @@ def classify_turn(text: str) -> str:
     return KIND_SCIENCE
 
 
+def is_science_query(text: str) -> bool:
+    """True when the student is asking about a science idea, not answering one."""
+    raw = (text or "").strip()
+    if not raw or classify_turn(raw) != KIND_SCIENCE:
+        return False
+    if _STUCK_RE.search(raw):
+        return False
+    if "?" in raw or _ASK_RE.search(raw):
+        return True
+    return len(tokens(raw)) >= 8
+
+
+def retrieval_query(question: str, topic: str | None) -> str:
+    """Embed the live science thread, not short answers like 'photon' or 'idk'."""
+    if is_science_query(question):
+        return question
+    if topic:
+        return f"{topic}\n{question}".strip()
+    return question
+
+
 def tokens(text: str) -> set[str]:
     return {
         word
@@ -169,24 +201,22 @@ def canned_non_science_reply(kind: str, topic: str | None) -> str | None:
 
 
 def last_science_topic(history, current: str) -> str | None:
-    """Most recent science question from the student (current turn, else chat history)."""
-    if classify_turn(current) == KIND_SCIENCE:
+    """Most recent science *question*, not a short student answer."""
+    if is_science_query(current):
         return _short(current)
     for message in reversed(list(history or [])):
         if getattr(message, "type", None) != "human":
             continue
         text = (getattr(message, "content", None) or "").strip()
-        if text and classify_turn(text) == KIND_SCIENCE:
+        if text and is_science_query(text):
             return _short(text)
+    if classify_turn(current) == KIND_SCIENCE and current.strip():
+        return _short(current)
     return None
 
 
 _DEF_QUESTION_RE = re.compile(
     r"^\s*(what(?:'s| is| are)\s+(?:a |an |the )?|define\s+)",
-    re.I,
-)
-_DEF_ANSWER_RE = re.compile(
-    r"\b(is a|is an|are a|are an|refers to|defined as)\b",
     re.I,
 )
 
@@ -200,10 +230,6 @@ def definition_topic(question: str) -> str | None:
     return cleaned or None
 
 
-def looks_like_definition_dump(answer: str) -> bool:
-    return bool(_DEF_ANSWER_RE.search(answer or ""))
-
-
 _PHI3_SPECIAL_RE = re.compile(r"\|?<\|[^|>]+?\|>")
 
 
@@ -213,23 +239,114 @@ def strip_phi3_specials(text: str) -> str:
     return cleaned.rstrip("|").strip()
 
 
-def ensure_socratic_reply(answer: str, question: str, mode: str, topic: str | None) -> str:
-    """Keep strict/guided from dumping definitions or ending without a question."""
+_ROLE_LEAKS = (
+    "\nuser",
+    "\nUser",
+    "\nstudent",
+    "\nStudent",
+    "\nHuman",
+    "<|im_start|>",
+    "<|im_end|>",
+    "<|endoftext|>",
+)
+
+_STANDALONE_STARTERS = (
+    "what is ",
+    "what are ",
+    "explain ",
+    "define ",
+    "why is ",
+    "why do ",
+    "why are ",
+)
+_STANDALONE_PRONOUNS = frozenset(
+    {"it", "that", "this", "these", "those", "more", "simply", "again"}
+)
+
+
+def is_standalone_new_question(message: str) -> bool:
+    """A fresh concept question should not carry the previous topic into the model."""
+    msg = (message or "").strip().lower().rstrip("?").strip()
+    if not any(msg.startswith(starter) for starter in _STANDALONE_STARTERS):
+        return False
+    words = msg.split()
+    if not 2 <= len(words) <= 8:
+        return False
+    return not any(word in _STANDALONE_PRONOUNS for word in words)
+
+
+def _drop_leaked_fact(text: str) -> str:
+    """The Space hides 'Fact:' inside <plan>. A bare Fact line is not the reply."""
+    kept = []
+    for line in (text or "").splitlines():
+        if re.match(r"^\s*fact\s*:", line, re.I):
+            continue
+        kept.append(line)
+    cleaned = "\n".join(kept).strip()
+    cleaned = re.sub(
+        r"^\s*fact\s*:[^.?!]*[.?!]\s*",
+        "",
+        cleaned,
+        count=1,
+        flags=re.I,
+    )
+    return cleaned.strip()
+
+
+def visible_tutor_reply(answer: str) -> str:
+    """Hide the Space-style <plan> and cut a simulated student turn."""
     text = strip_phi3_specials(answer or "")
+    for leak in _ROLE_LEAKS:
+        if leak in text:
+            text = text.split(leak)[0]
+    if "<plan>" in text and "</plan>" in text:
+        plan_start = text.find("<plan>") + len("<plan>")
+        plan_end = text.find("</plan>")
+        plan = text[plan_start:plan_end].strip()
+        reply = text[plan_end + len("</plan>") :].strip()
+        if reply:
+            return _drop_leaked_fact(reply)
+        for line in plan.splitlines():
+            if "?" in line and not re.match(r"^\s*fact\s*:", line, re.I):
+                return line.strip()
+        return ""
+    if "<plan>" in text:
+        return ""
+    return _drop_leaked_fact(text)
+
+
+def _concept_label(question: str, topic: str | None) -> str:
+    named = definition_topic(question)
+    if named:
+        return named
+    raw = (topic or question or "this idea").strip()
+    raw = re.sub(r"[?!.]+$", "", raw).strip()
+    raw = re.sub(
+        r"^(why|what|how|when|where|which)\s+(are|is|do|does|did|can)\s+",
+        "",
+        raw,
+        flags=re.I,
+    )
+    return raw or "this idea"
+
+
+def ensure_socratic_reply(answer: str, question: str, mode: str, topic: str | None) -> str:
+    """Show the student-facing tutor text. Keep a closing question, except on goodbye."""
+    text = visible_tutor_reply(answer)
     if mode not in ("strict", "guided"):
         return text
-    def_topic = definition_topic(question)
-    if def_topic and looks_like_definition_dump(text):
-        return (
-            f"What have you already heard about {def_topic}? "
-            "Start from anything you remember, even if it is incomplete."
-        )
-    if "?" not in text:
-        thread = topic or def_topic or "this idea"
-        if text:
-            return f"{text} What smaller part of {thread} should we check next?"
-        return f"What do you already know about {thread}?"
-    return text
+    if re.search(
+        r"\b(thank you|thanks|i'?m done|that'?s all|goodbye|\bbye\b|no more questions)\b",
+        question,
+        re.I,
+    ):
+        return text
+    if "?" in text:
+        return text
+    thread = _concept_label(question, topic)
+    if text:
+        return f"{text} What do you notice about {thread}?"
+    return f"What do you notice about {thread}?"
 
 
 def _short(text: str) -> str:

@@ -66,21 +66,29 @@ def get_llm():
                 "MODAL_BASE_URL=https://...modal.run/v1 in "
                 f"{REPO_ROOT / '.env'} (searched: {searched}) and restart uvicorn."
             )
+        # Match the Hugging Face Space sampler (temperature 0.7, top-p 0.8,
+        # 512 tokens, repetition penalty 1.15). The global 0.1 default made
+        # the same weights dump a definition and stop.
         _model = OpenAICompatChat(
             api_key=config.MODAL_API_KEY or "clariq-modal",
             model=config.MODAL_MODEL,
             base_url=config.MODAL_BASE_URL,
-            temperature=config.LLM_TEMPERATURE,
-            max_tokens=128,
+            temperature=0.7,
+            top_p=0.8,
+            repetition_penalty=1.15,
+            max_tokens=512,
             timeout=600.0,
             provider_name="modal",
             retry_transient=True,
             stop_sequences=[
-                "<|end|>",
+                "\nuser",
+                "\nUser",
+                "\nstudent",
+                "\nStudent",
+                "\nHuman",
+                "<|im_start|>",
+                "<|im_end|>",
                 "<|endoftext|>",
-                "<|user|>",
-                "<|system|>",
-                "<|assistant|>",
             ],
         )
         _model_key = key

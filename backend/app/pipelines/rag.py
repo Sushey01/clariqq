@@ -1,4 +1,8 @@
-"""Ask the textbook and student notes (Chroma) then the tutor model. One method: ask()."""
+"""Ask the tutor model. One method: ask().
+
+The live reply is the student's words plus the Space tutor prompt.
+Textbook retrieval is not pasted into this turn.
+"""
 
 import threading
 
@@ -11,28 +15,14 @@ from app.pipelines.turn_policy import (
     canned_non_science_reply,
     classify_turn,
     ensure_socratic_reply,
-    filter_relevant_docs,
+    is_standalone_new_question,
     last_science_topic,
 )
 from app.prompts import system_prompt, turn_addendum
-from app.storage.chroma import retrieve_documents
 from app.storage.sessions import sessions
 
-_MAX_CONTEXT_CHARS = 1500
-_MAX_HISTORY_MESSAGES = 6
+_MAX_HISTORY_MESSAGES = 4
 _INFER_LOCK = threading.Lock()
-
-
-def _format_context(docs) -> str:
-    parts = []
-    for doc in docs:
-        meta = doc.metadata or {}
-        kind = meta.get("source_kind") or "textbook"
-        name = meta.get("source") or ""
-        label = "Student notes" if kind == "notes" else "Textbook"
-        header = f"[{label}: {name}]" if name else f"[{label}]"
-        parts.append(f"{header}\n{doc.page_content}")
-    return "\n\n".join(parts)[:_MAX_CONTEXT_CHARS]
 
 
 class Tutor:
@@ -46,7 +36,7 @@ class Tutor:
         mode: str = "strict",
         user_id: str | None = None,
     ) -> str:
-        history = sessions.load(session_id)[-_MAX_HISTORY_MESSAGES:]
+        history = sessions.load(session_id)
         kind = classify_turn(question)
         topic = last_science_topic(history, question)
         canned = canned_non_science_reply(kind, topic)
@@ -56,29 +46,31 @@ class Tutor:
             sessions.save(session_id, history)
             return canned
 
-        docs = filter_relevant_docs(
-            question, retrieve_documents(question, user_id=user_id)
-        )
-        context = _format_context(docs) or "(none)"
+        # Textbook chunks stay out of this turn. The Space sends only the
+        # student's words; pasting a retrieved paragraph makes the model recite it.
         extra = turn_addendum(kind, topic)
+        student_turn = question
 
         prompt = ChatPromptTemplate.from_messages(
             [
                 (
                     "system",
-                    system_prompt(mode) + extra + "\n\nRetrieved context:\n{context}",
+                    system_prompt(mode) + extra,
                 ),
                 MessagesPlaceholder("chat_history"),
                 ("human", "{question}"),
             ]
         )
+        if is_standalone_new_question(question):
+            model_history = []
+        else:
+            model_history = history[-_MAX_HISTORY_MESSAGES:]
         chain = prompt | self.llm | StrOutputParser()
         with _INFER_LOCK:
             answer = chain.invoke(
                 {
-                    "context": context,
-                    "chat_history": history,
-                    "question": question,
+                    "chat_history": model_history,
+                    "question": student_turn,
                 }
             )
         answer = ensure_socratic_reply(answer, question, mode, topic)
