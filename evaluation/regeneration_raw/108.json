@@ -1,0 +1,262 @@
+{
+  "opener": "What causes light to bend when it enters water?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great! Since you already know the answer, let's explore how the speed of light changes between air and water."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You mentioned that the angle changes; does that hint at a change in speed or wavelength?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You said it bends because water is denser; consider what happens when light goes from air to glass—does density alone explain the change?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about what happens to the wavelength when light slows down in water; can you calculate the new wavelength if the speed drops by a factor of 1.3?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You correctly identified the refraction at the air-water boundary; now, how would the bending differ if the water were very cold versus very hot?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You noted the bending, but did you consider that the angle depends on the incident angle and the medium's refractive index?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You think the bending is due to gravity; however, the path change occurs immediately upon entering the medium, not because of gravitational pull—can you think of an experiment that shows this?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a pencil partially submerged in a glass of water; if you draw a straight line across the surface, what shape will it appear to have inside the water?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You correctly distinguished refraction from reflection; to deepen your understanding, how would a light ray behave if it hit a polished metal surface instead?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You mentioned that refraction is similar to reflection; can you explain why the light direction changes in one case but not the other?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You think refraction and reflection are the same; yet, in reflection the angle of incidence equals the angle of reflection—can you identify a situation where this rule fails?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you shine a flashlight through a prism, the light splits into colors; does this splitting relate to the bending you see at the water surface?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You correctly identified that the claim about density is wrong; now, how does the refractive index quantify the bending effect?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You suggested that density causes bending, but refractive index also matters; could you calculate the expected angle using Snell's law?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "You asserted that light bends because it slows down; actually, the change in speed is a consequence, not the cause—can you think of a medium where speed changes but bending is negligible?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What causes light to bend when it enters water?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a bubble of air in water; if you look through it, you see a magnified image—how does that illustrate the relationship between speed and direction of light?"
+        }
+      ]
+    }
+  ]
+}

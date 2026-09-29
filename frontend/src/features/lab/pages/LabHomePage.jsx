@@ -1,20 +1,18 @@
-import '@/nebular/nebular.css';
-import NebularNav from '@/nebular/NebularNav';
-import NebularHero from '@/nebular/NebularHero';
-import NebularBenches from '@/nebular/NebularBenches';
-import NebularTutorDesk from '@/nebular/NebularTutorDesk';
-import NebularSignals from '@/nebular/NebularSignals';
-import NebularFooterCta from '@/nebular/NebularFooterCta';
+import LabLayout from '@/features/lab/components/LabLayout';
+import LabHero from '@/features/lab/components/LabHero';
+import LabBenches from '@/features/lab/components/LabBenches';
+import LabTutorDesk from '@/features/lab/components/LabTutorDesk';
+import LabSignals from '@/features/lab/components/LabSignals';
+import LabFooterCta from '@/features/lab/components/LabFooterCta';
 
-export default function NebularHome() {
+export default function LabHomePage() {
   return (
-    <div className="nebular">
-      <NebularNav />
-      <NebularHero />
-      <NebularBenches />
-      <NebularTutorDesk />
-      <NebularSignals />
-      <NebularFooterCta />
-    </div>
+    <LabLayout>
+      <LabHero />
+      <LabBenches />
+      <LabTutorDesk />
+      <LabSignals />
+      <LabFooterCta />
+    </LabLayout>
   );
 }

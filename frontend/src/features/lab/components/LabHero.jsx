@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ScanEye } from 'lucide-react';
-import NebularHeroIsland from '@/nebular/NebularHeroIsland';
+import LabHeroIsland from '@/features/lab/components/LabHeroIsland';
 
-export default function NebularHero() {
+export default function LabHero() {
   return (
     <section id="top" className="nebular-section nebular-grid">
       <div className="nebular-wrap nebular-hero-grid">
@@ -33,7 +33,7 @@ export default function NebularHero() {
             </a>
           </div>
         </div>
-        <NebularHeroIsland />
+        <LabHeroIsland />
       </div>
     </section>
   );

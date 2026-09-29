@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Check, Edit3, MessageSquare, Trash2, X } from 'lucide-react';
+import { Check, Copy, Edit3, MessageSquare, Trash2, X } from 'lucide-react';
+import { copySessionTranscript } from '@/lib/sessionTranscript';
 
 export default function SessionItem({
   session,
@@ -9,7 +10,9 @@ export default function SessionItem({
   onDelete,
 }) {
   const [editing, setEditing] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [title, setTitle] = useState(session.title);
+  const canCopy = (session.messages || []).length > 0;
 
   const save = (event) => {
     event.stopPropagation();
@@ -68,6 +71,26 @@ export default function SessionItem({
         </div>
       ) : (
         <div className="hidden shrink-0 gap-1 group-hover:flex">
+          {canCopy ? (
+            <button
+              type="button"
+              title="Copy this whole session"
+              onClick={async (event) => {
+                event.stopPropagation();
+                const ok = await copySessionTranscript(session);
+                if (!ok) return;
+                setCopied(true);
+                window.setTimeout(() => setCopied(false), 1600);
+              }}
+              className="p-1 hover:text-white"
+            >
+              {copied ? (
+                <Check className="h-3.5 w-3.5 text-emerald-400" />
+              ) : (
+                <Copy className="h-3.5 w-3.5" />
+              )}
+            </button>
+          ) : null}
           <button
             type="button"
             title="Rename"

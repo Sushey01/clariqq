@@ -1,0 +1,258 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of it as the eye’s way of adjusting focus, much like a camera’s lens changes to keep a picture sharp."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "It’s the process by which the lens changes shape so that images from close objects can be focused on the retina."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you look at a book held close, the eye’s lens thickens, a change called accommodation, to bring the text into clear view."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "The eye’s ability to alter lens curvature for focusing on nearby objects is what we call accommodation."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "It’s the dynamic reshaping of the eye’s lens so that a close‑up image lands correctly on the retina."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you focus on something near, the lens becomes rounder—this adjustment is called accommodation."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "Accommodation is how the eye’s lens changes shape to bring close objects into sharp focus."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "It refers to the lens thickening when you look at something close, allowing the image to be focused on the retina."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of the eye as a flexible camera; when you read a book, the lens changes shape to keep the text crisp."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "It’s the eye’s adjustment of lens thickness so that near objects can be seen clearly."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you look at something up close, the lens bulges to focus the image on the retina—this is accommodation."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "Accommodation is the eye’s way of changing lens shape to bring nearby objects into sharp focus."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "It’s how the lens becomes thicker when you focus on something close, enabling a clear image on the retina."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you read a book, the lens curves more to focus the text—this change is called accommodation."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "Accommodation means the lens alters its shape so that close objects can be sharply seen on the retina."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor."
+      },
+      {
+        "role": "user",
+        "content": "What is accommodation of the eye?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you focus on something near, the lens thickens; that adjustment is known as accommodation."
+      }
+    ]
+  }
+]

@@ -1,0 +1,116 @@
+```json
+[
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is inertia?"},
+      {"role": "assistant", "content": "Inertia is the tendency of an object to keep doing what it is already doing, whether that’s staying still or moving at a constant speed."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I heard that a moving car stops because of inertia."},
+      {"role": "assistant", "content": "Actually, inertia keeps the car moving; it’s friction and brakes that bring it to a halt."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Is inertia the same as gravity?"},
+      {"role": "assistant", "content": "No, inertia is about resisting changes in motion, while gravity pulls objects toward each other."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think inertia means an object will accelerate if you push it."},
+      {"role": "assistant", "content": "Inertia actually means the opposite: an object resists changes in its speed, so it stays at rest or moves uniformly unless acted upon by an external force."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is inertia?"},
+      {"role": "assistant", "content": "It’s the property that keeps a stationary object from moving until a force acts on it, and keeps a moving object traveling at constant velocity unless a force changes that motion."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "When a skateboard stops after a push, that’s inertia?"},
+      {"role": "assistant", "content": "The skateboard’s inertia keeps it moving, but friction is the force that eventually slows it down."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Is inertia the same as momentum?"},
+      {"role": "assistant", "content": "They’re related: inertia is the resistance to change in motion, while momentum is the product of mass and velocity."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think inertia means objects want to stop."},
+      {"role": "assistant", "content": "Actually, inertia keeps objects moving; it’s the external force that makes them stop."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is inertia?"},
+      {"role": "assistant", "content": "It’s the property that causes a body to maintain its state of rest or uniform motion unless acted upon by a net external force."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "When a ball rolls to a stop, that’s inertia?"},
+      {"role": "assistant", "content": "The ball’s inertia keeps it rolling; friction is what brings it to rest."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Is inertia the same as force?"},
+      {"role": "assistant", "content": "No, force is what changes motion, while inertia is the resistance to that change."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think inertia means objects like to keep moving."},
+      {"role": "assistant", "content": "That’s almost right: inertia keeps objects moving unless a force acts, but it also keeps them at rest if no force is applied."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is inertia?"},
+      {"role": "assistant", "content": "It’s the quality that makes a mass resist any change in its motion, whether that’s starting, stopping, or changing direction."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "When a car brakes, that’s inertia?"},
+      {"role": "assistant", "content": "The car’s inertia keeps it moving; the brakes apply a force that opposes that motion, causing it to slow down."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Is inertia the same as acceleration?"},
+      {"role": "assistant", "content": "Inertia itself doesn’t cause acceleration; it’s the resistance that needs a force to produce acceleration."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think inertia means objects stay where they are."},
+      {"role": "assistant", "content": "Inertia does keep objects at rest, but it also keeps moving objects traveling at constant speed unless a force changes that."}
+    ]
+  }
+]
+```

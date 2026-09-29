@@ -6,6 +6,8 @@ Goal: the UI must read as a **Grade 10 Socratic learning environment**, not Chat
 
 Out of scope for this track: Three.js / R3F / Spline, Next.js migration, rewriting FastAPI.
 
+Follow the folder map in [frontend-structure.md](frontend-structure.md). 3D lives only in `frontend/src/components/3d/` and must not be imported from tutor/chat.
+
 ---
 
 ## Current surface
@@ -16,7 +18,7 @@ Out of scope for this track: Three.js / R3F / Spline, Next.js migration, rewriti
 | `/login` `/signup` | auth pages | Google + local email |
 | `/demo` | `frontend/src/pages/DemoPage.jsx` | 5-turn guest Socratic chat |
 | `/app` | `frontend/src/pages/HubPage.jsx` | Student home, topics, materials |
-| `/app/chat` | `frontend/src/pages/ChatPage.jsx` | Tutor thread (ChatGPT-like bubbles today) |
+| `/app/chat` | `frontend/src/pages/ChatPage.jsx` | Socratic session (tutor cards) |
 
 API client: `frontend/src/api/client.js` (`POST /api/chat`, materials, Google auth). Sessions: `frontend/src/hooks/useChatSessions.js` (localStorage).
 
@@ -58,7 +60,7 @@ API client: `frontend/src/api/client.js` (`POST /api/chat`, materials, Google au
 
 - Keep topic grid, continue last thread, `MaterialsPanel`.
 - Copy/labels: “session” / “topic” rather than “New chat” where easy.
-- **Files:** `HubPage.jsx`, `MaterialsPanel.jsx`, `constants/app.js`.
+- **Files:** `HubPage.jsx`, `components/learning/MaterialsPanel.jsx`, `constants/app.js`.
 
 ### F5 — Socratic tutor UI (highest value)
 

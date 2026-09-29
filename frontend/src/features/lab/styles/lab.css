@@ -58,9 +58,11 @@
 }
 
 .nebular-links {
-  display: none;
-  gap: 1.5rem;
-  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem 1.15rem;
+  font-size: 0.8rem;
   color: var(--n-muted);
 }
 
@@ -69,7 +71,8 @@
   text-decoration: none;
 }
 
-.nebular-links a:hover {
+.nebular-links a:hover,
+.nebular-links a.is-active {
   color: var(--n-ink);
 }
 
@@ -97,12 +100,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  border: 0;
   border-radius: 0.85rem;
   padding: 0.8rem 1.15rem;
   background: var(--n-cyan);
   color: #04221c;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nebular-ghost {
@@ -112,7 +117,9 @@
   border-radius: 0.85rem;
   padding: 0.8rem 1.15rem;
   color: var(--n-ink);
+  background: transparent;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nebular-card {
@@ -238,6 +245,8 @@
 @media (min-width: 768px) {
   .nebular-links {
     display: flex;
+    font-size: 0.9rem;
+    gap: 1.5rem;
   }
 
   .nebular-hero-grid {

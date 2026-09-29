@@ -1,23 +1,21 @@
-import '@/nebular/nebular.css';
-import NebularNav from '@/nebular/NebularNav';
-import NebularHero from '@/nebular/NebularHero';
-import NebularBenches from '@/nebular/NebularBenches';
-import NebularTutorDesk from '@/nebular/NebularTutorDesk';
-import NebularSignals from '@/nebular/NebularSignals';
-import NebularFooterCta from '@/nebular/NebularFooterCta';
+import LabLayout from '@/features/lab/components/LabLayout';
+import LabHero from '@/features/lab/components/LabHero';
+import LabBenches from '@/features/lab/components/LabBenches';
+import LabTutorDesk from '@/features/lab/components/LabTutorDesk';
+import LabSignals from '@/features/lab/components/LabSignals';
+import LabFooterCta from '@/features/lab/components/LabFooterCta';
 
 const BLOCKS = [
-  { name: 'Hero', node: <NebularHero /> },
-  { name: 'Lab benches', node: <NebularBenches /> },
-  { name: 'Tutor desk', node: <NebularTutorDesk /> },
-  { name: 'Progress signals', node: <NebularSignals /> },
-  { name: 'Footer CTA', node: <NebularFooterCta /> },
+  { name: 'Hero', node: <LabHero /> },
+  { name: 'Lab benches', node: <LabBenches /> },
+  { name: 'Tutor desk', node: <LabTutorDesk /> },
+  { name: 'Progress signals', node: <LabSignals /> },
+  { name: 'Footer CTA', node: <LabFooterCta /> },
 ];
 
-export default function NebularPreview() {
+export default function LabComponentsPage() {
   return (
-    <div className="nebular">
-      <NebularNav />
+    <LabLayout>
       <section className="nebular-section">
         <div className="nebular-wrap">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--n-cyan)]">
@@ -25,8 +23,8 @@ export default function NebularPreview() {
           </p>
           <h1 className="mt-2 font-outfit text-4xl font-semibold">Preview the lab pieces.</h1>
           <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--n-muted)' }}>
-            New Clariq lab components, matching the nebular quest layout. These sit besides the old
-            app files instead of rewriting them.
+            Feature module at <code>src/features/lab</code>: pages, layout, section components, and a
+            lazy 3D hero scene.
           </p>
         </div>
       </section>
@@ -40,6 +38,6 @@ export default function NebularPreview() {
           {block.node}
         </div>
       ))}
-    </div>
+    </LabLayout>
   );
 }

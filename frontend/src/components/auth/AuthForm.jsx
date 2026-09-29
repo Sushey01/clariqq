@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { Button, Input } from '@/components/ui';
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton';
 
-export default function AuthForm({ mode, onSubmit, onGoogle }) {
+export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
   const isSignup = mode === 'signup';
   const formRef = useRef(null);
   const [error, setError] = useState('');
@@ -154,6 +154,44 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
+      {onDemo ? (
+        <div className="auth-item grid grid-cols-3 gap-2">
+          {[
+            { role: 'student', label: 'Student' },
+            { role: 'teacher', label: 'Teacher' },
+            { role: 'parent', label: 'Parent' },
+          ].map((item) => (
+            <Button
+              key={item.role}
+              type="button"
+              variant="secondary"
+              size="md"
+              disabled={pending}
+              className="w-full"
+              onClick={async () => {
+                setError('');
+                setPending(true);
+                try {
+                  await onDemo(item.role);
+                } catch (err) {
+                  setError(err.message);
+                } finally {
+                  setPending(false);
+                }
+              }}
+            >
+              {item.label}
+            </Button>
+          ))}
+        </div>
+      ) : null}
+
+      <div className="auth-item flex items-center gap-3 py-1">
+        <span className="h-px flex-1 bg-white/10" />
+        <span className="text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">or</span>
+        <span className="h-px flex-1 bg-white/10" />
+      </div>
+
       <div className="auth-item flex justify-center">
         <GoogleSignInButton
           text={isSignup ? 'signup_with' : 'signin_with'}
@@ -163,7 +201,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle }) {
       </div>
 
       <p className="auth-item text-center text-xs text-[var(--ink-faint)]">
-        Google uses your school or personal Google account. Email signup stays in this browser until you switch fully to the API.
+        Email and Google accounts reach the API. Dummy desks skip Google.
       </p>
 
       <p className="auth-item text-center text-sm text-[var(--ink-muted)]">

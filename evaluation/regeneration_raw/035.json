@@ -1,0 +1,262 @@
+{
+  "opener": "How does an electric doorbell or crane magnet work?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the button is pressed, a circuit is completed, allowing current to flow through a coil; this changing current produces a magnetic field that can attract or repel a metal armature."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Pressing the doorbell’s button closes the circuit, letting electrons travel through the coil; the resulting magnetic flux then pulls the metal striker toward the bell."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you hit the button, the electric current energises the coil, and the induced magnetic field interacts with the iron core to produce motion."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Activating the switch sends a pulse through the coil, creating a temporary magnet that pulls the striker toward the bell or lifts the crane’s load."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the button is pressed, electrons flow through a coil, generating a magnetic field that attracts the metal armature and produces the ringing sound."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Pressing the doorbell completes the circuit, causing current to pass through the coil; this creates a magnetic field that pulls the striker to the bell."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the button is activated, the coil becomes a magnet due to the flow of current, which then attracts the metal part to make the bell ring."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "The button closes the circuit, allowing current to pass through the coil; the resulting magnetic field pulls the metal armature, producing the sound."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you press the doorbell, a circuit is completed, letting electrons flow through a coil that then acts as a temporary magnet to move the striker."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Activating the switch allows current to pass through the coil, which generates a magnetic field that pulls the metal armature and rings the bell."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the button is pressed, the circuit closes, electrons flow through the coil, and the resulting magnetic field attracts the striker to the bell."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Pressing the button completes the circuit, allowing current to travel through a coil that becomes a magnet and pulls the metal part, producing the sound."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the button is depressed, current flows through the coil, generating a magnetic field that attracts the striker, causing the bell to ring."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "The button closes the circuit, letting electrons move through the coil; the resulting magnetic field pulls the metal armature and rings the bell."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you press the button, the circuit is completed, current flows through the coil, and the magnetic field attracts the striker to produce sound."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does an electric doorbell or crane magnet work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Activating the button allows current to pass through the coil, creating a magnetic field that pulls the metal part toward the bell."
+        }
+      ]
+    }
+  ]
+}

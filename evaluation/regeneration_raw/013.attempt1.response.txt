@@ -1,0 +1,274 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of a light switch that can be either on or off; computers use a similar two‑state system to represent information."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "When a computer reads a tiny electric pulse, it can interpret it as a 1, and when there's no pulse it reads a 0—this simplicity keeps circuits reliable."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because digital electronics can cleanly distinguish two distinct voltage levels, which makes the hardware easier to design and manufacture."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Using only two symbols reduces the chance of errors caused by noise, so the data remains accurate even in noisy environments."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because a binary system lets a processor quickly perform logical operations like AND, OR, and NOT, which are the building blocks of all software."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of a digital clock that only shows 0s and 1s internally; this representation keeps the timing signals simple."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because each bit can be physically realized by a transistor that acts as a tiny on/off switch, making the hardware compact."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Binary coding allows a computer to store and manipulate data using simple electrical pulses, which is faster than more complex signals."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because a binary system aligns with the way memory cells physically lock into two stable states."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Binary reduces the chance of misreading data when signals travel through wires, ensuring reliable communication."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because with only two values, a computer can perform arithmetic by adding bits with carry, mirroring how we add numbers."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Binary is the simplest language for machines—each digit corresponds to a clear physical state that a circuit can detect."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because binary representation lets a processor use logic gates to execute instructions in a few nanoseconds."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of a binary counter that flips from 0 to 1; this mechanism is the core of how a CPU keeps track of time."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Using two symbols lets a computer easily detect errors through parity checks, improving data integrity."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Binary aligns with the way we build memory cells, each storing either a high or low voltage, which keeps the design simple."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+      },
+      {
+        "role": "user",
+        "content": "Why do computers use binary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because a two‑state system is the most reliable way to represent data in noisy electronic environments."
+      }
+    ]
+  }
+]

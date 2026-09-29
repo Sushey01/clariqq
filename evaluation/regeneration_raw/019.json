@@ -1,0 +1,262 @@
+{
+  "opener": "Why do we need to balance chemical equations?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing ensures that the number of atoms of each element is the same on both sides, so matter isn’t created or destroyed."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about a simple reaction like hydrogen burning in oxygen; the atoms must match up on both sides."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the law of conservation of mass tells us that atoms are neither created nor destroyed during a reaction."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine you have 2 apples and 3 bananas; you can't just toss them into a bowl and call it a balanced meal—everything must be accounted for."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you write H₂ + O₂ → H₂O without balancing, you’re implying that two hydrogen atoms and two oxygen atoms combine to give only two oxygen atoms—clearly incorrect."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because if the equation is unbalanced, the reaction would suggest atoms appearing out of nowhere or vanishing."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Consider the reaction of magnesium with oxygen; if you didn’t balance, you’d think one magnesium atom reacts with one oxygen atom, but in reality, two magnesium atoms are needed."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the numbers of each element must stay constant before and after the reaction, just like the number of books in a library stays the same unless someone borrows or returns them."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you write the combustion of methane as CH₄ + O₂ → CO₂ + H₂O, you’re missing the fact that two oxygen atoms are required to match the four hydrogens."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the principle of conservation of mass demands that the total mass of reactants equals that of products, so we must adjust coefficients accordingly."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a balance scale; if one side has more atoms than the other, the scale tips, indicating an unbalanced equation."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because without balancing, you’d incorrectly predict the amounts of products formed, leading to wrong stoichiometric calculations."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you write Na + Cl₂ → NaCl, you’re ignoring that two sodium atoms are needed to pair with one chlorine molecule."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the number of atoms of each element must be equal on both sides to obey the law of conservation of matter."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you forget to balance the hydrogen atoms in the reaction of ammonia with oxygen, you’ll end up with an impossible chemical equation."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why do we need to balance chemical equations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing is essential because it reflects the true stoichiometry of the reaction, ensuring that the amounts of reactants and products are in correct proportion."
+        }
+      ]
+    }
+  ]
+}

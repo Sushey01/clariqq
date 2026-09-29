@@ -7,7 +7,18 @@ const LABELS = {
   explanation: { title: 'Check this idea', variant: 'zinc' },
 };
 
-export default function SocraticMoveCard({ kind = 'question', text, yourTurn = false }) {
+function sourceLabel(item) {
+  if (typeof item === 'string') return item;
+  if (!item || typeof item !== 'object') return '';
+  return item.title || item.name || item.uri || item.url || item.source || '';
+}
+
+export default function SocraticMoveCard({
+  kind = 'question',
+  text,
+  yourTurn = false,
+  sources,
+}) {
   const meta = LABELS[kind] || LABELS.question;
   const accent =
     kind === 'question'
@@ -31,6 +42,14 @@ export default function SocraticMoveCard({ kind = 'question', text, yourTurn = f
           ) : null}
         </div>
         <TutorMarkdown>{text}</TutorMarkdown>
+        {Array.isArray(sources) && sources.length > 0 ? (
+          <ul className="mt-3 space-y-1 border-t border-[var(--border)] pt-3 text-[11px] text-[var(--ink-muted)]">
+            {sources.map((item, index) => {
+              const label = sourceLabel(item) || `Source ${index + 1}`;
+              return <li key={`${label}-${index}`}>Source · {label}</li>;
+            })}
+          </ul>
+        ) : null}
       </div>
     </div>
   );

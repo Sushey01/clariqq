@@ -1,0 +1,835 @@
+[
+  {
+    "id": 0,
+    "category": "direct_conceptual",
+    "question": "What is light?",
+    "concept_hint": "Dispersion of light",
+    "answer": "Let's think about how we see things around us. What do sunlight, firelight, and glowing neon signs all share in common?",
+    "flags": []
+  },
+  {
+    "id": 1,
+    "category": "direct_conceptual",
+    "question": "What is motion?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "Let's think about riding in a car. Even though the car is moving down the road, you feel perfectly still in your seat. What is happening to your body relative to the car?",
+    "flags": []
+  },
+  {
+    "id": 2,
+    "category": "direct_conceptual",
+    "question": "What is electric current?",
+    "concept_hint": "Electric current",
+    "answer": "Let's think about how water flows through a pipe to fill a bathtub. What makes that continuous flow happen?",
+    "flags": []
+  },
+  {
+    "id": 3,
+    "category": "direct_conceptual",
+    "question": "What is a chemical reaction?",
+    "concept_hint": "Types of chemical reactions",
+    "answer": "Let's think about mixing baking soda and vinegar. Before we mix them, both substances sit quietly without changing. But after we pour the acid into the base, suddenly there is this fizzling sound and bubbles forming. What gets broken apart during that change?",
+    "flags": []
+  },
+  {
+    "id": 4,
+    "category": "direct_conceptual",
+    "question": "What is photosynthesis?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "Let's think about how plants make their own food using sunlight. Imagine a plant leaf as a tiny factory. What raw materials does this factory need to build its food molecules?",
+    "flags": []
+  },
+  {
+    "id": 5,
+    "category": "direct_conceptual",
+    "question": "What is velocity?",
+    "concept_hint": "out_of_bank",
+    "answer": "Think about driving down a straight highway versus sitting still in a parked car. In the first scenario, you're covering distance every second. What single word describes how fast and in what direction something is moving?",
+    "flags": []
+  },
+  {
+    "id": 6,
+    "category": "direct_conceptual",
+    "question": "What is an isotope?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about atoms like building blocks. Most carbon atoms have exactly six protons and usually six neutrons. What happens to this basic structure if I add another neutron to my carbon atom?",
+    "flags": []
+  },
+  {
+    "id": 7,
+    "category": "direct_conceptual",
+    "question": "What is a food web?",
+    "concept_hint": "out_of_bank",
+    "answer": "Imagine a single string hanging down. Now imagine tying dozens of other strings onto those first ones so they all hang together like a dense tangle. What we've described is actually how energy moves through nature, rather than a single straight path. Can you think of something living eating another organism within this complex network?",
+    "flags": []
+  },
+  {
+    "id": 8,
+    "category": "direct_conceptual",
+    "question": "What is evaporation?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about a puddle of water left out in the sun. Over time, the puddle slowly gets shallower until eventually, there is absolutely zero liquid left. What process causes this transition from liquid to gas?",
+    "flags": []
+  },
+  {
+    "id": 9,
+    "category": "direct_conceptual",
+    "question": "What is DNA?",
+    "concept_hint": "out_of_bank",
+    "answer": "Think about how instructions for building a house get passed down from generation to generation without ever being lost or changed. What do we call the molecule that carries these exact genetic instructions within every living cell?",
+    "flags": []
+  },
+  {
+    "id": 10,
+    "category": "direct_conceptual",
+    "question": "What is sound?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about how we hear things every day. What do you think causes those vibrations to travel through the air toward our ears?",
+    "flags": []
+  },
+  {
+    "id": 11,
+    "category": "direct_conceptual",
+    "question": "What is a lever?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about a common household item like a long metal bar you might see someone using as a crowbar. What is the main purpose of holding this rigid rod around a fixed point while pushing down on another part further away?",
+    "flags": []
+  },
+  {
+    "id": 12,
+    "category": "misconception",
+    "question": "The sun revolves around the Earth, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's test that belief with a thought experiment about shadows. Imagine walking outside during noon on a sunny day. What happens to your shadow as you walk forward?",
+    "flags": []
+  },
+  {
+    "id": 13,
+    "category": "misconception",
+    "question": "Heavier objects fall faster than lighter ones, don't they?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "That is a very common misconception about gravity. Let's test this idea with a thought experiment using a shopping cart and a heavy bowling ball. What do you notice about Heavier objects fall faster than lighter ones, don't they?",
+    "flags": []
+  },
+  {
+    "id": 14,
+    "category": "misconception",
+    "question": "Plants only need water to grow, that's it, right?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "That is a common misconception, but let's test it out. Imagine a plant growing perfectly fine in soil saturated with water. Now, imagine we take away ALL the soil, leaving behind ONLY pure distilled water in a container. What will happen to the plant under this completely bare water-only condition?",
+    "flags": []
+  },
+  {
+    "id": 15,
+    "category": "misconception",
+    "question": "Lightning never strikes the same place twice, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception. Lightning actually seeks out the highest point around, so tall buildings, trees, and mountains get hit far more often than some specific location would ever be struck multiple times. What feature makes a building particularly dangerous during thunderstorms?",
+    "flags": []
+  },
+  {
+    "id": 16,
+    "category": "misconception",
+    "question": "Energy stays the same at every level of a food chain, doesn't it?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "Exactly. This fundamental rule states that energy is lost as heat during each transfer from one trophic level to another. What happens to this lost thermal energy?\n\n(Note: Avoid introducing thermodynamics concepts here.)",
+    "flags": [
+      "POSSIBLY_MALFORMED",
+      "MAY_HAVE_AGREED"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "misconception",
+    "question": "Humans only use 10% of their brain, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That's actually a common myth. Can you think about how many different things like thoughts, memories, emotions, and movements you believe we need our entire brain capacity for every single moment of our lives?",
+    "flags": []
+  },
+  {
+    "id": 18,
+    "category": "misconception",
+    "question": "Metals conduct electricity because they're shiny, right?",
+    "concept_hint": "Electric current",
+    "answer": "That golden shine comes from free electrons bouncing off metal ions. But shining alone doesn't make something electrically active. What special property allows these free electrons to carry electrical current?",
+    "flags": []
+  },
+  {
+    "id": 19,
+    "category": "misconception",
+    "question": "The Earth is closer to the sun in summer, isn't it?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception about seasons. We actually experience winter during part of our orbit where we are closest to the Sun. What do you think causes the difference between summer and winter anyway?",
+    "flags": []
+  },
+  {
+    "id": 20,
+    "category": "misconception",
+    "question": "Sound can travel through space just like light, can't it?",
+    "concept_hint": "Longitudinal vs transverse waves",
+    "answer": "That statement actually contains a common misconception about sound traveling through space. Sound requires a medium, such as air, water, or solid materials, to propagate. Space beyond Earth's atmosphere is essentially a vacuum devoid of any significant particles capable of transmitting vibrations. So, while light travels perfectly fine across interstellar distances without needing a physical medium, sound waves would completely fail to carry energy over those vast cosmic expanses. Can you think of another type of wave besides electromagnetic radiation that could potentially traverse the void of outer space unimpeded?",
+    "flags": []
+  },
+  {
+    "id": 21,
+    "category": "misconception",
+    "question": "All chemical reactions release heat, don't they?",
+    "concept_hint": "Exothermic and endothermic reactions",
+    "answer": "That is a common misconception. Chemical reactions do not always release energy as heat. Can you think of a biological process where organisms actually store thermal energy rather than releasing it?",
+    "flags": []
+  },
+  {
+    "id": 22,
+    "category": "misconception",
+    "question": "Bigger animals always need more food than smaller ones, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a logical assumption based on size, but biology often surprises us. Let's think about how different animal sizes affect their energy needs. What do you notice about Bigger animals always need more food than smaller ones, right?",
+    "flags": []
+  },
+  {
+    "id": 23,
+    "category": "misconception",
+    "question": "Glass is a type of liquid that flows very slowly, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "Exactly. Glass actually starts as a highly viscous liquid before cooling into a rigid amorphous solid. Can you think about how this high viscosity prevents glass from flowing off the windowsill over thousands of years?",
+    "flags": [
+      "MAY_HAVE_AGREED"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "confused_stuck",
+    "question": "I don't understand any of this.",
+    "concept_hint": "Resistance",
+    "answer": "That's completely okay! We will take small steps until everything makes perfect sense. Can we start with something familiar like a grocery shopping cart? What happens to the cart when someone suddenly pushes hard forward?",
+    "flags": []
+  },
+  {
+    "id": 25,
+    "category": "confused_stuck",
+    "question": "Can you explain that again? I'm lost.",
+    "concept_hint": "Ohm's Law",
+    "answer": "Let's break this down into a small, manageable part using a familiar everyday scenario. Think about pushing a heavy grocery cart across a smooth parking lot. What happens to the cart after you stop pushing it?",
+    "flags": []
+  },
+  {
+    "id": 26,
+    "category": "confused_stuck",
+    "question": "This makes no sense to me at all.",
+    "concept_hint": "Electromagnetic induction",
+    "answer": "I completely understand how frustrating this feels right now. Let's start over with something we both know perfectly well. Can you think of any solid material around us that takes the exact shape of whatever container it is placed inside?",
+    "flags": []
+  },
+  {
+    "id": 27,
+    "category": "confused_stuck",
+    "question": "I really don't get it, give me a hint.",
+    "concept_hint": "Digestion and enzymes",
+    "answer": "Let's think about how we move forward when pushing a heavy shopping cart down the aisle. What physical push or pull causes this change in motion?",
+    "flags": []
+  },
+  {
+    "id": 28,
+    "category": "confused_stuck",
+    "question": "I'm confused, can you slow down?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "Of course, let's take this one small step at a time. Can you tell me about the last concept we covered before this confusion started?",
+    "flags": []
+  },
+  {
+    "id": 29,
+    "category": "confused_stuck",
+    "question": "None of this is making sense.",
+    "concept_hint": "out_of_bank",
+    "answer": "I completely hear how that might feel overwhelming. Let's take a deep breath together, break down this topic into tiny manageable steps, and tackle it one small piece at a time. What specific concept or problem area feels stuck for you right now?",
+    "flags": []
+  },
+  {
+    "id": 30,
+    "category": "confused_stuck",
+    "question": "I don't know where to even start.",
+    "concept_hint": "Newton's third law (action-reaction)",
+    "answer": "Let's break this down into small steps. First, let's think about something we see every day, like a grocery shopping cart. What is the main purpose or function of that cart?",
+    "flags": []
+  },
+  {
+    "id": 31,
+    "category": "confused_stuck",
+    "question": "Sorry, I still don't understand after that hint.",
+    "concept_hint": "Ionic bond formation",
+    "answer": "Let's try this again using a different approach. Imagine we have a small metal boat made entirely out of solid iron, like a heavy-duty safety raft. This boat is completely sealed so water cannot leak into it, but it is fully submerged under a huge pool filled with regular fresh water. What will happen to this heavily weighted iron boat once it is pushed below the surface?\nBased on how it sits compared to a normal wooden rowboat, would pushing down on the sides make it float higher, sink lower, or stay perfectly level where it was initially placed?",
+    "flags": []
+  },
+  {
+    "id": 32,
+    "category": "confused_stuck",
+    "question": "Can you explain it a totally different way?",
+    "concept_hint": "Homologous series",
+    "answer": "Of course! Let's try this completely different approach using every day items. Can you imagine holding two identical plastic cups filled with water?",
+    "flags": []
+  },
+  {
+    "id": 33,
+    "category": "confused_stuck",
+    "question": "I'm just not following any of this.",
+    "concept_hint": "out_of_bank",
+    "answer": "That is completely understandable. Learning science takes time and patience. Can we start over using a brand-new, simpler concept about how things move around us every day?",
+    "flags": []
+  },
+  {
+    "id": 34,
+    "category": "confused_stuck",
+    "question": "I don't get it, can you just simplify?",
+    "concept_hint": "Covalent bonding in carbon compounds",
+    "answer": "Of course, let's break this down into small steps so it feels easier. What specific concept or topic are we struggling with here?",
+    "flags": []
+  },
+  {
+    "id": 35,
+    "category": "confused_stuck",
+    "question": "This is too hard, I'm stuck.",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "I completely understand how challenging this can feel sometimes. Let's take a quick break and try to approach this concept from a totally different angle once we return. Does that sound like a good plan before diving into another tricky topic?",
+    "flags": []
+  },
+  {
+    "id": 36,
+    "category": "topic_switch",
+    "question": "What is photosynthesis? ... Actually, what is friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about how we walk across a floor without slipping. What physical interaction actually prevents our shoes from sliding off the smooth tile surface under foot as weight presses down?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "topic_switch",
+    "question": "Can you explain resistance? ... wait, never mind, tell me about the water cycle instead.",
+    "concept_hint": "out_of_bank",
+    "answer": "Absolutely, let's explore how water moves around our planet. Imagine raindrops falling onto dry dirt. What physical property of the soil causes some of those drops to push aside the dirt particles rather than being absorbed?",
+    "flags": []
+  },
+  {
+    "id": 38,
+    "category": "topic_switch",
+    "question": "What causes rusting? ... actually can we talk about the human eye instead?",
+    "concept_hint": "The Human Eye and the Colourful World",
+    "answer": "Absolutely, let's explore how our eyes detect colors first before diving into corrosion. What do you notice about What causes rusting? ... actually can we talk about the human eye instead?",
+    "flags": [
+      "POSSIBLY_MALFORMED"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "topic_switch",
+    "question": "What is an ionic bond? ... hold on, what's an acid actually?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "Let's start with acids first. Acids are substances like lemon juice or battery acid that contain high concentrations of hydrogen ions. What familiar taste do we associate with these acidic liquids?",
+    "flags": []
+  },
+  {
+    "id": 40,
+    "category": "topic_switch",
+    "question": "Explain Newton's third law. ... actually I wanted to ask about magnets.",
+    "concept_hint": "Electromagnets and solenoids",
+    "answer": "Let's start with the first part. Newton's Third Law states that for every action there is always an equal but opposite reaction. Can you think of a real-world example where pushing something causes it to push back on you?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "topic_switch",
+    "question": "What is DNA? ... never mind, what's a food chain?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "Let's focus on the energy pathway first. What is the primary role of a food source like grass or algae in a living organism's body?",
+    "flags": []
+  },
+  {
+    "id": 42,
+    "category": "topic_switch",
+    "question": "Tell me about electric current. ... actually, why is the sky blue?",
+    "concept_hint": "Scattering of light and why the sky is blue",
+    "answer": "Let's tackle the second question first since we need to start with something familiar. Why is the sky blue?",
+    "flags": []
+  },
+  {
+    "id": 43,
+    "category": "topic_switch",
+    "question": "What is inertia? ... wait, can we do chemistry instead, like acids?",
+    "concept_hint": "Reaction of acids with metals",
+    "answer": "Let's focus on physics this time, specifically how objects resist changes in their motion. Can anyone think of a common daily experience where an object resists being pushed or pulled into motion?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "topic_switch",
+    "question": "What's a chemical reaction? ... actually forget that, what is gravity?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's start simply. Gravity is a fundamental attractive force that exists between all masses/objects in the universe. Can you think of something heavy falling towards the Earth?",
+    "flags": []
+  },
+  {
+    "id": 45,
+    "category": "topic_switch",
+    "question": "Explain reflection of light. ... sorry, can we talk about reproduction instead?",
+    "concept_hint": "Asexual reproduction",
+    "answer": "No problem at all! Let's switch gears completely. Can anyone guess how bacteria might reproduce without having any organs like humans do?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "topic_switch",
+    "question": "What are enzymes? ... actually, what's atomic number about?",
+    "concept_hint": "Modern periodic law and atomic number",
+    "answer": "Let's start with atoms first. Every element on the periodic table has a unique number of protons in its nucleus. This specific number defines the identity of the element. What do we call this unique identifier?",
+    "flags": []
+  },
+  {
+    "id": 47,
+    "category": "topic_switch",
+    "question": "Tell me about waves. ... wait, what's a homologous series?",
+    "concept_hint": "Homologous series",
+    "answer": "Let's focus on wave properties first since we're talking about traveling vibrations. Can anyone think of something that shakes or vibrates and travels as a disturbance?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "ambiguous_difficult",
+    "question": "Why does this happen?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's start with something familiar. Imagine pushing a heavy grocery cart across a smooth parking lot. What happens to the groceries sitting inside the moving cart?\n\nWhat do these rolling groceries tell us about how the wheels interact with the smooth surface below them?",
+    "flags": []
+  },
+  {
+    "id": 49,
+    "category": "ambiguous_difficult",
+    "question": "What's going on here?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's look closely at this bright orange traffic cone sitting outside my window. What do you think happens to the shape of this cone as I push it along the smooth sidewalk toward the front door?",
+    "flags": []
+  },
+  {
+    "id": 50,
+    "category": "ambiguous_difficult",
+    "question": "Can you explain this?",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! Let's start with something familiar. Think about pushing a heavy grocery cart across a parking lot. What physical push or pull do you need to apply to make that stationary cart move forward?",
+    "flags": []
+  },
+  {
+    "id": 51,
+    "category": "ambiguous_difficult",
+    "question": "I don't get why.",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about how a mirror works using a flat wall as our everyday visual aid. What do you notice about I don't get why?",
+    "flags": []
+  },
+  {
+    "id": 52,
+    "category": "ambiguous_difficult",
+    "question": "Can you help me with this chapter?",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! What specific concept or topic within the chapter are you struggling with?",
+    "flags": []
+  },
+  {
+    "id": 53,
+    "category": "ambiguous_difficult",
+    "question": "This doesn't make sense, why does it work that way?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's break this down into a small, manageable part we both agree looks normal. Once we get that working perfectly, adding another tiny piece will still keep everything working logically. Can you think of how we might build something big out of many identical little pieces?",
+    "flags": []
+  },
+  {
+    "id": 54,
+    "category": "ambiguous_difficult",
+    "question": "I have a question about the thing we did in class today.",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course, I am here to help clarify anything from our lesson. What specific concept or experiment are you trying to recall or understand better?",
+    "flags": []
+  },
+  {
+    "id": 55,
+    "category": "ambiguous_difficult",
+    "question": "Can you go over this topic with me?",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! Let's start with a common daily experience using a familiar household item as our visual aid. Can you think of a scenario where pushing against something solid actually makes you move forward?",
+    "flags": []
+  },
+  {
+    "id": 56,
+    "category": "ambiguous_difficult",
+    "question": "What's the deal with this?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's look at something familiar before we dive into the abstract concept. Imagine pushing a heavy grocery cart across a smooth parking lot versus trying to push the exact same cart up a steep hill. What difference would you expect to feel while doing these tasks?",
+    "flags": []
+  },
+  {
+    "id": 57,
+    "category": "ambiguous_difficult",
+    "question": "Explain.",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's start with something familiar, like a shopping cart rolling down a smooth aisle. What happens to the cart's speed as gravity pulls it downhill?",
+    "flags": []
+  },
+  {
+    "id": 58,
+    "category": "ambiguous_difficult",
+    "question": "I'm stuck on my homework, can you help?",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! Let's start with the first problem. Can you tell me what topic this homework is about?",
+    "flags": []
+  },
+  {
+    "id": 59,
+    "category": "ambiguous_difficult",
+    "question": "Why?",
+    "concept_hint": "out_of_bank",
+    "answer": "What do you notice about Why?",
+    "flags": []
+  },
+  {
+    "id": 60,
+    "category": "direct_conceptual",
+    "question": "What is friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about rolling a heavy shopping cart across a smooth, dry tile floor versus pushing it into a thick carpet. What happens differently as you push each surface?",
+    "flags": []
+  },
+  {
+    "id": 61,
+    "category": "direct_conceptual",
+    "question": "What is gravity?",
+    "concept_hint": "out_of_bank",
+    "answer": "Gravity is the invisible attractive force that exists between any two masses, though usually it is so weak as to go unnoticed. What common experience tells us there is something pulling us down toward Earth's surface?",
+    "flags": []
+  },
+  {
+    "id": 62,
+    "category": "direct_conceptual",
+    "question": "What is an acid?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "Let's think about household items like vinegar or lemon juice. What kind of taste do these liquids give you compared to pure water?",
+    "flags": []
+  },
+  {
+    "id": 63,
+    "category": "direct_conceptual",
+    "question": "What is refraction?",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "Let's think about how light travels through different materials, like glass or water. What happens to the path of light when it enters these denser fluids?\n\nWhen light changes speed as it moves from one medium into another, this bending of the light ray occurs at the boundary interface between those media. This phenomenon is known as refraction.\n\nIf I shine a laser pointer straight down vertically onto the surface of a swimming pool filled with water, where will the spot of the laser beam actually appear relative to the vertical line entering the water?\n\nBecause the light traveling from the air into the water slows down due to the higher refractive index of water compared to air, the actual position of the spot projected downward below the horizontal entry point would be further away horizontally toward the side rather than directly beneath the exact center of the vertical entry line.\n\nSo, based on whether the second material has a greater or lesser refractive index than the first material, we know that:\n\n* If the second material has a GREATER Refractive Index than the first material, the light bends TOWARDS THE NORMAL LINE perpendicular bisector plane separating the two media before exiting into the third environment behind it. Thus, the image formed after passing through both interfaces becomes DISLOCATED AND REVERSED IN BOTH X-Y DIRECTIONS ACROSS THE TWO LENSES FORMED BY THE INTERFACES BETWEEN AIR-WATER-Glass.",
+    "flags": []
+  },
+  {
+    "id": 64,
+    "category": "direct_conceptual",
+    "question": "What is a food chain?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "Let's think about how energy moves through nature. Imagine a single grasshopper sitting on a tall blade of grass. What animal do we know eats grasshoppers?",
+    "flags": []
+  },
+  {
+    "id": 65,
+    "category": "direct_conceptual",
+    "question": "What is inertia?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "Let's think about riding in a car without wearing a seatbelt. What happens to your body if the driver slams on the brakes suddenly?",
+    "flags": []
+  },
+  {
+    "id": 66,
+    "category": "direct_conceptual",
+    "question": "What is rusting?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about how iron interacts with its environment. What gases surround us here indoors?",
+    "flags": []
+  },
+  {
+    "id": 67,
+    "category": "direct_conceptual",
+    "question": "What is the pH scale?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "Let's think about how we measure whether something is acidic or basic. We use a specific numerical scale for this purpose. What is the range of numbers on this scale?",
+    "flags": []
+  },
+  {
+    "id": 68,
+    "category": "misconception",
+    "question": "Ice sinks in water because solids are always heavier, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception about solid states versus liquid states. Let's test this using ice cubes and some room temperature water. What happens when you drop three ice cubes into a glass containing half a cup of lukewarm water?",
+    "flags": []
+  },
+  {
+    "id": 69,
+    "category": "misconception",
+    "question": "We see objects because our eyes send out light, don't they?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception about vision. Our eyes actually capture light rather than emitting it. What device in a dark room bounces candlelight around so you can see the walls?",
+    "flags": []
+  },
+  {
+    "id": 70,
+    "category": "misconception",
+    "question": "Mass and weight are the same thing, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception. Let's think about how we measure these things. What do you notice about Mass and weight are the same thing, right?",
+    "flags": []
+  },
+  {
+    "id": 71,
+    "category": "misconception",
+    "question": "Acids are always dangerous and bases are always safe, right?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "That is a common misconception about acids and bases. Let's test this belief using a household item as our acid. What familiar kitchen staple contains strong acidic compounds like acetic acid?",
+    "flags": []
+  },
+  {
+    "id": 72,
+    "category": "misconception",
+    "question": "Current is used up as it goes around a circuit, isn't it?",
+    "concept_hint": "Electric current",
+    "answer": "That is a common misconception about electric current. What actually happens is that electrons flow continuously FROM the negative terminal of the battery TO the positive terminal. How does this continuous movement keep our devices running without ever being \"used up\"?",
+    "flags": []
+  },
+  {
+    "id": 73,
+    "category": "misconception",
+    "question": "Plants take in food from the soil through their roots, right?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "That is absolutely correct, but let's break down how plants actually obtain this essential energy source. We know that plant cells contain organelles called chloroplasts, where the magic happens. What specific process within these chloroplasts uses sunlight to convert carbon dioxide and water into glucose and oxygen?",
+    "flags": [
+      "MAY_HAVE_AGREED"
+    ]
+  },
+  {
+    "id": 74,
+    "category": "misconception",
+    "question": "There is no gravity on the Moon, that's why astronauts float, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "That is a common misconception about weightlessness on the Moon. Let's think about how astronauts actually move around there. What do you notice about There is no gravity on the Moon, that's why astronauts float, right?",
+    "flags": []
+  },
+  {
+    "id": 75,
+    "category": "misconception",
+    "question": "White light is a single colour with no mix in it, right?",
+    "concept_hint": "Dispersion of light",
+    "answer": "That is a common misconception about white light. White light actually contains ALL THE COLORS OF THE VISIBLE SPECTRUM mixed together. What happens when sunlight passes through a prism?",
+    "flags": []
+  },
+  {
+    "id": 76,
+    "category": "confused_stuck",
+    "question": "I forgot everything from last class.",
+    "concept_hint": "out_of_bank",
+    "answer": "That's okay, let's start fresh. Last time we talked about how different colors of light hit us differently. What happens physically to our eyes when white sunlight hits a pure red flower petal?",
+    "flags": []
+  },
+  {
+    "id": 77,
+    "category": "confused_stuck",
+    "question": "Wait, what were we even talking about?",
+    "concept_hint": "out_of_bank",
+    "answer": "It looks like our conversation might have drifted off course. Let's take a moment to review where we started so I know how best to help you get back on track. What was the specific topic or concept we were exploring together before this confusion arose?",
+    "flags": []
+  },
+  {
+    "id": 78,
+    "category": "confused_stuck",
+    "question": "Can you give a smaller step? I'm stuck on the last idea.",
+    "concept_hint": "Electric current",
+    "answer": "Of course! Let's take this one small step at a time until we get everything cleared away perfectly. Can you tell me where you feel stuck specifically within our current concept about how fluids behave under different pressures?",
+    "flags": []
+  },
+  {
+    "id": 79,
+    "category": "confused_stuck",
+    "question": "I think I mixed two chapters together.",
+    "concept_hint": "out_of_bank",
+    "answer": "That happens sometimes as we build our knowledge. Let's start fresh. What specific concept about energy transformation are you struggling with?",
+    "flags": []
+  },
+  {
+    "id": 80,
+    "category": "confused_stuck",
+    "question": "Please don't give the full answer, just unstick me.",
+    "concept_hint": "Nutrition in plants",
+    "answer": "Absolutely, let's work this out together using a common daily experience as our foundation. Can we start by looking around this room and identifying something that is completely still and not moving at all?",
+    "flags": []
+  },
+  {
+    "id": 81,
+    "category": "confused_stuck",
+    "question": "I understood until the last sentence, then I lost it.",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "Let's break down that final concept into a small, manageable step so we can get clarity there. Can you tell me about how this single piece of evidence led us to reject our original theory?",
+    "flags": []
+  },
+  {
+    "id": 82,
+    "category": "confused_stuck",
+    "question": "Is there an everyday example? I'm not getting the words.",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "Let's think about pushing a heavy grocery cart down an aisle versus walking without carrying anything. What happens differently under each scenario based purely on how many items or people are being pushed along?",
+    "flags": []
+  },
+  {
+    "id": 83,
+    "category": "confused_stuck",
+    "question": "I need to start over from the beginning of this topic.",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "Let's reset our understanding of energy transformation using a familiar device. Imagine pushing a heavy grocery cart down a smooth aisle. What happens to your body as you push that cart?",
+    "flags": []
+  },
+  {
+    "id": 84,
+    "category": "topic_switch",
+    "question": "Why does ice float on water? ... actually, what is photosynthesis?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "Let's break this into two separate topics since we need to address both correctly. First, let's tackle how ice floats on water:\n\nThink about a glass bottle filled completely with water. What happens to the level of the water when you carefully add a small cube of solid ice made from that exact same water?\n\nWhat does the water level do when solid ice is added to it?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 85,
+    "category": "topic_switch",
+    "question": "What is motion? ... wait, can we talk about acids and bases instead?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "Of course, let's switch gears. Acids and bases are chemical substances with specific properties. What property do you think tells us whether a liquid feels slippery or harsh like soap?",
+    "flags": []
+  },
+  {
+    "id": 86,
+    "category": "topic_switch",
+    "question": "What is light? ... never mind, what is electric current?",
+    "concept_hint": "Electric current",
+    "answer": "Let's start with something we see every day. What is the first thing that comes into your vision right this moment?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 87,
+    "category": "topic_switch",
+    "question": "Tell me about food chains. ... actually I wanted gravity.",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's start with something essential for both living things and falling apples. What is the invisible pull that keeps our feet on the ground?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 88,
+    "category": "topic_switch",
+    "question": "What is an isotope? ... sorry, what's friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's focus on isotopes first. All atoms of the same element share the exact same number of protons. However, some atoms of the same element might also contain different numbers of neutrons without changing their chemical behavior. What do we call these variants of the same element based on neutron number?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 89,
+    "category": "topic_switch",
+    "question": "Explain rusting. ... hold on, what is DNA?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's break this down into separate topics since we need to address both rusting and DNA before concluding. What do you notice about Explain rusting. ... hold on, what is DNA?",
+    "flags": [
+      "POSSIBLY_MALFORMED"
+    ]
+  },
+  {
+    "id": 90,
+    "category": "topic_switch",
+    "question": "What is a lever? ... actually, why is the sky blue?",
+    "concept_hint": "Scattering of light and why the sky is blue",
+    "answer": "Let's start with the second question first. Have you ever noticed how sunlight looks white but separates into beautiful colors as it passes through droplets of rain in a rainbow? What do we call this specific scattering process where oxygen and nitrogen molecules in Earth's atmosphere scatter shorter wavelengths of visible light more readily than longer wavelengths?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 91,
+    "category": "topic_switch",
+    "question": "What is evaporation? ... wait, can we do Newton's first law?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "Let's take a moment to address your original question about evaporation before changing topics. Evaporation is the process where liquid water changes into water vapor, usually occurring faster near warmer surfaces like sunlight. What specific phenomenon related to this change of state might an object experience as a result?",
+    "flags": [
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
+    ]
+  },
+  {
+    "id": 92,
+    "category": "ambiguous_difficult",
+    "question": "Help.",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! What topic or concept are we working on today?",
+    "flags": []
+  },
+  {
+    "id": 93,
+    "category": "ambiguous_difficult",
+    "question": "I have science homework.",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's tackle this together. What specific topic or problem are you stuck on?",
+    "flags": []
+  },
+  {
+    "id": 94,
+    "category": "ambiguous_difficult",
+    "question": "What should I study?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's think about what keeps you curious and engaged. Is there a specific topic like biology, physics, chemistry, or astronomy that really fascinates you? Or perhaps there is a phenomenon in nature or technology that puzzles or intrigues you? Let's dive into the exact area where your curiosity shines brightest.",
+    "flags": []
+  },
+  {
+    "id": 95,
+    "category": "ambiguous_difficult",
+    "question": "Is this important for the exam?",
+    "concept_hint": "out_of_bank",
+    "answer": "Let's take a quick look at our study plan. We've been focusing heavily on long-term memory retention using logical deduction rather than rote memorization. Based on how we've structured your learning so far, I would absolutely consider these topics crucial for your final examination success. What specific topic or concept do you feel needs the most review before the test?",
+    "flags": []
+  },
+  {
+    "id": 96,
+    "category": "ambiguous_difficult",
+    "question": "Can we do the next part?",
+    "concept_hint": "out_of_bank",
+    "answer": "Of course! Let's dive into our second concept using another familiar daily item. Can anyone think of something small but heavy enough to sink completely under water?",
+    "flags": []
+  },
+  {
+    "id": 97,
+    "category": "ambiguous_difficult",
+    "question": "Same as yesterday.",
+    "concept_hint": "out_of_bank",
+    "answer": "I see we're continuing our journey into physics this year. We will start each day with a brand-new concept to explore together, building upon last week’s foundation without repeating exact content. What specific topic would you like us to tackle first today?",
+    "flags": []
+  },
+  {
+    "id": 98,
+    "category": "ambiguous_difficult",
+    "question": "The diagram in the book, you know.",
+    "concept_hint": "out_of_bank",
+    "answer": "I see. Let's look at this specific illustration together. Can you describe the first feature or component shown in the image?",
+    "flags": []
+  },
+  {
+    "id": 99,
+    "category": "ambiguous_difficult",
+    "question": "Just tell me the main point.",
+    "concept_hint": "out_of_bank",
+    "answer": "Now let's think about a bowling ball sitting perfectly still on a smooth, flat wooden lane. What physical property of the material the floor is made of allows the bowler to actually get the heavy ball to move across the lane toward the pins?\n\n<plan>\nGoal: Now imagine we add tiny bumps, grooves, or microscopic irregularities to both the inner surface of the bowling ball and the smooth, polished wood of the lane itself. How do these minute textures interact physically under high pressure conditions during continuous contact between the two rapidly moving curved surfaces?\n</plan>\n\nWhat specific type of intermolecular attractive force gets generated due to the mechanical entanglement caused by those millions of microscopic interlocking shape mismatches happening simultaneously over their entire contacting area as the two roughened materials slide past each other under load?",
+    "flags": []
+  }
+]

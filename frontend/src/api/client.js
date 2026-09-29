@@ -149,3 +149,72 @@ export async function deleteMaterial(id) {
   }
   return response.json();
 }
+
+async function authGet(path) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export function getKnowledgeCatalog() {
+  return fetch(`${API_BASE}/api/knowledge/catalog`).then(async (response) => {
+    if (!response.ok) throw new Error(await parseError(response));
+    return response.json();
+  });
+}
+
+export function getProgress() {
+  return authGet('/api/progress');
+}
+
+export function getProgressGraph() {
+  return authGet('/api/progress/graph');
+}
+
+export function getWeeklyReport() {
+  return authGet('/api/reports/weekly');
+}
+
+async function authPost(path, body) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export function demoLogin(role) {
+  return authPost('/api/auth/demo-login', { role });
+}
+
+export function signupWithEmail({ name, email, password }) {
+  return authPost('/api/auth/signup', { name, email, password });
+}
+
+export function loginWithEmail({ email, password }) {
+  return authPost('/api/auth/login', { email, password });
+}
+
+export function getTeacherStudents() {
+  return authGet('/api/teacher/students');
+}
+
+export function getTeacherStudentWeekly(studentId) {
+  return authGet(`/api/teacher/students/${studentId}/weekly`);
+}
+
+export function getParentChild() {
+  return authGet('/api/parent/child');
+}
+
+export function getParentChildWeekly() {
+  return authGet('/api/parent/child/weekly');
+}

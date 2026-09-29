@@ -1,13 +1,19 @@
 """
-Runs eval_set.py against a model server and saves every response, with
-some cheap automatic red-flag detection so you don't have to read all 60
-responses cold before knowing where to look first.
+Runs eval_set.py (60) or smoke_set.py (100) against a model server and
+saves every response, with cheap automatic red-flag detection.
 
 Usage (raw fine-tuned Space, no RAG):
     python3 run_eval.py --url hf_space --out raw_model.json
 
 Usage (Clariq Hub + RAG + Hub prompts):
     python3 run_eval.py --url http://127.0.0.1:8000/api/chat --out rag_hub.json
+
+Usage (100-question smoke test, Hub + RAG):
+    python3 run_eval.py --set smoke --url http://127.0.0.1:8000/api/chat --out smoke_hub.json
+
+Usage (100-question smoke test, OpenAI-compatible RunPod / llama.cpp):
+    python3 run_eval.py --set smoke --url "$RUNPOD_BASE_URL/v1/chat/completions" \\
+        --api-key "$RUNPOD_API_KEY" --model "$RUNPOD_MODEL" --out smoke_model.json
 
 Usage (OpenAI-compatible llama.cpp / Modal, if that server is up):
     python3 run_eval.py --url http://127.0.0.1:8080/v1/chat/completions \\
@@ -32,6 +38,7 @@ from urllib.parse import urlparse
 
 import requests
 from eval_set import EVAL_SET
+from smoke_set import SMOKE_SET
 from training_fingerprints import fingerprint_matchers
 
 TRAINING_FINGERPRINTS = fingerprint_matchers()
@@ -298,9 +305,17 @@ def main():
     ap.add_argument("--sleep", type=float, default=0.2)
     ap.add_argument("--limit", type=int, default=0, help="If >0, only this many questions")
     ap.add_argument("--start", type=int, default=0)
+    ap.add_argument(
+        "--set",
+        dest="item_set",
+        choices=("pilot", "smoke"),
+        default="pilot",
+        help="pilot = 60-item eval_set; smoke = 100-item supervisor smoke test",
+    )
     args = ap.parse_args()
 
-    items = EVAL_SET[args.start :]
+    pool = SMOKE_SET if args.item_set == "smoke" else EVAL_SET
+    items = pool[args.start :]
     if args.limit:
         items = items[: args.limit]
 
@@ -310,7 +325,10 @@ def main():
         kind = "hub"
     else:
         kind = "openai"
-    print(f"target={args.url}  kind={kind}  n={len(items)}", flush=True)
+    print(
+        f"target={args.url}  kind={kind}  set={args.item_set}  n={len(items)}",
+        flush=True,
+    )
 
     out_path = Path(args.out)
     if not out_path.is_absolute():

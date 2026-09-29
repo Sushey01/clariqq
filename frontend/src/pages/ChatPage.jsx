@@ -10,6 +10,7 @@ import Sidebar from '@/components/layout/Sidebar';
 import ChatView from '@/components/chat/ChatView';
 import SettingsModal from '@/components/settings/SettingsModal';
 import LabFrame from '@/components/lab/LabFrame';
+import { tutorMessageFromReply } from '@/components/tutor/socraticKind';
 
 function titleFromQuestion(question) {
   const trimmed = question.trim();
@@ -83,10 +84,7 @@ export default function ChatPage() {
           sessionId: activeSessionId,
           socraticMode,
         });
-        appendMessage(activeSessionId, {
-          sender: 'ai',
-          text: data.answer,
-        });
+        appendMessage(activeSessionId, tutorMessageFromReply(data));
       } catch (error) {
         appendMessage(activeSessionId, {
           sender: 'ai',
@@ -151,6 +149,7 @@ export default function ChatPage() {
           onModelChange={setActiveModel}
           onOpenSettings={() => setSettingsOpen(true)}
           backendStatus={health.status}
+          session={activeSession}
         />
         <ChatView
           session={activeSession}

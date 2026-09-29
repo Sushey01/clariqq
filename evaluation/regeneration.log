@@ -1,0 +1,230 @@
+[1/108] resume How does energy move through a food chain?
+[2/108] resume What is water of crystallization?
+[3/108] resume How do we know which metal is more reactive than another?
+[4/108] resume What causes a rainbow?
+[5/108] resume What's the difference between the fuel in a cooking cylinder and cooking oil, chemically?
+[6/108] resume What causes the phases of the Moon?
+[7/108] resume Why do some wires get hot and others don't?
+[8/108] resume Why do our bodies change so much around age 11-14?
+[9/108] resume How do plants get their food?
+[10/108] resume What is electric current?
+[11/108] resume What is Newton's third law?
+[12/108] generating Why does a straw in a glass of water look bent?
+  saved 16 examples (192 total)
+[13/108] generating Why do computers use binary?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (208 total)
+[14/108] generating What's the difference between sound waves and light waves in terms of how they move?
+  invalid batch (expected a JSON list of 16 examples, got list of length 15); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (224 total)
+[15/108] generating How do metal and non-metal atoms bond together?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (240 total)
+[16/108] generating What is excretion?
+  invalid batch (expected a JSON list of 16 examples, got list of length 18); retrying
+  saved 16 examples (256 total)
+[17/108] generating What is accommodation of the eye?
+  invalid batch (expected a JSON list of 16 examples, got list of length 15); retrying
+  saved 16 examples (272 total)
+[18/108] generating Why does a mirror show a clear reflection but a piece of paper doesn't?
+  saved 16 examples (288 total)
+[19/108] generating Why do we need to balance chemical equations?
+  saved 16 examples (304 total)
+[20/108] generating Why do we use pressure and not just force to explain cutting?
+  saved 16 examples (320 total)
+[21/108] generating What is asexual reproduction?
+  saved 16 examples (336 total)
+[22/108] generating Why does the sky look blue during the day?
+  saved 16 examples (352 total)
+[23/108] generating What happens when you add a metal like zinc to an acid?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (368 total)
+[24/108] generating Can a magnet be used to create electric current?
+  invalid batch (expected a JSON list of 16 examples, got list of length 19); retrying
+  saved 16 examples (384 total)
+[25/108] generating Why do stars twinkle but planets don't?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 15); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[26/108] generating What determines if a baby will be a boy or a girl?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 15
+[27/108] generating Why are elements arranged by atomic number instead of atomic mass on the periodic table?
+  saved 16 examples (400 total)
+[28/108] generating Why is it harder to breathe on top of a tall mountain?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (416 total)
+[29/108] generating Why doesn't carbon just lose or gain electrons like sodium or chlorine do?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 18); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[30/108] generating Why do methane, ethane, and propane all behave chemically so similarly?
+  invalid batch (expected a JSON list of 16 examples, got list of length 15); retrying
+  saved 16 examples (432 total)
+[31/108] generating How is a hormone different from a nerve signal?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (448 total)
+[32/108] generating What determines whether a trait is dominant or recessive?
+  saved 16 examples (464 total)
+[33/108] generating What is Ohm's Law?
+  saved 16 examples (480 total)
+[34/108] generating Why can gold be hammered into thin sheets but sulphur just crumbles?
+  invalid batch (expected a JSON list of 16 examples, got list of length 18); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 20); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[35/108] generating How does an electric doorbell or crane magnet work?
+  saved 16 examples (496 total)
+[36/108] generating Why does a balloon push outward on all sides?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (512 total)
+[37/108] generating What is a reflex action?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (528 total)
+[38/108] generating Why does ethanol behave so differently from ethane if they're both mostly made of carbon and hydrogen?
+  saved 16 examples (544 total)
+[39/108] generating Why does adding baking soda to an ant bite help?
+  saved 16 examples (560 total)
+[40/108] generating Why are elements in the same group of the periodic table similar?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 14); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[41/108] generating Why don't all the bees in a hive do the same job?
+  invalid batch (model response did not contain a JSON array); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (576 total)
+[42/108] generating Why can some people not see distant objects clearly?
+  invalid batch (expected a JSON list of 16 examples, got list of length 19); retrying
+  saved 16 examples (592 total)
+[43/108] generating Why does dropping a metal into acid produce bubbles?
+  invalid batch (expected a JSON list of 16 examples, got list of length 19); retrying
+  saved 16 examples (608 total)
+[44/108] generating How does a generator produce electricity?
+  invalid batch (expected a JSON list of 16 examples, got list of length 18); retrying
+  saved 16 examples (624 total)
+[45/108] generating Why are mushrooms not classified as plants?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 18); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 18
+[46/108] generating Why do some children look more like one parent than the other?
+[1/108] resume How does energy move through a food chain?
+[2/108] resume What is water of crystallization?
+[3/108] resume How do we know which metal is more reactive than another?
+[4/108] resume What causes a rainbow?
+[5/108] resume What's the difference between the fuel in a cooking cylinder and cooking oil, chemically?
+[6/108] resume What causes the phases of the Moon?
+[7/108] resume Why do some wires get hot and others don't?
+[8/108] resume Why do our bodies change so much around age 11-14?
+[9/108] resume How do plants get their food?
+[10/108] resume What is electric current?
+[11/108] resume What is Newton's third law?
+[12/108] resume Why does a straw in a glass of water look bent?
+[13/108] resume Why do computers use binary?
+[14/108] resume What's the difference between sound waves and light waves in terms of how they move?
+[15/108] resume How do metal and non-metal atoms bond together?
+[16/108] resume What is excretion?
+[17/108] resume What is accommodation of the eye?
+[18/108] resume Why does a mirror show a clear reflection but a piece of paper doesn't?
+[19/108] resume Why do we need to balance chemical equations?
+[20/108] resume Why do we use pressure and not just force to explain cutting?
+[21/108] resume What is asexual reproduction?
+[22/108] resume Why does the sky look blue during the day?
+[23/108] resume What happens when you add a metal like zinc to an acid?
+[24/108] resume Can a magnet be used to create electric current?
+[25/108] generating Why do stars twinkle but planets don't?
+  saved 16 examples (640 total)
+[26/108] generating What determines if a baby will be a boy or a girl?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (Expecting property name enclosed in double quotes: line 358 column 9 (char 9619)); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 15
+[27/108] resume Why are elements arranged by atomic number instead of atomic mass on the periodic table?
+[28/108] resume Why is it harder to breathe on top of a tall mountain?
+[29/108] generating Why doesn't carbon just lose or gain electrons like sodium or chlorine do?
+  saved 16 examples (656 total)
+[30/108] resume Why do methane, ethane, and propane all behave chemically so similarly?
+[31/108] resume How is a hormone different from a nerve signal?
+[32/108] resume What determines whether a trait is dominant or recessive?
+[33/108] resume What is Ohm's Law?
+[34/108] generating Why can gold be hammered into thin sheets but sulphur just crumbles?
+  invalid batch (expected a JSON list of 16 examples, got list of length 20); retrying
+  invalid batch (model response did not contain a JSON array); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[35/108] resume How does an electric doorbell or crane magnet work?
+[36/108] resume Why does a balloon push outward on all sides?
+[37/108] resume What is a reflex action?
+[38/108] resume Why does ethanol behave so differently from ethane if they're both mostly made of carbon and hydrogen?
+[39/108] resume Why does adding baking soda to an ant bite help?
+[40/108] generating Why are elements in the same group of the periodic table similar?
+  saved 16 examples (672 total)
+[41/108] resume Why don't all the bees in a hive do the same job?
+[42/108] resume Why can some people not see distant objects clearly?
+[43/108] resume Why does dropping a metal into acid produce bubbles?
+[44/108] resume How does a generator produce electricity?
+[45/108] generating Why are mushrooms not classified as plants?
+  saved 16 examples (688 total)
+[46/108] generating Why do some children look more like one parent than the other?
+  saved 16 examples (704 total)
+[47/108] generating How does a rocket move forward in space if there's nothing to push against?
+  saved 16 examples (720 total)
+[48/108] generating What makes metals malleable while non-metals are usually brittle?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (736 total)
+[49/108] generating Why does a lime and water mixture get hot?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[50/108] generating How does a new organism actually start forming?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 17
+[51/108] generating What is respiration?
+  saved 16 examples (752 total)
+[52/108] generating What is a homologous series?
+  invalid batch (expected a JSON list of 16 examples, got list of length 15); retrying
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[53/108] generating Why can't we just swallow food whole and use it directly?
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[54/108] generating What do digestive enzymes actually do?
+  saved 16 examples (768 total)
+[55/108] generating What is an electromagnet?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (784 total)
+[56/108] generating Do plants have a nervous system?
+  saved 16 examples (800 total)
+[57/108] generating What makes plastic different from a banana peel when thrown away?
+  saved 16 examples (816 total)
+[58/108] generating Why does soap remove oily dirt from your hands when water alone doesn't?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (832 total)
+[59/108] generating What is inertia?
+  invalid batch (expected a JSON list of 16 examples, got list of length 19); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  saved 16 examples (848 total)
+[60/108] generating What does 'balancing' an equation even mean?
+  saved 16 examples (864 total)
+[61/108] generating What are the different types of chemical reactions?
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[62/108] generating What is corrosion?
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[63/108] generating What are hormones?
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[64/108] generating Does electricity create magnetism?
+  FAILED and recorded: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[65/108] generating Why does silver jewellery turn black over time?
+  saved 16 examples (880 total)
+[66/108] generating What is a functional group?
+  saved 16 examples (896 total)
+[67/108] generating Why do passengers lurch forward when a bus suddenly stops?
+  invalid batch (expected a JSON list of 16 examples, got list of length 14); retrying
+  invalid batch (expected a JSON list of 16 examples, got list of length 17); retrying
+  FAILED and recorded: ValueError: expected a JSON list of 16 examples, got list of length 15
+[68/108] generating What causes short-sightedness?

@@ -1,4 +1,4 @@
-export default function NebularFooterCta() {
+export default function LabFooterCta() {
   return (
     <a href="#top" className="nebular-bar">
       <p className="text-xs font-semibold uppercase tracking-[0.18em]">Clariq cool lab</p>

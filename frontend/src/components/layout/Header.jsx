@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
+import { Check, Copy, LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
 import { Badge, Button } from '@/components/ui';
 import ModelSelect from './ModelSelect';
 import ThemeToggle from '@/components/theme/ThemeToggle';
+import { copySessionTranscript } from '@/lib/sessionTranscript';
 
 const STATUS = {
   ok: { label: 'Lab online', variant: 'emerald' },
@@ -20,9 +21,19 @@ export default function Header({
   onModelChange,
   onOpenSettings,
   backendStatus,
+  session,
 }) {
   const [modelOpen, setModelOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const status = STATUS[backendStatus] ?? STATUS.unknown;
+  const canCopy = (session?.messages || []).length > 0;
+
+  const copySession = async () => {
+    const ok = await copySessionTranscript(session);
+    if (!ok) return;
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
+  };
 
   return (
     <header className="lab-header sticky top-0 z-30 flex h-14 items-center justify-between px-3">
@@ -54,9 +65,44 @@ export default function Header({
           <LayoutGrid className="h-4 w-4" />
           Lab floor
         </Link>
+        <Link
+          to="/app/progress"
+          className="hidden rounded-lg px-2 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)] sm:inline-flex"
+        >
+          Progress
+        </Link>
       </div>
 
       <div className="flex items-center gap-2">
+        <Button
+          variant="ghost"
+          size="sm"
+          disabled={!canCopy}
+          onClick={copySession}
+          title="Copy this whole session"
+          className="hidden px-2 py-1 sm:inline-flex"
+        >
+          {copied ? (
+            <Check className="h-3.5 w-3.5 text-emerald-400" />
+          ) : (
+            <Copy className="h-3.5 w-3.5" />
+          )}
+          <span className="text-[11px]">{copied ? 'Copied session' : 'Copy session'}</span>
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          disabled={!canCopy}
+          onClick={copySession}
+          title="Copy this whole session"
+          className="sm:hidden"
+        >
+          {copied ? (
+            <Check className="h-4 w-4 text-emerald-400" />
+          ) : (
+            <Copy className="h-4 w-4" />
+          )}
+        </Button>
         <Badge variant={status.variant} size="md" dot className="hidden sm:inline-flex">
           {status.label}
         </Badge>

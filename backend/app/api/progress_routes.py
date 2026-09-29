@@ -19,7 +19,8 @@ import os
 from fastapi import APIRouter, Depends, Header, HTTPException, Query
 
 from app.auth.jwt_tokens import get_current_user, get_optional_user
-from app.knowledge.graph import counts, edges, node_by_id, nodes
+from app.knowledge.graph import counts, edges, nodes
+from app.reports.weekly import build_weekly_report, mastery_out
 from app.schemas.progress import (
     ConceptOut,
     GraphEdgeOut,
@@ -28,23 +29,9 @@ from app.schemas.progress import (
     MasteryOut,
     WeeklyReportOut,
 )
-from app.storage.mastery import events_since, list_mastery
+from app.storage.mastery import list_mastery
 
 router = APIRouter()
-
-
-def _mastery_out(row: dict) -> MasteryOut:
-    concept = node_by_id().get(row["concept_id"], {})
-    return MasteryOut(
-        concept_id=row["concept_id"],
-        name=concept.get("name") or row["concept_id"],
-        subject=concept.get("subject") or "",
-        chapter=concept.get("chapter") or "",
-        m=float(row["m"]),
-        confused=bool(row["confused"]),
-        low_streak=int(row["low_streak"]),
-        updated_at=row.get("updated_at"),
-    )
 
 
 @router.get("/api/knowledge/catalog")
@@ -59,7 +46,7 @@ def catalog():
 
 @router.get("/api/progress", response_model=list[MasteryOut])
 def progress(user: dict = Depends(get_current_user)):
-    return [_mastery_out(row) for row in list_mastery(user["id"])]
+    return [mastery_out(row) for row in list_mastery(user["id"])]
 
 
 @router.get("/api/progress/graph", response_model=GraphOut)
@@ -103,20 +90,4 @@ def weekly_report(
             status_code=401,
             detail="Sign in, or pass X-Report-Export plus user_id for a demo export.",
         )
-
-    rows = list_mastery(target)
-    events = events_since(target, days=window_days)
-    mean_st = None
-    if events:
-        mean_st = sum(float(item["st"]) for item in events) / len(events)
-
-    weakest = sorted(rows, key=lambda item: float(item["m"]))[:10]
-    confused = [item for item in rows if item["confused"]]
-    return WeeklyReportOut(
-        user_id=target,
-        window_days=window_days,
-        event_count=len(events),
-        mean_st=mean_st,
-        weakest=[_mastery_out(item) for item in weakest],
-        confused=[_mastery_out(item) for item in confused],
-    )
+    return build_weekly_report(target, window_days)

@@ -43,7 +43,7 @@ function makePanelTexture() {
   return texture;
 }
 
-export default function NebularHeroScene() {
+export default function LabHeroScene() {
   const canvasRef = useRef(null);
 
   useEffect(() => {

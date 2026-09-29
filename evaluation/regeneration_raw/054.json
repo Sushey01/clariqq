@@ -1,0 +1,262 @@
+{
+  "opener": "What do digestive enzymes actually do?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "They act like tiny scissors, cutting large food molecules into smaller pieces that the body can absorb."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s because amylase in saliva starts breaking down starch into sugars even before the food reaches your stomach."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Not exactly; digestion breaks food down, while absorption moves the resulting nutrients across cell membranes into the bloodstream."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, enzymes are specialized proteins that catalyze reactions; they don’t contribute to taste."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "They lower the activation energy for chemical reactions, enabling the body to convert complex molecules into usable forms."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Proteins require pepsin, an enzyme that works best in the acidic stomach, so the breakdown takes more time compared to carbohydrates that are processed by amylase in the mouth."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Digestion breaks down food, while absorption is the transfer of the resulting nutrients into the bloodstream."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Enzymes are indeed proteins, but their role is to speed up reactions, not to influence taste."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "They act as catalysts, converting large food molecules into smaller units that cells can use for energy and growth."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because amylase in saliva starts breaking starch into maltose and glucose even before the food reaches the stomach."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "No, digestion is the chemical breakdown of food, whereas absorption is the uptake of the resulting nutrients into the bloodstream."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Enzymes are proteins that function as biological catalysts, not as flavor agents."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "They lower the energy barrier for breaking down macromolecules, enabling the body to efficiently extract nutrients."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the enzyme amylase in saliva initiates starch hydrolysis, turning it into simpler sugars."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Digestion breaks food into smaller molecules; absorption moves those molecules into the bloodstream."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What do digestive enzymes actually do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Enzymes are proteins that accelerate reactions, not substances that contribute to taste."
+        }
+      ]
+    }
+  ]
+}

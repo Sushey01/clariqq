@@ -3,7 +3,7 @@ import { Check, Copy, RotateCw } from 'lucide-react';
 import { Button } from '@/components/ui';
 import SocraticMoveCard from '@/components/tutor/SocraticMoveCard';
 import StudentTurn from '@/components/tutor/StudentTurn';
-import { inferMoveKind } from '@/components/tutor/socraticKind';
+import { resolveMoveKind } from '@/components/tutor/socraticKind';
 
 export default function Message({
   message,
@@ -24,11 +24,16 @@ export default function Message({
     return <StudentTurn text={message.text} />;
   }
 
-  const kind = inferMoveKind(message.text, socraticMode);
+  const kind = resolveMoveKind(message, socraticMode);
 
   return (
     <div>
-      <SocraticMoveCard kind={kind} text={message.text} yourTurn={showYourTurn} />
+      <SocraticMoveCard
+        kind={kind}
+        text={message.text}
+        yourTurn={showYourTurn}
+        sources={message.sources}
+      />
       <div className="-mt-1 mb-2 flex items-center gap-1 text-[var(--ink-muted)]">
         <Button variant="ghost" size="sm" onClick={copy} className="px-2 py-1">
           {copied ? (

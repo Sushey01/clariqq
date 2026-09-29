@@ -1,8 +1,12 @@
+import { useState } from 'react';
+import { Check, Copy } from 'lucide-react';
 import Composer from './Composer';
 import EmptyState from './EmptyState';
 import MessageList from './MessageList';
 import YourTurnBar from '@/components/tutor/YourTurnBar';
 import { lastSentenceIsQuestion } from '@/components/tutor/socraticKind';
+import { copySessionTranscript } from '@/lib/sessionTranscript';
+import { Button } from '@/components/ui';
 
 export default function ChatView({
   session,
@@ -30,6 +34,14 @@ export default function ChatView({
   const placeholder =
     composerPlaceholder ??
     (yourTurn ? 'Answer the tutor…' : 'Ask a Grade 10 science question');
+  const [copied, setCopied] = useState(false);
+
+  const copyThread = async () => {
+    const ok = await copySessionTranscript(session);
+    if (!ok) return;
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
+  };
 
   return (
     <div className="relative flex min-h-0 flex-1 flex-col bg-transparent">
@@ -58,6 +70,26 @@ export default function ChatView({
 
       <div className="px-3 md:px-4">
         <YourTurnBar visible={yourTurn} />
+        {messages.length > 0 ? (
+          <div className="mx-auto mb-2 flex w-full max-w-3xl justify-end">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={copyThread}
+              title="Copy this whole session"
+              className="px-2 py-1"
+            >
+              {copied ? (
+                <Check className="h-3.5 w-3.5 text-emerald-400" />
+              ) : (
+                <Copy className="h-3.5 w-3.5" />
+              )}
+              <span className="text-[11px]">
+                {copied ? 'Copied session' : 'Copy this session'}
+              </span>
+            </Button>
+          </div>
+        ) : null}
       </div>
 
       <Composer

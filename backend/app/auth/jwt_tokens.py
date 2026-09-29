@@ -1,4 +1,4 @@
-"""JWT helpers for Google-authenticated students."""
+"""JWT helpers for signed-in Clariq users."""
 
 from datetime import datetime, timedelta, timezone
 
@@ -7,6 +7,7 @@ from fastapi import Depends, HTTPException
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
 from app.config import JWT_EXPIRE_HOURS, JWT_SECRET, reload_env
+from app.storage.users import get_user
 
 _bearer = HTTPBearer(auto_error=False)
 
@@ -24,6 +25,7 @@ def issue_token(user: dict) -> str:
         "sub": user["id"],
         "email": user["email"],
         "name": user["name"],
+        "role": user.get("role") or "student",
         "iat": int(now.timestamp()),
         "exp": int((now + timedelta(hours=JWT_EXPIRE_HOURS)).timestamp()),
     }
@@ -44,10 +46,14 @@ def _user_from_bearer(creds: HTTPAuthorizationCredentials | None) -> dict:
     if creds is None or creds.scheme.lower() != "bearer":
         raise HTTPException(status_code=401, detail="Not signed in.")
     payload = decode_token(creds.credentials)
+    stored = get_user(str(payload["sub"]))
+    if stored:
+        return stored
     return {
         "id": str(payload["sub"]),
         "email": payload.get("email") or "",
         "name": payload.get("name") or "",
+        "role": payload.get("role") or "student",
     }
 
 
@@ -69,8 +75,26 @@ def get_optional_user(
         payload = decode_token(creds.credentials)
     except HTTPException:
         return None
+    stored = get_user(str(payload["sub"]))
+    if stored:
+        return stored
     return {
         "id": str(payload["sub"]),
         "email": payload.get("email") or "",
         "name": payload.get("name") or "",
+        "role": payload.get("role") or "student",
     }
+
+
+def require_role(*roles: str):
+    allowed = set(roles)
+
+    def _check(user: dict = Depends(get_current_user)) -> dict:
+        if (user.get("role") or "student") not in allowed:
+            raise HTTPException(
+                status_code=403,
+                detail="This desk is for a different role.",
+            )
+        return user
+
+    return _check

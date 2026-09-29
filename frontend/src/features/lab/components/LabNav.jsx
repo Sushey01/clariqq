@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FlaskConical } from 'lucide-react';
 import { useAuth } from '@/auth/AuthContext';
+import { userRole } from '@/auth/roles';
 
-export default function NebularNav() {
+export default function LabNav() {
   const { user } = useAuth();
+  const role = userRole(user);
   const chatTo = user ? '/app/chat' : '/demo';
 
   return (
@@ -16,14 +18,32 @@ export default function NebularNav() {
       </Link>
       <nav className="nebular-links">
         <a href="/#benches">Lab</a>
-        <a href="/#tutor-preview">Tutor</a>
-        <a href="/#signals">Progress</a>
-        <Link to={chatTo}>Chat</Link>
+        {!user || role === 'student' ? (
+          <NavLink to={chatTo} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+            Chat
+          </NavLink>
+        ) : null}
+        {user && role === 'student' ? (
+          <NavLink
+            to="/app/progress"
+            className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+          >
+            Progress
+          </NavLink>
+        ) : null}
+        {!user ? <a href="/#signals">Progress</a> : null}
+        {user && role === 'teacher' ? (
+          <NavLink to="/teacher" className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+            Teacher
+          </NavLink>
+        ) : null}
+        {user && role === 'parent' ? (
+          <NavLink to="/parent" className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+            Parent
+          </NavLink>
+        ) : null}
       </nav>
       <div className="flex items-center gap-2">
-        <Link to={chatTo} className="nebular-preview-btn sm:hidden">
-          Chat
-        </Link>
         <Link to="/preview" className="nebular-preview-btn">
           Preview
         </Link>
@@ -31,4 +51,3 @@ export default function NebularNav() {
     </header>
   );
 }
-

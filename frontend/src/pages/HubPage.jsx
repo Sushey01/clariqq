@@ -67,6 +67,9 @@ export default function HubPage() {
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Button variant="ghost" size="md" onClick={() => navigate('/app/progress')}>
+              Progress
+            </Button>
             <Button variant="indigo" size="md" className="rounded-full" onClick={() => navigate('/app/chat')}>
               Open the desk
             </Button>

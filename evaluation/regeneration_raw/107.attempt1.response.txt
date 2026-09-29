@@ -1,0 +1,123 @@
+```json
+[
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is a prism and why does it split light?"},
+      {"role": "assistant", "content": "A prism is a transparent solid with flat surfaces that refract light. When white light enters it, each color bends at a different angle because of their distinct wavelengths."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I saw a rainbow inside a glass prism, but I thought it was just a trick of the eye."},
+      {"role": "assistant", "content": "That observation shows a real optical effect: the prism disperses the light into its spectrum. Have you noticed the colors appearing in a specific order from red to violet?"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "How is a prism different from a mirror?"},
+      {"role": "assistant", "content": "Unlike a mirror, which reflects light, a prism bends light as it passes through, separating it into colors. This bending is due to the change in speed of light in the prism material."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think prisms only work with sunlight, not with lamps."},
+      {"role": "assistant", "content": "Prisms can split any source of white light, whether the sun or a lamp, because the principle depends on wavelength differences, not on the light's origin."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What exactly happens to light when it goes through a prism?"},
+      {"role": "assistant", "content": "As light enters the prism, it slows down, causing it to bend. Different colors, having different speeds, bend by varying amounts, producing a spectrum."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I saw the colors from a prism, but I think it's just scattering."},
+      {"role": "assistant", "content": "Scattering spreads light in many directions, but a prism redirects it in a single, orderly sequence. Notice how the colors form a continuous arc rather than a diffuse spread."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Why does a prism split light, not just a piece of glass?"},
+      {"role": "assistant", "content": "The key is the prism's angled faces, which create a change in direction at two points. Regular glass has flat surfaces that don't produce the same successive refraction."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I thought prisms were used only in old optical experiments."},
+      {"role": "assistant", "content": "Prisms are still common in modern devices like spectrometers and laser systems, where precise color separation is essential. Their basic physics hasn't changed."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Can a prism separate colors from a single color source?"},
+      {"role": "assistant", "content": "No, because a single color has only one wavelength, so there is nothing to separate. The spectrum appears only when a mix of wavelengths is present."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think the colors come from the prism itself."},
+      {"role": "assistant", "content": "The prism's material refracts light, but the colors originate from the light source. Try shining a white LED through the prism; the colors will still appear."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Is the angle of the prism important for splitting light?"},
+      {"role": "assistant", "content": "Yes, the prism's apex angle determines how much the light bends. A steeper angle increases the separation between colors."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I saw a prism and thought it only bends light, not splits it."},
+      {"role": "assistant", "content": "Bending and splitting are part of the same process: as light refracts, its components diverge. The visible spectrum is the result of this divergence."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Do all transparent materials split light like a prism?"},
+      {"role": "assistant", "content": "Only those with angled interfaces do. A flat pane of glass refracts but doesn't separate colors because the light exits at the same angle it entered."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I think the prism creates colors by absorbing some wavelengths."},
+      {"role": "assistant", "content": "Absorption would remove colors, not create them. The prism actually refracts each wavelength differently, letting all colors pass but at distinct angles."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Why is red the first color seen from a prism?"},
+      {"role": "assistant", "content": "Red light has the longest wavelength, so it bends the least. That places it at the outermost part of the spectrum when the light exits."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "I thought prisms just change the direction of light, not its color."},
+      {"role": "assistant", "content": "Direction change is true, but because different colors change direction by different amounts, the prism effectively separates them. The colors you see are the result of that separation."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "Can a prism turn a single color into a rainbow?"},
+      {"role": "assistant", "content": "No, a single color lacks multiple wavelengths, so there's nothing to split. A rainbow requires a mix of colors to begin with."}
+    ]
+  }
+]
+```

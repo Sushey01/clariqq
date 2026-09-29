@@ -17,7 +17,7 @@ const THREAD = [
   },
 ];
 
-export default function NebularTutorDesk() {
+export default function LabTutorDesk() {
   return (
     <section id="tutor-preview" className="nebular-section">
       <div className="nebular-wrap nebular-tutor">

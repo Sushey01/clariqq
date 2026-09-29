@@ -6,8 +6,7 @@ import LoginPage from '@/pages/LoginPage';
 import SignupPage from '@/pages/SignupPage';
 import DemoPage from '@/pages/DemoPage';
 import LandingPage from '@/pages/LandingPage';
-import NebularHome from '@/nebular/NebularHome';
-import NebularPreview from '@/nebular/NebularPreview';
+import { LabHomePage, LabComponentsPage } from '@/features/lab';
 import SubjectsPage from '@/pages/SubjectsPage';
 import SubjectDetailPage from '@/pages/SubjectDetailPage';
 import HowItWorksPage from '@/pages/HowItWorksPage';
@@ -19,6 +18,9 @@ import ForTeachersPage from '@/pages/ForTeachersPage';
 import HubPage from '@/pages/HubPage';
 import ChatPage from '@/pages/ChatPage';
 import ProtectedRoute from '@/pages/ProtectedRoute';
+import { ProgressPage } from '@/features/progress';
+import { TeacherDashboardPage } from '@/features/teacher';
+import { ParentDashboardPage } from '@/features/parent';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -43,8 +45,8 @@ export default function App() {
         <div data-lab="cinematic" className="min-h-screen bg-[var(--bg-canvas)] text-[var(--ink)]">
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<NebularHome />} />
-            <Route path="/preview" element={<NebularPreview />} />
+            <Route path="/" element={<LabHomePage />} />
+            <Route path="/preview" element={<LabComponentsPage />} />
             <Route path="/classic" element={<LandingPage />} />
             <Route path="/subjects" element={<SubjectsPage />} />
             <Route path="/subjects/:slug" element={<SubjectDetailPage />} />
@@ -60,7 +62,7 @@ export default function App() {
             <Route
               path="/app"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute roles={['student']}>
                   <HubPage />
                 </ProtectedRoute>
               }
@@ -68,8 +70,32 @@ export default function App() {
             <Route
               path="/app/chat"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute roles={['student']}>
                   <ChatPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/app/progress"
+              element={
+                <ProtectedRoute roles={['student']}>
+                  <ProgressPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/teacher"
+              element={
+                <ProtectedRoute roles={['teacher']}>
+                  <TeacherDashboardPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/parent"
+              element={
+                <ProtectedRoute roles={['parent']}>
+                  <ParentDashboardPage />
                 </ProtectedRoute>
               }
             />

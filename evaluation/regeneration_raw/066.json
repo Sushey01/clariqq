@@ -1,0 +1,262 @@
+{
+  "opener": "What is a functional group?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a functional group as a specific arrangement of atoms that dictates how a molecule behaves chemically. For example, the hydroxyl group (-OH) makes alcohols highly reactive toward acids."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "In chemistry, a functional group is a set of atoms within a molecule that is responsible for its characteristic reactions. The carbonyl group (C=O) is a classic example, found in aldehydes and ketones."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine each molecule has a 'signature' that determines how it interacts; that signature is the functional group. The amine group (-NH₂) gives amines their basic properties."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is a specific combination of atoms that defines a molecule’s chemical behavior. For instance, the carboxyl group (COOH) is what makes carboxylic acids acidic."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you see a molecule, the functional group is the part that reacts in a predictable way. The thiol group (-SH) in cysteine is crucial for forming disulfide bonds."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a functional group as a chemical 'tag' that tells other molecules how it will behave. The ester group (RCOOR') is key in determining the taste of many fruits."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is the part of a molecule that participates in chemical reactions. The nitro group (NO₂) is responsible for the strong oxidizing power of nitro compounds."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "In organic chemistry, a functional group is a specific arrangement of atoms that confers certain properties on a molecule. The phosphonate group (PO₃H₂) is commonly found in DNA molecules."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is a cluster of atoms that defines how a compound reacts. The epoxide ring, for example, is highly strained and reacts readily with nucleophiles."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of it as the chemical 'handshake' of a molecule. The imine group (C=N) is essential in Schiff base formation during condensation reactions."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is a specific set of atoms that gives a molecule its characteristic reactivity. The peroxy group (O–O) is responsible for the explosive nature of hydrogen peroxide."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "In molecules, the functional group is the portion that undergoes chemical change. The acyl group (RCO–) is central to esterification reactions."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s the part of a compound that dictates its behavior. The azo group (–N=N–) gives many dyes their vibrant colors."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is a specific arrangement of atoms that makes a molecule reactive. The sulfonyl group (SO₂) is key in many detergents."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s like a tag on a molecule that tells other chemicals how to interact. The oxime group (C=NOH) is used in synthetic organic chemistry for selective transformations."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a functional group?"
+        },
+        {
+          "role": "assistant",
+          "content": "A functional group is a set of atoms that confers specific chemical properties to a molecule. The enol group (C=C–OH) is important in tautomerism reactions."
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ from app.ai_engine.hf_space_chat import (
 
 
 class HfSpaceChatPayloadTests(unittest.TestCase):
-    def test_split_includes_system_in_question(self):
+    def test_split_keeps_space_system_prompt_unclobbered(self):
         question, history = split_space_payload(
             [
                 SystemMessage(content="Stay Socratic."),
@@ -20,8 +20,8 @@ class HfSpaceChatPayloadTests(unittest.TestCase):
                 HumanMessage(content="photosynthesis"),
             ]
         )
-        self.assertIn("Stay Socratic.", question)
-        self.assertIn("photosynthesis", question)
+        self.assertEqual(question, "photosynthesis")
+        self.assertNotIn("Stay Socratic.", question)
         self.assertEqual(
             history,
             [

@@ -8,7 +8,7 @@ const BENCHES = [
   { n: '04', subject: 'Earth Science', line: 'Models, change, and real-world links', Icon: Eye, to: '/subjects/earth' },
 ];
 
-export default function NebularBenches() {
+export default function LabBenches() {
   return (
     <section id="benches" className="nebular-section">
       <div className="nebular-wrap">

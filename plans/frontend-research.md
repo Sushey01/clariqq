@@ -1,12 +1,30 @@
 ---
 
-This file is the full Schoolhouse / 3D / architecture research report. Day-to-day implementation steps are in [frontend.md](frontend.md).
+This file is the full Schoolhouse / 3D / architecture research report.
+
+- Day-to-day work packages: [frontend.md](frontend.md)
+- Folder map to follow while coding: [frontend-structure.md](frontend-structure.md)
+- Backend track: [backend.md](backend.md)
+
+**Status (Sep 2026):** Research stands. Implementation has started on Vite + React with the existing theme. Do not treat section 5 “ChatGPT-like thread” as current UI.
+
+| Area | Status |
+| --- | --- |
+| Stack | Vite + React. Not Next.js. |
+| Theme | Keep `--bg-canvas` / `--accent` indigo, light/dark |
+| Landing | How-it-works + “will not dump” sections added |
+| Tutor UI | Socratic cards + Your turn (not ChatGPT thumbs/bubbles) |
+| Folders | `layout/`, `tutor/`, `learning/`, empty `3d/` |
+| 3D / R3F / Spline | Still **not** started. Stay out of the tutor thread. |
+| `move_type` / sources API | Still backend B1 / frontend F6 |
+
+---
 
 # Clariq frontend research and implementation plan
 
-**Stack locked for this plan:** Vite + React (current Clariq). Next.js appears in Schoolhouse job ads and in generic 3D stacks; it is **not** the Clariq target. TypeScript can be adopted incrementally later; today the UI is JSX.
+**Stack locked:** Vite + React. Next.js is what Schoolhouse *jobs* mention; it is **not** the Clariq target. UI is JSX.
 
-**Constraint:** No code in this pass. Keep FastAPI RAG, Socratic prompts, materials/Chroma, Google JWT.
+Keep FastAPI RAG, Socratic prompts, materials/Chroma, Google JWT.
 
 ---
 
@@ -57,7 +75,7 @@ What Clariq should steal vs not:
 
 ## 3. 3D / motion technology investigation
 
-Schoolhouse does **not** prove you need 3D. Use 3D only where it teaches (molecules, orbits, vectors). Clariq already has **GSAP** (`@gsap/react`) and **Framer Motion** unused/lightly used — start there.
+Schoolhouse does **not** prove you need 3D. Use 3D only where it teaches (molecules, orbits). Clariq already uses **GSAP** on landing/auth (`@gsap/react`). Framer Motion is installed; prefer GSAP + CSS until a real 3D lesson exists.
 
 - **A Three.js** — raw WebGL. Max control, high complexity. Works with Vite/React via a canvas ref. Docs: [threejs.org](https://threejs.org/docs/).
 - **B React Three Fiber** — React renderer for Three. Fits Vite + React. Docs: [r3f.docs.pmnd.rs](https://r3f.docs.pmnd.rs/).
@@ -90,45 +108,34 @@ All of A–G work with TypeScript and Tailwind (canvas sits beside Tailwind layo
 
 ## 5. Clariq today vs proposed IA
 
-**Today (do not throw away):** `/` landing, `/login` `/signup` `/demo`, `/app` hub, `/app/chat` ChatGPT-like thread ([frontend/src/App.jsx](frontend/src/App.jsx)). Messages are bubbles + `chatgpt-markdown` ([frontend/src/components/chat/Message.jsx](frontend/src/components/chat/Message.jsx)). Hub: topics + materials. Backend: `POST /api/chat` `{question, session_id, socratic_mode}` → `{answer, session_id}` ([backend/app/api/routes.py](backend/app/api/routes.py)). No streaming, no message-role types.
+**Clariq now:** `/` landing, `/login` `/signup` `/demo`, `/app` learning home, `/app/chat` Socratic session ([frontend/src/App.jsx](frontend/src/App.jsx)). Tutor turns use `components/tutor/` cards (`SocraticMoveCard`, `StudentTurn`, `YourTurnBar`). Hub: topics + materials. Backend still `POST /api/chat` `{question, session_id, socratic_mode}` → `{answer, session_id}`. No streaming, no `move_type` yet.
 
-**Proposed routes (evolve, don’t explode):**
+**Still optional later:**
 
-- `/` Landing — proof it is Socratic, not ChatGPT.
-- `/demo` Keep 5-turn guest.
-- `/login` `/signup` Keep Google.
-- `/app` Learning home (today’s hub, richer).
-- `/app/subjects` Optional: Physics/Chem/Bio/Earth grid (data already in `SUBJECTS`).
-- `/app/tutor` Alias or rename of chat — **session**, not “new chat”.
-- `/app/progress` Later: local then API.
-- Skip separate “Learning session” URL until backend has checkpoints.
+- `/app/subjects` — Physics/Chem/Bio/Earth as its own page (grid already on hub)
+- `/app/tutor` — alias of `/app/chat` if you want the URL to say session
+- `/app/progress` — after a progress API
 
-Each page: purpose = enter / prove / continue; components = existing layout + new tutor atoms; AI only on tutor/demo; motion = GSAP section reveals; mobile = bottom composer, overlay sidebar (already exists).
+Do not add a 3D route until Phase 8.
 
 ---
 
-## 6. Socratic tutor UX (highest priority)
+## 6. Socratic tutor UX
 
-ChatGPT copy/regenerate/thumbs **fights the product**. Replace the visual language:
+**Shipped (heuristic, no extra backend field):**
 
-Student asks → UI shows **one tutor move** tagged as question | hint | (rare) explanation.
+- `SocraticMoveCard` — question / hint / explanation from last `?` + mode
+- `StudentTurn` — labeled “Your reasoning”
+- `YourTurnBar` + composer “Answer the tutor…”
+- Empty state still topic cards; demo still 5 turns
 
-Proposed atoms (JSX first):
+**Not shipped (need backend or more product work):**
 
-- `SocraticQuestionCard` — the only full-width AI block ending in `?`
-- `HintCard` — collapsible, “tiny hint”, not the answer
-- `StudentTurn` — short, right-aligned but labeled “Your reasoning”
-- `YourTurnBar` — already a badge; make it a sticky state machine
-- `TopicContext` — subject + retrieved source chips (notes vs textbook) when metadata exists
-- `LearningCheckpoint` — “You used the word chlorophyll — keep going”
-- `MisconceptionFlag` — amber, “Let’s test that idea”
-- `ConceptMastered` — only after several good turns (needs backend later)
-- `SuggestedProbe` — chips that *continue reasoning*, not “explain photosynthesis”
-- `CitationPanel` — optional drawer; never dump PDF
+- `TopicContext` / `CitationPanel` — notes vs textbook chips (`sources` on API)
+- `LearningCheckpoint`, `MisconceptionFlag`, `ConceptMastered`
+- `SuggestedProbe` chips
 
-**Together:** a turn is not a bubble soup. Composer placeholder: “Answer the tutor…” after AI asks. Empty state stays topic cards.
-
-Backend later (not now): optional `move_type` on `ChatResponse`. Until then, **heuristic UI** (ends with `?` → question card; settings mode → hint vs explain styling).
+Until `move_type` exists, keep the heuristic in `components/tutor/socraticKind.js`.
 
 ---
 
@@ -141,7 +148,7 @@ Backend later (not now): optional `move_type` on `ChatResponse`. Until then, **h
 - **Astronomy:** orbits 3D yes.
 - **Tutor thread:** **no** WebGL beside text (attention + GPU).
 
-Folder later: `frontend/src/components/3d/` with `ScienceScene.jsx` lazy, `Molecule.jsx`, never imported from `Message.jsx`.
+Folder exists: [frontend/src/components/3d/README.md](frontend/src/components/3d/README.md). Still no `ScienceScene.jsx`. Do not import this folder from `Message.jsx` or `SocraticMoveCard.jsx`.
 
 ---
 
@@ -210,42 +217,36 @@ flowchart TD
 
 ---
 
-## 12. Component architecture (evolve current folders)
+## 12. Component architecture
 
-Keep [frontend/src/components/ui](frontend/src/components/ui). Add:
+Current map (see [frontend-structure.md](frontend-structure.md)):
 
-- `layout/` — Navbar, AppShell (hub + tutor)
-- `tutor/` — QuestionCard, HintCard, StudentTurn, YourTurnBar, Composer (move)
-- `learning/` — SubjectGrid, TopicCard, MaterialsPanel
-- `3d/` — empty until Phase 8
+- `components/ui/` — Button, Card, Badge, …
+- `components/layout/` — Header, Sidebar
+- `components/tutor/` — SocraticMoveCard, StudentTurn, YourTurnBar
+- `components/chat/` — ChatView, Composer, MessageList
+- `components/learning/` — MaterialsPanel
+- `components/3d/` — empty until Phase 8
 
-Do not delete ChatPage; restyle internals.
+Do not delete ChatPage; keep restyling internals.
 
 ---
 
-## 13. Roadmap (implementation only after approval)
+## 13. Roadmap
 
-**P1 Foundation** — tokens, type scale, button/card consistency. Risk: theme regressions. Test: light/dark hub+chat.
+**P1–P5** — largely done (theme, landing sections, auth chrome, hub as learning home, Socratic cards).
 
-**P2 Landing** — Schoolhouse-like sections using Ask/Think/Reply; GSAP scroll. Do not copy SAT programs.
+**P6** Backend contract — optional `move_type` / `sources`; still FastAPI.
 
-**P3 Auth** — visual only; keep Google/JWT.
+**P7** Progress — local checkpoints then API.
 
-**P4 Dashboard** — hub as learning home; subjects; continue thread; materials.
+**P8** 3D — one subject toy, lazy, desktop. Not before P6 unless you explicitly want a landing atom.
 
-**P5 Socratic UI** — replace ChatGPT message chrome. Highest product value.
+**P9** Polish — more GSAP/Framer.
 
-**P6 Backend contract** — optional `move_type` / sources; still FastAPI. No Qwen swap.
+**P10** Mobile — composer, hub cards, 3D off.
 
-**P7 Progress** — local checkpoints then API.
-
-**P8 3D** — one subject toy, lazy, desktop.
-
-**P9 Polish** — GSAP/Framer micro-interactions.
-
-**P10 Mobile** — composer, hub cards, 3D off.
-
-Testing each phase: browser flows you already use (demo 5 turns, Google materials, chat).
+Test: demo 5 turns, Google materials, light/dark, `/app/chat`.
 
 ---
 

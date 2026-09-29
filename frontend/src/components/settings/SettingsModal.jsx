@@ -2,6 +2,7 @@ import { Download, Trash2 } from 'lucide-react';
 import { Button, Card, Modal } from '@/components/ui';
 import { SOCRATIC_MODES } from '@/constants/app';
 import { useTheme } from '@/theme/ThemeProvider';
+import { formatSessionTranscript } from '@/lib/sessionTranscript';
 
 export default function SettingsModal({
   isOpen,
@@ -16,12 +17,7 @@ export default function SettingsModal({
   const { theme, setTheme, typeSize, setTypeSize } = useTheme();
   const exportMarkdown = () => {
     if (!activeSession?.messages?.length) return;
-    const content = activeSession.messages
-      .map(
-        (message) =>
-          `### ${message.sender === 'user' ? 'Student' : 'Clariq'}\n${message.text}\n`
-      )
-      .join('\n---\n\n');
+    const content = formatSessionTranscript(activeSession);
     const blob = new Blob([content], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');

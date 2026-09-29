@@ -2,11 +2,14 @@ import { useCallback, useMemo, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { sendChat } from '@/api/client';
 import { useAuth } from '@/auth/AuthContext';
+import { homePathForRole, userRole } from '@/auth/roles';
 import { useBackendHealth } from '@/hooks/useBackendHealth';
 import ChatView from '@/components/chat/ChatView';
 import DemoLimitCard from '@/components/chat/DemoLimitCard';
-import SiteHeader from '@/components/layout/SiteHeader';
 import LabFrame from '@/components/lab/LabFrame';
+import LabNav from '@/features/lab/components/LabNav';
+import { tutorMessageFromReply } from '@/components/tutor/socraticKind';
+import '@/features/lab/styles/lab.css';
 
 const DEMO_MAX_TURNS = 5;
 
@@ -43,7 +46,7 @@ export default function DemoPage() {
           sessionId,
           socraticMode: 'strict',
         });
-        setMessages((prev) => [...prev, { sender: 'ai', text: data.answer }]);
+        setMessages((prev) => [...prev, tutorMessageFromReply(data)]);
       } catch (error) {
         setMessages((prev) => [
           ...prev,
@@ -57,14 +60,15 @@ export default function DemoPage() {
   );
 
   if (user) {
-    return <Navigate to="/app" replace />;
+    return <Navigate to={homePathForRole(userRole(user))} replace />;
   }
 
   const remaining = DEMO_MAX_TURNS - studentTurns;
 
   return (
-    <LabFrame className="h-screen">
-      <SiteHeader />
+    <div className="nebular flex h-screen flex-col">
+      <LabNav />
+      <LabFrame fill>
       <p className="lab-header border-b border-[var(--border)] px-5 py-2 text-center text-xs text-[var(--ink-muted)]">
         Open desk · five student turns
         {studentTurns > 0 && !locked
@@ -87,6 +91,7 @@ export default function DemoPage() {
         }
         footer={locked && !isLoading ? <DemoLimitCard /> : null}
       />
-    </LabFrame>
+      </LabFrame>
+    </div>
   );
 }

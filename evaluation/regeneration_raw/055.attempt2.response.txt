@@ -1,0 +1,114 @@
+[
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Think of a coil of wire wrapped around a metal core. When electric current flows through the coil, the metal becomes magnetized, acting like a temporary magnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Picture a piece of iron inside a long copper wire loop. If you power the wire, the iron turns into a magnet that can pick up paper clips."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Imagine a coil of wire around a nail. When you connect a battery, the nail becomes a magnet that can attract small metal objects."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Think of a wire wound around a steel rod. With electric current, the rod turns into a magnet that can be turned on or off."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Picture a coil of wire wrapped around a piece of iron. When current flows, the iron becomes a magnet that can attract metal."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Envision a copper coil around a steel core. When electricity passes through, the core becomes a magnet that can be switched on or off."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Consider a loop of wire around a metal rod. With electric current, the rod turns into a magnet that can pick up small metal objects."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Think of a coil of wire wrapped around a nail. When you connect a battery, the nail becomes a temporary magnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Imagine a coil of wire around a piece of iron. When current flows, the iron becomes a magnet that can attract metal."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Picture a loop of wire wrapped around a steel core. With electricity, the core turns into a magnet that can be turned on or off."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Think of a coil of wire around a nail. When you apply a battery, the nail becomes a magnet that can pick up metal objects."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Envision a copper coil around a steel rod. When current flows, the rod becomes a magnet that can be switched on or off."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Picture a coil of wire around a metal core. With electric current, the core turns into a magnet that can attract small metal items."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Imagine a loop of wire wrapped around a steel nail. When you connect a battery, the nail becomes a temporary magnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Think of a coil of wire around a piece of iron. When current flows, the iron becomes a magnet that can pick up metal."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."},
+      {"role": "user", "content": "What is an electromagnet?"},
+      {"role": "assistant", "content": "Consider a copper coil around a steel core. With electricity, the core turns into a magnet that can be turned on or off."}
+    ]
+  }
+]

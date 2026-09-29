@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
 import { MessageSquare } from 'lucide-react';
+import { useAuth } from '@/auth/AuthContext';
+import { userRole } from '@/auth/roles';
 
 const SIGNALS = [
   {
@@ -15,7 +18,16 @@ const SIGNALS = [
   },
 ];
 
-export default function NebularSignals() {
+export default function LabSignals() {
+  const { user } = useAuth();
+  const role = userRole(user);
+  const progressTo = !user
+    ? '/login'
+    : role === 'student'
+      ? '/app/progress'
+      : role === 'teacher'
+        ? '/teacher'
+        : '/parent';
   return (
     <section id="signals" className="nebular-section" style={{ background: 'var(--n-bg-deep)' }}>
       <div className="nebular-wrap nebular-signals">
@@ -26,6 +38,11 @@ export default function NebularSignals() {
           <h2 className="mt-2 font-outfit text-4xl font-semibold leading-tight">
             Progress students and teachers can act on.
           </h2>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Link to={progressTo} className="nebular-ghost">
+              {role === 'parent' ? 'Parent desk' : role === 'teacher' ? 'Teacher desk' : 'Student progress'}
+            </Link>
+          </div>
         </div>
         {SIGNALS.map((signal) => (
           <article key={signal.title} className="nebular-card p-5">

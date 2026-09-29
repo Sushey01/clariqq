@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useAuth } from '@/auth/AuthContext';
+import { homePathForRole, userRole } from '@/auth/roles';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import MarketingShell from '@/components/layout/MarketingShell';
 import LabHeroIsland from '@/components/lab/LabHeroIsland';
@@ -119,7 +120,7 @@ export default function LandingPage() {
   );
 
   if (user) {
-    return <Navigate to="/app" replace />;
+    return <Navigate to={homePathForRole(userRole(user))} replace />;
   }
 
   return (

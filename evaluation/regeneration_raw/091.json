@@ -1,0 +1,262 @@
+{
+  "opener": "What is puberty?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Puberty is the period when a child's body starts to develop into an adult body, marked by hormonal changes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about the growth hormone released during puberty—how might it affect bone length?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Adolescence is the broader developmental stage; puberty is the specific biological process that starts it."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "The first period, or menarche, is a sign that puberty has begun, but other changes happen before it."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "The hypothalamus releases GnRH, which signals the pituitary to release hormones that kick off puberty."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "The growth spurt is one of many changes during puberty; it’s the rapid increase in height that often occurs in mid-puberty."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "The age can vary widely; some start as early as 9, others around 14, depending on genetics and nutrition."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yes, increased oil production during puberty can clog pores and lead to acne."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Puberty typically ends when the body reaches its adult hormone levels, usually by the late teens."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Physical changes are prominent, but emotional and social shifts also accompany puberty."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Correct! The surge in estrogen and testosterone signals many of puberty’s hallmark changes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Puberty is a phase where hormone levels rise sharply, whereas hormonal balance refers to the steady state after that phase."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Voice deepening is a sign of puberty, but it usually occurs after other changes like growth spurt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Breast development is triggered by estrogen, which stimulates mammary gland growth."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Puberty onset is the beginning of the process; puberty itself includes all subsequent changes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is puberty?"
+        },
+        {
+          "role": "assistant",
+          "content": "Puberty is a specific developmental stage; it’s part of the broader transition from childhood to adulthood."
+        }
+      ]
+    }
+  ]
+}

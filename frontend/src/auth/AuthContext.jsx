@@ -1,18 +1,30 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { getAuthMe, loginWithGoogle as requestGoogleLogin } from '@/api/client';
+import {
+  getAuthMe,
+  loginWithEmail as requestEmailLogin,
+  loginWithGoogle as requestGoogleLogin,
+  signupWithEmail as requestSignup,
+  demoLogin as requestDemoLogin,
+} from '@/api/client';
 import {
   clearAccessToken,
   clearSession,
   getAccessToken,
   getSession,
-  listUsers,
   publicUser,
   saveAccessToken,
   saveSession,
-  saveUsers,
 } from './storage';
 
 const AuthContext = createContext(null);
+
+function applyAuthPayload(data, setUser) {
+  saveAccessToken(data.access_token);
+  const session = publicUser(data.user);
+  saveSession(session);
+  setUser(session);
+  return session;
+}
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => getSession());
@@ -21,55 +33,40 @@ export function AuthProvider({ children }) {
     const token = getAccessToken();
     if (!token) return undefined;
     let cancelled = false;
-    getAuthMe().catch(() => {
-      if (!cancelled) clearAccessToken();
-    });
+    getAuthMe()
+      .then((me) => {
+        if (cancelled) return;
+        const session = publicUser(me);
+        saveSession(session);
+        setUser(session);
+      })
+      .catch(() => {
+        if (!cancelled) clearAccessToken();
+      });
     return () => {
       cancelled = true;
     };
   }, []);
 
   const value = useMemo(() => {
-    const signup = ({ name, email, password }) => {
-      const normalized = email.trim().toLowerCase();
-      const users = listUsers();
-      if (users.some((item) => item.email === normalized)) {
-        throw new Error('An account with that email already exists.');
-      }
-      const record = {
-        id: `user-${Date.now()}`,
-        name: name.trim(),
-        email: normalized,
-        password,
-      };
-      saveUsers([...users, record]);
-      const session = publicUser(record);
-      saveSession(session);
-      setUser(session);
-      return session;
+    const signup = async ({ name, email, password }) => {
+      const data = await requestSignup({ name, email, password });
+      return applyAuthPayload(data, setUser);
     };
 
-    const login = ({ email, password }) => {
-      const normalized = email.trim().toLowerCase();
-      const match = listUsers().find(
-        (item) => item.email === normalized && item.password === password
-      );
-      if (!match) {
-        throw new Error('Email or password is incorrect.');
-      }
-      const session = publicUser(match);
-      saveSession(session);
-      setUser(session);
-      return session;
+    const login = async ({ email, password }) => {
+      const data = await requestEmailLogin({ email, password });
+      return applyAuthPayload(data, setUser);
     };
 
     const loginWithGoogle = async (idToken) => {
       const data = await requestGoogleLogin(idToken);
-      saveAccessToken(data.access_token);
-      const session = publicUser(data.user);
-      saveSession(session);
-      setUser(session);
-      return session;
+      return applyAuthPayload(data, setUser);
+    };
+
+    const loginDemo = async (role) => {
+      const data = await requestDemoLogin(role);
+      return applyAuthPayload(data, setUser);
     };
 
     const logout = () => {
@@ -78,7 +75,7 @@ export function AuthProvider({ children }) {
       setUser(null);
     };
 
-    return { user, signup, login, loginWithGoogle, logout };
+    return { user, signup, login, loginWithGoogle, loginDemo, logout };
   }, [user]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

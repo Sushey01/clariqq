@@ -46,18 +46,18 @@ def _as_chat_dicts(messages: list[BaseMessage]) -> list[dict]:
 
 
 def split_space_payload(messages: list[BaseMessage]) -> tuple[str, list[dict]]:
-    """Last user turn plus prior user/assistant rows for Gradio /chat."""
+    """Last user turn plus prior user/assistant rows for Gradio /chat.
+
+    Hub system text stays off this payload so the Space fine-tune is not
+    overwritten by a second system prompt. Optional textbook snippets belong
+    in the last user turn from the Hub pipeline.
+    """
     rows = _as_chat_dicts(messages)
-    system = "\n\n".join(
-        row["content"] for row in rows if row["role"] == "system" and row["content"]
-    )
     turns = [row for row in rows if row["role"] != "system"]
     question = turns[-1]["content"] if turns else ""
     history = [
         {"role": row["role"], "content": row["content"]} for row in turns[:-1]
     ]
-    if system:
-        question = f"{system}\n\nStudent message:\n{question}"
     return question, history
 
 

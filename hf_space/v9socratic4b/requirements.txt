@@ -1,0 +1,4 @@
+accelerate
+peft>=0.20.0
+sentencepiece
+transformers>=4.56.0

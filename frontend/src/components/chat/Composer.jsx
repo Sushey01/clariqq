@@ -24,8 +24,18 @@ export default function Composer({
     const node = textareaRef.current;
     if (!node) return;
     node.style.height = 'auto';
-    node.style.height = `${Math.min(node.scrollHeight, 200)}px`;
+    node.style.height = `${Math.min(Math.max(node.scrollHeight, 88), 200)}px`;
   }, [input]);
+
+  useEffect(() => {
+    if (isLoading || disabled) return;
+    const node = textareaRef.current;
+    if (!node) return;
+    const id = window.requestAnimationFrame(() => {
+      node.focus({ preventScroll: true });
+    });
+    return () => window.cancelAnimationFrame(id);
+  }, [isLoading, disabled, placeholder]);
 
   const submit = (event) => {
     event?.preventDefault();
@@ -33,7 +43,7 @@ export default function Composer({
     if (!text || isLoading || disabled) return;
     setInput('');
     if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = '88px';
     }
     onSend(text);
   };
@@ -44,6 +54,8 @@ export default function Composer({
         <div className="lab-glass rounded-[1.75rem] focus-within:border-[var(--accent)]">
           <Textarea
             ref={textareaRef}
+            rows={3}
+            autoFocus
             value={input}
             onChange={(event) => setInput(event.target.value)}
             onKeyDown={(event) => {
@@ -53,7 +65,8 @@ export default function Composer({
               }
             }}
             placeholder={placeholder}
-            disabled={isLoading || disabled}
+            disabled={disabled}
+            className="min-h-[88px]"
           />
           <div className="flex items-center justify-between px-3 pb-2">
             <div className="flex items-center gap-2">

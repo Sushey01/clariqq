@@ -1,0 +1,262 @@
+{
+  "opener": "Why are mushrooms not classified as plants?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mushrooms are the fruiting bodies of fungi, which have cells without cell walls made of cellulose. They differ from plants in their lack of chlorophyll and photosynthetic ability."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about what you know about photosynthesis in plants. Do mushrooms perform that process?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right that both can be found on the ground, but consider their cell structure—plants have cellulose walls, fungi have chitin. How does that difference affect their classification?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common misconception. While mushrooms do grow on trees, they actually obtain nutrients differently. What do you think they absorb from the wood?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mushrooms are the reproductive structures of fungi, which are a separate kingdom from plants. They reproduce via spores, not seeds."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about the composition of a maple tree’s leaves versus a mushroom’s cap. Which one contains chlorophyll?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right that both can have structures that look like roots. However, mushrooms lack true roots and instead have mycelium. How does that influence their classification?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common mistake. Mushrooms actually grow by absorbing nutrients from decaying matter. What does that tell you about their relationship to plants?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "A mushroom is the visible fruiting body of a fungus, which belongs to its own kingdom. Unlike plants, fungi have cell walls made of chitin and obtain nutrients by decomposing organic matter."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Consider how pine trees and mushrooms interact. Pine trees produce resin, while mushrooms break down dead wood. What does that suggest about their biological roles?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Stems in plants are vascular tissues, whereas mushroom stems are made of hyphae. How does that structural difference affect their classification?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common misconception. Mushrooms actually obtain nutrients by decomposing wood, not by photosynthesis. What does this say about their kingdom?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "A mushroom is the reproductive structure of a fungus. Fungi are a distinct kingdom; they lack chlorophyll and absorb nutrients from dead organic material."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about how birch trees produce leaves that photosynthesize, while mushrooms break down wood. What does that difference reveal?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "Leaves in plants are for photosynthesis, whereas mushrooms have gills for spore production. How does that functional difference affect their classification?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why are mushrooms not classified as plants?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a frequent error. Mushrooms grow by absorbing nutrients from dead matter, not by photosynthesis. What kingdom does that place them in?"
+        }
+      ]
+    }
+  ]
+}

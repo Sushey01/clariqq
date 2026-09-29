@@ -1,0 +1,326 @@
+{
+  "opener": "Why can some people not see distant objects clearly?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What do you think might happen to the light path when it passes through a very close eye lens?"
+        },
+        {
+          "role": "assistant",
+          "content": "If the lens is too strong, the image forms in front of the retina. That means distant objects appear blurred."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine standing in front of a distant mountain and noticing it looks fuzzy. What part of the eye do you suspect is responsible for this fuzziness?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the cornea and lens focus light incorrectly, the eye struggles to form a sharp image on the retina, causing distant vision problems."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What would you predict if the eye’s lens were slightly too thick for a person?"
+        },
+        {
+          "role": "assistant",
+          "content": "A thicker lens bends light more than needed, so the focus point moves before the retina, making far‑away objects blurry."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "If the pupil dilates in bright light, what happens to the amount of light that reaches the retina?"
+        },
+        {
+          "role": "assistant",
+          "content": "An overly dilated pupil lets in too much light, which can scatter and reduce the sharpness of images on the retina, especially for far objects."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Do you think the problem could be related to the eye’s ability to adjust focus?"
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly. When the ciliary muscles fail to relax properly, the lens stays too round, preventing distant images from focusing on the retina."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What would happen if the eye’s lens were too weak?"
+        },
+        {
+          "role": "assistant",
+          "content": "A weak lens bends light too little, so the image falls behind the retina, making distant objects appear out of focus."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Can you recall the name of the muscle that changes the shape of the lens?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s the ciliary muscle. If it doesn’t contract correctly, the lens can’t flatten enough for distant vision."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What does it mean when we say the eye has a ‘short eye’?"
+        },
+        {
+          "role": "assistant",
+          "content": "A short eye, or myopia, has a longer optical length than the eye’s physical length, so light focuses before the retina, causing distant blur."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What is the relationship between the cornea’s curvature and focus?"
+        },
+        {
+          "role": "assistant",
+          "content": "A steeper cornea bends light more, moving the focal point forward; if it’s too steep, distant objects become blurry."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you look at a far‑away tree and it’s fuzzy, what part of the eye’s anatomy might be at fault?"
+        },
+        {
+          "role": "assistant",
+          "content": "The lens could be too thick or the ciliary muscles might not relax, preventing proper focusing on the retina."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "When the eye’s lens is too flexible, how does that affect far‑away vision?"
+        },
+        {
+          "role": "assistant",
+          "content": "A very flexible lens keeps a round shape, which increases its refractive power and moves the focus in front of the retina, blurring distant objects."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What does the term ‘accommodation’ refer to in the context of vision?"
+        },
+        {
+          "role": "assistant",
+          "content": "Accommodation is the eye’s ability to change the lens shape for different distances; failure to accommodate for far objects leads to blur."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a person who can read a book but can’t spot a car from the street. What might be wrong with the eye’s optical system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Their lens is likely too powerful or the eye’s length is too long, so light focuses before the retina, causing distant blur."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "How does the eye’s ability to adjust focus change as we age?"
+        },
+        {
+          "role": "assistant",
+          "content": "The lens becomes less flexible with age, so the eye struggles to flatten for distant focus, leading to blurry vision."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "What is the effect of a highly curved cornea on vision?"
+        },
+        {
+          "role": "assistant",
+          "content": "A highly curved cornea increases refractive power, making the eye focus light in front of the retina, which causes distant blur."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "Why can some people not see distant objects clearly?"
+        },
+        {
+          "role": "assistant",
+          "content": "If the lens cannot change shape, what kind of vision problem would that produce?"
+        },
+        {
+          "role": "assistant",
+          "content": "It would result in myopia, where distant objects are blurred because the image focuses before the retina."
+        }
+      ]
+    }
+  ]
+}

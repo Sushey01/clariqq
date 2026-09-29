@@ -1,0 +1,262 @@
+{
+  "opener": "Do plants have a nervous system?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "A nervous system is a network that sends signals between parts of the body, similar to how a city’s roads connect different districts."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants don’t have nerves, but they do have a signaling system that moves chemical messages across cells."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "That instant reaction is due to electrical changes in plant cells, not a nervous system like in animals."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants don’t have nerves, but their cells can send electrical signals that trigger movements like leaf folding."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a system that carries signals between parts of an organism, enabling responses to the environment."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sensing light uses photoreceptors, not a nervous system; plants rely on chemical signaling instead."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "That shockwave is a rapid change in electrical potential across cells, not a nervous system like in animals."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants lack nerves, but their cells communicate through chemical and electrical signals."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a chain of cells that transmits messages, letting organisms react quickly to changes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants don’t have nerves, but they use chemical signals to coordinate growth and responses."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Feeling touch uses receptors, not a nervous system; plants rely on electrical changes in cells."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "That instant response is due to electrical changes across cells, not a nervous system."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants lack nerves; they use chemical signaling between cells."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a network that sends signals, allowing an organism to respond to its environment."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants don’t have nerves; they communicate through chemical and electrical signals."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "Do plants have a nervous system?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sensing light uses photoreceptors, not a nervous system; plants rely on chemical signaling."
+        }
+      ]
+    }
+  ]
+}
