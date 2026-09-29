@@ -1,6 +1,7 @@
 """Chroma lookup of textbook and student-note chunks."""
 
 import logging
+import re
 
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from langchain_core.documents import Document
@@ -9,6 +10,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_ollama import OllamaEmbeddings
 
 from app.config import CHROMA_DIR, EMBED_MODEL, RETRIEVE_K, SHARED_USER_ID
+from app.retrieval_eval import search_text
 
 _store = None
 _tagged = False
@@ -88,6 +90,23 @@ def _search(store: Chroma, query: str, k: int, where: dict) -> list[Document]:
         return []
 
 
+def _rerank(query: str, docs: list[Document], k: int) -> list[Document]:
+    """Hybrid order: chunks that contain the query's science words first, vector rank second."""
+    words = [word for word in re.findall(r"[a-z0-9]+", query.lower()) if len(word) > 2]
+    if not words:
+        return docs[:k]
+    phrase = " ".join(words)
+
+    def score(item: tuple[int, Document]) -> tuple[float, int]:
+        rank, doc = item
+        text = doc.page_content.lower()
+        overlap = sum(1 for word in words if word in text) / len(words)
+        return (overlap + (1.0 if phrase in text else 0.0), -rank)
+
+    ranked = sorted(enumerate(docs), key=score, reverse=True)
+    return [doc for _rank, doc in ranked[:k]]
+
+
 def retrieve_documents(query: str, user_id: str | None = None) -> list[Document]:
     """Student notes first (if signed in), then shared textbook chunks."""
     try:
@@ -96,10 +115,12 @@ def retrieve_documents(query: str, user_id: str | None = None) -> list[Document]
         logger.warning("Chroma unavailable (%s). Answering without retrieval.", exc)
         return []
 
+    query = search_text(query)
+    pool = max(RETRIEVE_K * 4, 12)
     notes: list[Document] = []
     if user_id:
-        notes = _search(store, query, RETRIEVE_K, {"user_id": str(user_id)})
-    textbook = _search(store, query, RETRIEVE_K, {"user_id": SHARED_USER_ID})
+        notes = _rerank(query, _search(store, query, pool, {"user_id": str(user_id)}), RETRIEVE_K)
+    textbook = _rerank(query, _search(store, query, pool, {"user_id": SHARED_USER_ID}), RETRIEVE_K)
     seen = set()
     merged: list[Document] = []
     for doc in notes + textbook:

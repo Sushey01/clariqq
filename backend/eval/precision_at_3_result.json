@@ -1,0 +1,1326 @@
+{
+  "date": "2026-09-29",
+  "queries": 100,
+  "judgments": 300,
+  "precision_at_3": 0.873,
+  "exact_phrase_precision_at_3": 0.84,
+  "previous_precision_at_3": 0.607,
+  "target": 0.85,
+  "meets_target": true,
+  "by_subject": {
+    "Biology": 0.815,
+    "Chemistry": 0.912,
+    "Physics": 0.9
+  },
+  "definition": "Precision@3 = (top-3 chunks that mention the concept) / 3, averaged over all gold queries. A chunk mentions the concept if it contains the gold phrase, its stem (rusting -> rust), or listed textbook wording (voltage -> potential difference, neutralisation -> neutralization). exact_phrase_precision_at_3 requires the literal gold phrase. Labels are phrase judgments on the indexed textbook, not a teacher panel and not transcribed NEB past papers.",
+  "index": {
+    "store": "Chroma",
+    "path": "/home/shekhar/Documents/clariq/backend/storage/chroma_db",
+    "embeddings": "nomic-embed-text (Ollama)"
+  },
+  "query_cleaning": "Classroom filler such as 'in Class 10 science' is removed before embedding.",
+  "retrieval": "Vector search returns 12 textbook chunks; they are re-ordered so chunks containing the query's science words come first, then the top 3 are scored. Gold labels are also word-based, so this reranker and the metric share a lexical signal.",
+  "index_build": "backend/scripts/rebuild_textbook_index.py: running headers, page numbers and reprint lines removed; ~1200-character chunks with 200 overlap. Scanned PDFs CDC2017_ScienceGrade10EN.pdf and grade-10-science-and-technology-part-i.pdf have no text layer and are not indexed.",
+  "per_query": [
+    {
+      "query": "What is Measurement?",
+      "search_text": "Measurement",
+      "phrase": "Measurement",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Matter in Class 10 science.",
+      "search_text": "Matter",
+      "phrase": "Matter",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Cell organelles work in the SEE science syllabus?",
+      "search_text": "Cell organelles",
+      "phrase": "Cell organelles",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about SI units. Where should I look in the textbook?",
+      "search_text": "SI units",
+      "phrase": "SI units",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Mixture?",
+      "search_text": "Mixture",
+      "phrase": "Mixture",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Plant cell in Class 10 science.",
+      "search_text": "Plant cell",
+      "phrase": "Plant cell",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "How does Scalars work in the SEE science syllabus?",
+      "search_text": "Scalars",
+      "phrase": "Scalars",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Proton. Where should I look in the textbook?",
+      "search_text": "Proton",
+      "phrase": "Proton",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Photosynthesis?",
+      "search_text": "Photosynthesis",
+      "phrase": "Photosynthesis",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Vectors in Class 10 science.",
+      "search_text": "Vectors",
+      "phrase": "Vectors",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Neutron work in the SEE science syllabus?",
+      "search_text": "Neutron",
+      "phrase": "Neutron",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Transpiration. Where should I look in the textbook?",
+      "search_text": "Transpiration",
+      "phrase": "Transpiration",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Acceleration?",
+      "search_text": "Acceleration",
+      "phrase": "Acceleration",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Atomic number in Class 10 science.",
+      "search_text": "Atomic number",
+      "phrase": "Atomic number",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Tropism work in the SEE science syllabus?",
+      "search_text": "Tropism",
+      "phrase": "Tropism",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about Weight. Where should I look in the textbook?",
+      "search_text": "Weight",
+      "phrase": "Weight",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Electronic configuration?",
+      "search_text": "Electronic configuration",
+      "phrase": "Electronic configuration",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Flower in Class 10 science.",
+      "search_text": "Flower",
+      "phrase": "Flower",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Friction work in the SEE science syllabus?",
+      "search_text": "Friction",
+      "phrase": "Friction",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Valency. Where should I look in the textbook?",
+      "search_text": "Valency",
+      "phrase": "Valency",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Germination?",
+      "search_text": "Germination",
+      "phrase": "Germination",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Momentum in Class 10 science.",
+      "search_text": "Momentum",
+      "phrase": "Momentum",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Periodic table work in the SEE science syllabus?",
+      "search_text": "Periodic table",
+      "phrase": "Periodic table",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Digestion. Where should I look in the textbook?",
+      "search_text": "Digestion",
+      "phrase": "Digestion",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Atmospheric pressure?",
+      "search_text": "Atmospheric pressure",
+      "phrase": "Atmospheric pressure",
+      "subject": "Physics",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "Explain Non-metals in Class 10 science.",
+      "search_text": "Non-metals",
+      "phrase": "Non-metals",
+      "subject": "Chemistry",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Respiration work in the SEE science syllabus?",
+      "search_text": "Respiration",
+      "phrase": "Respiration",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Density. Where should I look in the textbook?",
+      "search_text": "Density",
+      "phrase": "Density",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Ionic bond?",
+      "search_text": "Ionic bond",
+      "phrase": "Ionic bond",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Circulation in Class 10 science.",
+      "search_text": "Circulation",
+      "phrase": "Circulation",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Kinetic energy work in the SEE science syllabus?",
+      "search_text": "Kinetic energy",
+      "phrase": "Kinetic energy",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Covalent bond. Where should I look in the textbook?",
+      "search_text": "Covalent bond",
+      "phrase": "Covalent bond",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Excretion?",
+      "search_text": "Excretion",
+      "phrase": "Excretion",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Potential energy in Class 10 science.",
+      "search_text": "Potential energy",
+      "phrase": "Potential energy",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Chemical formula work in the SEE science syllabus?",
+      "search_text": "Chemical formula",
+      "phrase": "Chemical formula",
+      "subject": "Chemistry",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about Nervous system. Where should I look in the textbook?",
+      "search_text": "Nervous system",
+      "phrase": "Nervous system",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Conservation of energy?",
+      "search_text": "Conservation of energy",
+      "phrase": "Conservation of energy",
+      "subject": "Physics",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "Explain Chemical equation in Class 10 science.",
+      "search_text": "Chemical equation",
+      "phrase": "Chemical equation",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Reproduction work in the SEE science syllabus?",
+      "search_text": "Reproduction",
+      "phrase": "Reproduction",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Reflection of light. Where should I look in the textbook?",
+      "search_text": "Reflection of light",
+      "phrase": "Reflection of light",
+      "subject": "Physics",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "What is Indicators?",
+      "search_text": "Indicators",
+      "phrase": "Indicators",
+      "subject": "Chemistry",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "query": "Explain Mitosis in Class 10 science.",
+      "search_text": "Mitosis",
+      "phrase": "Mitosis",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Refraction of light work in the SEE science syllabus?",
+      "search_text": "Refraction of light",
+      "phrase": "Refraction of light",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Neutralisation. Where should I look in the textbook?",
+      "search_text": "Neutralisation",
+      "phrase": "Neutralisation",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Meiosis?",
+      "search_text": "Meiosis",
+      "phrase": "Meiosis",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Lenses in Class 10 science.",
+      "search_text": "Lenses",
+      "phrase": "Lenses",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Oxidation work in the SEE science syllabus?",
+      "search_text": "Oxidation",
+      "phrase": "Oxidation",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Chromosome. Where should I look in the textbook?",
+      "search_text": "Chromosome",
+      "phrase": "Chromosome",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Human eye?",
+      "search_text": "Human eye",
+      "phrase": "Human eye",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Reduction in Class 10 science.",
+      "search_text": "Reduction",
+      "phrase": "Reduction",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Heredity work in the SEE science syllabus?",
+      "search_text": "Heredity",
+      "phrase": "Heredity",
+      "subject": "Biology",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about Electric current. Where should I look in the textbook?",
+      "search_text": "Electric current",
+      "phrase": "Electric current",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Rusting?",
+      "search_text": "Rusting",
+      "phrase": "Rusting",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Microorganisms in Class 10 science.",
+      "search_text": "Microorganisms",
+      "phrase": "Microorganisms",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Potential difference work in the SEE science syllabus?",
+      "search_text": "Potential difference",
+      "phrase": "Potential difference",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Hard water. Where should I look in the textbook?",
+      "search_text": "Hard water",
+      "phrase": "Hard water",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Bacteria?",
+      "search_text": "Bacteria",
+      "phrase": "Bacteria",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Magnetism in Class 10 science.",
+      "search_text": "Magnetism",
+      "phrase": "Magnetism",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Hydrocarbons work in the SEE science syllabus?",
+      "search_text": "Hydrocarbons",
+      "phrase": "Hydrocarbons",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Pathogen. Where should I look in the textbook?",
+      "search_text": "Pathogen",
+      "phrase": "Pathogen",
+      "subject": "Biology",
+      "precision_at_3": 0.0,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "What is Electromagnet?",
+      "search_text": "Electromagnet",
+      "phrase": "Electromagnet",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Polymers in Class 10 science.",
+      "search_text": "Polymers",
+      "phrase": "Polymers",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Immunity work in the SEE science syllabus?",
+      "search_text": "Immunity",
+      "phrase": "Immunity",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about newton. Where should I look in the textbook?",
+      "search_text": "newton",
+      "phrase": "newton",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Rate of reaction?",
+      "search_text": "Rate of reaction",
+      "phrase": "Rate of reaction",
+      "subject": "Chemistry",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "Explain Ecosystem in Class 10 science.",
+      "search_text": "Ecosystem",
+      "phrase": "Ecosystem",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does gravity work in the SEE science syllabus?",
+      "search_text": "gravity",
+      "phrase": "gravity",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Electrolysis. Where should I look in the textbook?",
+      "search_text": "Electrolysis",
+      "phrase": "Electrolysis",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Food chain?",
+      "search_text": "Food chain",
+      "phrase": "Food chain",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain transformer in Class 10 science.",
+      "search_text": "transformer",
+      "phrase": "transformer",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does isotope work in the SEE science syllabus?",
+      "search_text": "isotope",
+      "phrase": "isotope",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Food web. Where should I look in the textbook?",
+      "search_text": "Food web",
+      "phrase": "Food web",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is generator?",
+      "search_text": "generator",
+      "phrase": "generator",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain alkali in Class 10 science.",
+      "search_text": "alkali",
+      "phrase": "alkali",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does Biodiversity work in the SEE science syllabus?",
+      "search_text": "Biodiversity",
+      "phrase": "Biodiversity",
+      "subject": "Biology",
+      "precision_at_3": 0.0,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about series circuit. Where should I look in the textbook?",
+      "search_text": "series circuit",
+      "phrase": "series circuit",
+      "subject": "Physics",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "query": "What is alloy?",
+      "search_text": "alloy",
+      "phrase": "alloy",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain Conservation in Class 10 science.",
+      "search_text": "Conservation",
+      "phrase": "Conservation",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "How does motor work in the SEE science syllabus?",
+      "search_text": "motor",
+      "phrase": "motor",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about balanced equation. Where should I look in the textbook?",
+      "search_text": "balanced equation",
+      "phrase": "balanced equation",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is Pollution?",
+      "search_text": "Pollution",
+      "phrase": "Pollution",
+      "subject": "Biology",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "Explain charge in Class 10 science.",
+      "search_text": "charge",
+      "phrase": "charge",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does ph scale work in the SEE science syllabus?",
+      "search_text": "ph scale",
+      "phrase": "ph scale",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about Human health. Where should I look in the textbook?",
+      "search_text": "Human health",
+      "phrase": "Human health",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 0.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is voltage?",
+      "search_text": "voltage",
+      "phrase": "voltage",
+      "subject": "Physics",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain litmus in Class 10 science.",
+      "search_text": "litmus",
+      "phrase": "litmus",
+      "subject": "Chemistry",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "How does Plant hormones work in the SEE science syllabus?",
+      "search_text": "Plant hormones",
+      "phrase": "Plant hormones",
+      "subject": "Biology",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "query": "I am confused about current electricity. Where should I look in the textbook?",
+      "search_text": "current electricity",
+      "phrase": "current electricity",
+      "subject": "Physics",
+      "precision_at_3": 0.3333333333333333,
+      "exact_precision_at_3": 0.3333333333333333,
+      "top3_relevant": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "query": "What is corrosion?",
+      "search_text": "corrosion",
+      "phrase": "corrosion",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain dna in Class 10 science.",
+      "search_text": "dna",
+      "phrase": "dna",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does soap work in the SEE science syllabus?",
+      "search_text": "soap",
+      "phrase": "soap",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about hormone. Where should I look in the textbook?",
+      "search_text": "hormone",
+      "phrase": "hormone",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is detergent?",
+      "search_text": "detergent",
+      "phrase": "detergent",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "Explain enzyme in Class 10 science.",
+      "search_text": "enzyme",
+      "phrase": "enzyme",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does ethanol work in the SEE science syllabus?",
+      "search_text": "ethanol",
+      "phrase": "ethanol",
+      "subject": "Chemistry",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about kidney. Where should I look in the textbook?",
+      "search_text": "kidney",
+      "phrase": "kidney",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "What is reactivity?",
+      "search_text": "reactivity",
+      "phrase": "reactivity",
+      "subject": "Chemistry",
+      "precision_at_3": 0.6666666666666666,
+      "exact_precision_at_3": 0.6666666666666666,
+      "top3_relevant": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "query": "Explain heart in Class 10 science.",
+      "search_text": "heart",
+      "phrase": "heart",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "How does chlorophyll work in the SEE science syllabus?",
+      "search_text": "chlorophyll",
+      "phrase": "chlorophyll",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "query": "I am confused about stomata. Where should I look in the textbook?",
+      "search_text": "stomata",
+      "phrase": "stomata",
+      "subject": "Biology",
+      "precision_at_3": 1.0,
+      "exact_precision_at_3": 1.0,
+      "top3_relevant": [
+        true,
+        true,
+        true
+      ]
+    }
+  ]
+}

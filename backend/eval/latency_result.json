@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-29",
+  "health": {
+    "status": "ok",
+    "llm_provider": "modal",
+    "groq_configured": true,
+    "modal_configured": true,
+    "hf_space_configured": true,
+    "detail": null
+  },
+  "target_seconds": 5,
+  "note": "Every request failed before a tutor reply. seconds is the time until the error, not an answer time. The live Modal server returned 404, so the 5 second bar was not measured. This run is also single-user, not 10 concurrent sessions.",
+  "queries": [
+    {
+      "question": "What is density?",
+      "status": 502,
+      "seconds": 1.336,
+      "answer_words": 0,
+      "error": {
+        "detail": "modal error 404: "
+      }
+    },
+    {
+      "question": "Why does ice float on water?",
+      "status": 502,
+      "seconds": 0.407,
+      "answer_words": 0,
+      "error": {
+        "detail": "modal error 404: "
+      }
+    },
+    {
+      "question": "Explain photosynthesis in one guiding question.",
+      "status": 502,
+      "seconds": 0.514,
+      "answer_words": 0,
+      "error": {
+        "detail": "modal error 404: "
+      }
+    },
+    {
+      "question": "What is an ionic bond?",
+      "status": 502,
+      "seconds": 0.407,
+      "answer_words": 0,
+      "error": {
+        "detail": "modal error 404: "
+      }
+    },
+    {
+      "question": "How does the human eye form an image?",
+      "status": 502,
+      "seconds": 0.409,
+      "answer_words": 0,
+      "error": {
+        "detail": "modal error 404: "
+      }
+    }
+  ],
+  "ok": 0,
+  "median_seconds": null,
+  "max_seconds": null,
+  "meets_5s": false
+}

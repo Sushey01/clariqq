@@ -104,14 +104,11 @@ class DataIngestionPipeline:
         """
         logger.info("Initializing text splitting process.")
         
-        # A chunk size of 512 characters with a 64-character overlap is explicitly 
-        # optimized for scientific texts. This specific configuration ensures that 
-        # multiline scientific equations, chemical formulas, and contiguous 
-        # theoretical principles (such as Ohm's Law or Mendel's principles) remain 
-        # structurally sound and contextually isolated without fragmentation.
+        # Match rebuild_textbook_index.py: about 300 tokens, so a concept and
+        # its definition stay in one chunk. That script also strips running headers.
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=512,
-            chunk_overlap=64,
+            chunk_size=1200,
+            chunk_overlap=200,
             length_function=len,
             is_separator_regex=False,
         )
