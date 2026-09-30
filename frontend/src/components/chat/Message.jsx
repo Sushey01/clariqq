@@ -7,9 +7,13 @@ import { resolveMoveKind } from '@/components/tutor/socraticKind';
 
 export default function Message({
   message,
+  index,
   onRegenerate,
   showYourTurn = false,
   socraticMode = 'strict',
+  onEditUser,
+  onDeleteUser,
+  onShareUser,
 }) {
   const isUser = message.sender === 'user';
   const [copied, setCopied] = useState(false);
@@ -21,7 +25,14 @@ export default function Message({
   };
 
   if (isUser) {
-    return <StudentTurn text={message.text} />;
+    return (
+      <StudentTurn
+        text={message.text}
+        onEdit={onEditUser ? (text) => onEditUser(index, text) : undefined}
+        onDelete={onDeleteUser ? () => onDeleteUser(index) : undefined}
+        onShare={onShareUser ? () => onShareUser(index) : undefined}
+      />
+    );
   }
 
   const kind = resolveMoveKind(message, socraticMode);

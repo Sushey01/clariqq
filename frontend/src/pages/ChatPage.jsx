@@ -55,7 +55,7 @@ export default function ChatPage() {
   }, [createChat]);
 
   const askTutor = useCallback(
-    async (question, { regenerate = false } = {}) => {
+    async (question, { regenerate = false, userAlreadyAppended = false } = {}) => {
       if (!activeSessionId || !question.trim()) return;
 
       if (regenerate) {
@@ -64,7 +64,7 @@ export default function ChatPage() {
           withoutLastAi.pop();
         }
         replaceMessages(activeSessionId, withoutLastAi);
-      } else {
+      } else if (!userAlreadyAppended) {
         const isFirst =
           (activeSession.messages || []).filter((m) => m.sender === 'user')
             .length === 0;
@@ -121,6 +121,50 @@ export default function ChatPage() {
     .reverse()
     .find((message) => message.sender === 'user')?.text;
 
+  const handleEditUser = useCallback(
+    (index, text) => {
+      if (!activeSessionId || isLoading || !text.trim()) return;
+      const prior = (activeSession.messages || []).slice(0, index);
+      const isFirst = prior.filter((message) => message.sender === 'user').length === 0;
+      replaceMessages(
+        activeSessionId,
+        [...prior, { sender: 'user', text }],
+        isFirst ||
+          activeSession.title === 'New session' ||
+          activeSession.title === 'New chat'
+          ? titleFromQuestion(text)
+          : undefined
+      );
+      askTutor(text, { userAlreadyAppended: true });
+    },
+    [activeSession, activeSessionId, askTutor, isLoading, replaceMessages]
+  );
+
+  const handleDeleteUser = useCallback(
+    (index) => {
+      if (!activeSessionId || isLoading) return;
+      replaceMessages(activeSessionId, (activeSession.messages || []).slice(0, index));
+    },
+    [activeSession, activeSessionId, isLoading, replaceMessages]
+  );
+
+  const handleShareUser = useCallback(
+    async (index) => {
+      const messages = activeSession?.messages || [];
+      const userMsg = messages[index];
+      if (!userMsg) return;
+      const next = messages[index + 1];
+      const lines = [`Student: ${userMsg.text}`];
+      if (next?.sender === 'ai') lines.push(`Clariq: ${next.text}`);
+      try {
+        await navigator.clipboard.writeText(lines.join('\n\n'));
+      } catch {
+        /* ignore */
+      }
+    },
+    [activeSession]
+  );
+
   return (
     <LabFrame className="h-screen overflow-hidden">
     <div className="flex min-h-0 flex-1 overflow-hidden font-sans">
@@ -160,6 +204,9 @@ export default function ChatPage() {
           onRegenerate={() =>
             lastUserText && askTutor(lastUserText, { regenerate: true })
           }
+          onEditUser={handleEditUser}
+          onDeleteUser={handleDeleteUser}
+          onShareUser={handleShareUser}
           uploadEnabled={Boolean(getAccessToken())}
           uploadStatus={uploadStatus}
           onUpload={async (file) => {

@@ -155,3 +155,64 @@ def events_since(user_id: str, days: int = 7) -> list[dict]:
             (user_id, start),
         ).fetchall()
     return [dict(row) for row in rows]
+
+
+def activity_calendar(user_id: str, weeks: int = 53) -> dict:
+    """Daily scored-turn counts for a GitHub-style heatmap."""
+    today = datetime.now(timezone.utc).date()
+    span = max(1, weeks) * 7
+    start = today - timedelta(days=span - 1)
+    while start.weekday() != 6:
+        start -= timedelta(days=1)
+    with _connect() as conn:
+        rows = conn.execute(
+            """
+            SELECT substr(created_at, 1, 10) AS day, COUNT(*) AS n
+            FROM knowledge_events
+            WHERE user_id = ? AND created_at >= ?
+            GROUP BY day
+            """,
+            (user_id, start.isoformat()),
+        ).fetchall()
+    counts = {row["day"]: int(row["n"]) for row in rows}
+    days = []
+    cursor = start
+    while cursor <= today:
+        key = cursor.isoformat()
+        days.append({"date": key, "count": counts.get(key, 0)})
+        cursor += timedelta(days=1)
+    return {
+        "days": days,
+        "current_streak": _current_streak(counts, today),
+        "longest_streak": _longest_streak(sorted(counts)),
+        "active_days": sum(1 for item in days if item["count"] > 0),
+    }
+
+
+def _current_streak(counts: dict, today) -> int:
+    cursor = today
+    if counts.get(cursor.isoformat(), 0) == 0:
+        cursor = today - timedelta(days=1)
+        if counts.get(cursor.isoformat(), 0) == 0:
+            return 0
+    streak = 0
+    while counts.get(cursor.isoformat(), 0) > 0:
+        streak += 1
+        cursor -= timedelta(days=1)
+    return streak
+
+
+def _longest_streak(sorted_days: list[str]) -> int:
+    if not sorted_days:
+        return 0
+    best = 1
+    run = 1
+    for index in range(1, len(sorted_days)):
+        prev = datetime.fromisoformat(sorted_days[index - 1]).date()
+        cur = datetime.fromisoformat(sorted_days[index]).date()
+        if (cur - prev).days == 1:
+            run += 1
+            best = max(best, run)
+        else:
+            run = 1
+    return best

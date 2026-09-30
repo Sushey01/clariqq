@@ -41,9 +41,9 @@ export default function Sidebar({
       >
         <div className="space-y-2 p-3">
           <div className="flex items-center justify-between px-1 py-1">
-            <span className="font-outfit text-sm font-semibold text-[var(--ink)]">
-              Lab log
-            </span>
+            <Link to="/" className="font-outfit text-sm font-semibold text-[var(--ink)]">
+              Clariq
+            </Link>
             <div className="flex items-center">
               <Button variant="ghost" size="icon" onClick={onNewChat} title="New session">
                 <SquarePen className="h-4 w-4" />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SiteHeader from '@/components/layout/SiteHeader';
+import LabNav from '@/features/lab/components/LabNav';
 import SiteFooter from '@/components/layout/SiteFooter';
 import LabHeroFallback from '@/components/lab/LabHeroFallback';
 import TryDemoButton from '@/components/auth/TryDemoButton';
@@ -7,7 +7,7 @@ import TryDemoButton from '@/components/auth/TryDemoButton';
 export default function AuthLayout({ eyebrow, title, children }) {
   return (
     <div data-lab="cinematic" className="min-h-screen bg-[var(--bg-canvas)] text-[var(--ink)]">
-      <SiteHeader />
+      <LabNav />
       <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl lg:grid-cols-2">
         <section className="hero-band relative hidden overflow-hidden p-12 lg:flex lg:flex-col lg:justify-between">
           <span className="lab-orb-cyan pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full" />

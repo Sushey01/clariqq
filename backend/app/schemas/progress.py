@@ -48,3 +48,15 @@ class WeeklyReportOut(BaseModel):
     mean_st: float | None
     weakest: list[MasteryOut]
     confused: list[MasteryOut]
+
+
+class ActivityDayOut(BaseModel):
+    date: str
+    count: int
+
+
+class ActivityOut(BaseModel):
+    days: list[ActivityDayOut]
+    current_streak: int
+    longest_streak: int
+    active_days: int

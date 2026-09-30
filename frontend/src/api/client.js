@@ -179,6 +179,10 @@ export function getWeeklyReport() {
   return authGet('/api/reports/weekly');
 }
 
+export function getProgressActivity(weeks = 53) {
+  return authGet(`/api/progress/activity?weeks=${weeks}`);
+}
+
 async function authPost(path, body) {
   const response = await fetch(`${API_BASE}${path}`, {
     method: 'POST',

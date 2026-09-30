@@ -15,6 +15,9 @@ export default function ChatView({
   backendStatus,
   onSend,
   onRegenerate,
+  onEditUser,
+  onDeleteUser,
+  onShareUser,
   composerDisabled = false,
   composerPlaceholder,
   footer = null,
@@ -55,6 +58,9 @@ export default function ChatView({
               isLoading={isLoading}
               socraticMode={socraticMode}
               onRegenerate={composerDisabled ? null : onRegenerate}
+              onEditUser={composerDisabled ? undefined : onEditUser}
+              onDeleteUser={composerDisabled ? undefined : onDeleteUser}
+              onShareUser={onShareUser}
             />
           </div>
         )}

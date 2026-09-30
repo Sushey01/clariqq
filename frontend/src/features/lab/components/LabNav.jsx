@@ -2,6 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { FlaskConical } from 'lucide-react';
 import { useAuth } from '@/auth/AuthContext';
 import { userRole } from '@/auth/roles';
+import ThemeToggle from '@/components/theme/ThemeToggle';
+import '@/features/lab/styles/lab.css';
 
 export default function LabNav() {
   const { user } = useAuth();
@@ -44,9 +46,23 @@ export default function LabNav() {
         ) : null}
       </nav>
       <div className="flex items-center gap-2">
+        <ThemeToggle />
+        {!user ? (
+          <Link to="/login" className="hidden text-sm text-[var(--n-muted)] hover:text-[var(--n-ink)] sm:inline">
+            Sign in
+          </Link>
+        ) : null}
         <Link to="/preview" className="nebular-preview-btn">
           Preview
         </Link>
+        {!user ? (
+          <Link
+            to="/signup"
+            className="rounded-full bg-[var(--n-cyan)] px-3 py-1.5 text-xs font-semibold text-[#041018]"
+          >
+            Sign up
+          </Link>
+        ) : null}
       </div>
     </header>
   );

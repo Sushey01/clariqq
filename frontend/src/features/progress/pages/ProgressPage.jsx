@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProgressGraph, getWeeklyReport } from '@/api/client';
 import LabLayout from '@/features/lab/components/LabLayout';
+import ActivityHeatmap from '@/features/progress/components/ActivityHeatmap';
 import MasteryCard from '@/features/progress/components/MasteryCard';
+import useProgressActivity from '@/features/progress/hooks/useProgressActivity';
 import { downloadJson } from '@/features/progress/lib/mastery';
 
 const SUBJECTS = ['All', 'Physics', 'Chemistry', 'Biology'];
@@ -13,6 +15,7 @@ export default function ProgressPage() {
   const [subject, setSubject] = useState('All');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const activity = useProgressActivity();
 
   useEffect(() => {
     let cancelled = false;
@@ -68,6 +71,17 @@ export default function ProgressPage() {
               </button>
             ) : null}
           </div>
+
+          {activity ? (
+            <div className="nebular-card mt-8 p-5">
+              <ActivityHeatmap
+                days={activity.days}
+                currentStreak={activity.current_streak}
+                longestStreak={activity.longest_streak}
+                activeDays={activity.active_days}
+              />
+            </div>
+          ) : null}
 
           {loading ? <p className="mt-8 text-sm text-[var(--n-muted)]">Loading graph…</p> : null}
           {error ? (

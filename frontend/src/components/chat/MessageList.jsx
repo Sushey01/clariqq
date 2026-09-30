@@ -3,7 +3,15 @@ import Message from './Message';
 import TypingIndicator from './TypingIndicator';
 import { lastSentenceIsQuestion } from '@/components/tutor/socraticKind';
 
-export default function MessageList({ messages, isLoading, onRegenerate, socraticMode }) {
+export default function MessageList({
+  messages,
+  isLoading,
+  onRegenerate,
+  socraticMode,
+  onEditUser,
+  onDeleteUser,
+  onShareUser,
+}) {
   const endRef = useRef(null);
 
   useEffect(() => {
@@ -21,8 +29,12 @@ export default function MessageList({ messages, isLoading, onRegenerate, socrati
           <Message
             key={`${message.sender}-${index}`}
             message={message}
+            index={index}
             showYourTurn={isLastAi}
             socraticMode={socraticMode}
+            onEditUser={onEditUser}
+            onDeleteUser={onDeleteUser}
+            onShareUser={onShareUser}
             onRegenerate={
               index === messages.length - 1 && message.sender === 'ai'
                 ? onRegenerate

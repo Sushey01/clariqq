@@ -6,7 +6,9 @@ export default function SiteFooter() {
     <footer className="border-t border-[var(--border)] bg-[var(--bg-raised)]">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-outfit text-lg font-semibold">Clariq</p>
+          <Link to="/" className="font-outfit text-lg font-semibold">
+            Clariq
+          </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--ink-muted)]">
             A cinematic front door for a serious Socratic tutor. Grade 10 science for Nepal — one
             question at a time, not a homework dump.

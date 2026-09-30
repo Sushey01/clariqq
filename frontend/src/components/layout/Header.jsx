@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Copy, LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
+import { Check, Copy, FlaskConical, LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
 import { Badge, Button } from '@/components/ui';
 import ModelSelect from './ModelSelect';
 import ThemeToggle from '@/components/theme/ThemeToggle';
 import { copySessionTranscript } from '@/lib/sessionTranscript';
+import useProgressActivity from '@/features/progress/hooks/useProgressActivity';
 
 const STATUS = {
   ok: { label: 'Lab online', variant: 'emerald' },
@@ -25,6 +26,7 @@ export default function Header({
 }) {
   const [modelOpen, setModelOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const activity = useProgressActivity();
   const status = STATUS[backendStatus] ?? STATUS.unknown;
   const canCopy = (session?.messages || []).length > 0;
 
@@ -48,6 +50,10 @@ export default function Header({
             <PanelLeft className="h-5 w-5" />
           </Button>
         )}
+        <Link to="/" className="hidden items-center gap-1.5 px-2 sm:inline-flex">
+          <FlaskConical className="h-4 w-4 text-[var(--accent)]" />
+          <span className="font-outfit text-sm font-semibold">Clariq</span>
+        </Link>
         <div className="hidden px-2 sm:block">
           <p className="font-outfit text-sm font-semibold">The desk</p>
           <p className="text-[10px] uppercase tracking-[0.16em] text-[var(--accent)]">2D Socratic thread</p>
@@ -74,6 +80,15 @@ export default function Header({
       </div>
 
       <div className="flex items-center gap-2">
+        {activity ? (
+          <Link
+            to="/app/progress"
+            className="hidden rounded-lg px-2 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)] sm:inline-flex"
+            title="Practice streak from scored turns"
+          >
+            {activity.current_streak}d streak
+          </Link>
+        ) : null}
         <Button
           variant="ghost"
           size="sm"

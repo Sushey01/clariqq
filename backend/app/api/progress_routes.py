@@ -22,6 +22,7 @@ from app.auth.jwt_tokens import get_current_user, get_optional_user
 from app.knowledge.graph import counts, edges, nodes
 from app.reports.weekly import build_weekly_report, mastery_out
 from app.schemas.progress import (
+    ActivityOut,
     ConceptOut,
     GraphEdgeOut,
     GraphNodeOut,
@@ -29,7 +30,7 @@ from app.schemas.progress import (
     MasteryOut,
     WeeklyReportOut,
 )
-from app.storage.mastery import list_mastery
+from app.storage.mastery import activity_calendar, list_mastery
 
 router = APIRouter()
 
@@ -70,6 +71,14 @@ def progress_graph(user: dict = Depends(get_current_user)):
         GraphEdgeOut(source=edge["from"], target=edge["to"]) for edge in edges()
     ]
     return GraphOut(counts=counts(), nodes=graph_nodes, edges=graph_edges)
+
+
+@router.get("/api/progress/activity", response_model=ActivityOut)
+def progress_activity(
+    user: dict = Depends(get_current_user),
+    weeks: int = Query(default=53, ge=4, le=53),
+):
+    return activity_calendar(user["id"], weeks=weeks)
 
 
 @router.get("/api/reports/weekly", response_model=WeeklyReportOut)

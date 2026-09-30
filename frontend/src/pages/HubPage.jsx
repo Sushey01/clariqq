@@ -8,6 +8,8 @@ import ThemeToggle from '@/components/theme/ThemeToggle';
 import MaterialsPanel from '@/components/learning/MaterialsPanel';
 import LabFrame from '@/components/lab/LabFrame';
 import { Button } from '@/components/ui';
+import ActivityHeatmap from '@/features/progress/components/ActivityHeatmap';
+import useProgressActivity from '@/features/progress/hooks/useProgressActivity';
 
 const BENCH_ACCENT = {
   physics: '#22d3ee',
@@ -31,6 +33,7 @@ export default function HubPage() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const { sessions, createChat, setActiveSessionId } = useChatSessions();
+  const activity = useProgressActivity();
 
   if (!user) {
     return <Navigate to="/login" replace />;
@@ -60,7 +63,7 @@ export default function HubPage() {
       <header className="lab-header sticky top-0 z-30">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <div>
-            <Link to="/app" className="font-outfit text-lg font-semibold">
+            <Link to="/" className="font-outfit text-lg font-semibold">
               Clariq
             </Link>
             <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--accent)]">Lab floor</p>
@@ -103,6 +106,18 @@ export default function HubPage() {
             </div>
           ))}
         </div>
+
+        {activity ? (
+          <div className="lab-glass mt-6 rounded-[1.75rem] p-6">
+            <ActivityHeatmap
+              compact
+              days={activity.days}
+              currentStreak={activity.current_streak}
+              longestStreak={activity.longest_streak}
+              activeDays={activity.active_days}
+            />
+          </div>
+        ) : null}
 
         {last ? (
           <button

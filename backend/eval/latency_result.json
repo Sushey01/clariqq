@@ -1,64 +1,124 @@
 {
-  "date": "2026-09-29",
+  "date": "2026-09-30",
   "health": {
     "status": "ok",
-    "llm_provider": "modal",
+    "llm_provider": "hf_space",
     "groq_configured": true,
     "modal_configured": true,
     "hf_space_configured": true,
     "detail": null
   },
   "target_seconds": 5,
-  "note": "Every request failed before a tutor reply. seconds is the time until the error, not an answer time. The live Modal server returned 404, so the 5 second bar was not measured. This run is also single-user, not 10 concurrent sessions.",
+  "note": "Warm sequential replies are the five queries above. The first request after the Space woke was 12.9s. concurrent_10 is ten overlapping POSTs. The 5 second bar is met only when meets_5s_concurrent_10 is true.",
   "queries": [
     {
       "question": "What is density?",
-      "status": 502,
-      "seconds": 1.336,
-      "answer_words": 0,
-      "error": {
-        "detail": "modal error 404: "
-      }
+      "status": 200,
+      "seconds": 3.311,
+      "answer_words": 34,
+      "error": null
     },
     {
       "question": "Why does ice float on water?",
-      "status": 502,
-      "seconds": 0.407,
-      "answer_words": 0,
-      "error": {
-        "detail": "modal error 404: "
-      }
+      "status": 200,
+      "seconds": 3.036,
+      "answer_words": 60,
+      "error": null
     },
     {
       "question": "Explain photosynthesis in one guiding question.",
-      "status": 502,
-      "seconds": 0.514,
-      "answer_words": 0,
-      "error": {
-        "detail": "modal error 404: "
-      }
+      "status": 200,
+      "seconds": 3.547,
+      "answer_words": 45,
+      "error": null
     },
     {
       "question": "What is an ionic bond?",
-      "status": 502,
-      "seconds": 0.407,
-      "answer_words": 0,
-      "error": {
-        "detail": "modal error 404: "
-      }
+      "status": 200,
+      "seconds": 3.629,
+      "answer_words": 30,
+      "error": null
     },
     {
       "question": "How does the human eye form an image?",
-      "status": 502,
-      "seconds": 0.409,
-      "answer_words": 0,
-      "error": {
-        "detail": "modal error 404: "
-      }
+      "status": 200,
+      "seconds": 2.416,
+      "answer_words": 36,
+      "error": null
     }
   ],
-  "ok": 0,
-  "median_seconds": null,
-  "max_seconds": null,
-  "meets_5s": false
+  "ok": 5,
+  "median_seconds": 3.311,
+  "max_seconds": 3.629,
+  "meets_5s": false,
+  "cold_start_seconds": 12.931,
+  "concurrent_10": {
+    "wall_seconds": 37.789,
+    "queries": [
+      {
+        "i": 0,
+        "status": 200,
+        "seconds": 17.383,
+        "words": 36
+      },
+      {
+        "i": 1,
+        "status": 200,
+        "seconds": 3.277,
+        "words": 54
+      },
+      {
+        "i": 2,
+        "status": 200,
+        "seconds": 31.64,
+        "words": 41
+      },
+      {
+        "i": 3,
+        "status": 200,
+        "seconds": 27.769,
+        "words": 45
+      },
+      {
+        "i": 4,
+        "status": 200,
+        "seconds": 13.798,
+        "words": 41
+      },
+      {
+        "i": 5,
+        "status": 200,
+        "seconds": 20.47,
+        "words": 25
+      },
+      {
+        "i": 6,
+        "status": 200,
+        "seconds": 11.279,
+        "words": 98
+      },
+      {
+        "i": 7,
+        "status": 200,
+        "seconds": 24.011,
+        "words": 49
+      },
+      {
+        "i": 8,
+        "status": 200,
+        "seconds": 34.19,
+        "words": 42
+      },
+      {
+        "i": 9,
+        "status": 200,
+        "seconds": 37.743,
+        "words": 46
+      }
+    ],
+    "max_seconds": 37.743,
+    "ok": 10
+  },
+  "meets_5s_sequential_warm": true,
+  "meets_5s_concurrent_10": false
 }

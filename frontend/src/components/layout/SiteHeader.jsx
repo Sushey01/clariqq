@@ -20,7 +20,7 @@ export default function SiteHeader() {
   return (
     <header className="lab-header sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
-        <Link to="/#top" className="font-outfit text-lg font-semibold tracking-tight">
+        <Link to="/" className="font-outfit text-lg font-semibold tracking-tight">
           Clariq
         </Link>
 

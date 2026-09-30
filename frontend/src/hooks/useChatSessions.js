@@ -113,10 +113,17 @@ export function useChatSessions() {
     );
   }, []);
 
-  const replaceMessages = useCallback((sessionId, messages) => {
+  const replaceMessages = useCallback((sessionId, messages, title) => {
     setSessions((prev) =>
       prev.map((session) =>
-        session.id === sessionId ? { ...session, messages } : session
+        session.id === sessionId
+          ? {
+              ...session,
+              messages,
+              title: title ?? session.title,
+              updatedAt: Date.now(),
+            }
+          : session
       )
     );
   }, []);
