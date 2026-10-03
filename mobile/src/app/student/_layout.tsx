@@ -4,6 +4,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { pathForRole } from '@/auth/roles';
 import { ChatSessionsProvider } from '@/chat/sessions';
 import { Loading, Screen } from '@/components/ui';
+import { colors } from '@/theme';
 
 export default function StudentLayout() {
   const { user, ready } = useAuth();
@@ -19,7 +20,7 @@ export default function StudentLayout() {
 
   return (
     <ChatSessionsProvider>
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#07141c' } }} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.canvas } }} />
     </ChatSessionsProvider>
   );
 }

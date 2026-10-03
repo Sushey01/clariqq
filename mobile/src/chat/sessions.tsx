@@ -3,7 +3,13 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 
 const KEY = 'clariq_socratic_sessions_v1';
 
-export type ChatMessage = { sender: 'user' | 'ai'; text: string };
+export type ChatMessage = {
+  id?: string;
+  sender: 'user' | 'ai';
+  text: string;
+  timestamp?: number;
+  grounded?: boolean;
+};
 
 export type ChatSession = {
   id: string;
@@ -11,24 +17,29 @@ export type ChatSession = {
   createdAt: number;
   updatedAt?: number;
   messages: ChatMessage[];
+  personaId?: string;
+  mode?: 'strict' | 'guided' | 'direct';
 };
 
 type ChatContextValue = {
   ready: boolean;
   sessions: ChatSession[];
-  createChat: () => string;
+  createChat: (initialTitle?: string, initialQuestion?: string) => string;
   deleteSession: (id: string) => void;
   appendMessage: (sessionId: string, message: ChatMessage, title?: string) => void;
+  setSessionMetadata: (sessionId: string, meta: { personaId?: string; mode?: 'strict' | 'guided' | 'direct' }) => void;
 };
 
 const ChatContext = createContext<ChatContextValue | null>(null);
 
-function freshSession(): ChatSession {
+function freshSession(initialTitle?: string): ChatSession {
   return {
     id: `session-${Date.now()}`,
-    title: 'New session',
+    title: initialTitle?.trim() || 'New Socratic inquiry',
     createdAt: Date.now(),
     messages: [],
+    mode: 'strict',
+    personaId: 'socratic-mentor',
   };
 }
 
@@ -68,8 +79,16 @@ export function ChatSessionsProvider({ children }: { children: ReactNode }) {
     return {
       ready,
       sessions,
-      createChat: () => {
-        const session = freshSession();
+      createChat: (initialTitle?: string, initialQuestion?: string) => {
+        const session = freshSession(initialTitle);
+        if (initialQuestion) {
+          session.messages.push({
+            id: `msg-${Date.now()}`,
+            sender: 'user',
+            text: initialQuestion,
+            timestamp: Date.now(),
+          });
+        }
         update((prev) => [session, ...prev]);
         return session.id;
       },
@@ -83,11 +102,29 @@ export function ChatSessionsProvider({ children }: { children: ReactNode }) {
         update((prev) =>
           prev.map((session) => {
             if (session.id !== sessionId) return session;
+            const msgWithMeta: ChatMessage = {
+              ...message,
+              id: message.id || `msg-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+              timestamp: message.timestamp || Date.now(),
+              grounded: message.sender === 'ai' ? true : undefined,
+            };
             return {
               ...session,
               title: title ?? session.title,
               updatedAt: Date.now(),
-              messages: [...session.messages, message],
+              messages: [...session.messages, msgWithMeta],
+            };
+          }),
+        );
+      },
+      setSessionMetadata: (sessionId, meta) => {
+        update((prev) =>
+          prev.map((session) => {
+            if (session.id !== sessionId) return session;
+            return {
+              ...session,
+              ...meta,
+              updatedAt: Date.now(),
             };
           }),
         );
