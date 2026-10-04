@@ -222,3 +222,25 @@ export function getParentChild() {
 export function getParentChildWeekly() {
   return authGet('/api/parent/child/weekly');
 }
+
+export async function getStudyTopic(topicId = 'acids_bases') {
+  const response = await fetch(`${API_BASE}/api/study/topic/${topicId}`);
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}
+
+export async function submitStudySession(payload) {
+  const response = await fetch(`${API_BASE}/api/study/submit`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}
+
+export async function getStudySessions() {
+  const response = await fetch(`${API_BASE}/api/study/sessions`);
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}

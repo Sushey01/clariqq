@@ -25,18 +25,22 @@ export default function Sidebar({
 
   return (
     <>
+      {/* Mobile Backdrop Overlay */}
       {isOpen && (
         <button
           type="button"
           aria-label="Close sidebar"
-          className="fixed inset-0 z-40 bg-black/60 md:hidden"
+          className="fixed inset-0 z-40 bg-black/60 md:hidden backdrop-blur-xs transition-opacity duration-300"
           onClick={onClose}
         />
       )}
 
+      {/* Smooth Sliding Sidebar Drawer */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex h-full w-[272px] shrink-0 flex-col border-r border-[var(--border)] bg-[var(--bg-sidebar)]/90 backdrop-blur-xl transition-transform duration-200 md:static ${
-          isOpen ? 'translate-x-0' : '-translate-x-full md:hidden'
+        className={`fixed md:static inset-y-0 left-0 z-50 flex h-full w-[272px] shrink-0 flex-col border-r border-[var(--border)] bg-[var(--bg-sidebar)]/95 backdrop-blur-xl transition-all duration-300 ease-in-out select-none ${
+          isOpen 
+            ? 'translate-x-0 opacity-100' 
+            : '-translate-x-full md:-ml-[272px] opacity-0 pointer-events-none'
         }`}
       >
         <div className="space-y-2 p-3">
@@ -82,7 +86,7 @@ export default function Sidebar({
           />
         </div>
 
-        <nav className="flex-1 space-y-4 overflow-y-auto px-2 py-2">
+        <nav className="flex-1 space-y-4 overflow-y-auto px-2 py-2" aria-label="Past conversations">
           {Object.entries(grouped).map(([label, items]) => {
             if (items.length === 0) return null;
             return (

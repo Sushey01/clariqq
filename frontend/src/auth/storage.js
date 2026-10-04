@@ -32,11 +32,18 @@ export function clearSession() {
 }
 
 export function publicUser(user) {
+  let role = user.role;
+  if (!role) {
+    const email = (user.email || '').toLowerCase();
+    if (email.includes('teacher')) role = 'teacher';
+    else if (email.includes('parent')) role = 'parent';
+    else role = 'student';
+  }
   return {
     id: user.id,
     name: user.name,
     email: user.email,
-    role: user.role || 'student',
+    role,
   };
 }
 

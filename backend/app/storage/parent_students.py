@@ -47,16 +47,14 @@ def list_children(parent_id: str) -> list[dict]:
         _ensure_table(conn)
         rows = conn.execute(
             """
-            SELECT student_id FROM parent_students
-            WHERE parent_id = ?
+            SELECT u.id, u.name, u.email
+            FROM users u
+            INNER JOIN parent_students ps
+                ON CAST(u.id AS TEXT) = ps.student_id OR u.id = ps.student_id
+            WHERE ps.parent_id = ?
+            ORDER BY u.name ASC
             """,
             (str(parent_id),),
         ).fetchall()
-    children = []
-    for row in rows:
-        user = get_user(str(row["student_id"]))
-        if user:
-            children.append(
-                {"id": user["id"], "name": user["name"], "email": user["email"]}
-            )
-    return children
+    return [{"id": str(r["id"]), "name": r["name"], "email": r["email"]} for r in rows]
+

@@ -8,6 +8,7 @@ import { homePathForRole, userRole } from '@/auth/roles';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import MarketingShell from '@/components/layout/MarketingShell';
 import LabHeroIsland from '@/components/lab/LabHeroIsland';
+import LabBenches from '@/features/lab/components/LabBenches';
 
 const HOME_TITLE = 'Clariq — Socratic Science Tutor for Class 10 Nepal';
 const HOME_DESCRIPTION =
@@ -162,34 +163,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="benches" className="lab-section mx-auto max-w-6xl px-5 py-20">
-          <p className="lab-reveal text-xs font-medium uppercase tracking-[0.2em] text-[var(--ink-faint)]">
-            Choose a bench
-          </p>
-          <h2 className="lab-reveal mt-2 max-w-xl font-outfit text-4xl font-semibold">
-            A spatial lab for the big science areas.
-          </h2>
-          <p className="lab-reveal mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
-            The homepage stays light: no syllabus lists, no wall of chapters. Each bench points students
-            toward exploration and question-led practice.
-          </p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {BENCHES.map((bench) => (
-              <Link
-                key={bench.slug}
-                to={bench.to}
-                className="lab-reveal lab-glass block rounded-[1.75rem] p-7 transition hover:border-[var(--accent)]"
-                style={{ boxShadow: `inset 0 0 0 1px ${bench.accent}22` }}
-              >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: bench.accent }}>
-                  {bench.live ? 'Open bench' : 'Context only'}
-                </p>
-                <h3 className="mt-2 font-outfit text-2xl font-semibold">{bench.subject}</h3>
-                <p className="mt-2 text-sm text-[var(--ink-muted)]">{bench.line}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <LabBenches />
 
         <section id="tutor-preview" className="lab-section bg-[var(--bg-raised)]">
           <div className="mx-auto max-w-6xl px-5 py-20">

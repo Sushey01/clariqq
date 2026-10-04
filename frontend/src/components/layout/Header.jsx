@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Check, Copy, FlaskConical, LayoutGrid, PanelLeft, Plus, Settings } from 'lucide-react';
 import { Badge, Button } from '@/components/ui';
 import ModelSelect from './ModelSelect';
+import PersonaSelect from '@/components/tutor/PersonaSelect';
 import ThemeToggle from '@/components/theme/ThemeToggle';
 import { copySessionTranscript } from '@/lib/sessionTranscript';
 import useProgressActivity from '@/features/progress/hooks/useProgressActivity';
@@ -20,6 +21,8 @@ export default function Header({
   onNewChat,
   activeModel,
   onModelChange,
+  activePersona = 'socratic-mentor',
+  onPersonaChange,
   onOpenSettings,
   backendStatus,
   session,
@@ -64,6 +67,12 @@ export default function Header({
           isOpen={modelOpen}
           onOpenChange={setModelOpen}
         />
+        {onPersonaChange && (
+          <PersonaSelect
+            activePersona={activePersona}
+            onChange={onPersonaChange}
+          />
+        )}
         <Link
           to="/app"
           className="hidden items-center gap-1 rounded-lg px-2 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)] sm:inline-flex"

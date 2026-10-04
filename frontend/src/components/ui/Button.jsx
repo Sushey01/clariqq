@@ -11,18 +11,21 @@ const Button = React.forwardRef(({
   onClick, 
   type = 'button',
   title,
+  'aria-label': ariaLabel,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
   ...props 
 }, ref) => {
 
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed select-none';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 disabled:opacity-40 disabled:cursor-not-allowed select-none cursor-pointer';
 
   const variants = {
-    primary: 'bg-[var(--ink)] text-[var(--bg-canvas)] hover:opacity-90 active:scale-95 shadow-md',
-    secondary: 'bg-[var(--bg-card)] hover:opacity-90 text-[var(--ink)] border border-[var(--border)]',
-    ghost: 'text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--bg-card)]',
-    outline: 'border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)] bg-transparent',
-    indigo: 'lab-cta-primary shadow-[0_10px_30px_rgba(34,211,238,0.25)]',
-    danger: 'bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20',
+    primary: 'bg-white text-black hover:bg-zinc-200 active:scale-95 shadow-md',
+    secondary: 'bg-zinc-800 hover:bg-zinc-700/80 text-zinc-100 border border-white/10 shadow-xs',
+    ghost: 'text-zinc-300 hover:text-white hover:bg-zinc-800/80',
+    outline: 'border border-white/15 hover:border-white/30 text-zinc-200 hover:text-white bg-transparent',
+    indigo: 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 active:scale-95',
+    danger: 'bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/20',
   };
 
   const sizes = {
@@ -31,7 +34,7 @@ const Button = React.forwardRef(({
     lg: 'px-4 py-2.5 text-sm rounded-xl space-x-2',
     icon: 'p-2 rounded-lg',
     iconSm: 'p-1.5 rounded-lg',
-    iconRound: 'w-8 h-8 rounded-full p-0',
+    iconRound: 'w-9 h-9 rounded-full p-0',
   };
 
   return (
@@ -41,6 +44,9 @@ const Button = React.forwardRef(({
       disabled={disabled}
       onClick={onClick}
       title={title}
+      aria-label={ariaLabel || title}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
       className={twMerge(clsx(baseStyles, variants[variant], sizes[size], className))}
       {...props}
     >

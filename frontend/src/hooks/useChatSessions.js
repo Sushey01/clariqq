@@ -1,7 +1,20 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { getSession } from '@/auth/storage';
 
-const KEY = 'clariq_socratic_sessions_v1';
-const ACTIVE_KEY = 'clariq_active_session_v1';
+function getStorageKeys() {
+  const sessionUser = getSession();
+  const role = sessionUser?.role || 'student';
+  const userId = sessionUser?.email || sessionUser?.id || 'guest';
+  const safeId = String(userId).toLowerCase().replace(/[^a-z0-9@._-]/g, '_');
+  return {
+    userId: safeId,
+    role,
+    KEY: `clariq_socratic_sessions_${role}_${safeId}_v2`,
+    LEGACY_KEY_V1: `clariq_socratic_sessions_${role}_${safeId}_v1`,
+    LEGACY_KEY_GENERIC: `clariq_socratic_sessions_${role}_${sessionUser?.id || 'guest'}_v1`,
+    ACTIVE_KEY: `clariq_active_session_${role}_${safeId}_v2`,
+  };
+}
 
 function freshSession() {
   return {
@@ -12,26 +25,36 @@ function freshSession() {
   };
 }
 
-function loadSessions() {
-  try {
-    const saved = localStorage.getItem(KEY);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+function loadSavedSessionsForKey(keys) {
+  const candidateKeys = [keys.KEY, keys.LEGACY_KEY_V1, keys.LEGACY_KEY_GENERIC];
+  for (const k of candidateKeys) {
+    if (!k) continue;
+    try {
+      const saved = localStorage.getItem(k);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
       }
+    } catch {
+      /* ignore */
     }
-  } catch {
-    /* ignore corrupt storage */
   }
-  return [freshSession()];
+  return null;
 }
 
 export function useChatSessions() {
-  const [sessions, setSessions] = useState(loadSessions);
+  const initialKeys = getStorageKeys();
+  const activeUserIdRef = useRef(initialKeys.userId);
+
+  const [sessions, setSessions] = useState(() => {
+    return loadSavedSessionsForKey(initialKeys) || [freshSession()];
+  });
+
   const [activeSessionId, setActiveSessionIdState] = useState(() => {
     try {
-      const stored = localStorage.getItem(ACTIVE_KEY);
+      const stored = localStorage.getItem(initialKeys.ACTIVE_KEY);
       if (stored) return stored;
     } catch {
       /* ignore */
@@ -39,18 +62,52 @@ export function useChatSessions() {
     return sessions[0]?.id ?? null;
   });
 
+  // Re-sync sessions whenever logged-in user changes so past sessions are reloaded
+  useEffect(() => {
+    const currentKeys = getStorageKeys();
+    if (currentKeys.userId !== activeUserIdRef.current) {
+      activeUserIdRef.current = currentKeys.userId;
+      const loaded = loadSavedSessionsForKey(currentKeys);
+      if (loaded && loaded.length > 0) {
+        setSessions(loaded);
+        setActiveSessionIdState(loaded[0].id);
+      } else {
+        // If logged in user has no stored sessions yet, preserve any ongoing chat
+        setSessions((prev) => {
+          const hasContent = prev.some((s) => (s.messages || []).length > 0);
+          if (hasContent) {
+            localStorage.setItem(currentKeys.KEY, JSON.stringify(prev));
+            return prev;
+          }
+          const fresh = [freshSession()];
+          setActiveSessionIdState(fresh[0].id);
+          return fresh;
+        });
+      }
+    }
+  }, [sessions]);
+
+  // Persist sessions whenever sessions state changes
+  useEffect(() => {
+    const currentKeys = getStorageKeys();
+    if (sessions && sessions.length > 0) {
+      try {
+        localStorage.setItem(currentKeys.KEY, JSON.stringify(sessions));
+      } catch {
+        /* ignore storage quota errors */
+      }
+    }
+  }, [sessions]);
+
   const setActiveSessionId = useCallback((id) => {
     setActiveSessionIdState(id);
+    const currentKeys = getStorageKeys();
     try {
-      localStorage.setItem(ACTIVE_KEY, id);
+      localStorage.setItem(currentKeys.ACTIVE_KEY, id);
     } catch {
       /* ignore */
     }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem(KEY, JSON.stringify(sessions));
-  }, [sessions]);
 
   const activeSession =
     sessions.find((session) => session.id === activeSessionId) || sessions[0];
@@ -59,8 +116,9 @@ export function useChatSessions() {
     const session = freshSession();
     setSessions((prev) => {
       const next = [session, ...prev];
+      const currentKeys = getStorageKeys();
       try {
-        localStorage.setItem(KEY, JSON.stringify(next));
+        localStorage.setItem(currentKeys.KEY, JSON.stringify(next));
       } catch {
         /* ignore */
       }
@@ -70,20 +128,23 @@ export function useChatSessions() {
     return session.id;
   }, [setActiveSessionId]);
 
-  const deleteSession = useCallback((id) => {
-    setSessions((prev) => {
-      const next = prev.filter((session) => session.id !== id);
-      if (next.length === 0) {
-        const session = freshSession();
-        setActiveSessionId(session.id);
-        return [session];
-      }
-      if (id === activeSessionId) {
-        setActiveSessionId(next[0].id);
-      }
-      return next;
-    });
-  }, [activeSessionId, setActiveSessionId]);
+  const deleteSession = useCallback(
+    (id) => {
+      setSessions((prev) => {
+        const next = prev.filter((session) => session.id !== id);
+        if (next.length === 0) {
+          const session = freshSession();
+          setActiveSessionId(session.id);
+          return [session];
+        }
+        if (id === activeSessionId) {
+          setActiveSessionId(next[0].id);
+        }
+        return next;
+      });
+    },
+    [activeSessionId, setActiveSessionId]
+  );
 
   const renameSession = useCallback((id, title) => {
     setSessions((prev) =>

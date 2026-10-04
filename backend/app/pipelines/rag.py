@@ -66,7 +66,17 @@ class Tutor:
         else:
             model_history = history[-_MAX_HISTORY_MESSAGES:]
         chain = prompt | self.llm | StrOutputParser()
-        with _INFER_LOCK:
+        # ChatLlamaCpp runs C-bindings that require serialization; cloud API providers
+        # (Groq, Modal, HF Space) are thread-safe HTTP clients that can execute concurrently.
+        if getattr(self.llm, "__class__", None).__name__ == "ChatLlamaCpp":
+            with _INFER_LOCK:
+                answer = chain.invoke(
+                    {
+                        "chat_history": model_history,
+                        "question": student_turn,
+                    }
+                )
+        else:
             answer = chain.invoke(
                 {
                     "chat_history": model_history,

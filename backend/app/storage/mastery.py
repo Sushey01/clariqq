@@ -16,6 +16,9 @@ def _connect() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode = WAL")
+    conn.execute("PRAGMA busy_timeout = 5000")
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS knowledge_mastery (
@@ -43,6 +46,9 @@ def _connect() -> sqlite3.Connection:
             created_at TEXT NOT NULL
         )
         """
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_knowledge_events_user_created ON knowledge_events (user_id, created_at DESC)"
     )
     conn.commit()
     return conn

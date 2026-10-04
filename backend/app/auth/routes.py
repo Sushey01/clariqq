@@ -87,7 +87,22 @@ def signup(body: SignupRequest):
 @router.post("/api/auth/login", response_model=AuthResponse)
 def login(body: LoginRequest):
     record = get_user_with_secret_by_email(body.email)
-    if record is None or not verify_password(body.password, record.get("password_hash")):
+    if record is None:
+        raise HTTPException(status_code=401, detail="Email or password is incorrect.")
+
+    if not record.get("password_hash"):
+        google_sub = record.get("google_sub") or ""
+        if google_sub.startswith("demo:"):
+            raise HTTPException(
+                status_code=400,
+                detail="This is a demo account. Click the Student, Teacher, or Parent button below to log in.",
+            )
+        raise HTTPException(
+            status_code=400,
+            detail="This account was registered with Google. Please click 'Sign in with Google' or use Sign Up to set a password.",
+        )
+
+    if not verify_password(body.password, record.get("password_hash")):
         raise HTTPException(status_code=401, detail="Email or password is incorrect.")
     return _auth_response(record)
 

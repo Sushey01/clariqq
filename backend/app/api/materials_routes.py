@@ -1,5 +1,4 @@
-"""Student PDF/notes uploads: catalog in SQLite, chunks in Chroma."""
-
+import logging
 import re
 import uuid
 from pathlib import Path
@@ -20,6 +19,7 @@ from app.storage.materials import (
 )
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 _ALLOWED_SUFFIXES = {".pdf", ".txt", ".md", ".markdown", ".csv"}
 
@@ -90,13 +90,11 @@ async def upload_material(
             filename=filename,
         )
     except Exception as exc:
-        set_indexed(material_id, False, str(exc))
+        logger.exception("Error ingesting material %s for user %s", material_id, user.get("id"))
+        set_indexed(material_id, False, "Document indexing failed.")
         raise HTTPException(
             status_code=503,
-            detail=(
-                "File saved but not indexed. Start Ollama with nomic-embed-text "
-                f"and try again. ({exc})"
-            ),
+            detail="File saved but not indexed. Please verify embedding service availability and retry.",
         ) from exc
 
     set_indexed(material_id, True, None)
@@ -123,13 +121,11 @@ def reindex_material(material_id: str, user: dict = Depends(get_current_user)):
             filename=row["filename"],
         )
     except Exception as exc:
-        set_indexed(material_id, False, str(exc))
+        logger.exception("Error reindexing material %s for user %s", material_id, user.get("id"))
+        set_indexed(material_id, False, "Document indexing failed.")
         raise HTTPException(
             status_code=503,
-            detail=(
-                "Could not index that file. Start Ollama with nomic-embed-text "
-                f"and try again. ({exc})"
-            ),
+            detail="Could not index that file. Please verify embedding service availability and retry.",
         ) from exc
     set_indexed(material_id, True, None)
     row["indexed"] = True

@@ -21,6 +21,7 @@ import ProtectedRoute from '@/pages/ProtectedRoute';
 import { ProgressPage } from '@/features/progress';
 import { TeacherDashboardPage } from '@/features/teacher';
 import { ParentDashboardPage } from '@/features/parent';
+import StudyRunnerPage from '@/features/study/pages/StudyRunnerPage';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -59,6 +60,8 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/demo" element={<DemoPage />} />
+            <Route path="/study" element={<StudyRunnerPage />} />
+            <Route path="/evaluation" element={<StudyRunnerPage />} />
             <Route
               path="/app"
               element={
@@ -70,7 +73,7 @@ export default function App() {
             <Route
               path="/app/chat"
               element={
-                <ProtectedRoute roles={['student']}>
+                <ProtectedRoute roles={['student', 'teacher', 'admin']}>
                   <ChatPage />
                 </ProtectedRoute>
               }
@@ -78,7 +81,7 @@ export default function App() {
             <Route
               path="/app/progress"
               element={
-                <ProtectedRoute roles={['student']}>
+                <ProtectedRoute roles={['student', 'teacher', 'parent', 'admin']}>
                   <ProgressPage />
                 </ProtectedRoute>
               }
@@ -86,7 +89,7 @@ export default function App() {
             <Route
               path="/teacher"
               element={
-                <ProtectedRoute roles={['teacher']}>
+                <ProtectedRoute roles={['teacher', 'admin']}>
                   <TeacherDashboardPage />
                 </ProtectedRoute>
               }
@@ -94,7 +97,7 @@ export default function App() {
             <Route
               path="/parent"
               element={
-                <ProtectedRoute roles={['parent']}>
+                <ProtectedRoute roles={['parent', 'admin']}>
                   <ParentDashboardPage />
                 </ProtectedRoute>
               }

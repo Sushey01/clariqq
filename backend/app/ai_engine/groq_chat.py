@@ -69,7 +69,7 @@ class OpenAICompatChat(BaseChatModel):
             payload["top_p"] = self.top_p
         if self.repetition_penalty is not None:
             payload["repetition_penalty"] = self.repetition_penalty
-        stops = list(stop or self.stop_sequences or [])
+        stops = list(stop or self.stop_sequences or [])[:4]
         if stops:
             payload["stop"] = stops
 

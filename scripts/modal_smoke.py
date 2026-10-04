@@ -71,7 +71,12 @@ def main() -> int:
     }
     t0 = time.time()
     try:
-        health = httpx.get(f"{_origin(base)}/health", timeout=180.0)
+        health_url = f"{_origin(base)}/health"
+        if "api.runpod.ai" in base:
+            # RunPod serverless health is at /v2/<id>/health
+            endpoint_id = base.split("/v2/")[1].split("/")[0]
+            health_url = f"https://api.runpod.ai/v2/{endpoint_id}/health"
+        health = httpx.get(health_url, headers=headers, timeout=180.0)
         payload["health_status"] = health.status_code
         chat = httpx.post(
             _completions_url(base),
@@ -96,7 +101,7 @@ def main() -> int:
         else:
             message = chat.json()["choices"][0]["message"]
             payload["reply"] = (message.get("content") or "").strip()
-            payload["ok"] = bool(payload["reply"]) and health.status_code == 200
+            payload["ok"] = bool(payload["reply"]) and chat.status_code == 200
     except Exception as exc:
         payload["elapsed_s"] = round(time.time() - t0, 2)
         payload["error"] = str(exc)

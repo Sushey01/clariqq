@@ -28,6 +28,19 @@ models/
 *.csv
 *.pdf
 
+# Dissertation deliverables and generated report assets
+/clariq_final_report.tex
+/clariq_final_draft.tex
+/clariq_gantt_chart.png
+/report_figures/
+/reports/
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+
 # OS
 .DS_Store
 Thumbs.db

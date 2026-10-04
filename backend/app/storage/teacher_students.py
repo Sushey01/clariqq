@@ -47,16 +47,14 @@ def list_students(teacher_id: str) -> list[dict]:
         _ensure_table(conn)
         rows = conn.execute(
             """
-            SELECT student_id FROM teacher_students
-            WHERE teacher_id = ?
+            SELECT u.id, u.name, u.email
+            FROM users u
+            INNER JOIN teacher_students ts
+                ON CAST(u.id AS TEXT) = ts.student_id OR u.id = ts.student_id
+            WHERE ts.teacher_id = ?
+            ORDER BY u.name ASC
             """,
             (str(teacher_id),),
         ).fetchall()
-    students = []
-    for row in rows:
-        user = get_user(str(row["student_id"]))
-        if user:
-            students.append(
-                {"id": user["id"], "name": user["name"], "email": user["email"]}
-            )
-    return students
+    return [{"id": str(r["id"]), "name": r["name"], "email": r["email"]} for r in rows]
+

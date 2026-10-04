@@ -88,11 +88,13 @@ def weekly_report(
     x_report_export: str | None = Header(default=None, alias="X-Report-Export"),
     window_days: int = Query(default=7, ge=1, le=90),
 ):
+    import hmac
+
     secret = os.getenv("REPORT_EXPORT_SECRET", "").strip()
     target = None
     if user:
         target = user["id"]
-    if user_id and secret and x_report_export == secret:
+    if user_id and secret and x_report_export and hmac.compare_digest(x_report_export, secret):
         target = user_id
     if not target:
         raise HTTPException(

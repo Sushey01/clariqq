@@ -712,9 +712,9 @@
     "category": "topic_switch",
     "question": "What is motion? ... wait, can we talk about acids and bases instead?",
     "concept_hint": "pH scale and neutralization",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "answer": "Sure, let's try another scenario before changing topics. How would pushing that stationary shopping cart also change the type of energy it possesses compared to being perfectly still?",
     "flags": [
-      "ERROR"
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
     ]
   },
   {
@@ -722,29 +722,25 @@
     "category": "topic_switch",
     "question": "What is light? ... never mind, what is electric current?",
     "concept_hint": "Electric current",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's tackle electricity first. Imagine pushing a heavy grocery cart across a parking lot versus letting gravity pull it down a slight slope into a car. What pushes the electrons along the wire to make the bulb glow?",
+    "flags": []
   },
   {
     "id": 87,
     "category": "topic_switch",
     "question": "Tell me about food chains. ... actually I wanted gravity.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's switch gears quickly before we leave this concept behind. Gravity is a fundamental pull towards the center of Earth. What keeps our feet firmly planted here without us having to hold ourselves down constantly?",
+    "flags": []
   },
   {
     "id": 88,
     "category": "topic_switch",
     "question": "What is an isotope? ... sorry, what's friction?",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "answer": "Let's focus on the second question first. Imagine pushing a heavy grocery cart across a smooth tile floor versus pushing the exact same cart over a bumpy carpeted hallway. Which surface makes the wheels roll harder and slower?",
     "flags": [
-      "ERROR"
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
     ]
   },
   {
@@ -752,19 +748,17 @@
     "category": "topic_switch",
     "question": "Explain rusting. ... hold on, what is DNA?",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's break this down into two parts. First, let's think about how iron reacts with its environment to form rust. Imagine a shiny piece of iron sitting outside during a heavy rainstorm. What two things in the air mix together around that metal?",
+    "flags": []
   },
   {
     "id": 90,
     "category": "topic_switch",
     "question": "What is a lever? ... actually, why is the sky blue?",
     "concept_hint": "Scattering of light and why the sky is blue",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "answer": "Let's start with the second one first, since colors often trip people up. Imagine sunlight hits a tiny particle of dust floating high in our atmosphere. That white sunlight contains every color mixed together. What single color of visible light bends the least as it passes through normal air versus dense glass?",
     "flags": [
-      "ERROR"
+      "DID_NOT_FOLLOW_TOPIC_SWITCH"
     ]
   },
   {
@@ -772,89 +766,71 @@
     "category": "topic_switch",
     "question": "What is evaporation? ... wait, can we do Newton's first law?",
     "concept_hint": "Newton's first law (inertia)",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's start with Newton's First Law of Motion. Imagine pushing a heavy shopping cart across a smooth floor. What happens to the cart as soon as you stop applying that push?",
+    "flags": []
   },
   {
     "id": 92,
     "category": "ambiguous_difficult",
     "question": "Help.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Of course! Let's start with something familiar. Imagine pushing a heavy shopping cart across smooth linoleum versus pushing it over bumpy gravel. What happens differently to the cart's movement each time you push?",
+    "flags": []
   },
   {
     "id": 93,
     "category": "ambiguous_difficult",
     "question": "I have science homework.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's get started! What specific topic or problem are you stuck on?",
+    "flags": []
   },
   {
     "id": 94,
     "category": "ambiguous_difficult",
     "question": "What should I study?",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "That depends on where you want to focus! We've covered biology, chemistry, physics, and environmental science so far this year. Which topic feels like the biggest challenge, or perhaps there's a concept we haven't explored yet but sounds interesting, like how solar panels work? Let's pick something based on your goals here.",
+    "flags": []
   },
   {
     "id": 95,
     "category": "ambiguous_difficult",
     "question": "Is this important for the exam?",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's think about how these rules help us learn effectively. Imagine trying to build a house without knowing whether we need bricks or wood; we would waste time guessing. These universal laws give us solid facts to test our understanding against, like gravity always pulling down. Knowing there are four basic states of matter helps us predict changes in ice cubes or cooking oil. Does having a reliable foundation make studying harder or easier?",
+    "flags": []
   },
   {
     "id": 96,
     "category": "ambiguous_difficult",
     "question": "Can we do the next part?",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Of course! Let's dive into how sunlight breaks apart oxygen molecules during photosynthesis. We know plants need this broken-down energy to build their own food. What do you think provides the initial burst of energy required to split those strong O=O bonds?",
+    "flags": []
   },
   {
     "id": 97,
     "category": "ambiguous_difficult",
     "question": "Same as yesterday.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's pick up where we left off about how white paper looks different under sunlight versus yellow fluorescent lights. What do you think the sun emits more strongly compared to the fluorescents?",
+    "flags": []
   },
   {
     "id": 98,
     "category": "ambiguous_difficult",
     "question": "The diagram in the book, you know.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's look closely together. What specific part of the plant's cell structure does this image highlight as being rich in pigments?",
+    "flags": []
   },
   {
     "id": 99,
     "category": "ambiguous_difficult",
     "question": "Just tell me the main point.",
     "concept_hint": "out_of_bank",
-    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
-    "flags": [
-      "ERROR"
-    ]
+    "answer": "Let's break this down into small steps so it sticks perfectly in your memory. What happens to a heavy wooden block placed in a bathtub full of water?",
+    "flags": []
   }
 ]

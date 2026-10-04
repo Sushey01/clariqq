@@ -10,6 +10,7 @@ const Textarea = React.forwardRef(({
   onChange, 
   onKeyDown, 
   placeholder,
+  'aria-label': ariaLabel,
   ...props 
 }, ref) => {
   return (
@@ -21,9 +22,10 @@ const Textarea = React.forwardRef(({
       onKeyDown={onKeyDown}
       disabled={disabled}
       placeholder={placeholder}
+      aria-label={ariaLabel || placeholder}
       className={twMerge(
         clsx(
-          'w-full bg-transparent text-[var(--ink)] placeholder-[var(--ink-faint)] resize-none min-h-[44px] max-h-[180px] py-2 px-4 focus:outline-none focus:ring-0 font-inter text-[15px] leading-relaxed overflow-y-auto disabled:opacity-50',
+          'w-full bg-transparent text-zinc-100 placeholder-zinc-400 resize-none min-h-[44px] max-h-[180px] py-2 px-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 font-inter text-[15px] leading-relaxed overflow-y-auto disabled:opacity-50',
           className
         )
       )}

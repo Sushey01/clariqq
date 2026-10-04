@@ -46,15 +46,21 @@ def _user_from_bearer(creds: HTTPAuthorizationCredentials | None) -> dict:
     if creds is None or creds.scheme.lower() != "bearer":
         raise HTTPException(status_code=401, detail="Not signed in.")
     payload = decode_token(creds.credentials)
-    stored = get_user(str(payload["sub"]))
+    sub = str(payload.get("sub", ""))
+    if not sub:
+        raise HTTPException(status_code=401, detail="Invalid token claims.")
+    stored = get_user(sub)
     if stored:
         return stored
-    return {
-        "id": str(payload["sub"]),
-        "email": payload.get("email") or "",
-        "name": payload.get("name") or "",
-        "role": payload.get("role") or "student",
-    }
+    from app.storage.users import get_user_by_sub
+
+    stored_by_sub = get_user_by_sub(sub)
+    if stored_by_sub:
+        return stored_by_sub
+    raise HTTPException(
+        status_code=401,
+        detail="User account not found or has been revoked.",
+    )
 
 
 def get_current_user(
@@ -75,15 +81,15 @@ def get_optional_user(
         payload = decode_token(creds.credentials)
     except HTTPException:
         return None
-    stored = get_user(str(payload["sub"]))
+    sub = str(payload.get("sub", ""))
+    if not sub:
+        return None
+    stored = get_user(sub)
     if stored:
         return stored
-    return {
-        "id": str(payload["sub"]),
-        "email": payload.get("email") or "",
-        "name": payload.get("name") or "",
-        "role": payload.get("role") or "student",
-    }
+    from app.storage.users import get_user_by_sub
+
+    return get_user_by_sub(sub)
 
 
 def require_role(*roles: str):

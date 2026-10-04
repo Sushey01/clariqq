@@ -16,10 +16,19 @@ const Dropdown = ({
         onClose();
       }
     };
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
     }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isOpen, onClose]);
 
   const alignmentClass = align === 'right' ? 'right-0' : 'left-0';
@@ -28,7 +37,11 @@ const Dropdown = ({
     <div className="relative inline-block" ref={dropdownRef}>
       {trigger}
       {isOpen && (
-        <div className={`absolute ${alignmentClass} mt-2 ${width} bg-[var(--bg-raised)] border border-[var(--border)] rounded-2xl shadow-2xl p-1.5 z-50`}>
+        <div 
+          role="menu"
+          aria-orientation="vertical"
+          className={`absolute ${alignmentClass} mt-2 ${width} bg-[#212121] border border-white/15 rounded-2xl shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150`}
+        >
           {children}
         </div>
       )}

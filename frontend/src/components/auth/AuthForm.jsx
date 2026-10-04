@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Button, Input } from '@/components/ui';
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton';
+import { Sparkles } from 'lucide-react';
 
 export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
   const isSignup = mode === 'signup';
@@ -15,6 +16,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
     email: '',
     password: '',
     confirm: '',
+    studentEmail: '',
   });
 
   useGSAP(
@@ -117,17 +119,28 @@ export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
       </label>
 
       {isSignup && (
-        <label className="auth-item block space-y-1.5">
-          <span className="text-xs text-[var(--ink-muted)]">Confirm password</span>
-          <Input
-            required
-            type="password"
-            placeholder="Repeat password"
-            value={values.confirm}
-            onChange={update('confirm')}
-            className="bg-[var(--bg-input)] py-2.5 text-sm"
-          />
-        </label>
+        <>
+          <label className="auth-item block space-y-1.5">
+            <span className="text-xs text-[var(--ink-muted)]">Confirm password</span>
+            <Input
+              required
+              type="password"
+              placeholder="Repeat password"
+              value={values.confirm}
+              onChange={update('confirm')}
+              className="bg-[var(--bg-input)] py-2.5 text-sm"
+            />
+          </label>
+          <label className="auth-item block space-y-1.5">
+            <span className="text-xs text-[var(--ink-muted)]">Student Email or ID (Optional for Parents)</span>
+            <Input
+              placeholder="e.g. student@clariq.edu or STU-8492"
+              value={values.studentEmail}
+              onChange={update('studentEmail')}
+              className="bg-[var(--bg-input)] py-2.5 text-sm font-mono text-xs"
+            />
+          </label>
+        </>
       )}
 
       {error && (
@@ -150,45 +163,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
 
       <div className="auth-item flex items-center gap-3 py-1">
         <span className="h-px flex-1 bg-white/10" />
-        <span className="text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">or</span>
-        <span className="h-px flex-1 bg-white/10" />
-      </div>
-
-      {onDemo ? (
-        <div className="auth-item grid grid-cols-3 gap-2">
-          {[
-            { role: 'student', label: 'Student' },
-            { role: 'teacher', label: 'Teacher' },
-            { role: 'parent', label: 'Parent' },
-          ].map((item) => (
-            <Button
-              key={item.role}
-              type="button"
-              variant="secondary"
-              size="md"
-              disabled={pending}
-              className="w-full"
-              onClick={async () => {
-                setError('');
-                setPending(true);
-                try {
-                  await onDemo(item.role);
-                } catch (err) {
-                  setError(err.message);
-                } finally {
-                  setPending(false);
-                }
-              }}
-            >
-              {item.label}
-            </Button>
-          ))}
-        </div>
-      ) : null}
-
-      <div className="auth-item flex items-center gap-3 py-1">
-        <span className="h-px flex-1 bg-white/10" />
-        <span className="text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">or</span>
+        <span className="text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">or continue with</span>
         <span className="h-px flex-1 bg-white/10" />
       </div>
 
@@ -200,9 +175,7 @@ export default function AuthForm({ mode, onSubmit, onGoogle, onDemo }) {
         />
       </div>
 
-      <p className="auth-item text-center text-xs text-[var(--ink-faint)]">
-        Email and Google accounts reach the API. Dummy desks skip Google.
-      </p>
+
 
       <p className="auth-item text-center text-sm text-[var(--ink-muted)]">
         {isSignup ? (

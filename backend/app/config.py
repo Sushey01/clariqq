@@ -52,6 +52,7 @@ def reload_env() -> None:
     global OLLAMA_BASE_URL, EMBED_MODEL, HF_REPO_ID, HF_FILENAME, HF_TOKEN, HF_SPACE_ID
     global GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, JWT_SECRET
     global MODAL_BASE_URL, MODAL_API_KEY, MODAL_MODEL
+    global RUNPOD_BASE_URL, RUNPOD_API_KEY, RUNPOD_MODEL
     OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     os.environ.setdefault("OLLAMA_HOST", OLLAMA_BASE_URL)
     EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
@@ -68,6 +69,9 @@ def reload_env() -> None:
     MODAL_BASE_URL = os.getenv("MODAL_BASE_URL", "").strip()
     MODAL_API_KEY = os.getenv("MODAL_API_KEY", "").strip() or "clariq-modal"
     MODAL_MODEL = os.getenv("MODAL_MODEL", "socratic-phi3").strip() or "socratic-phi3"
+    RUNPOD_BASE_URL = os.getenv("RUNPOD_BASE_URL", "").strip() or MODAL_BASE_URL
+    RUNPOD_API_KEY = os.getenv("RUNPOD_API_KEY", "").strip() or MODAL_API_KEY
+    RUNPOD_MODEL = os.getenv("RUNPOD_MODEL", "").strip() or MODAL_MODEL or "Susu11/socratic_qwen7b-merged"
     GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip() or os.getenv(
         "VITE_GOOGLE_CLIENT_ID", ""
     ).strip()

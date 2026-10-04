@@ -48,10 +48,35 @@ export default function Composer({
     onSend(text);
   };
 
+  const SCAFFOLD_PILLS = [
+    "Give an everyday example",
+    "Break this into smaller steps",
+    "What should I observe first?",
+    "I think it increases because...",
+  ];
+
   return (
     <div className="px-3 pb-3 pt-2 md:px-4 bg-[var(--bg-canvas)]">
-      <form onSubmit={submit} className="mx-auto w-full max-w-3xl">
-        <div className="lab-glass rounded-[1.75rem] focus-within:border-[var(--accent)]">
+      <form onSubmit={submit} className="mx-auto w-full max-w-3xl space-y-2">
+        {/* Scaffolding Thought Starters */}
+        <div className="flex flex-wrap items-center gap-1.5 px-1">
+          {SCAFFOLD_PILLS.map((pill, i) => (
+            <button
+              key={i}
+              type="button"
+              disabled={isLoading || disabled}
+              onClick={() => {
+                setInput(pill);
+                textareaRef.current?.focus();
+              }}
+              className="text-[11px] px-2.5 py-1 rounded-[8px] border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-cyan-300 transition"
+            >
+              {pill}
+            </button>
+          ))}
+        </div>
+
+        <div className="lab-glass rounded-[8px] border border-slate-800 focus-within:border-[var(--accent)] overflow-hidden">
           <Textarea
             ref={textareaRef}
             rows={3}

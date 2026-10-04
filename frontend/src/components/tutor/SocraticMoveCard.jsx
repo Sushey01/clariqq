@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui';
 import TutorMarkdown from './TutorMarkdown';
+import GroundingBadge from '@/components/chat/GroundingBadge';
 
 const LABELS = {
   question: { title: 'Tutor question', variant: 'indigo' },
@@ -7,17 +8,12 @@ const LABELS = {
   explanation: { title: 'Check this idea', variant: 'zinc' },
 };
 
-function sourceLabel(item) {
-  if (typeof item === 'string') return item;
-  if (!item || typeof item !== 'object') return '';
-  return item.title || item.name || item.uri || item.url || item.source || '';
-}
-
 export default function SocraticMoveCard({
   kind = 'question',
   text,
   yourTurn = false,
   sources,
+  personaName = 'Clariq',
 }) {
   const meta = LABELS[kind] || LABELS.question;
   const accent =
@@ -28,10 +24,10 @@ export default function SocraticMoveCard({
         : 'border-[var(--border)] bg-[var(--bg-card)]';
 
   return (
-    <div className="w-full py-3">
+    <div className="w-full py-2">
       <div className={`lab-glass rounded-3xl px-5 py-4 ${accent}`}>
         <div className="mb-2 flex flex-wrap items-center gap-2">
-          <p className="font-outfit text-sm font-semibold text-[var(--ink)]">Clariq</p>
+          <p className="font-outfit text-sm font-semibold text-[var(--ink)]">{personaName}</p>
           <Badge variant={meta.variant} size="sm">
             {meta.title}
           </Badge>
@@ -41,14 +37,21 @@ export default function SocraticMoveCard({
             </Badge>
           ) : null}
         </div>
+        
         <TutorMarkdown>{text}</TutorMarkdown>
+
+        {/* Interactive Grounding Badges */}
         {Array.isArray(sources) && sources.length > 0 ? (
-          <ul className="mt-3 space-y-1 border-t border-[var(--border)] pt-3 text-[11px] text-[var(--ink-muted)]">
-            {sources.map((item, index) => {
-              const label = sourceLabel(item) || `Source ${index + 1}`;
-              return <li key={`${label}-${index}`}>Source · {label}</li>;
-            })}
-          </ul>
+          <div className="mt-3 border-t border-[var(--border)] pt-3">
+            <p className="text-[10px] uppercase tracking-wider text-[var(--ink-muted)] mb-2 font-semibold">
+              Grounding Citations & Sources
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {sources.map((item, index) => (
+                <GroundingBadge key={index} source={item} index={index} />
+              ))}
+            </div>
+          </div>
         ) : null}
       </div>
     </div>

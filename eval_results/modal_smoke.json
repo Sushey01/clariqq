@@ -1,10 +1,10 @@
 {
-  "ok": false,
-  "skipped": true,
-  "health_status": null,
-  "chat_status": null,
-  "reply": null,
-  "elapsed_s": null,
-  "error": "MODAL_BASE_URL is empty. Deploy modal/serve_socratic.py, then set LLM_PROVIDER=modal and MODAL_BASE_URL in .env.",
-  "base_url": null
+  "ok": true,
+  "skipped": false,
+  "health_status": 200,
+  "chat_status": 200,
+  "reply": "If an object is moving in a straight line at a constant speed, what must be true about its acceleration?",
+  "elapsed_s": 7.11,
+  "error": null,
+  "base_url": "https://api.runpod.ai/v2/jwlu4u0uahizk8/openai/v1"
 }

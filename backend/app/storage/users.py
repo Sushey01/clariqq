@@ -19,7 +19,8 @@ DEMO_SUBS = {
     "parent": "demo:parent",
 }
 
-_PBKDF_ROUNDS = 120_000
+_PBKDF_ROUNDS = 600_000
+_LEGACY_PBKDF_ROUNDS = 120_000
 
 
 def hash_password(password: str) -> str:
@@ -27,28 +28,45 @@ def hash_password(password: str) -> str:
     digest = hashlib.pbkdf2_hmac(
         "sha256", password.encode("utf-8"), salt, _PBKDF_ROUNDS
     )
-    return f"{salt.hex()}:{digest.hex()}"
+    return f"pbkdf2_sha256${_PBKDF_ROUNDS}${salt.hex()}${digest.hex()}"
 
 
 def verify_password(password: str, stored: str | None) -> bool:
-    if not stored or ":" not in stored:
+    if not stored:
         return False
-    salt_hex, digest_hex = stored.split(":", 1)
-    try:
-        salt = bytes.fromhex(salt_hex)
-        expected = bytes.fromhex(digest_hex)
-    except ValueError:
-        return False
-    actual = hashlib.pbkdf2_hmac(
-        "sha256", password.encode("utf-8"), salt, _PBKDF_ROUNDS
-    )
-    return hmac.compare_digest(actual, expected)
+    if stored.startswith("pbkdf2_sha256$"):
+        parts = stored.split("$")
+        if len(parts) != 4:
+            return False
+        try:
+            rounds = int(parts[1])
+            salt = bytes.fromhex(parts[2])
+            expected = bytes.fromhex(parts[3])
+        except ValueError:
+            return False
+        actual = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, rounds)
+        return hmac.compare_digest(actual, expected)
+    if ":" in stored:
+        salt_hex, digest_hex = stored.split(":", 1)
+        try:
+            salt = bytes.fromhex(salt_hex)
+            expected = bytes.fromhex(digest_hex)
+        except ValueError:
+            return False
+        actual = hashlib.pbkdf2_hmac(
+            "sha256", password.encode("utf-8"), salt, _LEGACY_PBKDF_ROUNDS
+        )
+        return hmac.compare_digest(actual, expected)
+    return False
 
 
 def _connect() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode = WAL")
+    conn.execute("PRAGMA busy_timeout = 5000")
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS users (
@@ -67,6 +85,7 @@ def _connect() -> sqlite3.Connection:
         )
     if "password_hash" not in cols:
         conn.execute("ALTER TABLE users ADD COLUMN password_hash TEXT")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_users_email_lower ON users (lower(email))")
     conn.commit()
     return conn
 
@@ -168,11 +187,26 @@ def create_email_user(name: str, email: str, password: str, role: str = "student
     sub = f"email:{normalized}"
     with _connect() as conn:
         existing = conn.execute(
-            "SELECT id FROM users WHERE lower(email) = ? OR google_sub = ?",
+            "SELECT * FROM users WHERE lower(email) = ? OR google_sub = ?",
             (normalized, sub),
         ).fetchone()
         if existing is not None:
-            raise ValueError("An account with that email already exists.")
+            # If account exists from Google OAuth without a password, attach the password
+            if not existing["password_hash"] and not str(existing["google_sub"]).startswith("demo:"):
+                hashed = hash_password(password)
+                conn.execute(
+                    "UPDATE users SET password_hash = ? WHERE id = ?",
+                    (hashed, existing["id"]),
+                )
+                conn.commit()
+                return {
+                    "id": str(existing["id"]),
+                    "google_sub": existing["google_sub"],
+                    "email": normalized,
+                    "name": existing["name"],
+                    "role": existing["role"] if "role" in existing.keys() else "student",
+                }
+            raise ValueError("An account with that email already exists. Please log in.")
         cur = conn.execute(
             """
             INSERT INTO users (google_sub, email, name, created_at, role, password_hash)

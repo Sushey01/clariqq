@@ -6,6 +6,45 @@ export const MODELS = [
   },
 ];
 
+export const PERSONAS = [
+  {
+    id: 'socratic-mentor',
+    name: 'Socratic Mentor',
+    tagline: 'Strict inquiry-based learning',
+    description: 'Never gives direct answers. Guides discovery through targeted questions.',
+    icon: 'Sparkles',
+    badgeVariant: 'indigo',
+    color: 'from-indigo-500/20 to-purple-500/20 text-indigo-400 border-indigo-500/30',
+  },
+  {
+    id: 'exam-coach',
+    name: 'SEE Exam Coach',
+    tagline: 'Grade 10 SEE Exam Practice',
+    description: 'Focuses on exam mark schemes, past paper formats, and timed answers.',
+    icon: 'GraduationCap',
+    badgeVariant: 'emerald',
+    color: 'from-emerald-500/20 to-teal-500/20 text-emerald-400 border-emerald-500/30',
+  },
+  {
+    id: 'lab-assistant',
+    name: 'Lab Assistant',
+    tagline: 'Hands-on Science & Experiments',
+    description: 'Guides experimental reasoning, hypotheses, variables, and safety.',
+    icon: 'FlaskConical',
+    badgeVariant: 'purple',
+    color: 'from-purple-500/20 to-pink-500/20 text-purple-400 border-purple-500/30',
+  },
+  {
+    id: 'study-buddy',
+    name: 'Peer Study Buddy',
+    tagline: 'Collaborative Problem Solver',
+    description: 'Friendly, encouraging checks for understanding and study tricks.',
+    icon: 'Users',
+    badgeVariant: 'amber',
+    color: 'from-amber-500/20 to-orange-500/20 text-amber-400 border-amber-500/30',
+  },
+];
+
 export const SOCRATIC_MODES = [
   {
     id: 'strict',

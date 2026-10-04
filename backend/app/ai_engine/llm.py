@@ -58,37 +58,35 @@ def get_llm():
         _model_key = key
         return _model
 
-    if config.LLM_PROVIDER == "modal":
-        if not config.MODAL_BASE_URL:
+    if config.LLM_PROVIDER in {"modal", "runpod", "serverless"}:
+        base_url = getattr(config, "RUNPOD_BASE_URL", "") or config.MODAL_BASE_URL
+        if not base_url:
             searched = ", ".join(str(path) for path in ENV_FILES)
             raise RuntimeError(
-                "MODAL_BASE_URL is empty. Deploy modal/serve_socratic.py, then put "
-                "MODAL_BASE_URL=https://...modal.run/v1 in "
+                "RUNPOD_BASE_URL / MODAL_BASE_URL is empty. Set "
+                "RUNPOD_BASE_URL=https://api.runpod.ai/v2/.../openai/v1 in "
                 f"{REPO_ROOT / '.env'} (searched: {searched}) and restart uvicorn."
             )
+        api_key = getattr(config, "RUNPOD_API_KEY", "") or config.MODAL_API_KEY or "clariq-runpod"
+        model_name = getattr(config, "RUNPOD_MODEL", "") or config.MODAL_MODEL or "Susu11/socratic_qwen7b-merged"
         # Match the Hugging Face Space sampler (temperature 0.7, top-p 0.8,
-        # 512 tokens, repetition penalty 1.15). The global 0.1 default made
-        # the same weights dump a definition and stop.
+        # 512 tokens, repetition penalty 1.15).
         _model = OpenAICompatChat(
-            api_key=config.MODAL_API_KEY or "clariq-modal",
-            model=config.MODAL_MODEL,
-            base_url=config.MODAL_BASE_URL,
+            api_key=api_key,
+            model=model_name,
+            base_url=base_url,
             temperature=0.7,
             top_p=0.8,
             repetition_penalty=1.15,
             max_tokens=512,
             timeout=600.0,
-            provider_name="modal",
+            provider_name="runpod" if "runpod" in base_url.lower() else "modal",
             retry_transient=True,
             stop_sequences=[
-                "\nuser",
-                "\nUser",
-                "\nstudent",
-                "\nStudent",
-                "\nHuman",
-                "<|im_start|>",
                 "<|im_end|>",
-                "<|endoftext|>",
+                "<|im_start|>",
+                "\nuser",
+                "\nStudent",
             ],
         )
         _model_key = key
