@@ -1,0 +1,262 @@
+{
+  "opener": "What makes a hydrocarbon 'saturated' or 'unsaturated'?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right—saturated hydrocarbons contain only single C–C bonds, so no double or triple bonds are present."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "You captured part of the idea, but the absence of multiple bonds is the key reason for saturation, not just stability."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's not quite accurate; being a gas isn't what defines saturation."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Remember that saturation refers to the number of bonds attached to each carbon atom."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly, ethane burns more readily because its single bonds allow easier access for oxygen during combustion."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re onto something with hydrogen count, but the main factor is the presence of double bonds in ethene that actually reduce its reactivity."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, liquids aren’t the deciding factor here; it's the bond type that matters."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Notice how a double bond introduces a region of higher electron density that can slow down combustion."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "You nailed it—single bonds only for saturated, double or triple bonds for unsaturated."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re partially right; having more carbon atoms can influence properties, but saturation is about bond multiplicity."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common mix‑up; gases can be either saturated or unsaturated depending on their structure."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Notice that methane has only single bonds, whereas ethene contains a double bond."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, propane is saturated, but other hydrocarbons like ethene are unsaturated; the statement that all are saturated is too broad."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Aromatic compounds have alternating single and double bonds, making them a special case."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great job—your statement is correct; saturated hydrocarbons indeed lack double bonds."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What makes a hydrocarbon 'saturated' or 'unsaturated'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Let’s switch gears to fuels. Which hydrocarbon do you think is used in gasoline?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of the rocket as a sealed container that ejects gas out of one end. The gas rushes backward, and by conservation of momentum, the rocket moves forward."
+      },
+      {
+        "role": "user",
+        "content": "I get that the gas pushes the rocket, but if there's no air, how does the gas move?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket's engines burn fuel, they produce high‑pressure exhaust that exits through the nozzle, creating a thrust force that propels the vehicle."
+      },
+      {
+        "role": "user",
+        "content": "So the rocket is pushing against the exhaust, not the space?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Imagine the rocket as a boat that pushes water behind it; in vacuum, the 'water' is the expelled gas."
+      },
+      {
+        "role": "user",
+        "content": "But the gas leaves the rocket; it doesn't stay in space."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket’s propellant burns, it turns into a fast‑moving stream that exits the nozzle, and the reaction force on the rocket pushes it ahead."
+      },
+      {
+        "role": "user",
+        "content": "So it's like the rocket pushes itself by pushing the gas out?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of the rocket as a balloon that releases air; the escaping air pushes the balloon in the opposite direction."
+      },
+      {
+        "role": "user",
+        "content": "But a balloon needs air pressure inside to push out."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket’s engines ignite, the hot gases are expelled through a nozzle, and the reaction to that expulsion accelerates the rocket."
+      },
+      {
+        "role": "user",
+        "content": "So the rocket's engines are like tiny fans?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Picture the rocket as a sealed box that throws its own weight backward; the backward throw gives it a forward kick."
+      },
+      {
+        "role": "user",
+        "content": "Is that why rockets need a lot of fuel?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When fuel burns inside the rocket, it becomes high‑pressure gas that exits the back, and the opposite reaction moves the rocket forward."
+      },
+      {
+        "role": "user",
+        "content": "So the rocket is pushing against the gas, not the space?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of a rocket like a firework that throws its own particles outward; the reaction to those particles carries the rocket forward."
+      },
+      {
+        "role": "user",
+        "content": "But if space is empty, where does the reaction force come from?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "The rocket’s engines create a jet of hot gas that leaves the rear; the jet’s momentum pushes the rocket in the opposite direction."
+      },
+      {
+        "role": "user",
+        "content": "Is that the same as a car moving on a road?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket burns fuel, it turns into a high‑speed stream that exits the back, and that stream’s momentum pushes the rocket ahead."
+      },
+      {
+        "role": "user",
+        "content": "So the rocket uses its own weight to move?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Imagine a rocket as a sealed container that ejects mass out the back; the reaction to that ejection drives it forward."
+      },
+      {
+        "role": "user",
+        "content": "Does that mean the rocket loses mass as it travels?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket’s fuel combusts, it produces a stream of hot gas that exits through the nozzle, and the reaction to that stream accelerates the rocket."
+      },
+      {
+        "role": "user",
+        "content": "Is the exhaust the only thing that matters?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of the rocket as a boat that pushes water behind it; in vacuum, the 'water' is the exhaust gas."
+      },
+      {
+        "role": "user",
+        "content": "But the gas is not in space?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "The rocket’s engines produce a high‑pressure gas that exits the rear nozzle; the reaction to that ejection propels the vehicle forward."
+      },
+      {
+        "role": "user",
+        "content": "So the rocket is essentially throwing mass backward?"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+      },
+      {
+        "role": "user",
+        "content": "How does a rocket move forward in space if there's nothing to push against?"
+      },
+      {
+        "role": "assistant",
+        "content": "When the rocket burns fuel, it turns into a fast‑moving jet of gas that exits the back, and that jet’s momentum pushes the rocket in the opposite direction."
+      },
+      {
+        "role": "user",
+        "content": "Is that why rockets need a lot of fuel?"
+      }
+    ]
+  }
+]

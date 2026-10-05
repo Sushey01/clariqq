@@ -1,0 +1,262 @@
+{
+  "opener": "What is a reflex action?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a reflex as the body’s automatic response to a sudden stimulus, like pulling your hand away from a hot stove without thinking."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine touching a sharp object and your fingers reflexively curl inward. That quick, involuntary movement is an example of a reflex action."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you step on a hidden stone and immediately lift your foot, that is a reflex action—an automatic, rapid response without conscious thought."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "A reflex action is the body's instant reaction to a stimulus, such as the knee-jerk response when a doctor taps your patellar tendon."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "Reflex actions are automatic responses, like when your eyes quickly adjust to a bright light."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a child touches a hot pot and instantly pulls away, that’s a reflex action—an involuntary, rapid reaction."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you feel a sudden sting on your hand and your fingers automatically close around it, that’s a reflex action."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about your eyes dilating when you move from a dark room to bright sunlight—a reflex action that helps protect your vision."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a child bumps into a wall and immediately turns away, that’s a reflex action—an automatic, protective response."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "A reflex action is an instant bodily response, like the rapid blinking when something approaches your eye."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you touch a hot surface and your hand immediately retracts, that’s a reflex action—an involuntary, protective reflex."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "When your knee taps the doctor’s hammer and your leg jerks, that’s a classic reflex action."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "A reflex action is the body’s quick, automatic response to a stimulus, such as pulling your hand away from a hot stove."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you touch a sharp object and your fingers curl automatically, that’s a reflex action—an involuntary, rapid response."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you step on a hidden stone and instantly lift your foot, that’s a reflex action—an automatic protective movement."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is a reflex action?"
+        },
+        {
+          "role": "assistant",
+          "content": "A reflex action is the body’s instant reaction to a stimulus, like your eyes adjusting quickly to bright light."
+        }
+      ]
+    }
+  ]
+}

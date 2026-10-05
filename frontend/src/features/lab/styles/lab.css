@@ -1,0 +1,300 @@
+.nebular {
+  --n-bg: #07151c;
+  --n-bg-deep: #041016;
+  --n-cyan: #2ee6c5;
+  --n-cyan-dim: rgba(46, 230, 197, 0.14);
+  --n-ink: #e9fffb;
+  --n-muted: #9ec9c0;
+  --n-faint: #6d8f88;
+  --n-line: rgba(46, 230, 197, 0.2);
+  --n-card: rgba(10, 32, 40, 0.78);
+  min-height: 100vh;
+  background: var(--n-bg);
+  color: var(--n-ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+html[data-theme='light'] .nebular, html.light .nebular {
+  --n-bg: #f8fafc;
+  --n-bg-deep: #f1f5f9;
+  --n-cyan: #0d9488;
+  --n-cyan-dim: rgba(13, 148, 136, 0.12);
+  --n-ink: #0f172a;
+  --n-muted: #475569;
+  --n-faint: #64748b;
+  --n-line: rgba(0, 0, 0, 0.12);
+  --n-card: #ffffff;
+  background: var(--n-bg);
+  color: var(--n-ink);
+}
+
+.nebular-grid {
+  background-color: var(--n-bg);
+  background-image:
+    linear-gradient(rgba(46, 230, 197, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 230, 197, 0.07) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.nebular-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--n-line);
+  background: rgba(4, 16, 22, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.nebular-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+}
+
+.nebular-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--n-line);
+  background: var(--n-cyan-dim);
+  color: var(--n-cyan);
+}
+
+.nebular-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem 1.15rem;
+  font-size: 0.8rem;
+  color: var(--n-muted);
+}
+
+.nebular-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nebular-links a:hover,
+.nebular-links a.is-active {
+  color: var(--n-ink);
+}
+
+.nebular-preview-btn {
+  border: 1px solid var(--n-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  color: var(--n-ink);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.nebular-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--n-line);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  color: var(--n-muted);
+  font-size: 0.75rem;
+}
+
+.nebular-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
+  border-radius: 0.85rem;
+  padding: 0.8rem 1.15rem;
+  background: var(--n-cyan);
+  color: #04221c;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nebular-ghost {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--n-line);
+  border-radius: 0.85rem;
+  padding: 0.8rem 1.15rem;
+  color: var(--n-ink);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nebular-card {
+  border: 1px solid var(--n-line);
+  border-radius: 1.25rem;
+  background: var(--n-card);
+}
+
+.nebular-section {
+  scroll-margin-top: 5rem;
+  padding: 4.5rem 1.25rem;
+}
+
+.nebular-wrap {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.nebular-glow {
+  height: 4.5rem;
+  border-radius: 1rem;
+  background: radial-gradient(circle at 50% 120%, rgba(46, 230, 197, 0.55), transparent 70%);
+}
+
+.nebular-stage {
+  position: relative;
+  min-height: 22rem;
+}
+
+.nebular-sphere {
+  position: absolute;
+  left: 18%;
+  top: 18%;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 32% 28%, #9ff7e4, #2ee6c5 42%, #0b5f58);
+  box-shadow: 0 0 80px rgba(46, 230, 197, 0.28);
+}
+
+.nebular-orbit {
+  position: absolute;
+  left: 4%;
+  top: 8%;
+  width: 20rem;
+  height: 14rem;
+  border: 1px solid rgba(46, 230, 197, 0.28);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.nebular-stick {
+  position: absolute;
+  width: 0.45rem;
+  height: 5.2rem;
+  border-radius: 999px;
+  background: linear-gradient(#c8fff2, #2ee6c5);
+}
+
+.nebular-pulse {
+  position: absolute;
+  right: 0;
+  bottom: 8%;
+  width: 11.5rem;
+  padding: 0.75rem;
+}
+
+.nebular-stage-motion .nebular-pulse {
+  animation: nebular-box-float 5.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes nebular-box-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(-12deg) rotateX(6deg);
+  }
+  50% {
+    transform: translate3d(-10px, -14px, 12px) rotateY(14deg) rotateX(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nebular-stage-motion .nebular-pulse {
+    animation: none;
+  }
+}
+
+.nebular-pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+
+.nebular-pulse-grid span {
+  height: 1.7rem;
+  border-radius: 0.4rem;
+  background: rgba(8, 28, 34, 0.9);
+  border: 1px solid var(--n-line);
+}
+
+.nebular-desk-row {
+  border: 1px solid var(--n-line);
+  border-radius: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  margin-top: 0.65rem;
+  background: rgba(5, 18, 24, 0.55);
+}
+
+.nebular-bar {
+  display: block;
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto 3rem;
+  border-radius: 1.2rem;
+  padding: 1.6rem 1.4rem;
+  background: var(--n-cyan);
+  color: #04221c;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .nebular-links {
+    display: flex;
+    font-size: 0.9rem;
+    gap: 1.5rem;
+  }
+
+  .nebular-hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nebular-benches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .nebular-tutor {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .nebular-signals {
+    display: grid;
+    grid-template-columns: 0.9fr repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .nebular-benches,
+  .nebular-signals {
+    display: grid;
+    gap: 0.85rem;
+  }
+}

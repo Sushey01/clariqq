@@ -1,0 +1,123 @@
+```json
+[
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"What is an electromagnet?"},
+      {"role":"assistant","content":"An electromagnet is a type of magnet whose magnetic field is produced by an electric current. When the current flows through a coil of wire wrapped around a core, the core becomes magnetized. This magnetic field disappears once the current stops."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"When I turn on a lamp, the metal rod inside gets attracted to a magnet. Why does that happen?"},
+      {"role":"assistant","content":"That happens because the current in the lamp’s wiring creates a magnetic field that magnetizes the nearby metal rod. The rod then behaves like a temporary magnet, which is the essence of an electromagnet. The effect disappears when the lamp is turned off."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"Is a refrigerator magnet the same as an electromagnet?"},
+      {"role":"assistant","content":"A refrigerator magnet is a permanent magnet, not an electromagnet. Permanent magnets have a magnetic field even without electricity, while electromagnets need an electric current to produce theirs. So the two types of magnets differ in how their fields are generated."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I think an electromagnet is just a magnet that is turned on and off. Is that right?"},
+      {"role":"assistant","content":"Actually, an electromagnet isn’t just a regular magnet that can be switched; it’s a magnet whose magnetic field appears only when electric current flows through a coil. When the current stops, the magnetism disappears, unlike a permanent magnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"What is an electromagnet?"},
+      {"role":"assistant","content":"An electromagnet is a magnet created by passing electric current through a coil of wire wrapped around a core. The core, often iron, becomes magnetized only while the current flows. Once the current ceases, the magnetism vanishes."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I saw a metal bar being pulled by a coil in a science lab. That’s an electromagnet, right?"},
+      {"role":"assistant","content":"Yes, that’s an electromagnet in action. The current in the coil generates a magnetic field that magnetizes the bar, causing it to be attracted. When you stop the current, the bar is no longer attracted."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"Is an electromagnet the same as a magnetic field?"},
+      {"role":"assistant","content":"An electromagnet produces a magnetic field, but the two are not identical. The magnetic field is the region around a magnet where magnetic forces act; the electromagnet is the device that generates that field using electric current."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I think electromagnets are just regular magnets that are powered. Is that correct?"},
+      {"role":"assistant","content":"Not exactly. Regular, or permanent, magnets have a constant magnetic field without any power. Electromagnets generate their field only while electric current flows through their coils, and the field disappears when the current stops."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"What is an electromagnet?"},
+      {"role":"assistant","content":"An electromagnet is a device that creates a magnetic field by running electric current through a coil of wire around a ferromagnetic core. The core becomes magnetized only during current flow, turning the device into a temporary magnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"When I turned on the electric heater, the metal rod in the coil got attracted to a magnet. Why?"},
+      {"role":"assistant","content":"That’s because the heater’s current produced a magnetic field that magnetized the nearby rod, making it behave like a temporary magnet. This is the basic principle behind an electromagnet."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"Is an electromagnet the same as a permanent magnet?"},
+      {"role":"assistant","content":"No, they differ in how they generate magnetism. Permanent magnets have a continuous magnetic field without any external power, while electromagnets need electric current to produce theirs, and the field disappears when the current stops."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I think an electromagnet is a magnet that can be turned on and off. Is that true?"},
+      {"role":"assistant","content":"It’s close, but not exactly. An electromagnet’s magnetic field exists only when electric current flows through its coil. Once the current stops, the magnetism ceases, unlike a permanent magnet that stays magnetic."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"What is an electromagnet?"},
+      {"role":"assistant","content":"An electromagnet is a magnet formed by passing electric current through a coil of wire wrapped around a core, often made of iron. The core becomes magnetized only while the current flows, and the magnetic effect disappears when the current stops."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I saw a metal bar being pulled by a coil in a lab. That’s an electromagnet, right?"},
+      {"role":"assistant","content":"Exactly. The coil’s current creates a magnetic field that magnetizes the bar, causing attraction. When you turn off the current, the bar loses its magnetic attraction."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"Is an electromagnet the same as a magnetic field?"},
+      {"role":"assistant","content":"A magnetic field is the region around a magnet where magnetic forces act, whereas an electromagnet is the device that produces that field using electric current. So the field is an effect, and the electromagnet is the source."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"I think electromagnets are just magnets that are powered. Is that correct?"},
+      {"role":"assistant","content":"Actually, a powered magnet that turns on and off is an electromagnet. It differs from a permanent magnet, which stays magnetic without any power. The key is that the magnetic field appears only while current flows."}
+    ]
+  },
+  {
+    "messages": [
+      {"role":"system","content":"You are a Socratic tutor for Grade 10 Nepal SEE science."},
+      {"role":"user","content":"What is an electromagnet?"},
+      {"role":"assistant","content":"An electromagnet is a magnet that is created by electric current flowing through a coil of wire around a ferromagnetic core. The core becomes magnetized only while the current is present, making the magnet temporary."}
+    ]
+  }
+]
+```

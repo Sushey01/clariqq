@@ -1,0 +1,262 @@
+{
+  "opener": "How are voltage, current, and resistance related?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a water pipe: voltage is like the water pressure, current is the flow rate, and resistance is the pipe’s narrowness that limits flow."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "If the battery’s voltage stays the same and you make the resistor larger, the current will decrease—just as a wider pipe lets more water through."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "No, voltage drives the electrons, while current is the actual flow of electrons; think of voltage as the push and current as the traffic that moves."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "If resistance were the battery’s strength, a weaker battery would still push more electrons through a high‑resistance wire—so resistance actually limits how many electrons can flow."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right; voltage, current, and resistance follow Ohm’s law, which states that voltage equals current times resistance."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly, the current will halve—doubling the resistance halves the flow, just like doubling the width of a narrow road halves the number of cars that can pass at once."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re correct; voltage is the potential difference that pushes electrons, whereas current is the rate at which electrons move."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good starting point, but resistance actually measures how much a material opposes electron flow, not how strong a battery is."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a garden hose: the water pressure is voltage, the amount of water pouring out is current, and the size of the nozzle is resistance."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "If the battery’s voltage stays constant and you increase the resistor’s size, the current will drop—just as a thicker pipe reduces water flow."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re correct; voltage is the driving force, while current is the flow of electrons."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common mix‑up; resistance is actually how much a material resists electron flow, not how strong a battery is."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of it like a traffic system: voltage is the speed limit, current is the number of cars, and resistance is the number of lanes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly, the current will halve—doubling resistance halves the flow, much like doubling a road’s width halves the traffic density."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right; voltage is the potential difference that pushes electrons, while current is the actual flow."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "How are voltage, current, and resistance related?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a misunderstanding; resistance limits how many electrons can move, not how strong a battery is."
+        }
+      ]
+    }
+  ]
+}

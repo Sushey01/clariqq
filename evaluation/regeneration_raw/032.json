@@ -1,0 +1,262 @@
+{
+  "opener": "What determines whether a trait is dominant or recessive?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent, you’ve nailed it! The deciding factor is the pair of alleles an organism inherits; the allele that shows up in the phenotype is the dominant one."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re on the right track! Purple is a dominant trait, so the presence of just one purple allele is enough to mask the white allele in the offspring."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good question—while a dominant allele is a specific form of a gene, the trait you observe depends on how that allele behaves in the organism’s genotype."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a common misconception. Recessive traits do appear when an organism inherits two copies of the recessive allele, even if the dominant trait is also present."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve got it right—dominance is all about which allele masks the other in a heterozygote; the allele that expresses itself is the dominant one."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re thinking along the right lines! Brown is dominant, but if both parents carry a recessive blue allele, their child can inherit two copies and show blue eyes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a subtle distinction. A dominant phenotype results when the dominant allele is present, but dominance itself refers to how that allele behaves relative to its counterpart."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, recessive traits are passed on just as often; they simply require two recessive alleles to be expressed in the offspring."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve answered correctly! The presence of a dominant allele in a heterozygote masks the recessive allele, making the trait dominant."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good observation! Height is controlled by a dominant allele, so even a single tall allele produces the tall phenotype."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Not exactly. A gene is the broader unit, while an allele is one of its variants; dominance refers to how one allele behaves compared to another."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a misconception—recessive traits do appear when two recessive alleles come together, even though they’re hidden when a dominant allele is present."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right! The allele that shows up in the phenotype when two different alleles are present is the dominant one."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great question! If a child inherits a dominant brown allele from a parent who carries it as a hidden recessive, the child will show brown eyes."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Not exactly—dominance refers to the allele’s ability to mask another, while the phenotype is the observable trait that results."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What determines whether a trait is dominant or recessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, recessive traits are inherited too; they simply require two copies of the recessive allele to be expressed."
+        }
+      ]
+    }
+  ]
+}

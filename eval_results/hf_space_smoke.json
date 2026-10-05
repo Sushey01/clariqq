@@ -1,0 +1,15 @@
+{
+  "ok": false,
+  "space": "Susu11/socratic",
+  "endpoint": "/user_message+/bot_response",
+  "reply": null,
+  "elapsed_s": 6.11,
+  "error": "AppError: Data incompatible with messages format. Each message should be a dictionary with 'role' and 'content' keys or a ChatMessage object.",
+  "endpoints": [
+    "/bot_response",
+    "/bot_response_1",
+    "/clear_chat",
+    "/user_message",
+    "/user_message_1"
+  ]
+}

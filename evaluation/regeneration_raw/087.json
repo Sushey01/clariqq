@@ -1,0 +1,262 @@
+{
+  "opener": "What is resistance?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is the property of a material that opposes the flow of electric current, much like how a narrow pipe slows water."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of resistance as the friction that electrons feel when they move through a conductor, similar to how a car slows down on a rough road."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a sponge that lets water through only slowly; that slowing down is like electrical resistance in a wire."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is the measure of how much a material hinders electric current, just as a crowded hallway makes walking slower."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you hear the word resistance, think of how a thick syrup resists pouring, similar to how electrons resist moving through a conductor."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is a material's tendency to oppose the flow of electric charge, like a narrow tunnel limiting the number of cars that can pass at once."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of resistance as the friction that slows down electrons, just as a rough surface slows a sliding block."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance measures how hard it is for current to flow, much like how a steep hill makes climbing harder."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you say resistance, imagine a thick syrup that slows down the flow of liquid; electrons face a similar slowdown in a conductor."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is like the drag force on a moving object, but for electrons traveling through a material."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is the property that makes a conductor less willing to let current flow, similar to how a narrow doorway restricts people."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of resistance as the friction that electrons experience, like a skateboarder pushing through a crowd."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance measures how much a material resists the flow of current, just as a thick carpet slows down walking."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is the obstacle that electrons face in a conductor, comparable to a traffic jam that slows vehicles."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you ask about resistance, think of how a thick rope resists being pulled, similar to how electrons resist moving through a wire."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "What is resistance?"
+        },
+        {
+          "role": "assistant",
+          "content": "Resistance is the property that makes current flow less easily, like a narrow pipe that slows water."
+        }
+      ]
+    }
+  ]
+}

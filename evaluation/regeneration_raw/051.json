@@ -1,0 +1,262 @@
+{
+  "opener": "What is respiration?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration is the process by which living organisms convert oxygen and glucose into energy, releasing carbon dioxide and water as waste. It occurs in cells through a series of reactions known as cellular respiration."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "In the context of a single breathing cycle, respiration is the act of inhaling oxygen-rich air and exhaling carbon dioxide. This mechanical exchange happens in the lungs."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration is often confused with photosynthesis; while both involve gas exchange, respiration is the release of energy from food, whereas photosynthesis captures energy from light to build food."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Some people think respiration only means breathing, but it actually includes the biochemical reactions inside cells that produce ATP."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "You mentioned that respiration is the same as digestion; could you tell me where oxygen is used in the process you described?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "You said that respiration only happens in animals. How would you explain the energy release in a plant that also undergoes respiration?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration involves the mitochondria acting as powerhouses, converting glucose and oxygen into ATP, CO₂, and H₂O."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "In the lungs, respiration is the exchange of gases, where oxygen diffuses into the blood and carbon dioxide diffuses out."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration is distinct from photosynthesis; the former releases energy stored in food, while the latter captures light energy to build food."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "It seems you think respiration is only about breathing. The real process is the biochemical conversion of glucose into ATP inside cells."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "You mentioned that respiration is the same as digestion. How would you describe the role of oxygen in the reactions you listed?"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration is the process where cells use oxygen to break down glucose, producing ATP, CO₂, and H₂O."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "During a breathing cycle, respiration involves inhaling oxygen and exhaling carbon dioxide through the alveoli."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Respiration is often confused with photosynthesis; the former releases energy from food, while the latter captures light energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "You said respiration is just breathing. Actually, it includes the cellular process that generates ATP."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic science tutor for Grade 10 Nepal SEE."
+        },
+        {
+          "role": "user",
+          "content": "What is respiration?"
+        },
+        {
+          "role": "assistant",
+          "content": "You mentioned respiration is the same as digestion. The key difference is that digestion breaks down food, while respiration uses oxygen to convert it into usable energy."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "opener": "How does a plant know to grow toward light?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a plant's stem bends toward light, it's reacting to the hormone auxin that redistributes itself to the shaded side, pulling the cells there to elongate."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Vines sense light on the wall and also touch the wall, triggering a hormonal response that directs growth upward."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Phototropism uses light as a cue, while gravitropism relies on gravity; both involve auxin redistribution but the stimulus differs."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s not just preference; light triggers a hormone shift that encourages cells on the shaded side to grow longer, bending the stem toward the light."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Auxin directs cell elongation, especially when it accumulates on one side of a stem, causing that side to grow more and the plant to bend."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Heat is a byproduct of light, but the real cue is the light itself; experiments with dark and light strips show growth only where light hits, not just where heat rises."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "When light hits a plant from the side, auxin shifts toward the shaded side, causing the stem to elongate there and bend sideways toward the light source."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Phototropism is guided by light, whereas chemotropism is guided by chemical gradients; both involve directional growth but respond to different stimuli."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yes, that ability is called gravitropism; it works alongside phototropism, but the hormone redistribution pattern is reversed compared to light response."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Most use auxin, but some specialized plants also rely on other growth regulators like gibberellins when responding to light."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Water is important, but experiments where water is supplied equally on both sides show that plants still bend toward light, proving light is the main cue."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Light intensity differences across the stem create a concentration gradient of auxin, causing it to accumulate on the shaded side."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Plants don't have eyes, but they have photoreceptors like phototropins that detect light direction and trigger growth responses."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "No, leaves and roots can also exhibit phototropism, adjusting their orientation to maximize light capture or avoid shade."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Actually, auxin accumulates on the shaded side; the side with less auxin grows faster, causing the bend toward light."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does a plant know to grow toward light?"
+        },
+        {
+          "role": "assistant",
+          "content": "Photoreceptor proteins detect light intensity on each side of the stem, allowing the plant to compare and redirect growth accordingly."
+        }
+      ]
+    }
+  ]
+}

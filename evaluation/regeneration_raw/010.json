@@ -1,0 +1,262 @@
+{
+  "opener": "What is electric current?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about how water flows through a pipe—electric current is the flow of electric charge, mainly electrons, through a conductor."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a crowd moving in a hallway; electric current is the organized movement of charges past a point per second."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a river’s speed—electric current measures how fast charge travels through a material."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a conveyor belt moving boxes; electric current is the rate at which charges move along a conductor."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a battery powers a light, the electrons that flow from the negative to the positive terminal constitute the electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Consider a line of ants carrying crumbs; the number of ants passing a point per second is analogous to electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "In a simple circuit, the flow of electrons from the negative terminal to the positive one is the electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of traffic on a road; electric current is how many cars—charges—pass a point every second."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you flip a switch, electrons start moving through the wire, and that flow is what we call electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a river of electrons; the current is the speed at which they travel through the conductor."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a light bulb glows, electrons moving through the filament create the electric current that powers it."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a crowd of people passing through a doorway; the number of people per second is similar to electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you connect a battery to a wire, the electrons that move from the negative to the positive end constitute the electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a stream of cars on a highway; the count of cars passing a point per second is like electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a circuit is closed, electrons flow through the wire, and that flow is what we call electric current."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What is electric current?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a line of ants carrying food; the rate at which they move past a point is analogous to electric current."
+        }
+      ]
+    }
+  ]
+}

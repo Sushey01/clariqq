@@ -1,0 +1,11 @@
+.teacher-desk {
+  --t-bg: #061018;
+  --t-panel: rgba(10, 32, 42, 0.78);
+  --t-line: rgba(255, 255, 255, 0.1);
+  --t-gold: #e8c36a;
+  min-height: 100%;
+}
+
+.teacher-desk .teacher-kicker {
+  color: var(--t-gold);
+}

@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 0,
+    "category": "direct_conceptual",
+    "question": "What is light?",
+    "concept_hint": "Dispersion of light",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 1,
+    "category": "direct_conceptual",
+    "question": "What is motion?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "direct_conceptual",
+    "question": "What is electric current?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "direct_conceptual",
+    "question": "What is a chemical reaction?",
+    "concept_hint": "Types of chemical reactions",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "direct_conceptual",
+    "question": "What is photosynthesis?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "direct_conceptual",
+    "question": "What is velocity?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "direct_conceptual",
+    "question": "What is an isotope?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "direct_conceptual",
+    "question": "What is a food web?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "direct_conceptual",
+    "question": "What is evaporation?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "direct_conceptual",
+    "question": "What is DNA?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "direct_conceptual",
+    "question": "What is sound?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "direct_conceptual",
+    "question": "What is a lever?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "misconception",
+    "question": "The sun revolves around the Earth, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "misconception",
+    "question": "Heavier objects fall faster than lighter ones, don't they?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "misconception",
+    "question": "Plants only need water to grow, that's it, right?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "misconception",
+    "question": "Lightning never strikes the same place twice, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "misconception",
+    "question": "Energy stays the same at every level of a food chain, doesn't it?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "misconception",
+    "question": "Humans only use 10% of their brain, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "misconception",
+    "question": "Metals conduct electricity because they're shiny, right?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "misconception",
+    "question": "The Earth is closer to the sun in summer, isn't it?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "misconception",
+    "question": "Sound can travel through space just like light, can't it?",
+    "concept_hint": "Longitudinal vs transverse waves",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "misconception",
+    "question": "All chemical reactions release heat, don't they?",
+    "concept_hint": "Exothermic and endothermic reactions",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "misconception",
+    "question": "Bigger animals always need more food than smaller ones, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "misconception",
+    "question": "Glass is a type of liquid that flows very slowly, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "confused_stuck",
+    "question": "I don't understand any of this.",
+    "concept_hint": "Resistance",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "confused_stuck",
+    "question": "Can you explain that again? I'm lost.",
+    "concept_hint": "Ohm's Law",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "confused_stuck",
+    "question": "This makes no sense to me at all.",
+    "concept_hint": "Electromagnetic induction",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "confused_stuck",
+    "question": "I really don't get it, give me a hint.",
+    "concept_hint": "Digestion and enzymes",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "confused_stuck",
+    "question": "I'm confused, can you slow down?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "confused_stuck",
+    "question": "None of this is making sense.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "confused_stuck",
+    "question": "I don't know where to even start.",
+    "concept_hint": "Newton's third law (action-reaction)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "confused_stuck",
+    "question": "Sorry, I still don't understand after that hint.",
+    "concept_hint": "Ionic bond formation",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "confused_stuck",
+    "question": "Can you explain it a totally different way?",
+    "concept_hint": "Homologous series",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "confused_stuck",
+    "question": "I'm just not following any of this.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "confused_stuck",
+    "question": "I don't get it, can you just simplify?",
+    "concept_hint": "Covalent bonding in carbon compounds",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "confused_stuck",
+    "question": "This is too hard, I'm stuck.",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "topic_switch",
+    "question": "What is photosynthesis? ... Actually, what is friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "topic_switch",
+    "question": "Can you explain resistance? ... wait, never mind, tell me about the water cycle instead.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "topic_switch",
+    "question": "What causes rusting? ... actually can we talk about the human eye instead?",
+    "concept_hint": "The Human Eye and the Colourful World",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "topic_switch",
+    "question": "What is an ionic bond? ... hold on, what's an acid actually?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "topic_switch",
+    "question": "Explain Newton's third law. ... actually I wanted to ask about magnets.",
+    "concept_hint": "Electromagnets and solenoids",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "topic_switch",
+    "question": "What is DNA? ... never mind, what's a food chain?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "topic_switch",
+    "question": "Tell me about electric current. ... actually, why is the sky blue?",
+    "concept_hint": "Scattering of light and why the sky is blue",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "topic_switch",
+    "question": "What is inertia? ... wait, can we do chemistry instead, like acids?",
+    "concept_hint": "Reaction of acids with metals",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "topic_switch",
+    "question": "What's a chemical reaction? ... actually forget that, what is gravity?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "topic_switch",
+    "question": "Explain reflection of light. ... sorry, can we talk about reproduction instead?",
+    "concept_hint": "Asexual reproduction",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "topic_switch",
+    "question": "What are enzymes? ... actually, what's atomic number about?",
+    "concept_hint": "Modern periodic law and atomic number",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "topic_switch",
+    "question": "Tell me about waves. ... wait, what's a homologous series?",
+    "concept_hint": "Homologous series",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "ambiguous_difficult",
+    "question": "Why does this happen?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 49,
+    "category": "ambiguous_difficult",
+    "question": "What's going on here?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 50,
+    "category": "ambiguous_difficult",
+    "question": "Can you explain this?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 51,
+    "category": "ambiguous_difficult",
+    "question": "I don't get why.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 52,
+    "category": "ambiguous_difficult",
+    "question": "Can you help me with this chapter?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 53,
+    "category": "ambiguous_difficult",
+    "question": "This doesn't make sense, why does it work that way?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 54,
+    "category": "ambiguous_difficult",
+    "question": "I have a question about the thing we did in class today.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 55,
+    "category": "ambiguous_difficult",
+    "question": "Can you go over this topic with me?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 56,
+    "category": "ambiguous_difficult",
+    "question": "What's the deal with this?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 57,
+    "category": "ambiguous_difficult",
+    "question": "Explain.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 58,
+    "category": "ambiguous_difficult",
+    "question": "I'm stuck on my homework, can you help?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 59,
+    "category": "ambiguous_difficult",
+    "question": "Why?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 60,
+    "category": "direct_conceptual",
+    "question": "What is friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 61,
+    "category": "direct_conceptual",
+    "question": "What is gravity?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 62,
+    "category": "direct_conceptual",
+    "question": "What is an acid?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 63,
+    "category": "direct_conceptual",
+    "question": "What is refraction?",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 64,
+    "category": "direct_conceptual",
+    "question": "What is a food chain?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 65,
+    "category": "direct_conceptual",
+    "question": "What is inertia?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 66,
+    "category": "direct_conceptual",
+    "question": "What is rusting?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 67,
+    "category": "direct_conceptual",
+    "question": "What is the pH scale?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 68,
+    "category": "misconception",
+    "question": "Ice sinks in water because solids are always heavier, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 69,
+    "category": "misconception",
+    "question": "We see objects because our eyes send out light, don't they?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 70,
+    "category": "misconception",
+    "question": "Mass and weight are the same thing, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 71,
+    "category": "misconception",
+    "question": "Acids are always dangerous and bases are always safe, right?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 72,
+    "category": "misconception",
+    "question": "Current is used up as it goes around a circuit, isn't it?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 73,
+    "category": "misconception",
+    "question": "Plants take in food from the soil through their roots, right?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 74,
+    "category": "misconception",
+    "question": "There is no gravity on the Moon, that's why astronauts float, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 75,
+    "category": "misconception",
+    "question": "White light is a single colour with no mix in it, right?",
+    "concept_hint": "Dispersion of light",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 76,
+    "category": "confused_stuck",
+    "question": "I forgot everything from last class.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 77,
+    "category": "confused_stuck",
+    "question": "Wait, what were we even talking about?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 78,
+    "category": "confused_stuck",
+    "question": "Can you give a smaller step? I'm stuck on the last idea.",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 79,
+    "category": "confused_stuck",
+    "question": "I think I mixed two chapters together.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 80,
+    "category": "confused_stuck",
+    "question": "Please don't give the full answer, just unstick me.",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 81,
+    "category": "confused_stuck",
+    "question": "I understood until the last sentence, then I lost it.",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 82,
+    "category": "confused_stuck",
+    "question": "Is there an everyday example? I'm not getting the words.",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 83,
+    "category": "confused_stuck",
+    "question": "I need to start over from the beginning of this topic.",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 84,
+    "category": "topic_switch",
+    "question": "Why does ice float on water? ... actually, what is photosynthesis?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 85,
+    "category": "topic_switch",
+    "question": "What is motion? ... wait, can we talk about acids and bases instead?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 86,
+    "category": "topic_switch",
+    "question": "What is light? ... never mind, what is electric current?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 87,
+    "category": "topic_switch",
+    "question": "Tell me about food chains. ... actually I wanted gravity.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 88,
+    "category": "topic_switch",
+    "question": "What is an isotope? ... sorry, what's friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 89,
+    "category": "topic_switch",
+    "question": "Explain rusting. ... hold on, what is DNA?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 90,
+    "category": "topic_switch",
+    "question": "What is a lever? ... actually, why is the sky blue?",
+    "concept_hint": "Scattering of light and why the sky is blue",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 91,
+    "category": "topic_switch",
+    "question": "What is evaporation? ... wait, can we do Newton's first law?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 92,
+    "category": "ambiguous_difficult",
+    "question": "Help.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 93,
+    "category": "ambiguous_difficult",
+    "question": "I have science homework.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 94,
+    "category": "ambiguous_difficult",
+    "question": "What should I study?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 95,
+    "category": "ambiguous_difficult",
+    "question": "Is this important for the exam?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 96,
+    "category": "ambiguous_difficult",
+    "question": "Can we do the next part?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 97,
+    "category": "ambiguous_difficult",
+    "question": "Same as yesterday.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 98,
+    "category": "ambiguous_difficult",
+    "question": "The diagram in the book, you know.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 99,
+    "category": "ambiguous_difficult",
+    "question": "Just tell me the main point.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: Invalid URL '/v1/chat/completions': No scheme supplied. Perhaps you meant https:///v1/chat/completions?]",
+    "flags": [
+      "ERROR"
+    ]
+  }
+]

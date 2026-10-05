@@ -1,0 +1,262 @@
+{
+  "opener": "What actually happens when sodium reacts with chlorine to form table salt?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine two friends, one eager and the other reserved. The eager friend (sodium) gives away a single spark (electron) to the reserved one (chlorine). This exchange creates a strong bond—like a handshake—forming a new, stable pair (NaCl)."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about a game where one player loses a point and the other gains it. The sodium atom loses its lone outer electron, while chlorine gains that electron, resulting in a positively charged sodium ion and a negatively charged chloride ion that stick together to make salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a tiny, highly reactive metal that wants to shed its outer electron. When it meets chlorine, the chlorine atom eagerly accepts that electron, and the two ions combine, forming a crystal lattice that we recognize as table salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Consider a scenario where one person has a surplus and another has a deficit. Sodium, with its surplus electron, transfers it to chlorine, which has a deficit. This transfer creates an ionic bond, producing stable sodium chloride."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of sodium as a generous donor and chlorine as a needy recipient. The sodium gives up its lone electron, the chlorine receives it, and the resulting oppositely charged ions attract to form the familiar salt crystals."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine two magnets, one positively charged, the other negatively charged. When they meet, they snap together to form a stable pair—this is essentially what happens between Na⁺ and Cl⁻ to create NaCl."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a handshake between two people: one extends a hand, the other takes it. Here, sodium offers its electron, chlorine accepts, and they bond to make a neutral salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a tiny dance where one partner loses a step and the other gains it. Sodium loses its outer electron, chlorine gains it, and together they form a tightly bound crystal lattice."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a puzzle piece that fits perfectly into another. Sodium's electron slot is filled by chlorine, creating a stable ionic pair that repeats in a lattice—table salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Imagine a tug‑of‑war where one side pulls down and the other pulls up. Sodium pulls down its electron, chlorine pulls it up, and the resulting ionic attraction forms the salt crystal."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of sodium as a generous donor and chlorine as a needy recipient. The sodium gives up its lone electron, the chlorine receives it, and the resulting oppositely charged ions attract to form stable sodium chloride."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a tiny, highly reactive metal that wants to shed its outer electron. When it meets chlorine, the chlorine atom eagerly accepts that electron, and the two ions combine, forming a crystal lattice that we recognize as table salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a game where one player loses a point and the other gains it. The sodium atom loses its lone outer electron, while chlorine gains that electron, resulting in a positively charged sodium ion and a negatively charged chloride ion that stick together to make salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a tiny, highly reactive metal that wants to shed its outer electron. When it meets chlorine, the chlorine atom eagerly accepts that electron, and the two ions combine, forming a crystal lattice that we recognize as table salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think of a handshake between two people: one extends a hand, the other takes it. The sodium gives up its electron, the chlorine receives it, and they bond to make a neutral salt."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor."
+        },
+        {
+          "role": "user",
+          "content": "What actually happens when sodium reacts with chlorine to form table salt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Picture a tiny dance where one partner loses a step and the other gains it. Sodium loses its outer electron, chlorine gains it, and together they form a tightly bound crystal lattice."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+import { clearAccessToken, getAccessToken } from '@/auth/storage';
+
+const API_BASE = import.meta.env.VITE_API_URL ?? '';
+
+function authHeaders(extra = {}, { withToken = true } = {}) {
+  const headers = { ...extra };
+  const token = withToken ? getAccessToken() : null;
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  return headers;
+}
+
+function isStaleTokenError(message) {
+  return /invalid or expired token/i.test(message || '');
+}
+
+async function parseError(response, rawText = "") {
+  const text = rawText || "";
+  try {
+    const body = text ? JSON.parse(text) : await response.clone().json();
+    if (Array.isArray(body.detail)) {
+      return body.detail.map((item) => item.msg || JSON.stringify(item)).join(' ');
+    }
+    return body.detail || body.message || `Request failed (${response.status})`;
+  } catch {
+    if (text.trim()) return text.slice(0, 300);
+    return `Request failed (${response.status})`;
+  }
+}
+
+async function postChat({ question, sessionId, socraticMode }, withToken) {
+  const response = await fetch(`${API_BASE}/api/chat`, {
+    method: 'POST',
+    headers: authHeaders({ 'Content-Type': 'application/json' }, { withToken }),
+    body: JSON.stringify({
+      question,
+      session_id: sessionId,
+      socratic_mode: socraticMode,
+    }),
+  });
+
+  const raw = await response.text();
+  if (!response.ok) {
+    throw new Error(await parseError(response, raw));
+  }
+  if (!raw.trim()) {
+    throw new Error('Empty reply from the tutor API.');
+  }
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error('Tutor API returned a non-JSON reply.');
+  }
+}
+
+export async function sendChat({ question, sessionId, socraticMode }) {
+  try {
+    return await postChat({ question, sessionId, socraticMode }, true);
+  } catch (error) {
+    if (!getAccessToken() || !isStaleTokenError(error.message)) {
+      throw error;
+    }
+    clearAccessToken();
+    return postChat({ question, sessionId, socraticMode }, false);
+  }
+}
+
+export async function getAuthMe() {
+  const response = await fetch(`${API_BASE}/api/auth/me`, {
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function getHealth() {
+  const response = await fetch(`${API_BASE}/health`);
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function getAuthConfig() {
+  const response = await fetch(`${API_BASE}/api/auth/config`);
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function loginWithGoogle(idToken) {
+  const response = await fetch(`${API_BASE}/api/auth/google`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id_token: idToken }),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function listMaterials() {
+  const response = await fetch(`${API_BASE}/api/materials`, {
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function uploadMaterial(file) {
+  const body = new FormData();
+  body.append('file', file);
+  const response = await fetch(`${API_BASE}/api/materials`, {
+    method: 'POST',
+    headers: authHeaders(),
+    body,
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function reindexMaterial(id) {
+  const response = await fetch(`${API_BASE}/api/materials/${id}/index`, {
+    method: 'POST',
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export async function deleteMaterial(id) {
+  const response = await fetch(`${API_BASE}/api/materials/${id}`, {
+    method: 'DELETE',
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+async function authGet(path) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    headers: authHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export function getKnowledgeCatalog() {
+  return fetch(`${API_BASE}/api/knowledge/catalog`).then(async (response) => {
+    if (!response.ok) throw new Error(await parseError(response));
+    return response.json();
+  });
+}
+
+export function getProgress() {
+  return authGet('/api/progress');
+}
+
+export function getProgressGraph() {
+  return authGet('/api/progress/graph');
+}
+
+export function getWeeklyReport() {
+  return authGet('/api/reports/weekly');
+}
+
+export function getProgressActivity(weeks = 53) {
+  return authGet(`/api/progress/activity?weeks=${weeks}`);
+}
+
+async function authPost(path, body) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) {
+    throw new Error(await parseError(response));
+  }
+  return response.json();
+}
+
+export function demoLogin(role) {
+  return authPost('/api/auth/demo-login', { role });
+}
+
+export function signupWithEmail({ name, email, password }) {
+  return authPost('/api/auth/signup', { name, email, password });
+}
+
+export function loginWithEmail({ email, password }) {
+  return authPost('/api/auth/login', { email, password });
+}
+
+export function getTeacherStudents() {
+  return authGet('/api/teacher/students');
+}
+
+export function getTeacherStudentWeekly(studentId) {
+  return authGet(`/api/teacher/students/${studentId}/weekly`);
+}
+
+export function getParentChild() {
+  return authGet('/api/parent/child');
+}
+
+export function getParentChildWeekly() {
+  return authGet('/api/parent/child/weekly');
+}
+
+export async function getStudyTopic(topicId = 'acids_bases') {
+  const response = await fetch(`${API_BASE}/api/study/topic/${topicId}`);
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}
+
+export async function submitStudySession(payload) {
+  const response = await fetch(`${API_BASE}/api/study/submit`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}
+
+export async function getStudySessions() {
+  const response = await fetch(`${API_BASE}/api/study/sessions`);
+  if (!response.ok) throw new Error(await parseError(response));
+  return response.json();
+}

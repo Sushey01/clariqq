@@ -1,0 +1,603 @@
+[
+  {
+    "id": 0,
+    "category": "direct_conceptual",
+    "question": "What is light?",
+    "concept_hint": "Dispersion of light",
+    "answer": "Here's a question for you: White light passing through a prism splits into a band of colours from violet to red. Since all these colours were hidden inside the white light, what do you think must be different about each colour that causes them to separate?",
+    "flags": [
+      "SCRIPT_COLLAPSE:Dispersion of light"
+    ],
+    "note": "Captured from POST /api/chat before ZeroGPU quota ran out. Remaining items in this file are 502s from the same quota."
+  },
+  {
+    "id": 1,
+    "category": "direct_conceptual",
+    "question": "What is motion?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "direct_conceptual",
+    "question": "What is electric current?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "direct_conceptual",
+    "question": "What is a chemical reaction?",
+    "concept_hint": "Types of chemical reactions",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "direct_conceptual",
+    "question": "What is photosynthesis?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "direct_conceptual",
+    "question": "What is velocity?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "direct_conceptual",
+    "question": "What is an isotope?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "direct_conceptual",
+    "question": "What is a food web?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "direct_conceptual",
+    "question": "What is evaporation?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "direct_conceptual",
+    "question": "What is DNA?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "direct_conceptual",
+    "question": "What is sound?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "direct_conceptual",
+    "question": "What is a lever?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "misconception",
+    "question": "The sun revolves around the Earth, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "misconception",
+    "question": "Heavier objects fall faster than lighter ones, don't they?",
+    "concept_hint": "Newton's first law (inertia)",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "misconception",
+    "question": "Plants only need water to grow, that's it, right?",
+    "concept_hint": "Nutrition in plants",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "misconception",
+    "question": "Lightning never strikes the same place twice, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "misconception",
+    "question": "Energy stays the same at every level of a food chain, doesn't it?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "misconception",
+    "question": "Humans only use 10% of their brain, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "misconception",
+    "question": "Metals conduct electricity because they're shiny, right?",
+    "concept_hint": "Electric current",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "misconception",
+    "question": "The Earth is closer to the sun in summer, isn't it?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "misconception",
+    "question": "Sound can travel through space just like light, can't it?",
+    "concept_hint": "Longitudinal vs transverse waves",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "misconception",
+    "question": "All chemical reactions release heat, don't they?",
+    "concept_hint": "Exothermic and endothermic reactions",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "misconception",
+    "question": "Bigger animals always need more food than smaller ones, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "misconception",
+    "question": "Glass is a type of liquid that flows very slowly, right?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "confused_stuck",
+    "question": "I don't understand any of this.",
+    "concept_hint": "Resistance",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "confused_stuck",
+    "question": "Can you explain that again? I'm lost.",
+    "concept_hint": "Ohm's Law",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "confused_stuck",
+    "question": "This makes no sense to me at all.",
+    "concept_hint": "Electromagnetic induction",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "confused_stuck",
+    "question": "I really don't get it, give me a hint.",
+    "concept_hint": "Digestion and enzymes",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "confused_stuck",
+    "question": "I'm confused, can you slow down?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "confused_stuck",
+    "question": "None of this is making sense.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "confused_stuck",
+    "question": "I don't know where to even start.",
+    "concept_hint": "Newton's third law (action-reaction)",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "confused_stuck",
+    "question": "Sorry, I still don't understand after that hint.",
+    "concept_hint": "Ionic bond formation",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "confused_stuck",
+    "question": "Can you explain it a totally different way?",
+    "concept_hint": "Homologous series",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "confused_stuck",
+    "question": "I'm just not following any of this.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "confused_stuck",
+    "question": "I don't get it, can you just simplify?",
+    "concept_hint": "Covalent bonding in carbon compounds",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "confused_stuck",
+    "question": "This is too hard, I'm stuck.",
+    "concept_hint": "Refraction and bending of light",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "topic_switch",
+    "question": "What is photosynthesis? ... Actually, what is friction?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "topic_switch",
+    "question": "Can you explain resistance? ... wait, never mind, tell me about the water cycle instead.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "topic_switch",
+    "question": "What causes rusting? ... actually can we talk about the human eye instead?",
+    "concept_hint": "The Human Eye and the Colourful World",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "topic_switch",
+    "question": "What is an ionic bond? ... hold on, what's an acid actually?",
+    "concept_hint": "pH scale and neutralization",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "topic_switch",
+    "question": "Explain Newton's third law. ... actually I wanted to ask about magnets.",
+    "concept_hint": "Electromagnets and solenoids",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "topic_switch",
+    "question": "What is DNA? ... never mind, what's a food chain?",
+    "concept_hint": "Food chains and energy flow",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "topic_switch",
+    "question": "Tell me about electric current. ... actually, why is the sky blue?",
+    "concept_hint": "Scattering of light and why the sky is blue",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "topic_switch",
+    "question": "What is inertia? ... wait, can we do chemistry instead, like acids?",
+    "concept_hint": "Reaction of acids with metals",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "topic_switch",
+    "question": "What's a chemical reaction? ... actually forget that, what is gravity?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "topic_switch",
+    "question": "Explain reflection of light. ... sorry, can we talk about reproduction instead?",
+    "concept_hint": "Asexual reproduction",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "topic_switch",
+    "question": "What are enzymes? ... actually, what's atomic number about?",
+    "concept_hint": "Modern periodic law and atomic number",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "topic_switch",
+    "question": "Tell me about waves. ... wait, what's a homologous series?",
+    "concept_hint": "Homologous series",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "ambiguous_difficult",
+    "question": "Why does this happen?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 49,
+    "category": "ambiguous_difficult",
+    "question": "What's going on here?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 50,
+    "category": "ambiguous_difficult",
+    "question": "Can you explain this?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 51,
+    "category": "ambiguous_difficult",
+    "question": "I don't get why.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 52,
+    "category": "ambiguous_difficult",
+    "question": "Can you help me with this chapter?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 53,
+    "category": "ambiguous_difficult",
+    "question": "This doesn't make sense, why does it work that way?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 54,
+    "category": "ambiguous_difficult",
+    "question": "I have a question about the thing we did in class today.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 55,
+    "category": "ambiguous_difficult",
+    "question": "Can you go over this topic with me?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 56,
+    "category": "ambiguous_difficult",
+    "question": "What's the deal with this?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 57,
+    "category": "ambiguous_difficult",
+    "question": "Explain.",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 58,
+    "category": "ambiguous_difficult",
+    "question": "I'm stuck on my homework, can you help?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  },
+  {
+    "id": 59,
+    "category": "ambiguous_difficult",
+    "question": "Why?",
+    "concept_hint": "out_of_bank",
+    "answer": "[ERROR: 502 Server Error: Bad Gateway for url: http://127.0.0.1:8000/api/chat]",
+    "flags": [
+      "ERROR"
+    ]
+  }
+]

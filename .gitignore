@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+dist/
+build/
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# Databases & Vector Stores
+backend/storage/chroma_db/
+backend/storage/uploads/
+*.sqlite3
+
+# Large Data & Model files
+*.jsonl
+models/
+*.gguf
+*.bin
+*.pt
+*.safetensors
+*.csv
+*.pdf
+
+# Dissertation deliverables and generated report assets
+/clariq_final_report.tex
+/clariq_final_draft.tex
+/clariq_gantt_chart.png
+/report_figures/
+/reports/
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+
+# OS
+.DS_Store
+Thumbs.db

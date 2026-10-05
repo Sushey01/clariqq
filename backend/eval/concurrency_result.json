@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-10-03T17:26:17.426318+00:00",
+  "target_concurrency": 10,
+  "completed": 10,
+  "failed": 0,
+  "wall_clock_seconds": 8.457,
+  "throughput_req_per_sec": 1.18,
+  "latency_seconds": {
+    "min": 5.408,
+    "mean": 6.825,
+    "median_p50": 6.658,
+    "p90": 8.384,
+    "p95": 8.404,
+    "max": 8.404
+  },
+  "target_seconds": 5.0,
+  "meets_5s_target": false,
+  "health": {
+    "status": "ok",
+    "llm_provider": "modal",
+    "groq_configured": true,
+    "modal_configured": true,
+    "hf_space_configured": true,
+    "detail": null
+  },
+  "results": [
+    {
+      "index": 0,
+      "question": "What is density?",
+      "status": 200,
+      "seconds": 5.856,
+      "words": 27,
+      "preview": "Let's think about packing clothes into a suitcase before a trip. What happens as you keep adding heavier coats and shoes",
+      "error": null
+    },
+    {
+      "index": 1,
+      "question": "Why does ice float on water?",
+      "status": 200,
+      "seconds": 7.475,
+      "words": 20,
+      "preview": "It should become lighter since the molecules spread out further apart. What do you notice about ice float on water?",
+      "error": null
+    },
+    {
+      "index": 2,
+      "question": "Explain photosynthesis in one guiding question.",
+      "status": 200,
+      "seconds": 8.208,
+      "words": 47,
+      "preview": "Let's think about a farmer trying to grow crops during a long rainy period. Water is abundant, but there isn't enough su",
+      "error": null
+    },
+    {
+      "index": 3,
+      "question": "What is an ionic bond?",
+      "status": 200,
+      "seconds": 6.536,
+      "words": 39,
+      "preview": "Let's think about how atoms become stable. Imagine Atom X really needs four electrons to fill its outer shell, but Atom",
+      "error": null
+    },
+    {
+      "index": 4,
+      "question": "How does the human eye form an image?",
+      "status": 200,
+      "seconds": 6.526,
+      "words": 39,
+      "preview": "Let's think about how we see things clearly as we move closer to something, like reading this page. Imagine looking into",
+      "error": null
+    },
+    {
+      "index": 5,
+      "question": "What is electric current?",
+      "status": 200,
+      "seconds": 6.081,
+      "words": 30,
+      "preview": "Let's think about how we move things around using our muscles as energy. What happens in your body when electrical signa",
+      "error": null
+    },
+    {
+      "index": 6,
+      "question": "Explain Newton's third law of motion.",
+      "status": 200,
+      "seconds": 6.78,
+      "words": 20,
+      "preview": "Imagine someone jumps off a stationary skateboard onto solid ground. What physical push causes the person to leave the s",
+      "error": null
+    },
+    {
+      "index": 7,
+      "question": "What is the difference between an acid and a base?",
+      "status": 200,
+      "seconds": 6.981,
+      "words": 51,
+      "preview": "Let's think about household cleaning products like soap versus vinegar. Soap cleans grease but makes things feel slipper",
+      "error": null
+    },
+    {
+      "index": 8,
+      "question": "How does refraction of light work?",
+      "status": 200,
+      "seconds": 8.404,
+      "words": 46,
+      "preview": "Let's think about looking down into a swimming pool. Even though the bottom looks like solid ground, there isn't actuall",
+      "error": null
+    },
+    {
+      "index": 9,
+      "question": "What is a food chain?",
+      "status": 200,
+      "seconds": 5.408,
+      "words": 13,
+      "preview": "Let's imagine a forest where grass grows first. What eats the grass directly?",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "opener": "How does energy move through a food chain?",
+  "model": "openai/gpt-oss-20b",
+  "examples": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy is transferred from one organism to another by eating. When a herbivore consumes plants, the chemical energy stored in the plant’s sugars is now part of the herbivore’s body, and when a carnivore eats that herbivore, the energy passes again."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Think about a grasshopper eating grass and then being eaten by a frog. The grasshopper stores energy from the grass, and the frog stores energy from the grasshopper. This is how energy travels up the chain."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When you hear about a lion hunting a zebra, the lion receives the energy that the zebra had obtained from grasses. Energy is passed along as one organism consumes another."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy flows upward: plants capture light energy, herbivores eat plants, and carnivores eat herbivores, each step transferring the stored chemical energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a rabbit eats a carrot, the rabbit stores the carrot’s chemical energy. If a fox later eats the rabbit, that energy moves to the fox. Each feeding event transfers energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy travels up the chain when a predator consumes a prey that has already eaten producers, thus moving the stored energy from the producer to the predator."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a beetle feeds on a leaf, the beetle’s body contains the leaf’s energy. If a bird eats that beetle, the bird obtains the leaf’s energy indirectly."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy moves from the sun to plants, from plants to herbivores, and from herbivores to carnivores. Each step involves consumption and energy transfer."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Consider a tadpole eating algae and then a frog eating the tadpole. The frog receives the energy the tadpole had from the algae, illustrating the upward flow of energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy is passed from producers to consumers by eating. The energy stored in a leaf ends up in the leaf‑eating insect, and then in the insect‑eating bird."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a deer eats grass, it stores the grass’s energy. If a wolf eats that deer, the wolf gets the energy that was originally in the grass."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy moves upward: plants capture sunlight, herbivores eat plants, and carnivores eat herbivores, transferring the stored chemical energy each time."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a spider eats a fly, the spider receives the energy that the fly had obtained from plants, showing how energy moves through successive trophic levels."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy travels from the sun to plants, then to herbivores, and finally to carnivores, with each feeding event transferring the stored energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "When a frog eats a mosquito, the frog gets the energy that the mosquito had from algae, demonstrating the upward flow of energy."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a Socratic tutor for Grade 10 Nepal SEE science."
+        },
+        {
+          "role": "user",
+          "content": "How does energy move through a food chain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Energy passes from plants to herbivores to carnivores by eating. Each step involves the consumer taking the producer’s stored energy."
+        }
+      ]
+    }
+  ]
+}

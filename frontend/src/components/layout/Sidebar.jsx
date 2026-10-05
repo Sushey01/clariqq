@@ -1,0 +1,139 @@
+import { useMemo, useState } from 'react';
+import { LogOut, PanelLeftClose, Search, SquarePen, LayoutGrid } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button, Input } from '@/components/ui';
+import SessionItem from './SessionItem';
+import { groupSessions } from './groupSessions';
+
+export default function Sidebar({
+  isOpen,
+  onClose,
+  sessions,
+  activeSessionId,
+  onSelectSession,
+  onNewChat,
+  onDeleteSession,
+  onRenameSession,
+  user,
+  onLogout,
+}) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const grouped = useMemo(
+    () => groupSessions(sessions, searchTerm),
+    [sessions, searchTerm]
+  );
+
+  return (
+    <>
+      {/* Mobile Backdrop Overlay */}
+      {isOpen && (
+        <button
+          type="button"
+          aria-label="Close sidebar"
+          className="fixed inset-0 z-40 bg-black/60 md:hidden backdrop-blur-xs transition-opacity duration-300"
+          onClick={onClose}
+        />
+      )}
+
+      {/* Smooth Sliding Sidebar Drawer */}
+      <aside
+        className={`fixed md:static inset-y-0 left-0 z-50 flex h-full w-[272px] shrink-0 flex-col border-r border-[var(--border)] bg-[var(--bg-sidebar)]/95 backdrop-blur-xl transition-all duration-300 ease-in-out select-none ${
+          isOpen 
+            ? 'translate-x-0 opacity-100' 
+            : '-translate-x-full md:-ml-[272px] opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="space-y-2 p-3">
+          <div className="flex items-center justify-between px-1 py-1">
+            <Link to="/" className="font-outfit text-sm font-semibold text-[var(--ink)]">
+              Clariq
+            </Link>
+            <div className="flex items-center">
+              <Button variant="ghost" size="icon" onClick={onNewChat} title="New session">
+                <SquarePen className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onClose}
+                title="Close sidebar"
+              >
+                <PanelLeftClose className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={onNewChat}
+            className="w-full justify-between"
+          >
+            <span className="flex items-center gap-2">
+              <SquarePen className="h-4 w-4" />
+              New path
+            </span>
+            <kbd className="rounded border border-[var(--border)] bg-[var(--bg-canvas)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--ink-muted)]">
+              Ctrl K
+            </kbd>
+          </Button>
+
+          <Input
+            icon={Search}
+            placeholder="Search sessions"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+        </div>
+
+        <nav className="flex-1 space-y-4 overflow-y-auto px-2 py-2" aria-label="Past conversations">
+          {Object.entries(grouped).map(([label, items]) => {
+            if (items.length === 0) return null;
+            return (
+              <div key={label}>
+                <p className="px-2 pb-1 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-faint)]">
+                  {label}
+                </p>
+                <div className="space-y-0.5">
+                  {items.map((session) => (
+                    <SessionItem
+                      key={session.id}
+                      session={session}
+                      isActive={session.id === activeSessionId}
+                      onSelect={onSelectSession}
+                      onRename={onRenameSession}
+                      onDelete={onDeleteSession}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </nav>
+
+        <div className="border-t border-[var(--border)] p-3">
+          <Link
+            to="/app"
+            className="mb-2 flex items-center gap-2 rounded-lg px-1 py-1 text-xs text-[var(--ink-muted)] hover:text-[var(--ink)]"
+          >
+            <LayoutGrid className="h-4 w-4" />
+            Lab floor
+          </Link>
+          <p className="truncate px-1 text-xs font-medium text-[var(--ink)]">
+            {user?.name || 'Student'}
+          </p>
+          <p className="truncate px-1 text-[11px] text-[var(--ink-faint)]">{user?.email}</p>
+          <Button
+            variant="ghost"
+            size="md"
+            onClick={onLogout}
+            className="mt-2 w-full justify-start gap-2 text-[var(--ink-muted)]"
+          >
+            <LogOut className="h-4 w-4" />
+            Log out
+          </Button>
+        </div>
+      </aside>
+    </>
+  );
+}
